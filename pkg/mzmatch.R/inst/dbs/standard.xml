@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<compounds>
+	<compound>
+		<id>STD_ALANINE</id>
+		<name>L-alanine</name>
+		<formula>C3H7NO2</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+			<synonym>B-Alanine</synonym>
+			<synonym>Sarcosine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_AMINOADIPIC_ACID</id>
+		<name>L-a-Aminoadipic Acid</name>
+		<formula>C6H11NO4</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_AMINONBUTRYIC_Acid</id>
+		<name>L-a-Amino-n-butryic Acid</name>
+		<formula>C4H9NO2</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+			<synonym> g-Amino-n-butyric Acid </synonym>
+			<synonym> D,L-b-Aminoisobutyric Acid </synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_AMONIUMCHLORIDE</id>
+		<name>Amonium Chloride</name>
+		<formula>ClH4N</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_ANSERINE</id>
+		<name>L-Anserine</name>
+		<formula>C10H16N4O3</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_ARGININE</id>
+		<name>L-Arginine</name>
+		<formula>C6H14N4O2</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_ASPARTIC_ACID</id>
+		<name>L-Aspartic Acid</name>
+		<formula>C4H7NO4</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_ASPARTIC_ACID_f1</id>
+		<name>L-Aspartic Acid-H20-CO</name>
+		<formula>C3H5NO2</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_ASPARTIC_ACID_f2</id>
+		<name>L-Aspartic Acid-H20-CO-CH2</name>
+		<formula>C2H3NO2</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_CARNOSINE</id>
+		<name>L-Carnosine</name>
+		<formula>C9H14N4O3</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_CITRULLINE</id>
+		<name>L-Citrulline</name>
+		<formula>C6H13N3O3</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_CREATININE</id>
+		<name>L-Creatinine</name>
+		<formula>C4H7N3O</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_CYSTATHIONINE</id>
+		<name>L-Cystathionine</name>
+		<formula>C7H14N2O4S</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_Cystine</id>
+		<name>L-Cystine</name>
+		<formula>C6H12N2O4S2</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_ETHANOLAMINE</id>
+		<name>Ethanolamine</name>
+		<formula>C2H7NO</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_GLUTAMIC_ACID</id>
+		<name>L-Glutamic acid</name>
+		<formula>C5H9NO4</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_GLYCINE</id>
+		<name>Glycine</name>
+		<formula>C2H5NO2</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_HISTIDINE</id>
+		<name>L-Histidine</name>
+		<formula>C6H9N3O2</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_HOMOCYSTINE</id>
+		<name>L-Homocystine</name>
+		<formula>C8H16N2O4S2</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_HOMOCYSTINE_f1</id>
+		<name>L-Homocystine-homocisteine</name>
+		<formula>C4H8NO2S</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_HYDROXYLYSINE</id>
+		<name>gamma-Hydroxylysine</name>
+		<formula>C6H14N2O3</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_HYDROXYLYSINE_f1</id>
+		<name>gamma-Hydroxylysine-H20</name>
+		<formula>C6H12N2O2</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_HYDROXYLYSINE_f2</id>
+		<name>gamma-Hydroxylysine-H20-NH3</name>
+		<formula>C6H9NO2</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_HYDROXYLPROLINE</id>
+		<name>Hydroxy-L-proline</name>
+		<formula>C5H9NO3</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_LEUCINE</id>
+		<name>L-Leucine</name>
+		<formula>C6H13NO2</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+			<synonym>L-Isoleucine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_LYSINE</id>
+		<name>L-Lysine</name>
+		<formula>C6H14N2O2</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_LYSINE_f1</id>
+		<name>L-Lysine-NH3</name>
+		<formula>C6H11NO2</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_LYSINE_f2</id>
+		<name>L-Lysine-NH3-H20-CO</name>
+		<formula>C5H9N</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_METHIONINE</id>
+		<name>L-Methionine</name>
+		<formula>C5H11NO2S</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_METHYLHISTIDINE</id>
+		<name>1-Methyl-L-histidine</name>
+		<formula>C7H11N3O2</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+			<synonym>3-Methyl-L-histidine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_ORNITHINE</id>
+		<name>L-Ornithine</name>
+		<formula>C5H12N2O2</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_ORNITHINE_f1</id>
+		<name>L-Ornithine-NH3</name>
+		<formula>C5H9NO2</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_ORNITHINE_f2</id>
+		<name>L-Ornithine-CHOONH4</name>
+		<formula>C4H7N</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_PHENYLALANINE</id>
+		<name>L-Phenylalanine</name>
+		<formula>C9H11NO2</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_PROLINE</id>
+		<name>L-Proline</name>
+		<formula>C5H9NO2</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_SERINE</id>
+		<name>L-Serine</name>
+		<formula>C3H7NO3</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_SERINE_f1</id>
+		<name>L-Serine-H20-CO</name>
+		<formula>C2H5NO</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_TAURINE</id>
+		<name>Taurine</name>
+		<formula>C2H7NO3S</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_THREONINE</id>
+		<name>L-THREONINE</name>
+		<formula>C4H9NO3</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_THREONINE_f1</id>
+		<name>L-THREONINE-H20-CO</name>
+		<formula>C3H7NO</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_TRYPTOPHAN</id>
+		<name>L-Tryptophan</name>
+		<formula>C11H12N2O2</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_TYROSINE</id>
+		<name>L-Tyrosine</name>
+		<formula>C9H11NO3</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_UREA</id>
+		<name>Urea</name>
+		<formula>CH4N2O</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STD_VALINE</id>
+		<name>L-Valine</name>
+		<formula>C5H11NO2</formula>
+		<inchi />
+		<description></description>
+		<synonyms>
+		</synonyms>
+	</compound>
+</compounds>

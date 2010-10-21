@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<compounds>
+	<compound>
+		<id>CID23831</id>
+		<name>Hepes</name>
+		<formula>[M1];[C8H18N2O4S]n</formula>
+		<inchi>InChI=1S/C8H18N2O4S/c11-7-5-9-1-3-10(4-2-9)6-8-15(12,13)14/h11H,1-8H2,(H,12,13,14)</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>HEPES solution</synonym>
+			<synonym>Prestwick_256</synonym>
+			<synonym>HEPES buffer solution</synonym>
+			<synonym>HEPES buffered saline</synonym>
+			<synonym>1d1p</synonym>
+			<synonym>1dg9</synonym>
+			<synonym>H0887_SIGMA</synonym>
+			<synonym>H3375_SIGMA</synonym>
+			<synonym>H4034_SIGMA</synonym>
+			<synonym>H6147_SIGMA</synonym>
+			<synonym>H7523_SIGMA</synonym>
+			<synonym>51558_FLUKA</synonym>
+			<synonym>54457_FLUKA</synonym>
+			<synonym>54457_SIGMA</synonym>
+			<synonym>54459_FLUKA</synonym>
+			<synonym>54459_SIGMA</synonym>
+			<synonym>83264_FLUKA</synonym>
+			<synonym>83264_SIGMA</synonym>
+			<synonym>CHEBI:42334</synonym>
+			<synonym>CID23831</synonym>
+			<synonym>NSC166663</synonym>
+			<synonym>LT00138109</synonym>
+			<synonym>4-(2-Hydroxyethyl)-1-piperazineethanesulfonic acid</synonym>
+			<synonym>N-2-Hydroxyethylpiperazine-N'-ethanesulfonate</synonym>
+			<synonym>N-2-Hydroxyethylpiperazine-N'-ethanesulfonic acid</synonym>
+			<synonym>N-2-Hydroxyethylpiperazine-N-ethane sulfonic acid</synonym>
+			<synonym>4-(2-Hydroxyethyl)-1-piperazineethane sulfonic acid</synonym>
+			<synonym>4-(2-Hydroxyethyl)piperazine-1-ethanesulfonic acid</synonym>
+			<synonym>I09-0112</synonym>
+			<synonym>N-2-Hydroxyethylpiperazine-N -2-ethanesulfonic acid</synonym>
+			<synonym>1-Piperazineethanesulfonic acid, 4-(2-hydroxyethyl)-4-(2-HYDROXYETHYL)-1-PIPERAZINE ETHANESULFONIC ACID</synonym>
+			<synonym>N-2-Hydroxyethylpiperazine N',2'-ethanesulfonic acid</synonym>
+			<synonym>2-[4-(2-hydroxyethyl)piperazin-1-yl]ethanesulfonic acid</synonym>
+			<synonym>Hepes,4-(2-hydroxyethyl)-1-piperazineethanesulfonic acid</synonym>
+			<synonym>N-(2-Hydroxyethyl)piperazine-N'-(2-ethanesulfonic acid)</synonym>
+			<synonym>7365-45-9 [MeSH: HEPES]</synonym>
+			<synonym>EPE</synonym>
+		</synonyms>
+	</compound>
+</compounds>
