@@ -1,0 +1,10 @@
+Package: mzmatch.Data 
+Version: 0.1.0
+Date: 2010-10-20
+Title: Orbitrap Mass Spectrometry raw data example files 
+Author: Andris Jankevics <a.jankevics@rug.nl>
+Maintainer: Andris Jankevics <a.jankevics@rug.nl>
+Suggests: mzmatch.R
+ZipData: no
+Description: Orbitrap positive ionization mode data in mzXML file format.
+License: GPL (>= 2)

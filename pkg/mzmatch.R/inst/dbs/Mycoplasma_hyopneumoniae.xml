@@ -1,0 +1,3771 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<compounds>
+	<compound>
+		<id>NADPH</id>
+		<name>NADPH</name>
+		<formula>[M1];[C21H26N7O17P3]n</formula>
+		<inchi />
+		<smiles>C(C3(C(C(C(N2(C1(=C(C(=NC=N1)N)N=C2)))O3)OP([O-])([O-])=O)O))OP(OP(=O)([O-])OCC4(C(C(C(O4)N5(C=C(CC=C5)C(=O)N))O)O))([O-])=O</smiles>
+		<description>[NADH-P-OR-NOP]</description>
+		<synonyms>
+			<synonym>NADPH+H+</synonym>
+			<synonym>NADPH2</synonym>
+			<synonym>NADPH2</synonym>
+			<synonym>dihydrotriphosphopyridine nucleotide</synonym>
+			<synonym>dihydrotriphosphopyridine nucleotide reduced</synonym>
+			<synonym>dihydronicotinamide adenine dinucleotide phosphate</synonym>
+			<synonym>dihydronicotinamide adenine dinucleotide phosphate reduced</synonym>
+			<synonym>NADP-reduced</synonym>
+			<synonym>NADP-red</synonym>
+			<synonym>NADPH+H+</synonym>
+			<synonym>TPNH</synonym>
+			<synonym>dihydronicotinamide adenine dinucleotide-P</synonym>
+			<synonym>NADP(H)</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>PROPIONATE</id>
+		<name>propionate</name>
+		<formula>[M1];[C3H5O2]n</formula>
+		<inchi />
+		<smiles>C(CC)(=O)[O-]</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>propionic acid</synonym>
+			<synonym>ethylformic acid</synonym>
+			<synonym>methylacetic acid</synonym>
+			<synonym>propanoate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>D-GLUCOSAMINE-6-P</id>
+		<name>D-glucosamine-6-phosphate</name>
+		<formula>[M1];[C6H13NO8P]n</formula>
+		<inchi />
+		<smiles>C(OP(=O)([O-])[O-])C1(OC(O)C([N+])C(O)C(O)1)</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>D-glucosamine phosphate</synonym>
+			<synonym>D-glucosamine 6-phosphate</synonym>
+			<synonym>D-glucosamine-6-P</synonym>
+			<synonym>glucosamine-6-P</synonym>
+			<synonym>glucosamine-6-phosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>L-XYLULOSE</id>
+		<name>L-xylulose</name>
+		<formula>[M1];[C5H10O5]n</formula>
+		<inchi />
+		<smiles>C(C(=O)C(O)C(O)CO)O</smiles>
+		<description>[L-Pentoses]</description>
+		<synonyms>
+			<synonym>xylulose</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-211</id>
+		<name>&amp;gamma;-L-glutamyl-L-cysteinyl-&amp;beta;-alanine</name>
+		<formula>[M1];[C11H18N3O6S]n</formula>
+		<inchi />
+		<smiles>C(C([N+])CCC(=O)NC(C(=O)NCCC(=O)[O-])CS)(=O)[O-]</smiles>
+		<description>[TRIPEPTIDES]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>D-GALACTOSAMINE-6-PHOSPHATE</id>
+		<name>D-galactosamine-6-phosphate</name>
+		<formula>[M1];[C6H13NO8P]n</formula>
+		<inchi />
+		<smiles>C(OP(=O)([O-])[O-])C1(OC(O)C([N+])C(O)C(O)1)</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-210</id>
+		<name>L-tyrosyl-L-arginine</name>
+		<formula>[M1];[C15H24N5O4]n</formula>
+		<inchi />
+		<smiles>C(=O)(C(CC1(C=CC(=CC=1)O))[N+])NC(C(=O)[O-])CCCNC(=[N+])N</smiles>
+		<description>[DIPEPTIDES]</description>
+		<synonyms>
+			<synonym>kyotorphin</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD0-1082</id>
+		<name>L-Ala-&amp;gamma;-D-Glu-DAP-D-Ala</name>
+		<formula>[M1];[C18H30N5O9]n</formula>
+		<inchi />
+		<smiles>CC([N+])C(=O)NC(CCC(=O)[O-])C(=O)NCC(C(NC(C(=O)[O-])C)=O)CCC([N+])C(=O)[O-]</smiles>
+		<description>[OLIGOPEPTIDES]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10366</id>
+		<name>nodularin</name>
+		<formula>[M1];[C41H59N8O10]n</formula>
+		<inchi />
+		<smiles>CC(C=C(C)C=CC1(NC(C(NC(C(C(NC(C(N(C)C(CCC(NC(=O)C(C)1)C(=O)[O-])=O)=CC)=O)C(=O)[O-])C)=O)CCCNC(N)=[N+])=O))C(OC)CC2(C=CC=CC=2)</smiles>
+		<description>[Microcystins]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>PENTOSE-RING</id>
+		<name>pentose-ring</name>
+		<formula>[M1];[C5H10O5]n</formula>
+		<inchi />
+		<smiles>C1(C(O)C(O)C(CO)O1)(O)</smiles>
+		<description>[Rings]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>GDP</id>
+		<name>guanosine-5&apos;-diphosphate</name>
+		<formula>[M1];[C10H12N5O11P2]n</formula>
+		<inchi />
+		<smiles>C(OP(=O)([O-])OP(=O)([O-])[O-])C1(OC(C(O)C(O)1)N3(C=NC2(C(=O)NC(N)=NC=23)))</smiles>
+		<description>[Purine-Related, Purine-Diphosphates]</description>
+		<synonyms>
+			<synonym>ppG</synonym>
+			<synonym>GDP</synonym>
+			<synonym>guanosine-diphosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>D-SEDOHEPTULOSE-7-P</id>
+		<name>D-sedoheptulose-7-phosphate</name>
+		<formula>[M1];[C7H13O10P]n</formula>
+		<inchi />
+		<smiles>C(O)C(C(C(C(C(COP([O-])(=O)[O-])O)O)O)O)=O</smiles>
+		<description>[Sugar-Phosphate]</description>
+		<synonyms>
+			<synonym>D-Sedoheptulose-7-P</synonym>
+			<synonym>sedoheptulose-7-phosphate</synonym>
+			<synonym>heptulose-7-phosphate</synonym>
+			<synonym>sedoheptulose-7-P</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>DIHYDROFOLATE</id>
+		<name>7,8-dihydrofolate</name>
+		<formula>[M1];[C19H21N7O6]n</formula>
+		<inchi />
+		<smiles>C(C2(=NC1(C(N=C(NC=1NC2)N)=O)))NC3(=CC=C(C(NC(C(O)=O)CCC(O)=O)=O)C=C3)</smiles>
+		<description>[All-Folates]</description>
+		<synonyms>
+			<synonym>H2PteGlu</synonym>
+			<synonym>FH2</synonym>
+			<synonym>H2PteGlu1</synonym>
+			<synonym>dihydrofolate</synonym>
+			<synonym>DHF</synonym>
+			<synonym>7,8-dihydropteroylglutamate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>ILE</id>
+		<name>L-isoleucine</name>
+		<formula>[M1];[C6H13NO2]n</formula>
+		<inchi />
+		<smiles>C(=O)([O-])C([N+])C(C)CC</smiles>
+		<description>[Amino-Acids-20, Branched-Amino-Acids, Non-polar-amino-acids, L-Amino-Acids]</description>
+		<synonyms>
+			<synonym>I</synonym>
+			<synonym>ile</synonym>
+			<synonym>iso-leucine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>2-PG</id>
+		<name>2-phosphoglycerate</name>
+		<formula>[M1];[C3H4O7P]n</formula>
+		<inchi />
+		<smiles>C(O)C(OP(=O)([O-])[O-])C(=O)[O-]</smiles>
+		<description>[Glycerates]</description>
+		<synonyms>
+			<synonym>2-PGA</synonym>
+			<synonym>phosphoglycerate</synonym>
+			<synonym>2-phosphoglyceric acid</synonym>
+			<synonym>2-PG</synonym>
+			<synonym>2-P-glycerate</synonym>
+			<synonym>glycerate 2-phosphate</synonym>
+			<synonym>2-phospho-D-glycerate</synonym>
+			<synonym>2-P-D-glycerate</synonym>
+			<synonym>D-Glycerate 2-phosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>L-METHIONINE_SULFOXIDE</id>
+		<name>L-methionine sulfoxide</name>
+		<formula>[M1];[C5H11NO3S]n</formula>
+		<inchi />
+		<smiles>C([O-])(C([N+])CCS(=O)C)=O</smiles>
+		<description>[Non-standard-amino-acids]</description>
+		<synonyms>
+			<synonym>L-methionine-S-sulfoxide</synonym>
+			<synonym>L-methionine S-oxide</synonym>
+			<synonym>methionine sulfoxide</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>XANTHOSINE</id>
+		<name>xanthosine</name>
+		<formula>[M1];[C10H12N4O6]n</formula>
+		<inchi />
+		<smiles>C3(C2(=C(N(C1(OC(CO)C(O)C1O))C=N2)NC(=O)N3))=O</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>9 &amp;beta;-D-ribofuranosylxanthine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10370</id>
+		<name>nostopeptolide A2</name>
+		<formula>[M1];[C52H78N10O14]n</formula>
+		<inchi />
+		<smiles>C2(C(C)CC3(C(NC(C(CC(NC(C(NCC(NC(CC(N)=O)C(NC(CC1(C=CC(=CC=1)O))C(N4(CCCC(C(=O)OCC(C(N23)=O)NC(C(C(C)C)NC(CCC)=O)=O)4))=O)=O)=O)=O)CC(C)C)=O)=O)CC(C)C)=O))</smiles>
+		<description>[Nostopeptolides]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>TMP</id>
+		<name>dTMP</name>
+		<formula>[M1];[C10H13N2O8P]n</formula>
+		<inchi />
+		<smiles>CC1(=CN(C(=O)NC(=O)1)C2(CC(O)C(COP(=O)([O-])[O-])O2))</smiles>
+		<description>[Deoxy-Ribonucleoside-Monophosphates, Pyrimidine-Related]</description>
+		<synonyms>
+			<synonym>T</synonym>
+			<synonym>thymidylic acid</synonym>
+			<synonym>thymidine monophosphate</synonym>
+			<synonym>deoxythymidylate</synonym>
+			<synonym>TMP</synonym>
+			<synonym>thymidine-5&apos;-monophosphate</synonym>
+			<synonym>thymidine-phosphate</synonym>
+			<synonym>thymidine-5&apos;-phosphate</synonym>
+			<synonym>Deoxythymidine 5&apos;-phosphate</synonym>
+			<synonym>5&apos;-Thymidylic acid</synonym>
+			<synonym>Deoxythymidylic acid</synonym>
+			<synonym>Thymidylate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>ARG</id>
+		<name>L-arginine</name>
+		<formula>[M1];[C6H15N4O2]n</formula>
+		<inchi />
+		<smiles>C(NC(=[N+])N)CCC([N+])C(=O)[O-]</smiles>
+		<description>[Positively-charged-polar-amino-acids, Amino-Acids-20, Basic-Amino-Acids, L-Amino-Acids]</description>
+		<synonyms>
+			<synonym>2-amino-5-guanidinovaleric acid</synonym>
+			<synonym>R</synonym>
+			<synonym>arginine</synonym>
+			<synonym>arg</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>G3P</id>
+		<name>3-phosphoglycerate</name>
+		<formula>[M1];[C3H4O7P]n</formula>
+		<inchi />
+		<smiles>C(OP(=O)([O-])[O-])C(O)C(=O)[O-]</smiles>
+		<description>[Glycerates]</description>
+		<synonyms>
+			<synonym>3-phospho-(R)-glycerate</synonym>
+			<synonym>3-phospho-glyceric acid</synonym>
+			<synonym>G3P</synonym>
+			<synonym>3-PG</synonym>
+			<synonym>3-P-glycerate</synonym>
+			<synonym>glycerate 3-phosphate</synonym>
+			<synonym>3-phospho-D-glycerate</synonym>
+			<synonym>3-P-D-glycerate</synonym>
+			<synonym>glycerate-3-P</synonym>
+			<synonym>D-Glycerate 3-phosphate</synonym>
+			<synonym>phosphoglycerate</synonym>
+			<synonym>3-PGA</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10374</id>
+		<name>nostocyclopeptide A3</name>
+		<formula>[M1];[C41H56N8O9]n</formula>
+		<inchi />
+		<smiles>C1(C(C)CC2(C(NC(C=NC(C(NCC(NC(CCC(N)=O)C(NC(C(C)CC)C(NC(CO)C(N12)=O)=O)=O)=O)=O)CC3(C=CC(=CC=3)O))CC4(C=CC(C)=CC=4))=O))</smiles>
+		<description>[Nostocyclopeptides]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10373</id>
+		<name>nostocyclopeptide A2</name>
+		<formula>[M1];[C40H54N8O9]n</formula>
+		<inchi />
+		<smiles>C1(C(C)CC2(C(NC(C=NC(C(NCC(NC(CCC(N)=O)C(NC(C(C)CC)C(NC(CO)C(N12)=O)=O)=O)=O)=O)CC3(C=CC(=CC=3)O))CC4(C=CC=CC=4))=O))</smiles>
+		<description>[Nostocyclopeptides]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10372</id>
+		<name>nostocyclopeptide A1</name>
+		<formula>[M1];[C37H56N8O9]n</formula>
+		<inchi />
+		<smiles>C1(C(C)CC2(C(NC(C=NC(C(NCC(NC(CCC(N)=O)C(NC(C(C)CC)C(NC(CO)C(N12)=O)=O)=O)=O)=O)CC3(C=CC(=CC=3)O))CC(C)C)=O))</smiles>
+		<description>[Nostocyclopeptides]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10371</id>
+		<name>nostopeptolide A1</name>
+		<formula>[M1];[C53H80N10O14]n</formula>
+		<inchi />
+		<smiles>C2(C(C)CC3(C(NC(C(CC(NC(C(NCC(NC(CC(N)=O)C(NC(CC1(C=CC(=CC=1)O))C(N4(CCCC(C(=O)OCC(C(N23)=O)NC(C(C(C)CC)NC(CCC)=O)=O)4))=O)=O)=O)=O)CC(C)C)=O)=O)CC(C)C)=O))</smiles>
+		<description>[Nostopeptolides]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10378</id>
+		<name>aeruginosin 98-b</name>
+		<formula>[M1];[C29H46N6O9S]n</formula>
+		<inchi />
+		<smiles>C(C(C(C)CC)NC(C(CC1(C=CC(=CC=1)O))O)=O)(N3(C(C(NCCCCN=C(N)N)=O)CC2(CCC(CC23)OS(=O)(=O)O)))=O</smiles>
+		<description>[Aeruginosins]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>FORMALDEHYDE</id>
+		<name>formaldehyde</name>
+		<formula>[M1];[CH2O]n</formula>
+		<inchi />
+		<smiles>C=O</smiles>
+		<description>[Aldehydes]</description>
+		<synonyms>
+			<synonym>formalin</synonym>
+			<synonym>methanal</synonym>
+			<synonym>formol</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10376</id>
+		<name>curacin A</name>
+		<formula>[M1];[C23H35NOS]n</formula>
+		<inchi />
+		<smiles>C2(C1(CC(C)1))(=NC(C=CCCC=CC=C(C)CCC(CC=C)OC)CS2)</smiles>
+		<description>[Curacins]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10375</id>
+		<name>barbamide</name>
+		<formula>[M1];[C20H23N2O2Cl3S]n</formula>
+		<inchi />
+		<smiles>C2(C(CC1(C=CC=CC=1))N(C)C(C=C(CC(C)C(Cl)(Cl)Cl)OC)=O)(=NC=CS2)</smiles>
+		<description>[Nonribosomal-Peptides]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>IMP</id>
+		<name>inosine-5&apos;-phosphate</name>
+		<formula>[M1];[C10H11N4O8P]n</formula>
+		<inchi />
+		<smiles>C(OP(=O)([O-])[O-])C1(OC(C(O)C(O)1)N3(C=NC2(C(=O)NC=NC=23)))</smiles>
+		<description>[Ribonucleoside-Monophosphates, Purine-Related]</description>
+		<synonyms>
+			<synonym>5&apos;-IMP</synonym>
+			<synonym>ribosylhypoxanthine monophosphate</synonym>
+			<synonym>IMP</synonym>
+			<synonym>inosinate</synonym>
+			<synonym>inosine monophosphate</synonym>
+			<synonym>inosine 5&apos;-monophosphate</synonym>
+			<synonym>inosine 5&apos;-phosphate</synonym>
+			<synonym>5&apos;-inosinate</synonym>
+			<synonym>5&apos;-inosinic acid</synonym>
+			<synonym>5&apos;-inosine monophosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10368</id>
+		<name>anabaenopeptilide 90B</name>
+		<formula>[M1];[C45H61N8O14Cl]n</formula>
+		<inchi />
+		<smiles>C4(CCC2(C(N(C(C(N(C)C(C(NC(C(=O)OC(C)C(C(NC(CCC1(C=CC(=CC=1)O))C(N2)=O)=O)NC(C(CCC(N)=O)NC=O)=O)C(C)CC)=O)CC3(C=CC(=C(C=3)Cl)O))=O)C(C)O)4)=O))O</smiles>
+		<description>[Anabaenopeptilides]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10369</id>
+		<name>anabaenopeptilide 90A</name>
+		<formula>[M1];[C46H64N8O14]n</formula>
+		<inchi />
+		<smiles>C4(CCC2(C(N(C(C(N(C)C(C(NC(C(=O)OC(C)C(C(NC(CCC1(C=CC(=CC=1)O))C(N2)=O)=O)NC(C(CCC(N)=O)NC=O)=O)C(C)CC)=O)CC3(C=CC(=CC=3)OC))=O)C(C)O)4)=O))O</smiles>
+		<description>[Anabaenopeptilides]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CYTOSINE</id>
+		<name>cytosine</name>
+		<formula>[M1];[C4H5N3O]n</formula>
+		<inchi />
+		<smiles>C1(N)(=NC(=O)NC=C1)</smiles>
+		<description>[Pyrimidine-Bases, Pyrimidine-Related]</description>
+		<synonyms>
+			<synonym>4-amino-2-oxo-1,2-dihydropyrimidine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>ACETYL-COA</id>
+		<name>acetyl-CoA</name>
+		<formula>[M1];[C23H34N7O17P3S]n</formula>
+		<inchi />
+		<smiles>C1(C(O)C(C(COP([O-])(=O)OP([O-])(OCC(C)(C)C(C(NCCC(=O)NCCSC(=O)C)=O)O)=O)O1)OP([O-])(=O)[O-])(N3(C=NC2(C(=NC=NC=23)N)))</smiles>
+		<description>[All-Coas]</description>
+		<synonyms>
+			<synonym>acetyl coenzyme-A</synonym>
+			<synonym>ac-CoA</synonym>
+			<synonym>acetylcoenzyme-A</synonym>
+			<synonym>acetyl-S-CoA</synonym>
+			<synonym>ac-S-CoA</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-2961</id>
+		<name>6-phospho-D-gluconate</name>
+		<formula>[M1];[C6H10O10P]n</formula>
+		<inchi />
+		<smiles>C(C(C(C(C(C([O-])=O)O)O)O)O)OP([O-])([O-])=O</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>6-p-gluconate</synonym>
+			<synonym>6-phospho-gluconate</synonym>
+			<synonym>6-phosphogluconic acid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>HIS</id>
+		<name>L-histidine</name>
+		<formula>[M1];[C6H9N3O2]n</formula>
+		<inchi />
+		<smiles>C1(=C(CC(C([O-])=O)[N+])NC=N1)</smiles>
+		<description>[Positively-charged-polar-amino-acids, Amino-Acids-20, Aromatic-Amino-Acids, L-Amino-Acids]</description>
+		<synonyms>
+			<synonym>glyoxaline-5-alanine</synonym>
+			<synonym>&amp;alpha;-amino-4-imidazoleproprionic acid</synonym>
+			<synonym>(S)-&amp;alpha;-amino-1H-imidazole-4-propanoic acid</synonym>
+			<synonym>H</synonym>
+			<synonym>histidine</synonym>
+			<synonym>his</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>MANNITOL-1P</id>
+		<name>mannitol-1-phosphate</name>
+		<formula>[M1];[C6H13O9P]n</formula>
+		<inchi />
+		<smiles>C(C(C(C(C(CO)O)O)O)O)OP([O-])([O-])=O</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>D-mannitol-6-phosphate</synonym>
+			<synonym>mannitol-6-P</synonym>
+			<synonym>mannitol-1-P</synonym>
+			<synonym>D-mannitol-1-phosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>L-ASCORBATE-6-PHOSPHATE</id>
+		<name>L-ascorbate-6-phosphate</name>
+		<formula>[M1];[C6H6O9P]n</formula>
+		<inchi />
+		<smiles>C(OP(=O)([O-])[O-])C(O)C1(OC(=O)C(O)=C([O-])1)</smiles>
+		<description>[HEXOSE-6-PHOSPHATES]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>GDP-D-GLUCOSE</id>
+		<name>GDP-&amp;alpha;-D-glucose</name>
+		<formula>[M1];[C16H23N5O16P2]n</formula>
+		<inchi />
+		<smiles>C(O)C4(OC(OP(=O)([O-])OP(=O)([O-])OCC1(OC(C(O)C(O)1)N3(C=NC2(C(=O)NC(N)=NC=23))))C(O)C(O)C(O)4)</smiles>
+		<description>[NDP-glucoses, GDP-SUGARS]</description>
+		<synonyms>
+			<synonym>GDP-glucose</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>LIPOAMIDE</id>
+		<name>lipoamide</name>
+		<formula>[M1];[C8H15NOS2]n</formula>
+		<inchi />
+		<smiles>C1(CC(CCCCC(N)=O)SS1)</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>5-(1,2-dithiolan-3-yl)-pentanamide</synonym>
+			<synonym>DL-lipoamide</synonym>
+			<synonym>6,8-dithiooctanoic amide</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>S-ACETYLDIHYDROLIPOAMIDE</id>
+		<name>S-acetyldihydrolipoamide</name>
+		<formula>[M1];[C10H19NO2S2]n</formula>
+		<inchi />
+		<smiles>C(CC(CCCCC(N)=O)SC(=O)C)S</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>6-S-Acetyldihydrolipoamide</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>PHOSPHATE-GROUP</id>
+		<name>phosphate-group</name>
+		<formula>[M1];[HO4P]n</formula>
+		<inchi />
+		<smiles>P(O)([O-])(=O)[O-]</smiles>
+		<description>[Simple-Groups]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>ASN</id>
+		<name>L-asparagine</name>
+		<formula>[M1];[C4H8N2O3]n</formula>
+		<inchi />
+		<smiles>C(=O)([O-])C([N+])CC(=O)N</smiles>
+		<description>[Uncharged-polar-amino-acids, Amino-Acids-20, L-Amino-Acids]</description>
+		<synonyms>
+			<synonym>asparagine</synonym>
+			<synonym>&amp;alpha;-aminosuccinamic acid</synonym>
+			<synonym>(-)-asparagine</synonym>
+			<synonym>(S)-2,4-diamino-4-oxobutanoic acid</synonym>
+			<synonym>(S)-asparagine</synonym>
+			<synonym>2,4-diamino-4-oxobutanoic acid, (S)-</synonym>
+			<synonym>2-aminosuccinamic acid, L-</synonym>
+			<synonym>agedoite</synonym>
+			<synonym>altheine</synonym>
+			<synonym>asparagine acid</synonym>
+			<synonym>aspartic acid &amp;beta;-amide</synonym>
+			<synonym>butanoic acid, 2,4-diamino-4-oxo-, (S)-</synonym>
+			<synonym>L-2,4-diamino-4-oxobutanoic acid</synonym>
+			<synonym>L-asparatamine</synonym>
+			<synonym>L-&amp;beta;-asparagine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>L-ASPARTATE</id>
+		<name>L-aspartate</name>
+		<formula>[M1];[C4H6NO4]n</formula>
+		<inchi />
+		<smiles>C(=O)([O-])C([N+])CC(=O)[O-]</smiles>
+		<description>[C4-dicarboxylates, Negatively-charged-polar-amino-acids, Amino-Acids-20, L-Amino-Acids]</description>
+		<synonyms>
+			<synonym>L-aspartic acid</synonym>
+			<synonym>aspartic acid</synonym>
+			<synonym>D</synonym>
+			<synonym>aspartate</synonym>
+			<synonym>asp</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>PTERIDINE-RING</id>
+		<name>pteridine-ring</name>
+		<formula>[M1];[C6H4N4]n</formula>
+		<inchi />
+		<smiles>C1(C=NC2(C=NC=NC(N=1)=2))</smiles>
+		<description>[Rings]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>AMP-GROUP</id>
+		<name>AMP group</name>
+		<formula>[M1];[C10H12N5O7P]n</formula>
+		<inchi />
+		<smiles>C(C3(C(C(C(N2(C1(=C(C(=NC=N1)N)N=C2)))O3)O)O))OP([O-])([O-])=O</smiles>
+		<description>[Groups]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>UBIQUINONE-8</id>
+		<name>ubiquinone-8</name>
+		<formula>[M1];[C49H74O4]n</formula>
+		<inchi />
+		<smiles>CC(C)=CCCC(C)=CCCC(C)=CCCC(C)=CCCC(C)=CCCC(C)=CCCC(C)=CCCC(C)=CCC1(=C(C)C(=O)C(OC)=C(OC)C(=O)1)</smiles>
+		<description>[Ubiquinones]</description>
+		<synonyms>
+			<synonym>ubiquinone(8)</synonym>
+			<synonym>coenzyme-Q8</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-1063</id>
+		<name>5-methylthioribulose-1-phosphate</name>
+		<formula>[M1];[C6H11O7PS]n</formula>
+		<inchi />
+		<smiles>C(SC)C(C(C(COP([O-])([O-])=O)=O)O)O</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>5-methylthio-5-deoxy-D-ribulose-1-phosphate</synonym>
+			<synonym>1-phosphomethylthioribulose</synonym>
+			<synonym>methylthioribulose-1-phosphate</synonym>
+			<synonym>MTRu-1-P</synonym>
+			<synonym>1PMT-ribulose</synonym>
+			<synonym>1-phospho-5-S-methylthioribulose</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>OXYGEN-MOLECULE</id>
+		<name>oxygen</name>
+		<formula>[M1];[O2]n</formula>
+		<inchi />
+		<smiles>O=O</smiles>
+		<description>[Non-Metabolic-Compounds]</description>
+		<synonyms>
+			<synonym>oxygen molecule</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>LACTOSE</id>
+		<name>lactose</name>
+		<formula>[M1];[C12H22O11]n</formula>
+		<inchi />
+		<smiles>C1(OC(C(C(C1O)O)O)CO)OC2(C(CO)OC(C(C2O)O)O)</smiles>
+		<description>[Disaccharides]</description>
+		<synonyms>
+			<synonym>&amp;alpha;-lactose</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CDP</id>
+		<name>CDP</name>
+		<formula>[M1];[C9H12N3O11P2]n</formula>
+		<inchi />
+		<smiles>C2(N(C1(C(C(C(O1)COP(OP([O-])([O-])=O)([O-])=O)O)O))C(N=C(C=2)N)=O)</smiles>
+		<description>[Pyrimidine-Related, Ribonucleoside-Diphosphates]</description>
+		<synonyms>
+			<synonym>cytidine-diphosphate</synonym>
+			<synonym>cytidine-5&apos;-diphosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>PHENANTHRENE-RING</id>
+		<name>phenanthrene-ring</name>
+		<formula>[M1];[C14H10]n</formula>
+		<inchi />
+		<smiles>C1(C=C2(C=CC3(=C(C(=CC=1)2)C=CC=C3)))</smiles>
+		<description>[Rings]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>TREHALOSE-6P</id>
+		<name>trehalose 6-phosphate</name>
+		<formula>[M1];[C12H21O14P]n</formula>
+		<inchi />
+		<smiles>C1(C(C(C(C(O1)COP([O-])([O-])=O)O)O)O)OC2(C(C(C(C(O2)CO)O)O)O)</smiles>
+		<description>[SUGAR-6-PHOSPHATES]</description>
+		<synonyms>
+			<synonym>&amp;alpha;,&amp;alpha;-trehalose 6-phosphate</synonym>
+			<synonym>trehalose phosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>DEOXYADENOSINE</id>
+		<name>deoxyadenosine</name>
+		<formula>[M1];[C10H13N5O3]n</formula>
+		<inchi />
+		<smiles>C1(CC(O)C(O1)CO)(N2(C3(=NC=NC(=C(N=C2)3)N)))</smiles>
+		<description>[Deoxy-Ribonucleosides, Purine-Related]</description>
+		<synonyms>
+			<synonym>2&apos;-deoxyadenosine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>PHE</id>
+		<name>L-phenylalanine</name>
+		<formula>[M1];[C9H11NO2]n</formula>
+		<inchi />
+		<smiles>C(=O)([O-])C([N+])CC1(C=CC=CC=1)</smiles>
+		<description>[Amino-Acids-20, Aromatic-Amino-Acids, Non-polar-amino-acids, L-Amino-Acids]</description>
+		<synonyms>
+			<synonym>F</synonym>
+			<synonym>endophenyl</synonym>
+			<synonym>phenylalanine</synonym>
+			<synonym>phe</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>PYROPHOSPHATE-GROUP</id>
+		<name>pyrophosphate-group</name>
+		<formula>[M1];[HO7P2]n</formula>
+		<inchi />
+		<smiles>[O-]P(OP(=O)([O-])O)(=O)[O-]</smiles>
+		<description>[Simple-Groups]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>undecaprenyl</id>
+		<name>undecaprenyl group</name>
+		<formula>[M1];[C55H90]n</formula>
+		<inchi />
+		<smiles>CC(C)=CCCC(C)=CCCC(C)=CCCC(C)=CCCC(C)=CCCC(C)=CCCC(C)=CCCC(C)=CCCC(C)=CCCC(C)=CCCC(C)=CC</smiles>
+		<description>[Groups]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>2-HYDROXY-3-KETO-5-METHYLTHIO-1-PHOSPHOP</id>
+		<name>2-hydroxy-3-keto-5-methylthio-1-phosphopentene</name>
+		<formula>[M1];[C6H8O6PS]n</formula>
+		<inchi />
+		<smiles>C(OP(=O)([O-])[O-])=C([O-])C(CCSC)=O</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>1-phosphoryloxyl-2-hydroxy-3-keto-5-methylthiopentene</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>RIBOSE-5P</id>
+		<name>D-ribose-5-phosphate</name>
+		<formula>[M1];[C5H9O8P]n</formula>
+		<inchi />
+		<smiles>C(C(C(C(C=O)O)O)O)OP([O-])(=O)[O-]</smiles>
+		<description>[PENTOSE-5-PHOSPHATES]</description>
+		<synonyms>
+			<synonym>D-ribose-5-phosphoric acid</synonym>
+			<synonym>ribose-5-phosphoric acid</synonym>
+			<synonym>ribose-5P</synonym>
+			<synonym>D-ribose-5-P</synonym>
+			<synonym>ribose-5-P</synonym>
+			<synonym>ribose-5-phosphate</synonym>
+			<synonym>&amp;alpha;-D-ribose-5-phosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>ATP</id>
+		<name>ATP</name>
+		<formula>[M1];[C10H13N5O13P3]n</formula>
+		<inchi />
+		<smiles>C(C3(C(C(C(N2(C1(=C(C(=NC=N1)N)N=C2)))O3)O)O))OP(OP(=O)([O-])OP(=O)([O-])O)([O-])=O</smiles>
+		<description>[Purine-Triphosphates, Purine-Related]</description>
+		<synonyms>
+			<synonym>adenylpyrophosphate</synonym>
+			<synonym>adenosine-triphosphate</synonym>
+			<synonym>adenosine-5&apos;-triphosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>GTP</id>
+		<name>GTP</name>
+		<formula>[M1];[C10H12N5O14P3]n</formula>
+		<inchi />
+		<smiles>C(OP(=O)([O-])OP(=O)([O-])OP(=O)([O-])[O-])C1(OC(C(O)C(O)1)N3(C=NC2(C(=O)NC(N)=NC=23)))</smiles>
+		<description>[Purine-Triphosphates, Purine-Related]</description>
+		<synonyms>
+			<synonym>guanylyl imidodiphosphate</synonym>
+			<synonym>guanosine 5&apos;-triphosphate</synonym>
+			<synonym>guanosine-triphosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>ANOTHER-STRANGE-GROUP</id>
+		<name>another strange group</name>
+		<formula>[M1];[CH5NOP]n</formula>
+		<inchi />
+		<smiles>C(P)([N+])O</smiles>
+		<description>[Simple-Groups]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CARBON-DIOXIDE</id>
+		<name>CO2</name>
+		<formula>[M1];[CO2]n</formula>
+		<inchi />
+		<smiles>C(=O)=O</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>carbonic anhydride</synonym>
+			<synonym>carbonic acid gas</synonym>
+			<synonym>carbon dioxide</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>NAD</id>
+		<name>NAD+</name>
+		<formula>[M1];[C21H26N7O14P2]n</formula>
+		<inchi />
+		<smiles>C1(=CC=C(C=[N+]1C5(OC(COP(=O)([O-])OP(=O)([O-])OCC2(OC(C(O)C(O)2)N4(C=NC3(C(N)=NC=NC=34))))C(O)C(O)5))C(N)=O)</smiles>
+		<description>[NAD-P-OR-NOP]</description>
+		<synonyms>
+			<synonym>beta-nicotinamide adenine dinucleotide</synonym>
+			<synonym>coenzyme I</synonym>
+			<synonym>diphosphopyridine nucleotide</synonym>
+			<synonym>diphosphopyridine nucleotide oxidized</synonym>
+			<synonym>nicotinamide adenine dinucleotide</synonym>
+			<synonym>nicotinamide adenine dinucleotide oxidized</synonym>
+			<synonym>NAD-oxidized</synonym>
+			<synonym>NAD-ox</synonym>
+			<synonym>DPN+</synonym>
+			<synonym>DPN-ox</synonym>
+			<synonym>DPN</synonym>
+			<synonym>&amp;beta;-nicotinamide adenine dinucleotide</synonym>
+			<synonym>NAD</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>L-ALA-D-GLU-MESOA2PM</id>
+		<name>L-Ala-D-Glu-meso-A2pm</name>
+		<formula>[M1];[C15H25N4O8]n</formula>
+		<inchi />
+		<smiles>CC([N+])C(=O)NC(CCC(=O)NC(CCCC([N+])C(=O)[O-])C(=O)[O-])C(=O)[O-]</smiles>
+		<description>[TRIPEPTIDES]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-8999</id>
+		<name>5-(methylthio)-2,3-dioxopentyl phosphate</name>
+		<formula>[M1];[C6H9O6PS]n</formula>
+		<inchi />
+		<smiles>C(OP([O-])([O-])=O)C(C(CCSC)=O)=O</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>1-phosphoryloxy-2,3-diketo-5-methylthiopentane</synonym>
+			<synonym>1-phospho-2,3-diketo-5-methylthiopentane</synonym>
+			<synonym>DKM-1-P</synonym>
+			<synonym>2,3-diketo-5-methylthio-1-phosphopentane</synonym>
+			<synonym>2,3-diketo-5-methylthiopentyl-1-phosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>FUM</id>
+		<name>fumarate</name>
+		<formula>[M1];[C4H2O4]n</formula>
+		<inchi />
+		<smiles>C([O-])(C=CC(=O)[O-])=O</smiles>
+		<description>[C4-dicarboxylates]</description>
+		<synonyms>
+			<synonym>fum</synonym>
+			<synonym>fumaric acid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>AMINO-GROUP</id>
+		<name>amino-group</name>
+		<formula>[M1];[CH3N]n</formula>
+		<inchi />
+		<smiles>[C---][N+]</smiles>
+		<description>[Simple-Groups]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>MANNOSE-6P</id>
+		<name>D-mannose-6-phosphate</name>
+		<formula>[M1];[C6H11O9P]n</formula>
+		<inchi />
+		<smiles>C(OP(=O)([O-])[O-])C1(OC(O)C(O)C(O)C(O)1)</smiles>
+		<description>[HEXOSE-6-PHOSPHATES]</description>
+		<synonyms>
+			<synonym>mannose-6-phosphate</synonym>
+			<synonym>&amp;alpha;-D-mannose-6-phosphate</synonym>
+			<synonym>&amp;alpha;-D-mannose-6-P</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>GDP-MANNOSE</id>
+		<name>GDP-&amp;alpha;-D-mannose</name>
+		<formula>[M1];[C16H23N5O16P2]n</formula>
+		<inchi />
+		<smiles>C(C4(C(C(C(C(OP(OP(OCC3(C(C(C(N2(C1(=C(C(NC(=N1)N)=O)N=C2)))O3)O)O))([O-])=O)([O-])=O)O4)O)O)O))O</smiles>
+		<description>[GDP-SUGARS]</description>
+		<synonyms>
+			<synonym>guanosine pyrophosphate mannose</synonym>
+			<synonym>guanosine diphosphomannose</synonym>
+			<synonym>guanosine diphosphate mannose</synonym>
+			<synonym>GDP-mannose</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>SUC-COA</id>
+		<name>succinyl-CoA</name>
+		<formula>[M1];[C25H35N7O19P3S]n</formula>
+		<inchi />
+		<smiles>C1(C(O)C(C(COP(=O)([O-])OP(OCC(C)(C)C(C(NCCC(=O)NCCSC(CCC(=O)[O-])=O)=O)O)(=O)[O-])O1)OP([O-])([O-])=O)(N3(C=NC2(C(=NC=NC=23)N)))</smiles>
+		<description>[All-Coas]</description>
+		<synonyms>
+			<synonym>suc-coa</synonym>
+			<synonym>succ-coenzyme-A</synonym>
+			<synonym>succ-S-coenzyme-A</synonym>
+			<synonym>succinyl-S-coenzyme-A</synonym>
+			<synonym>succ-S-CoA</synonym>
+			<synonym>succinylcoenzyme-A</synonym>
+			<synonym>succ-CoA</synonym>
+			<synonym>suc-co-A</synonym>
+			<synonym>succinyl-S-CoA</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CYTIDINE</id>
+		<name>cytidine</name>
+		<formula>[M1];[C9H13N3O5]n</formula>
+		<inchi />
+		<smiles>C1(OC(C(C(O)1)O)CO)(N2(C=CC(N)=NC2=O))</smiles>
+		<description>[Pyrimidine-Ribonucleosides, Ribonucleosides]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>GLYCEROL-3P</id>
+		<name>sn-glycerol-3-phosphate</name>
+		<formula>[M1];[C3H7O6P]n</formula>
+		<inchi />
+		<smiles>C(O)C(O)COP(=O)([O-])[O-]</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>&amp;alpha;-glycerophosphoric acid</synonym>
+			<synonym>glycerol-3-P</synonym>
+			<synonym>glycerol-1-phosphate</synonym>
+			<synonym>&amp;alpha;-glycerophosphate</synonym>
+			<synonym>D-glycerol-3-phosphate</synonym>
+			<synonym>rac-Glycerol 3-phosphate</synonym>
+			<synonym>glycerol-3-phosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>PURINE-RING</id>
+		<name>purine-ring</name>
+		<formula>[M1];[C5H4N4]n</formula>
+		<inchi />
+		<smiles>C12(N=CN=CC(NC=N1)=2)</smiles>
+		<description>[Rings]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>D-LACTATE</id>
+		<name>D-lactate</name>
+		<formula>[M1];[C3H5O3]n</formula>
+		<inchi />
+		<smiles>C(C(C)O)(=O)[O-]</smiles>
+		<description>[Lactate]</description>
+		<synonyms>
+			<synonym>(R)-2-hydroxypropanate</synonym>
+			<synonym>(R)-lactate</synonym>
+			<synonym>lactate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>URACIL</id>
+		<name>uracil</name>
+		<formula>[M1];[C4H4N2O2]n</formula>
+		<inchi />
+		<smiles>C1(NC(=O)NC=C1)(=O)</smiles>
+		<description>[Pyrimidine-Bases, Pyrimidine-Related]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>METHYL-GROUP</id>
+		<name>methyl-group</name>
+		<formula>[M1];[CH4]n</formula>
+		<inchi />
+		<smiles>C</smiles>
+		<description>[Simple-Groups]</description>
+		<synonyms>
+			<synonym>methyl group</synonym>
+			<synonym>CH3</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>THR</id>
+		<name>L-threonine</name>
+		<formula>[M1];[C4H9NO3]n</formula>
+		<inchi />
+		<smiles>C(=O)(C([N+])C(O)C)[O-]</smiles>
+		<description>[Uncharged-polar-amino-acids, Amino-Acids-20, L-Amino-Acids]</description>
+		<synonyms>
+			<synonym>T</synonym>
+			<synonym>thr</synonym>
+			<synonym>thre</synonym>
+			<synonym>L-thr</synonym>
+			<synonym>threonine</synonym>
+			<synonym>2-amino-3-hydroxybutyric acid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>LACTOSE-6P</id>
+		<name>lactose 6-phosphate</name>
+		<formula>[M1];[C12H21O14P]n</formula>
+		<inchi />
+		<smiles>C(O)C2(OC(O)C(O)C(O)C(OC1(OC(COP(=O)([O-])[O-])C(O)C(O)C(O)1))2)</smiles>
+		<description>[Oligosaccharide-Phosphate]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>THF</id>
+		<name>tetrahydrofolate</name>
+		<formula>[M1];[C19H23N7O6]n</formula>
+		<inchi />
+		<smiles>C1(NC3(NC(N)=NC(=O)C(NC1CNC2(=CC=C(C=C2)C(=O)NC(CCC(=O)O)C(=O)O))=3))</smiles>
+		<description>[THF-GLU-N]</description>
+		<synonyms>
+			<synonym>H4PteGlu</synonym>
+			<synonym>5,6,7,8-tetrahydrofolic acid</synonym>
+			<synonym>tetrahydrofolic acid</synonym>
+			<synonym>(6S)-tetrahydrofolate</synonym>
+			<synonym>H4PteGlu1</synonym>
+			<synonym>tetrahydropteroyl mono-L-glutamate</synonym>
+			<synonym>tetrahydrafolate</synonym>
+			<synonym>5,6,7,8-tetrahydrofolate</synonym>
+			<synonym>THF</synonym>
+			<synonym>tetra-H-folate</synonym>
+			<synonym>th-folate</synonym>
+			<synonym>FH4</synonym>
+			<synonym>folate-H4</synonym>
+			<synonym>tetrahydropteroylglutamate</synonym>
+			<synonym>H4F</synonym>
+			<synonym>vitamin B9</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10422</id>
+		<name>aeruginosin B</name>
+		<formula>[M1];[C14H9N3O5S]n</formula>
+		<inchi />
+		<smiles>C(C1(=CC(S(=O)(=O)[O-])=CC3(=C1N=C2(C=CC(C=C2N(C)3)=[NH]))))(=O)[O-]</smiles>
+		<description>[Aeruginosins, SULFONATES]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>RIBOSE-1-ARSENATE</id>
+		<name>ribose-1-arsenate</name>
+		<formula>[M1];[C5H9O8As]n</formula>
+		<inchi />
+		<smiles>C(O)C1(C(O)C(O)C(O1)O[As]([O-])([O-])=O)</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10417</id>
+		<name>gramicidin C</name>
+		<formula>[M1];[C97H139N19O18]n</formula>
+		<inchi />
+		<smiles>C(C(CC(C)C)NC(C(CC2(=CNC1(C=CC=CC=12)))NC(C(C(C)C)NC(C(C(C)C)NC(C(C(C)C)NC(C(C)NC(C(CC(C)C)NC(C(C)NC(CNC(C(C(C)C)NC=O)=O)=O)=O)=O)=O)=O)=O)=O)=O)(NC(C(NC(C(NC(C(NC(C(NC(C(NCCO)=O)CC4(=CNC3(C=CC=CC=34)))=O)CC(C)C)=O)CC6(=CNC5(C=CC=CC=56)))=O)CC(C)C)=O)CC7(C=CC(O)=CC=7))=O</smiles>
+		<description>[Gramicidins]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10416</id>
+		<name>gramicidin B</name>
+		<formula>[M1];[C97H139N19O17]n</formula>
+		<inchi />
+		<smiles>C(C(CC(C)C)NC(C(CC2(=CNC1(C=CC=CC=12)))NC(C(C(C)C)NC(C(C(C)C)NC(C(C(C)C)NC(C(C)NC(C(CC(C)C)NC(C(C)NC(CNC(C(C(C)C)NC=O)=O)=O)=O)=O)=O)=O)=O)=O)=O)(NC(C(NC(C(NC(C(NC(C(NC(C(NCCO)=O)CC4(=CNC3(C=CC=CC=34)))=O)CC(C)C)=O)CC6(=CNC5(C=CC=CC=56)))=O)CC(C)C)=O)CC7(C=CC=CC=7))=O</smiles>
+		<description>[Gramicidins]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>ARSENATE</id>
+		<name>arsenate</name>
+		<formula>[M1];[HO4As]n</formula>
+		<inchi />
+		<smiles>O=[As](O)([O-])[O-]</smiles>
+		<description>[Anions]</description>
+		<synonyms>
+			<synonym>inorganic arsenate</synonym>
+			<synonym>orthoarsenate</synonym>
+			<synonym>AsO43-</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>TYR</id>
+		<name>L-tyrosine</name>
+		<formula>[M1];[C9H11NO3]n</formula>
+		<inchi />
+		<smiles>C(C(CC1(C=CC(O)=CC=1))[N+])([O-])=O</smiles>
+		<description>[Uncharged-polar-amino-acids, Amino-Acids-20, Aromatic-Amino-Acids, L-Amino-Acids]</description>
+		<synonyms>
+			<synonym>Y</synonym>
+			<synonym>tyr</synonym>
+			<synonym>tyrosine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>SUC</id>
+		<name>succinate</name>
+		<formula>[M1];[C4H4O4]n</formula>
+		<inchi />
+		<smiles>C(CCC([O-])=O)([O-])=O</smiles>
+		<description>[C4-dicarboxylates]</description>
+		<synonyms>
+			<synonym>succinic acid</synonym>
+			<synonym>suc</synonym>
+			<synonym>succ</synonym>
+			<synonym>butanedioic acid</synonym>
+			<synonym>ethylenesuccinic acid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>L-RIBULOSE-5-P</id>
+		<name>L-ribulose-5-phosphate</name>
+		<formula>[M1];[C5H9O8P]n</formula>
+		<inchi />
+		<smiles>C(C(=O)C(O)C(O)COP(=O)([O-])[O-])O</smiles>
+		<description>[Ribulose-phosphates]</description>
+		<synonyms>
+			<synonym>L-ribulose-5-P</synonym>
+			<synonym>ribulose-5-phosphate</synonym>
+			<synonym>ribulose-5-P</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>5-METHYLTHIOADENOSINE</id>
+		<name>S-methyl-5&apos;-thioadenosine</name>
+		<formula>[M1];[C11H15N5O3S]n</formula>
+		<inchi />
+		<smiles>C1(OC(C(C1O)O)CSC)N2(C=NC3(=C2N=CN=C3N))</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>methylthioadenosine</synonym>
+			<synonym>5&apos;-methylthioadenosine</synonym>
+			<synonym>5&apos;-S-methyl-5&apos;-thioadenosine</synonym>
+			<synonym>MTA</synonym>
+			<synonym>S-methyl-adenosine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10415</id>
+		<name>gramicidin A</name>
+		<formula>[M1];[C99H140N20O17]n</formula>
+		<inchi />
+		<smiles>C(C(CC(C)C)NC(C(CC2(=CNC1(=CC=CC=C12)))NC(C(C(C)C)NC(C(C(C)C)NC(C(C(C)C)NC(C(C)NC(C(CC(C)C)NC(C(C)NC(CNC(C(C(C)C)NC=O)=O)=O)=O)=O)=O)=O)=O)=O)=O)(NC(C(NC(C(NC(C(NC(C(NC(C(NCCO)=O)CC4(=CNC3(=CC=CC=C34)))=O)CC(C)C)=O)CC6(=CNC5(=CC=CC=C56)))=O)CC(C)C)=O)CC8(=CNC7(=CC=CC=C78)))=O</smiles>
+		<description>[Gramicidins]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>UBIQUINOL-8</id>
+		<name>ubiquinol-8</name>
+		<formula>[M1];[C49H76O4]n</formula>
+		<inchi />
+		<smiles>CC(C)=CCCC(C)=CCCC(C)=CCCC(C)=CCCC(C)=CCCC(C)=CCCC(C)=CCCC(C)=CCC1(C(C)=C(O)C(OC)=C(OC)C(O)=1)</smiles>
+		<description>[Ubiquinols]</description>
+		<synonyms>
+			<synonym>ubiquinol(8)</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>THREO-DS-ISO-CITRATE</id>
+		<name>D-threo-isocitrate</name>
+		<formula>[M1];[C6H5O7]n</formula>
+		<inchi />
+		<smiles>C(=O)(C(CC([O-])=O)C(O)C([O-])=O)[O-]</smiles>
+		<description>[Isocitrate]</description>
+		<synonyms>
+			<synonym>(1R, 2S)-1-hydroxypropane-1,2,3-tricarboxylate</synonym>
+			<synonym>D-threo-isocitric acid</synonym>
+			<synonym>isocitric acid</synonym>
+			<synonym>isocitrate</synonym>
+			<synonym>threo-Ds-isocitrate</synonym>
+			<synonym>I-CIT</synonym>
+			<synonym>D-isocitrate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>LYS</id>
+		<name>L-lysine</name>
+		<formula>[M1];[C6H15N2O2]n</formula>
+		<inchi />
+		<smiles>C(=O)([O-])C([N+])CCCC[N+]</smiles>
+		<description>[Positively-charged-polar-amino-acids, Amino-Acids-20, Lysine-or-DAP, Basic-Amino-Acids, L-Amino-Acids]</description>
+		<synonyms>
+			<synonym>K</synonym>
+			<synonym>lysine</synonym>
+			<synonym>L-lys</synonym>
+			<synonym>lys</synonym>
+			<synonym>2,6-diaminohexanoic acid</synonym>
+			<synonym>lysine acid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INOSINE</id>
+		<name>inosine</name>
+		<formula>[M1];[C10H12N4O5]n</formula>
+		<inchi />
+		<smiles>C(O)C1(OC(C(O)C(O)1)N3(C=NC2(C(=O)NC=NC=23)))</smiles>
+		<description>[Ribonucleosides, Purine-Ribonucleosides]</description>
+		<synonyms>
+			<synonym>hypoxanthine-ribose</synonym>
+			<synonym>iso-prinosine</synonym>
+			<synonym>riboxine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>IMINO-GROUP</id>
+		<name>imino-group</name>
+		<formula>[M1];[CH2N]n</formula>
+		<inchi />
+		<smiles>[C--]=[N+]</smiles>
+		<description>[Simple-Groups]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>Pi</id>
+		<name>phosphate</name>
+		<formula>[M1];[HO4P]n</formula>
+		<inchi />
+		<smiles>P([O-])([O-])(O)=O</smiles>
+		<description>[Phosphates]</description>
+		<synonyms>
+			<synonym>inorganic phosphate</synonym>
+			<synonym>phosphate-inorganic</synonym>
+			<synonym>Pi</synonym>
+			<synonym>orthophosphate</synonym>
+			<synonym>PO43-</synonym>
+			<synonym>HPO42-</synonym>
+			<synonym>HPO4-2</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10227</id>
+		<name>1-deoxy-1-imino-D-erythrose 4-phosphate</name>
+		<formula>[M1];[C4H9NO6P]n</formula>
+		<inchi />
+		<smiles>C(OP([O-])(=O)[O-])C(O)C(O)C=[N+]</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>imino-D-erythrose 4-phosphate</synonym>
+			<synonym>iminoerythrose 4-phosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>MYO-INOSITOL</id>
+		<name>myo-inositol</name>
+		<formula>[M1];[C6H12O6]n</formula>
+		<inchi />
+		<smiles>C1(C(C(C(C(C1O)O)O)O)O)O</smiles>
+		<description>[Inositols]</description>
+		<synonyms>
+			<synonym>chiro-inositol</synonym>
+			<synonym>mesoinositol</synonym>
+			<synonym>meso-inositol</synonym>
+			<synonym>inositol</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>DUMP</id>
+		<name>dUMP</name>
+		<formula>[M1];[C9H11N2O8P]n</formula>
+		<inchi />
+		<smiles>C1(=CC(=O)NC(=O)N1C2(CC(O)C(COP(=O)([O-])[O-])O2))</smiles>
+		<description>[Deoxy-Ribonucleoside-Monophosphates, Pyrimidine-Related]</description>
+		<synonyms>
+			<synonym>U</synonym>
+			<synonym>deoxyurdine-phosphate</synonym>
+			<synonym>2&apos;-deoxyuridine-5-monophosphate</synonym>
+			<synonym>deoxyuridine-phosphate</synonym>
+			<synonym>2&apos;-deoxyuridine-5&apos;-phosphate</synonym>
+			<synonym>2&apos;-deoxyuridylic acid</synonym>
+			<synonym>2&apos;-deoxy-5&apos;-uridylic acid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10226</id>
+		<name>3-amino-3-deoxy-D-fructose 6-phosphate</name>
+		<formula>[M1];[C6H13NO8P]n</formula>
+		<inchi />
+		<smiles>C(OP(=O)([O-])[O-])C1(C(O)C([N+])C(O)(CO)O1)</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>3-amino-3-deoxyfructose 6-phosphate</synonym>
+			<synonym>aminofructose 6-phosphate</synonym>
+			<synonym>amino-D-fructose 6-phosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>ADP</id>
+		<name>ADP</name>
+		<formula>[M1];[C10H12N5O10P2]n</formula>
+		<inchi />
+		<smiles>C(C3(C(C(C(N2(C1(=C(C(=NC=N1)N)N=C2)))O3)O)O))OP(OP(=O)([O-])[O-])([O-])=O</smiles>
+		<description>[Purine-Diphosphates, Purine-Related]</description>
+		<synonyms>
+			<synonym>adenosine pyrophosphate</synonym>
+			<synonym>adenosine 5&apos;-pyrophosphate</synonym>
+			<synonym>adenosine-5&apos;-diphosphate</synonym>
+			<synonym>adenosine-diphosphate</synonym>
+			<synonym>adenosine-5-diphosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>FAD-STEM-GROUP</id>
+		<name>FAD stem group</name>
+		<formula>[M1];[C15H25N6O13P2]n</formula>
+		<inchi />
+		<smiles>C(C3(OC(N2(C1(N=CN=C(N)C=1N=C2)))C(C(O)3)O))OP([O-])(OP(OCC(O)C(O)C(O)C[N+])(=O)[O-])=O</smiles>
+		<description>[Groups]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>UMP</id>
+		<name>uridine-5&apos;-phosphate</name>
+		<formula>[M1];[C9H11N2O9P]n</formula>
+		<inchi />
+		<smiles>C1(=CC(=O)NC(=O)N1C2(OC(COP(=O)([O-])[O-])C(O)C(O)2))</smiles>
+		<description>[Ribonucleoside-Monophosphates, Pyrimidine-Related]</description>
+		<synonyms>
+			<synonym>uridylate</synonym>
+			<synonym>5&apos;-UMP</synonym>
+			<synonym>U</synonym>
+			<synonym>uridine-5&apos;-monophosphate</synonym>
+			<synonym>5&apos;-uridylic acid (8CI)(9CI)</synonym>
+			<synonym>uridine-monophosphate</synonym>
+			<synonym>UMP</synonym>
+			<synonym>uridine-phosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>DEAMIDO-NAD</id>
+		<name>nicotinate adenine dinucleotide</name>
+		<formula>[M1];[C21H24N6O15P2]n</formula>
+		<inchi />
+		<smiles>C(C5(C=CC=[N+](C1(C(C(O)C(O1)COP(=O)([O-])OP([O-])(OCC4(C(O)C(O)C(N2(C3(C(N=C2)=C(N=CN=3)N)))O4))=O)O))C=5))([O-])=O</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>Deamino-NAD+</synonym>
+			<synonym>NaADN</synonym>
+			<synonym>deamido-NAD+</synonym>
+			<synonym>deamidonicotinamide adenine dinucleoetide</synonym>
+			<synonym>deamido-NAD</synonym>
+			<synonym>NAAD</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>PROPIONYL-COA</id>
+		<name>propionyl-CoA</name>
+		<formula>[M1];[C24H36N7O17P3S]n</formula>
+		<inchi />
+		<smiles>C1(C(O)C(C(COP([O-])(=O)OP([O-])(=O)OCC(C)(C)C(C(NCCC(=O)NCCSC(=O)CC)=O)O)O1)OP([O-])(=O)[O-])(N3(C=NC2(C(=NC=NC=23)N)))</smiles>
+		<description>[All-Coas]</description>
+		<synonyms>
+			<synonym>n-propionyl-CoA</synonym>
+			<synonym>propanoyl-CoA</synonym>
+			<synonym>propionyl-coenzyme A</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>DOLICHOL-GROUP</id>
+		<name>dolichol-group</name>
+		<formula>[M1];[C80H132]n</formula>
+		<inchi />
+		<smiles>CCC(C)CCC=C(C)CCC=C(C)CCC=C(C)CCC=C(C)CCC=C(C)CCC=C(C)CCC=C(C)CCC=C(C)CCC=C(C)CCC=C(C)CCC=C(C)CCC=C(C)CCC=C(C)CCC=C(C)CCC=C(C)C</smiles>
+		<description>[Groups]</description>
+		<synonyms>
+			<synonym>Dolichol</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>HYPOXANTHINE</id>
+		<name>hypoxanthine</name>
+		<formula>[M1];[C5H4N4O]n</formula>
+		<inchi />
+		<smiles>C12(NC=NC=1C(=O)NC=N2)</smiles>
+		<description>[Purine-Bases, Purine-Related]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>DCMP</id>
+		<name>dCMP</name>
+		<formula>[M1];[C9H12N3O7P]n</formula>
+		<inchi />
+		<smiles>C2(N(C1(OC(C(C1)O)COP([O-])([O-])=O))C(N=C(C=2)N)=O)</smiles>
+		<description>[Deoxy-Ribonucleoside-Monophosphates, Pyrimidine-Related]</description>
+		<synonyms>
+			<synonym>2&apos;-deoxycytidine 5&apos;-monophosphate</synonym>
+			<synonym>deoxycytidylate</synonym>
+			<synonym>deoxycytidylic acid</synonym>
+			<synonym>deoxycytidine monophosphate</synonym>
+			<synonym>2&apos;-deoxycytidine-5&apos;-phosphate</synonym>
+			<synonym>deoxycytidine-phosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>ACETYLMURAMYL-ALANYL-ISOGLUTAMINE</id>
+		<name>acetylmuramyl-alanyl-isoglutamine</name>
+		<formula>[M1];[C19H31N4O11]n</formula>
+		<inchi />
+		<smiles>C1(C(NC(C)=O)C(C(O)C(O1)CO)OC(C(=O)NC(C)C(NC(C(N)=O)CCC([O-])=O)=O)C)O</smiles>
+		<description>[OLIGOPEPTIDES]</description>
+		<synonyms>
+			<synonym>acetylmuramyl-alanyl-iso-glutamine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-9132</id>
+		<name>2,4-dinitrotoluene</name>
+		<formula>[M1];[C7H6N2O4]n</formula>
+		<inchi />
+		<smiles>CC1(C=CC(=CC=1N(=O)=O)N(=O)=O)</smiles>
+		<description>[Aromatics]</description>
+		<synonyms>
+			<synonym>2,4-DNT</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>SUCROSE</id>
+		<name>sucrose</name>
+		<formula>[M1];[C12H22O11]n</formula>
+		<inchi />
+		<smiles>C(C2(OC1(OC(C(O)C(C1O)O)CO))(OC(CO)C(C2O)O))O</smiles>
+		<description>[Disaccharides]</description>
+		<synonyms>
+			<synonym>saccharose</synonym>
+			<synonym>Glc(&amp;alpha;1&lt;-&gt;2&amp;beta;)Fru</synonym>
+			<synonym>&amp;alpha;-D-glucopyranosyl &amp;beta;-D-fructofuranoside</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-9134</id>
+		<name>4-methyl-5-nitrocatechol</name>
+		<formula>[M1];[C7H7NO4]n</formula>
+		<inchi />
+		<smiles>CC1(C(N(=O)=O)=CC(=C(C=1)O)O)</smiles>
+		<description>[Aromatics]</description>
+		<synonyms>
+			<synonym>4M5NC</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>PROPIONYL-P</id>
+		<name>propionyl-P</name>
+		<formula>[M1];[C3H5O5P]n</formula>
+		<inchi />
+		<smiles>CCC(OP([O-])([O-])=O)=O</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>propionyl-phosphate</synonym>
+			<synonym>propanoyl-P</synonym>
+			<synonym>Propanoyl phosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-85</id>
+		<name>1,2-dihydroxy-3-keto-5-methylthiopentene</name>
+		<formula>[M1];[C6H9O3S]n</formula>
+		<inchi />
+		<smiles>C(O)=C(C(CCSC)=O)[O-]</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>1,2-dihydroxy-3-keto-5-methylthiopentene anion</synonym>
+			<synonym>1,2-dihydroxy-3-keto-5-methylthiopentane</synonym>
+			<synonym>1,2-dihydroxy-5-(methylthio)pent-1-en-3-one</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>NAD-STEM-GROUP</id>
+		<name>NAD stem group</name>
+		<formula>[M1];[C15H21N5O13P2]n</formula>
+		<inchi />
+		<smiles>C(OP(OP([O-])(=O)OCC3(C(C(O)C(N2(C=NC1(=C(N=CN=C1N)2)))O3)O))(=O)[O-])C4(OCC(C4O)O)</smiles>
+		<description>[Groups]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>SER</id>
+		<name>L-serine</name>
+		<formula>[M1];[C3H7NO3]n</formula>
+		<inchi />
+		<smiles>C(=O)([O-])C([N+])CO</smiles>
+		<description>[Uncharged-polar-amino-acids, Amino-Acids-20, Serines, L-Amino-Acids, Neutral-Amino-Acids]</description>
+		<synonyms>
+			<synonym>S</synonym>
+			<synonym>serine</synonym>
+			<synonym>ser</synonym>
+			<synonym>L-ser</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-8945</id>
+		<name>N-acetyl-&amp;beta;-D-galactosaminyl-(1-&gt;4)-N-acetyl-&amp;beta;-D-glucosaminyl group</name>
+		<formula>[M1];[C16H28N2O11]n</formula>
+		<inchi />
+		<smiles>C2(OC1(C(O)C(NC(=O)C)C(O)OC(CO)1))(OC(CO)C(O)C(O)C(NC(=O)C)2)</smiles>
+		<description>[Simple-Groups]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>XANTHINE</id>
+		<name>xanthine</name>
+		<formula>[M1];[C5H4N4O2]n</formula>
+		<inchi />
+		<smiles>C12(NC(=O)NC(=O)C=1NC=N2)</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>2,6-dioxopurine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-9135</id>
+		<name>2-hydroxy-5-methylquinone</name>
+		<formula>[M1];[C7H5O3]n</formula>
+		<inchi />
+		<smiles>CC1(=CC(=O)C([O-])=CC1=O)</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>2H5MQ</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-9136</id>
+		<name>2,4,5-trihydroxytoluene</name>
+		<formula>[M1];[C7H8O3]n</formula>
+		<inchi />
+		<smiles>CC1(C=C(O)C(=CC=1O)O)</smiles>
+		<description>[Aromatics]</description>
+		<synonyms>
+			<synonym>2,4,5-THT</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>METHYLENE-THF</id>
+		<name>5,10-methylene-THF</name>
+		<formula>[M1];[C20H23N7O6]n</formula>
+		<inchi />
+		<smiles>C(C1(=CC=C(C=C1)N3(CC2(CNC4(=C(N2C3)C(N=C(N)N4)=O)))))(=O)NC(C(=O)O)CCC(O)=O</smiles>
+		<description>[METHYLENE-THF-GLU-N]</description>
+		<synonyms>
+			<synonym>5,10-methylenetetrahydrofolate</synonym>
+			<synonym>N5,N10-methylenetetrahydrofolate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-8944</id>
+		<name>N-acetyl-&amp;beta;-D-glucosaminyl group</name>
+		<formula>[M1];[C8H16N2O5]n</formula>
+		<inchi />
+		<smiles>C1(N)(OC(CO)C(O)C(O)C(NC(=O)C)1)</smiles>
+		<description>[Simple-Groups]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-9137</id>
+		<name>2,4-dihydroxy-5-methyl-6-oxohexa-2,4-dienoate</name>
+		<formula>[M1];[C7H7O5]n</formula>
+		<inchi />
+		<smiles>CC(=C(C=C(O)C([O-])=O)O)C=O</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>2,4-dihydroxy-5-methyl-6-oxohexa-2,4-dienoic acid</synonym>
+			<synonym>DHMOHA</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>ADP-GROUP</id>
+		<name>ADP group</name>
+		<formula>[M1];[C10H12N5O10P2]n</formula>
+		<inchi />
+		<smiles>C(C3(C(C(C(N2(C1(=C(C(=NC=N1)N)N=C2)))O3)O)O))OP(OP(=O)([O-])[O-])([O-])=O</smiles>
+		<description>[Groups]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>GLYCYLGLYCINE</id>
+		<name>glycylglycine</name>
+		<formula>[M1];[C4H8N2O3]n</formula>
+		<inchi />
+		<smiles>C([N+])C(=O)NCC(=O)[O-]</smiles>
+		<description>[DIPEPTIDES]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>D-6-P-GLUCONO-DELTA-LACTONE</id>
+		<name>D-glucono-&amp;delta;-lactone-6-phosphate</name>
+		<formula>[M1];[C6H9O9P]n</formula>
+		<inchi />
+		<smiles>C1(OC(C(C(C1O)O)O)COP([O-])([O-])=O)=O</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>6-phosphogluconolactone</synonym>
+			<synonym>D-6-phosphoglucono-&amp;delta;-lactone</synonym>
+			<synonym>D-6-P-glucono-&amp;delta;-lactone</synonym>
+			<synonym>D-glucono-1,5-lactone-6-phosphate</synonym>
+			<synonym>6-phospho-D-glucono-1,5-lactone</synonym>
+			<synonym>D-6-phospho-glucono-&amp;delta;-lactone</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CIS-ACONITATE</id>
+		<name>cis-aconitate</name>
+		<formula>[M1];[C6H3O6]n</formula>
+		<inchi />
+		<smiles>C(=O)(CC(=CC(=O)[O-])C([O-])=O)[O-]</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CH3-MALONATE-S-ALD</id>
+		<name>methylmalonate-semialdehyde</name>
+		<formula>[M1];[C4H5O3]n</formula>
+		<inchi />
+		<smiles>C(C(C=O)C)(=O)[O-]</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>2-methyl-3-oxopropanoate</synonym>
+			<synonym>CH3-malonate-S-ald</synonym>
+			<synonym>ch3-malonate-semialdehyde</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>RIBOSE-1P</id>
+		<name>&amp;alpha;-D-ribose-1-phosphate</name>
+		<formula>[M1];[C5H9O8P]n</formula>
+		<inchi />
+		<smiles>C(C1(OC(C(C1O)O)OP(=O)([O-])[O-]))O</smiles>
+		<description>[PENTOSE-1-PHOSPHATES]</description>
+		<synonyms>
+			<synonym>D-ribose-1-phosphate</synonym>
+			<synonym>&amp;alpha;-D-ribose-1P</synonym>
+			<synonym>&amp;alpha;-D-ribofuranose 1-phosphate</synonym>
+			<synonym>ribose-1-phosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>NADH</id>
+		<name>NADH</name>
+		<formula>[M1];[C21H27N7O14P2]n</formula>
+		<inchi />
+		<smiles>C(OP(=O)([O-])OP(=O)(OCC1(C(O)C(O)C(O1)N3(C2(C(=C(N)N=CN=2)N=C3))))[O-])C4(C(O)C(C(O4)N5(C=C(C(N)=O)CC=C5))O)</smiles>
+		<description>[NADH-P-OR-NOP]</description>
+		<synonyms>
+			<synonym>NADH2</synonym>
+			<synonym>NADH2</synonym>
+			<synonym>dihydrodiphosphopyridine nucleotide</synonym>
+			<synonym>diphosphopyridine nucleotide reduced</synonym>
+			<synonym>dihydronicotinamide adenine dinucleotide</synonym>
+			<synonym>nicotinamide adenine dinucleotide reduced</synonym>
+			<synonym>NAD-reduced</synonym>
+			<synonym>NADH+H+</synonym>
+			<synonym>DPNH</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CYS</id>
+		<name>L-cysteine</name>
+		<formula>[M1];[C3H7NO2S]n</formula>
+		<inchi />
+		<smiles>C(C(C([O-])=O)[N+])S</smiles>
+		<description>[Uncharged-polar-amino-acids, Amino-Acids-20, Non-polar-amino-acids, L-Amino-Acids]</description>
+		<synonyms>
+			<synonym>C</synonym>
+			<synonym>carbocysteine</synonym>
+			<synonym>cysteine</synonym>
+			<synonym>Cys</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-365</id>
+		<name>2-keto-myo-inositol</name>
+		<formula>[M1];[C6H10O6]n</formula>
+		<inchi />
+		<smiles>C1(=O)(C(O)C(O)C(O)C(O)C(O)1)</smiles>
+		<description>[Inositols]</description>
+		<synonyms>
+			<synonym>scyllo-inosine</synonym>
+			<synonym>2,4,6/3,5-pentahydroxycyclohexanone</synonym>
+			<synonym>scyllo-inosose</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>TREHALOSE</id>
+		<name>trehalose</name>
+		<formula>[M1];[C12H22O11]n</formula>
+		<inchi />
+		<smiles>C2(OC1(OC(CO)C(O)C(O)C(O)1))(OC(CO)C(O)C(O)C(O)2)</smiles>
+		<description>[Disaccharides]</description>
+		<synonyms>
+			<synonym>&amp;alpha;,&amp;alpha;-trehalose</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>GUANINE</id>
+		<name>guanine</name>
+		<formula>[M1];[C5H5N5O]n</formula>
+		<inchi />
+		<smiles>C12(N=C(NC(=O)C(N=CN1)=2)N)</smiles>
+		<description>[Purine-Bases, Purines]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>ADENOSINE</id>
+		<name>adenosine</name>
+		<formula>[M1];[C10H13N5O4]n</formula>
+		<inchi />
+		<smiles>C3(N1(C=NC2(=C1N=CN=C(N)2)))(C(O)C(O)C(CO)O3)</smiles>
+		<description>[Ribonucleosides, Purine-Ribonucleosides]</description>
+		<synonyms>
+			<synonym>adenine-D-ribose</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>NADP</id>
+		<name>NADP+</name>
+		<formula>[M1];[C21H25N7O17P3]n</formula>
+		<inchi />
+		<smiles>C(C3(C(C(C(N2(C1(=C(C(=NC=N1)N)N=C2)))O3)OP([O-])([O-])=O)O))OP(OP(=O)([O-])OCC4(C(C(C(O4)[N+]5(=CC(=CC=C5)C(=O)N))O)O))([O-])=O</smiles>
+		<description>[NAD-P-OR-NOP]</description>
+		<synonyms>
+			<synonym>coenzyme II</synonym>
+			<synonym>triphosphopyridine nucleotide</synonym>
+			<synonym>nicotinamide adenine dinucleotide phosphate</synonym>
+			<synonym>NADP-oxidized</synonym>
+			<synonym>NADP-ox</synonym>
+			<synonym>TPN</synonym>
+			<synonym>TPN+</synonym>
+			<synonym>TPN-ox</synonym>
+			<synonym>nicotinamide adenine dinucleotide-P</synonym>
+			<synonym>NADP(+)</synonym>
+			<synonym>NADP</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>3-5-ADP</id>
+		<name>adenosine 3&apos;,5&apos;-bisphosphate</name>
+		<formula>[M1];[C10H11N5O10P2]n</formula>
+		<inchi />
+		<smiles>C1(N=CN=C2(C=1N=CN2C3(OC(C(C3O)OP([O-])([O-])=O)COP([O-])(=O)[O-])))N</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>3&apos;,5&apos;-ADP</synonym>
+			<synonym>phosphoadenosine phosphate</synonym>
+			<synonym>PAP</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>DIHYDROXY-ACETONE-PHOSPHATE</id>
+		<name>dihydroxyacetone phosphate</name>
+		<formula>[M1];[C3H5O6P]n</formula>
+		<inchi />
+		<smiles>C(O)C(=O)COP([O-])([O-])=O</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>DHAP</synonym>
+			<synonym>glycerone-phosphate</synonym>
+			<synonym>dihydroxyacetone 3-phosphate</synonym>
+			<synonym>dihydroxyacetone-P</synonym>
+			<synonym>di-OH-acetone-P</synonym>
+			<synonym>dihydroxy-acetone-phosphate</synonym>
+			<synonym>dihydroxyacetone-phosphate</synonym>
+			<synonym>dihydroxy-acetone phosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>NIACINE</id>
+		<name>nicotinate</name>
+		<formula>[M1];[C6H4NO2]n</formula>
+		<inchi />
+		<smiles>C1(C=CC(C([O-])=O)=CN=1)</smiles>
+		<description>[Vitamins]</description>
+		<synonyms>
+			<synonym>3-pyridinecarboxylic acid</synonym>
+			<synonym>nicotinic acid</synonym>
+			<synonym>wampocap</synonym>
+			<synonym>nicolar</synonym>
+			<synonym>nicocap</synonym>
+			<synonym>nicobid</synonym>
+			<synonym>nico-400-</synonym>
+			<synonym>nicamin</synonym>
+			<synonym>niacin</synonym>
+			<synonym>niacine</synonym>
+			<synonym>vitamin B3</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>HYDROGEN-MOLECULE</id>
+		<name>H2</name>
+		<formula>[M1];[H2]n</formula>
+		<inchi />
+		<smiles>[HH]</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>hydrogen</synonym>
+			<synonym>hydrogen molecule</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>PYRIMIDINE-RING</id>
+		<name>pyrimidine-ring</name>
+		<formula>[M1];[C4H4N2]n</formula>
+		<inchi />
+		<smiles>C1(C=CN=CN=1)</smiles>
+		<description>[Rings]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>GLC</id>
+		<name>&amp;beta;-D-glucose</name>
+		<formula>[M1];[C6H12O6]n</formula>
+		<inchi />
+		<smiles>C(O)C1(OC(O)C(O)C(O)C(O)1)</smiles>
+		<description>[D-Glucose]</description>
+		<synonyms>
+			<synonym>glucose</synonym>
+			<synonym>dextrose</synonym>
+			<synonym>glc</synonym>
+			<synonym>glc-ring</synonym>
+			<synonym>D-glucose-ring</synonym>
+			<synonym>D-glucose</synonym>
+			<synonym>glucoside</synonym>
+			<synonym>&amp;beta;-D-glucopyranose</synonym>
+			<synonym>&amp;beta;-glucose</synonym>
+			<synonym>6-(hydroxymethyl)tetrahydropyran-2,3,4,5-tetraol</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CIT</id>
+		<name>citrate</name>
+		<formula>[M1];[C6H5O7]n</formula>
+		<inchi />
+		<smiles>C(=O)([O-])CC(C(=O)[O-])(O)CC(=O)[O-]</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>citr</synonym>
+			<synonym>cit</synonym>
+			<synonym>citric acid</synonym>
+			<synonym>2-hydroxy-1,2,3-propanetricarboxylic acid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>URATE</id>
+		<name>urate</name>
+		<formula>[M1];[C5H4N4O3]n</formula>
+		<inchi />
+		<smiles>C1(=O)(C2(=C(NC(=O)N1)NC(=O)N2))</smiles>
+		<description>[Aromatics]</description>
+		<synonyms>
+			<synonym>8-hydroxyxanthine</synonym>
+			<synonym>2,6,8-trihydroxypurine</synonym>
+			<synonym>trioxopurine</synonym>
+			<synonym>2,6,8-trioxypurine</synonym>
+			<synonym>purine-2,6,8-(1H,3H,9H)-trione</synonym>
+			<synonym>uric acid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-4422</id>
+		<name>chromate</name>
+		<formula>[M1];[H2O4Cr]n</formula>
+		<inchi />
+		<smiles>O=[Cr](=O)(O)O</smiles>
+		<description>[Metal-Ions, Anions]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>NICOTINATE_NUCLEOTIDE</id>
+		<name>nicotinate mononucleotide</name>
+		<formula>[M1];[C11H12NO9P]n</formula>
+		<inchi />
+		<smiles>C1(C(C(C(COP([O-])([O-])=O)O1)O)O)([N+]2(C=C(C=CC=2)C([O-])=O))</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>nicotinate dinucleotide</synonym>
+			<synonym>&amp;beta;-nicotinate-D-nucleotide</synonym>
+			<synonym>NaMN</synonym>
+			<synonym>nicotinic acid nucleotide</synonym>
+			<synonym>nicotinic acid mononucleotide</synonym>
+			<synonym>nicotinic acid ribonucleotide</synonym>
+			<synonym>nicotinate-D-ribonucleotide</synonym>
+			<synonym>nicotinate ribonucleotide</synonym>
+			<synonym>nicotinate nucleotide</synonym>
+			<synonym>deamido-nicotinamide mononucleotide</synonym>
+			<synonym>deamido-NMN</synonym>
+			<synonym>&amp;beta;-nicotinate D-ribonucleotide</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>L-LYXOSE</id>
+		<name>L-lyxose</name>
+		<formula>[M1];[C5H10O5]n</formula>
+		<inchi />
+		<smiles>C1(OC(O)C(O)C(O)C(O)1)</smiles>
+		<description>[L-Pentoses]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-479</id>
+		<name>2-oxo-4-methylthiobutanoate</name>
+		<formula>[M1];[C5H7O3S]n</formula>
+		<inchi />
+		<smiles>C(CC(C([O-])=O)=O)SC</smiles>
+		<description>[2-Oxo-Acids]</description>
+		<synonyms>
+			<synonym>2-keto-methyl-thio-butyrate</synonym>
+			<synonym>2-keto-4-methylthiobutyrate</synonym>
+			<synonym>4-methylthio-2-oxobutanoate</synonym>
+			<synonym>&amp;alpha;-keto-4-methylthiobutyrate</synonym>
+			<synonym>4-methylthio-2-ketobutyrate</synonym>
+			<synonym>4-methylthio-2-ketobutanoate</synonym>
+			<synonym>4-methylthio-2-oxobutyrate</synonym>
+			<synonym>2-ketomethiobutyrate</synonym>
+			<synonym>KMTB</synonym>
+			<synonym>&amp;alpha;-ketomethiobutyrate</synonym>
+			<synonym>2-keto-4-methylthiobutyric acid</synonym>
+			<synonym>&amp;alpha;-ketomethiobutyric acid</synonym>
+			<synonym>&amp;alpha;-keto-&amp;gamma;-methylthiobutyrate</synonym>
+			<synonym>&amp;alpha;-keto-&amp;gamma;-methylthiobutyric acid</synonym>
+			<synonym>2-oxo-4-methylthiobutanoic acid</synonym>
+			<synonym>2-oxomethionine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>ADENOSINE_DIPHOSPHATE_RIBOSE</id>
+		<name>ADP-ribose</name>
+		<formula>[M1];[C15H21N5O14P2]n</formula>
+		<inchi />
+		<smiles>C(C3(C(C(C(N2(C1(=C(C(=NC=N1)N)N=C2)))O3)O)O))OP(OP(=O)([O-])OC4(C(C(C(O4)CO)O)O))([O-])=O</smiles>
+		<description>[ADP-RIBOSE-P-OR-NOP]</description>
+		<synonyms>
+			<synonym>ADP-D-ribose</synonym>
+			<synonym>adenosine diphosphate ribose</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>WATER</id>
+		<name>H2O</name>
+		<formula>[M1];[H2O]n</formula>
+		<inchi />
+		<smiles>O</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>H20</synonym>
+			<synonym>hydrogen oxide</synonym>
+			<synonym>water</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>TTP</id>
+		<name>dTTP</name>
+		<formula>[M1];[C10H13N2O14P3]n</formula>
+		<inchi />
+		<smiles>CC1(=CN(C(=O)NC(=O)1)C2(CC(O)C(COP(=O)([O-])OP(=O)([O-])OP(=O)([O-])[O-])O2))</smiles>
+		<description>[Deoxy-Ribonucleoside-Triphosphates, Pyrimidine-Related]</description>
+		<synonyms>
+			<synonym>thymidine triphosphate</synonym>
+			<synonym>thymidine 5&apos;-triphosphate</synonym>
+			<synonym>TTP</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>DEOXY-RIBOSE-5P</id>
+		<name>deoxyribose-5-phosphate</name>
+		<formula>[M1];[C5H9O7P]n</formula>
+		<inchi />
+		<smiles>C(C1(C(O)CC(O1)O))OP([O-])(=O)[O-]</smiles>
+		<description>[PENTOSE-5-PHOSPHATES]</description>
+		<synonyms>
+			<synonym>2-deoxy-D-ribose-5-phosphate</synonym>
+			<synonym>deoxyribose-5-P</synonym>
+			<synonym>2-deoxyribose-5-P</synonym>
+			<synonym>2-deoxyribose-5-phosphate</synonym>
+			<synonym>2-deoxy-&amp;alpha;-D-ribose 5-phosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>PYRIDINE-RING</id>
+		<name>pyridine-ring</name>
+		<formula>[M1];[C5H5N]n</formula>
+		<inchi />
+		<smiles>C1(N=CC=CC=1)</smiles>
+		<description>[Rings]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>QUINOLINATE</id>
+		<name>quinolinate</name>
+		<formula>[M1];[C7H3NO4]n</formula>
+		<inchi />
+		<smiles>C([O-])(C1(C(=CC=CN=1)C([O-])=O))=O</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>2,3-pyridinedicarboxylic acid</synonym>
+			<synonym>2,3-pyridinedicarboxylate</synonym>
+			<synonym>quinolinic acid</synonym>
+			<synonym>pyridine-2,3-dicarboxylic acid</synonym>
+			<synonym>pyridine-2,3-dicarboxylate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD1G-1353</id>
+		<name>trehalose-cis-keto-mono-mycolate</name>
+		<formula>[M1];[C98H188O14]n</formula>
+		<inchi />
+		<smiles>C(OCC2(C(O)C(O)C(O)C(OC1(C(O)C(O)C(O)C(CO)O1))O2))(=O)C(CCCCCCCCCCCCCCCCCCCCCCCC)C(O)CCCCCCCCCCCCCCCCCCCC3(CC(CCCCCCCCCCCCCCCCC(=O)C(CCCCCCCCCCCCCCCCCC)C)3)</smiles>
+		<description>[MYCOLIC-ACIDS]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD1G-1354</id>
+		<name>trehalose-trans-keto-mono-mycolate</name>
+		<formula>[M1];[C99H190O14]n</formula>
+		<inchi />
+		<smiles>C(OCC2(C(O)C(O)C(O)C(OC1(C(O)C(O)C(O)C(CO)O1))O2))(=O)C(CCCCCCCCCCCCCCCCCCCCCCCC)C(O)CCCCCCCCCCCCCCCCCCC3(CC(C(C)CCCCCCCCCCCCCCCCC(C(C)CCCCCCCCCCCCCCCCCC)=O)3)</smiles>
+		<description>[MYCOLIC-ACIDS]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>ALPHA-GLC-6-P</id>
+		<name>&amp;alpha;-D-glucose 6-phosphate</name>
+		<formula>[M1];[C6H11O9P]n</formula>
+		<inchi />
+		<smiles>C(OP(=O)([O-])[O-])C1(OC(O)C(O)C(O)C(O)1)</smiles>
+		<description>[D-glucose-6-phosphate]</description>
+		<synonyms>
+			<synonym>&amp;alpha;-glucose-6-phosphate</synonym>
+			<synonym>&amp;alpha;-D-glucose-6-P</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>THIOL-GROUP</id>
+		<name>thiol-group</name>
+		<formula>[M1];[CHS]n</formula>
+		<inchi />
+		<smiles>[C---]S</smiles>
+		<description>[Simple-Groups]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>RIBULOSE-5P</id>
+		<name>D-ribulose-5-phosphate</name>
+		<formula>[M1];[C5H9O8P]n</formula>
+		<inchi />
+		<smiles>C(O)C(C(C(COP([O-])([O-])=O)O)O)=O</smiles>
+		<description>[Ribulose-phosphates]</description>
+		<synonyms>
+			<synonym>ribulose-5P</synonym>
+			<synonym>D-ribulose-5-P</synonym>
+			<synonym>ribulose-5-P</synonym>
+			<synonym>ribulose-5-phosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>D-ALA-D-ALA</id>
+		<name>D-alanyl-D-alanine</name>
+		<formula>[M1];[C6H12N2O3]n</formula>
+		<inchi />
+		<smiles>CC([N+])C(=O)NC(C)C(=O)[O-]</smiles>
+		<description>[DIPEPTIDES]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>PORPHYRIN-RING</id>
+		<name>porphyrin-ring</name>
+		<formula>[M1];[C20H12N4]n</formula>
+		<inchi />
+		<smiles>C14(N=C(C=C1)C=C2(N=C(C=C2)C=C3(C=CC(=N3)C=C5(N=C(C=4)C=C5))))</smiles>
+		<description>[Rings]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>LIPOIC-ACID</id>
+		<name>lipoate</name>
+		<formula>[M1];[C8H13O2S2]n</formula>
+		<inchi />
+		<smiles>C1(CC(SS1)CCCCC(=O)[O-])</smiles>
+		<description>[Coenzymes]</description>
+		<synonyms>
+			<synonym>&amp;alpha;-liponic acid</synonym>
+			<synonym>5-(1,2-dithiolan-3-yl)-pentanoate</synonym>
+			<synonym>lipoic acid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>PROTON</id>
+		<name>H+</name>
+		<formula>[M1];[H]n</formula>
+		<inchi />
+		<smiles>[H]</smiles>
+		<description>[Cations, Subatomic-Particles]</description>
+		<synonyms>
+			<synonym>hydrogen ion</synonym>
+			<synonym>proton</synonym>
+			<synonym>H</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>HYDROXYL-GROUP</id>
+		<name>hydroxyl-group</name>
+		<formula>[M1];[CH2O]n</formula>
+		<inchi />
+		<smiles>[C---][O+]</smiles>
+		<description>[Simple-Groups]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>DEOXYGUANOSINE</id>
+		<name>deoxyguanosine</name>
+		<formula>[M1];[C10H13N5O4]n</formula>
+		<inchi />
+		<smiles>C1(C2(=C(N=C(N1)N)N(C=N2)C3(CC(O)C(O3)CO)))=O</smiles>
+		<description>[Deoxy-Ribonucleosides, Purine-Related]</description>
+		<synonyms>
+			<synonym>2&apos;-deoxyguanosine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>VAL</id>
+		<name>L-valine</name>
+		<formula>[M1];[C5H11NO2]n</formula>
+		<inchi />
+		<smiles>CC(C)C([N+])C([O-])=O</smiles>
+		<description>[Amino-Acids-20, Branched-Amino-Acids, Non-polar-amino-acids, L-Amino-Acids]</description>
+		<synonyms>
+			<synonym>V</synonym>
+			<synonym>val</synonym>
+			<synonym>valine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>2-KETOGLUTARATE</id>
+		<name>2-oxoglutarate</name>
+		<formula>[M1];[C5H4O5]n</formula>
+		<inchi />
+		<smiles>C([O-])(=O)C(=O)CCC([O-])=O</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>ketoglutarate</synonym>
+			<synonym>&amp;alpha;-ketoglutarate</synonym>
+			<synonym>2-oxoglutaric acid</synonym>
+			<synonym>&amp;alpha;-ketoglutaric acid</synonym>
+			<synonym>&amp;alpha;-oxoglutarate</synonym>
+			<synonym>2-ketoglutaric acid</synonym>
+			<synonym>2-ketoglutarate</synonym>
+			<synonym>2-oxopentanedionic acid</synonym>
+			<synonym>2-oxopentanedionate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD1G-1344</id>
+		<name>trehalose-mono-mycolate</name>
+		<formula>[M1];[C90H172O13]n</formula>
+		<inchi />
+		<smiles>CCCCCCCCCCCCCCCCCCC1(C(C1)CCCCCCCCCCC4(CC(CCCCCCCCCCCCCCCCCC(O)C(CCCCCCCCCCCCCCCCCCCCCCCC)C(OCC3(C(O)C(O)C(O)C(OC2(C(O)C(O)C(O)C(CO)O2))O3))=O)4))</smiles>
+		<description>[MYCOLIC-ACIDS]</description>
+		<synonyms>
+			<synonym>trehalose 6-monomycolate</synonym>
+			<synonym>&amp;alpha;, &amp;alpha;&apos;-trehalose 6-mycolate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>SUCROSE-6P</id>
+		<name>sucrose-6-phosphate</name>
+		<formula>[M1];[C12H21O14P]n</formula>
+		<inchi />
+		<smiles>C(O)C2(OC(OC1(CO)(OC(COP(=O)([O-])[O-])C(O)C(O)1))C(O)C(O)C(O)2)</smiles>
+		<description>[Oligosaccharide-Phosphate]</description>
+		<synonyms>
+			<synonym>sucrose 6F-phosphate</synonym>
+			<synonym>sucrose-6-P</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD1G-1345</id>
+		<name>trehalose-cis-methoxy-mono-mycolate</name>
+		<formula>[M1];[C97H188O14]n</formula>
+		<inchi />
+		<smiles>C(OCC2(C(O)C(O)C(O)C(OC1(C(O)C(O)C(O)C(CO)O1))O2))(=O)C(CCCCCCCCCCCCCCCCCCCCCCCC)C(O)CCCCCCCCCCCCCCCCCC3(C(CCCCCCCCCCCCCCCCC(OC)C(C)CCCCCCCCCCCCCCCCCC)C3)</smiles>
+		<description>[MYCOLIC-ACIDS]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>PUTRESCINE</id>
+		<name>putrescine</name>
+		<formula>[M1];[C4H14N2]n</formula>
+		<inchi />
+		<smiles>C([N+])CCC[N+]</smiles>
+		<description>[Aliphatic-Alpha-Omega-Diamines]</description>
+		<synonyms>
+			<synonym>1,4-diaminobutane</synonym>
+			<synonym>1,4-butanediamine</synonym>
+			<synonym>tetramethylenediamine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD1G-1346</id>
+		<name>trehalose-trans-methoxy-mono-mycolate</name>
+		<formula>[M1];[C98H190O14]n</formula>
+		<inchi />
+		<smiles>C(OCC2(C(O)C(O)C(O)C(OC1(C(O)C(O)C(O)C(CO)O1))O2))(=O)C(CCCCCCCCCCCCCCCCCCCCCCCC)C(O)CCCCCCCCCCCCCCCCC3(C(C3)C(C)CCCCCCCCCCCCCCCCC(OC)C(C)CCCCCCCCCCCCCCCCCC)</smiles>
+		<description>[MYCOLIC-ACIDS]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>XYLULOSE-5-PHOSPHATE</id>
+		<name>D-xylulose-5-phosphate</name>
+		<formula>[M1];[C5H9O8P]n</formula>
+		<inchi />
+		<smiles>C(C(=O)C(O)C(O)COP(=O)([O-])[O-])O</smiles>
+		<description>[PENTOSE-5-PHOSPHATES]</description>
+		<synonyms>
+			<synonym>xylulose-5-phosphate</synonym>
+			<synonym>xylulose-phosphate</synonym>
+			<synonym>D-xylulose-5-P</synonym>
+			<synonym>xylulose-P</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>UDP</id>
+		<name>uridine-5&apos;-diphosphate</name>
+		<formula>[M1];[C9H11N2O12P2]n</formula>
+		<inchi />
+		<smiles>C1(=CC(=O)NC(=O)N1C2(OC(COP(=O)([O-])OP(=O)([O-])[O-])C(O)C(O)2))</smiles>
+		<description>[Pyrimidine-Related, Ribonucleoside-Diphosphates]</description>
+		<synonyms>
+			<synonym>uridine-diphosphate</synonym>
+			<synonym>UDP</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>GLYCEROL</id>
+		<name>glycerol</name>
+		<formula>[M1];[C3H8O3]n</formula>
+		<inchi />
+		<smiles>C(C(O)CO)O</smiles>
+		<description>[Sugar-alcohols]</description>
+		<synonyms>
+			<synonym>1,2,3-trihydroxypropane</synonym>
+			<synonym>glycerin</synonym>
+			<synonym>1,2,3-trihydroxypropanol</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>HCO3</id>
+		<name>bicarbonate</name>
+		<formula>[M1];[CHO3]n</formula>
+		<inchi />
+		<smiles>C([O-])(=O)O</smiles>
+		<description>[Anions]</description>
+		<synonyms>
+			<synonym>HCO3-</synonym>
+			<synonym>HCO3</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>ACETALD</id>
+		<name>acetaldehyde</name>
+		<formula>[M1];[C2H4O]n</formula>
+		<inchi />
+		<smiles>C(=O)C</smiles>
+		<description>[Aldehydes]</description>
+		<synonyms>
+			<synonym>acetic aldehyde</synonym>
+			<synonym>ethanal</synonym>
+			<synonym>aldehyde</synonym>
+			<synonym>ethyl aldehyde</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>NITRITE</id>
+		<name>nitrite</name>
+		<formula>[M1];[NO2]n</formula>
+		<inchi />
+		<smiles>N([O-])=O</smiles>
+		<description>[Anions]</description>
+		<synonyms>
+			<synonym>NO2</synonym>
+			<synonym>NO2-</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>TDP</id>
+		<name>dTDP</name>
+		<formula>[M1];[C10H13N2O11P2]n</formula>
+		<inchi />
+		<smiles>CC1(=CN(C(=O)NC(=O)1)C2(CC(O)C(COP(=O)([O-])OP(=O)([O-])[O-])O2))</smiles>
+		<description>[Deoxy-Ribonucleoside-Diphosphates, Pyrimidine-Related]</description>
+		<synonyms>
+			<synonym>TDP</synonym>
+			<synonym>thymidine 5&apos;-(trihydrogen diphosphate) (9CI)</synonym>
+			<synonym>deoxy-TDP</synonym>
+			<synonym>thymidine-5&apos;-diphosphate</synonym>
+			<synonym>thymidine-diphosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>HYDROGEN-PEROXIDE</id>
+		<name>hydrogen peroxide</name>
+		<formula>[M1];[H2O2]n</formula>
+		<inchi />
+		<smiles>OO</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>hydroperoxide</synonym>
+			<synonym>perhydrol</synonym>
+			<synonym>H2O2</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>GMP</id>
+		<name>guanosine-5&apos;-phosphate</name>
+		<formula>[M1];[C10H12N5O8P]n</formula>
+		<inchi />
+		<smiles>C(OP([O-])(=O)[O-])C1(OC(C(O)C(O)1)N3(C=NC2(C(=O)NC(N)=NC=23)))</smiles>
+		<description>[Ribonucleoside-Monophosphates, Purine-Related]</description>
+		<synonyms>
+			<synonym>guanylate</synonym>
+			<synonym>G</synonym>
+			<synonym>guanylic acid</synonym>
+			<synonym>guanosine-phosphate</synonym>
+			<synonym>GMP</synonym>
+			<synonym>guanosine-monophosphate</synonym>
+			<synonym>guanosine monophosphate</synonym>
+			<synonym>guanosine-5&apos;-monophosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>ADENINE-RING</id>
+		<name>adenine-ring</name>
+		<formula>[M1];[C5H5N5]n</formula>
+		<inchi />
+		<smiles>C12(N=CNC1=C(N=CN=2)N)</smiles>
+		<description>[Rings]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>NIACINAMIDE</id>
+		<name>nicotinamide</name>
+		<formula>[M1];[C6H6N2O]n</formula>
+		<inchi />
+		<smiles>C1(N=CC(C(=O)N)=CC=1)</smiles>
+		<description>[Vitamins]</description>
+		<synonyms>
+			<synonym>6-aminonicotinamide</synonym>
+			<synonym>vitamin PP</synonym>
+			<synonym>niacinamide</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>PPI</id>
+		<name>diphosphate</name>
+		<formula>[M1];[HO7P2]n</formula>
+		<inchi />
+		<smiles>O(P([O-])([O-])=O)P(=O)(O)[O-]</smiles>
+		<description>[Polyphosphates]</description>
+		<synonyms>
+			<synonym>PPi</synonym>
+			<synonym>PP</synonym>
+			<synonym>pyrophosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>TRP</id>
+		<name>L-tryptophan</name>
+		<formula>[M1];[C11H12N2O2]n</formula>
+		<inchi />
+		<smiles>C1(NC2(C(C(CC(C([O-])=O)[N+])=1)=CC=CC=2))</smiles>
+		<description>[Amino-Acids-20, Aromatic-Amino-Acids, Non-polar-amino-acids, L-Amino-Acids]</description>
+		<synonyms>
+			<synonym>trp</synonym>
+			<synonym>W</synonym>
+			<synonym>tryptacin</synonym>
+			<synonym>trofan</synonym>
+			<synonym>tryptophan</synonym>
+			<synonym>2-amino-3-indolylpropanic acid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>PHOSPHO-ENOL-PYRUVATE</id>
+		<name>phosphoenolpyruvate</name>
+		<formula>[M1];[C3H2O6P]n</formula>
+		<inchi />
+		<smiles>C=C(OP([O-])([O-])=O)C([O-])=O</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>P-enol-pyruvate</synonym>
+			<synonym>P-enol-pyr</synonym>
+			<synonym>PEP</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>THYMINE</id>
+		<name>thymine</name>
+		<formula>[M1];[C5H6N2O2]n</formula>
+		<inchi />
+		<smiles>C1(=C(C(=O)NC(N1)=O)C)</smiles>
+		<description>[Pyrimidine-Bases, Pyrimidine-Related]</description>
+		<synonyms>
+			<synonym>5-methyluracil</synonym>
+			<synonym>5-methyl-2,4(1H,3H)-pyrimidinedione</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>FRUCTOSE-16-DIPHOSPHATE</id>
+		<name>fructose-1,6-bisphosphate</name>
+		<formula>[M1];[C6H10O12P2]n</formula>
+		<inchi />
+		<smiles>C(C1(C(C(C(O1)(COP([O-])([O-])=O)O)O)O))OP([O-])([O-])=O</smiles>
+		<description>[HEXOSE-6-PHOSPHATES, Sugar-bisphosphates]</description>
+		<synonyms>
+			<synonym>fructose-1,6-biphosphate</synonym>
+			<synonym>fructose-1,6-diphosphate</synonym>
+			<synonym>&amp;beta;-D-fructose-1,6-diphosphate</synonym>
+			<synonym>D-fructose-1,6-diphosphate</synonym>
+			<synonym>D-fructose-1,6-bisphosphate</synonym>
+			<synonym>fructose 1,6-bisphosphate</synonym>
+			<synonym>FBP</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>NICOTINAMIDE_RIBOSE</id>
+		<name>nicotinamide riboside</name>
+		<formula>[M1];[C11H15N2O5]n</formula>
+		<inchi />
+		<smiles>C2([N+](C1(OC(C(O)C1O)CO))=CC=CC=2C(=O)N)</smiles>
+		<description>[Carbohydrates]</description>
+		<synonyms>
+			<synonym>N-ribosyl-nicotinamide</synonym>
+			<synonym>nicotinamide ribonucleoside</synonym>
+			<synonym>nicotinamide ribose</synonym>
+			<synonym>nicotinamide-&amp;beta;-riboside</synonym>
+			<synonym>ribosylnicotinamide</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10814</id>
+		<name>glycylproline</name>
+		<formula>[M1];[C7H12N2O3]n</formula>
+		<inchi />
+		<smiles>C1(CCC(C(=O)O)N(C(=O)CN)1)</smiles>
+		<description>[DIPEPTIDES]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>2-AMINO-3-3-OXOPROP-2-ENYL-BUT-2-ENEDI</id>
+		<name>aminocarboxymuconate semialdehyde</name>
+		<formula>[M1];[C7H5NO5]n</formula>
+		<inchi />
+		<smiles>C(=O)C=CC(C(=O)[O-])=C(N)C(=O)[O-]</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>2-amino-3-carboxymuconate-6-semialdehyde</synonym>
+			<synonym>2-amino-3-carboxymuconate semialdehyde</synonym>
+			<synonym>2-amino-3-(3-oxoprop-1-en-1-yl)-but-2-enedioate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>ADENOSYL-HOMO-CYS</id>
+		<name>S-adenosyl-L-homocysteine</name>
+		<formula>[M1];[C14H20N6O5S]n</formula>
+		<inchi />
+		<smiles>C(CC([N+])C(=O)[O-])SCC3(OC(N2(C=NC1(C(N)=NC=NC=12)))C(O)C(O)3)</smiles>
+		<description>[Non-standard-amino-acids]</description>
+		<synonyms>
+			<synonym>S-adenosylhomocysteine</synonym>
+			<synonym>2-S-adenosyl-L-homocysteine</synonym>
+			<synonym>AdoHcy</synonym>
+			<synonym>2-S-adenosyl-L-homocysteine</synonym>
+			<synonym>S-adenosyl-homocysteine</synonym>
+			<synonym>S-adenosylhomocysteine</synonym>
+			<synonym>adenosyl-homo-cys</synonym>
+			<synonym>adenosylhomocysteine</synonym>
+			<synonym>adenosylhomo-cys</synonym>
+			<synonym>SAH</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>XYLOSE</id>
+		<name>D-xylose</name>
+		<formula>[M1];[C5H10O5]n</formula>
+		<inchi />
+		<smiles>C1(OC(O)C(O)C(O)C(O)1)</smiles>
+		<description>[D-Pentoses]</description>
+		<synonyms>
+			<synonym>xylose</synonym>
+			<synonym>&amp;alpha;-D-xylose</synonym>
+			<synonym>wood sugar</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>GLC-1-P</id>
+		<name>&amp;alpha;-D-glucose 1-phosphate</name>
+		<formula>[M1];[C6H11O9P]n</formula>
+		<inchi />
+		<smiles>C(O)C1(OC(OP(=O)([O-])[O-])C(O)C(O)C(O)1)</smiles>
+		<description>[Alpha-Hexose-1-Phosphates]</description>
+		<synonyms>
+			<synonym>glucose 1-phosphate</synonym>
+			<synonym>cori ester</synonym>
+			<synonym>D-glucose 1-phosphate</synonym>
+			<synonym>glucose-1P</synonym>
+			<synonym>&amp;alpha;-glucose-1-phosphate</synonym>
+			<synonym>D-glucose-&amp;alpha;-1-phosphate</synonym>
+			<synonym>&amp;alpha;-D-glucose-1-P</synonym>
+			<synonym>D-glucose-1-phosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>NUKED-PENTOSE-RING</id>
+		<name>nt-pentose-ring</name>
+		<formula>[M1];[C5H10O4]n</formula>
+		<inchi />
+		<smiles>C1(C(C(O)C(CO)O1)O)</smiles>
+		<description>[Rings]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>MET</id>
+		<name>L-methionine</name>
+		<formula>[M1];[C5H11NO2S]n</formula>
+		<inchi />
+		<smiles>C(=O)([O-])C([N+])CCSC</smiles>
+		<description>[Amino-Acids-20, Non-polar-amino-acids, L-Amino-Acids]</description>
+		<synonyms>
+			<synonym>M</synonym>
+			<synonym>met</synonym>
+			<synonym>methionine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>XANTHOSINE-5-PHOSPHATE</id>
+		<name>xanthosine-5-phosphate</name>
+		<formula>[M1];[C10H11N4O9P]n</formula>
+		<inchi />
+		<smiles>C(OP(=O)([O-])[O-])C3(OC(N2(C=NC1(C(=O)NC(=O)NC=12)))C(O)C(O)3)</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>(9-D-ribosylxanthine)-5&apos;-phosphate</synonym>
+			<synonym>XMP</synonym>
+			<synonym>xanthosine-5&apos;-phosphate</synonym>
+			<synonym>xanthosine-5-P</synonym>
+			<synonym>xanthosine-5&apos;-P</synonym>
+			<synonym>9-(5-phospho-&amp;beta;-D-ribosyl)xanthine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>MANNOSE-1P</id>
+		<name>&amp;alpha;-D-mannose 1-phosphate</name>
+		<formula>[M1];[C6H11O9P]n</formula>
+		<inchi />
+		<smiles>C(O)C1(OC(OP(=O)([O-])[O-])C(O)C(O)C(O)1)</smiles>
+		<description>[Alpha-Hexose-1-Phosphates]</description>
+		<synonyms>
+			<synonym>mannose-1-phosphate</synonym>
+			<synonym>D-mannose-1-phosphate</synonym>
+			<synonym>mannose-1-P</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10401</id>
+		<name>tenuecyclamide A</name>
+		<formula>[M1];[C19H20N6O4S2]n</formula>
+		<inchi />
+		<smiles>C12(C(C)NC(C4(=CSC(C(C)NC(C3(=CSC(C(C)NC(C(=C(C)O1)N=2)=O)=N3))=O)=N4))=O)</smiles>
+		<description>[Tenuecyclamides]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10402</id>
+		<name>tenuecyclamide C</name>
+		<formula>[M1];[C20H22N6O4S3]n</formula>
+		<inchi />
+		<smiles>C12(C(CCSC)NC(C4(=CSC(CNC(C3(=C(C)OC(C(C)NC(C(=CS1)N=2)=O)=N3))=O)=N4))=O)</smiles>
+		<description>[Tenuecyclamides]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>L-LACTATE</id>
+		<name>L-lactate</name>
+		<formula>[M1];[C3H5O3]n</formula>
+		<inchi />
+		<smiles>CC(C([O-])=O)O</smiles>
+		<description>[Lactate]</description>
+		<synonyms>
+			<synonym>lactic acid</synonym>
+			<synonym>L(+)-lactate</synonym>
+			<synonym>(S)-lactate</synonym>
+			<synonym>lactasol</synonym>
+			<synonym>lac</synonym>
+			<synonym>2-hydroxypropanoic acid</synonym>
+			<synonym>2-hydroxypropionic acid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10404</id>
+		<name>ulongamide F</name>
+		<formula>[M1];[C30H49N5O6S]n</formula>
+		<inchi />
+		<smiles>C1(C(C(C)C)NC(C(C(C)CC)OC(C(C)C(CCC)NC(C2(=CSC(C(C)NC(C(C(C)C)N(C)1)=O)=N2))=O)=O)=O)=O</smiles>
+		<description>[Ulongamides]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>DIHYDROLIPOAMIDE</id>
+		<name>dihydrolipoamide</name>
+		<formula>[M1];[C8H17NOS2]n</formula>
+		<inchi />
+		<smiles>C(S)CC(S)CCCCC(N)=O</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10405</id>
+		<name>westiellamide</name>
+		<formula>[M1];[C27H42N6O6]n</formula>
+		<inchi />
+		<smiles>C12(C(C(C)C)NC(C4(C(C)OC(C(C(C)C)NC(C3(C(C)OC(C(C(C)C)NC(C(C(C)O1)N=2)=O)=N3))=O)=N4))=O)</smiles>
+		<description>[Cyclamides]</description>
+		<synonyms>
+			<synonym>cycloxazoline</synonym>
+			<synonym>trisoxazoline</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10406</id>
+		<name>symplostatin 1</name>
+		<formula>[M1];[C43H72N6O6S]n</formula>
+		<inchi />
+		<smiles>C3(CCC(C(C(C(NC(C1(=NC=CS1))CC2(C=CC=CC=2))=O)C)OC)N(C(CC(C(C(C)CC)[N+](C)C(C(NC(C(C(C)CC)[N+](C)C)=O)=O)C(C)C)OC)=O)3)</smiles>
+		<description>[Symplostatins]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>GLY</id>
+		<name>glycine</name>
+		<formula>[M1];[C2H5NO2]n</formula>
+		<inchi />
+		<smiles>C(=O)([O-])C[N+]</smiles>
+		<description>[Uncharged-polar-amino-acids, Amino-Acids-20, Non-polar-amino-acids, Neutral-Amino-Acids]</description>
+		<synonyms>
+			<synonym>G</synonym>
+			<synonym>aminoacetic acid</synonym>
+			<synonym>gly</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>GUANOSINE</id>
+		<name>guanosine</name>
+		<formula>[M1];[C10H13N5O5]n</formula>
+		<inchi />
+		<smiles>C(C3(C(O)C(O)C(N2(C1(=C(C(=O)NC(N)=N1)N=C2)))O3))O</smiles>
+		<description>[Ribonucleosides, Purine-Ribonucleosides]</description>
+		<synonyms>
+			<synonym>nucleoside Q</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10407</id>
+		<name>scyptolin A</name>
+		<formula>[M1];[C45H69N8O14Cl]n</formula>
+		<inchi />
+		<smiles>C2(=O)(NC(C(C)C)C(O[CH]([CH](NC([CH](NC(C(C)NC(=O)CCC)=O)[CH](C)O)=O)C(=O)NC(CC(C)C)C(=O)NC1(C(=O)N(C(O)CC1)[CH]([CH](C)O)C(=O)N(C)C2CC3(=CC=C(O)C(Cl)=C3)))C)=O)</smiles>
+		<description>[Scyptolins]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10408</id>
+		<name>schizopeptin 791</name>
+		<formula>[M1];[C42H60N7O8]n</formula>
+		<inchi />
+		<smiles>C3(C(C(C)CC)NC(C(CCCCNC(C(CC1(C=CC=CC=1))NC(C(C)N(C)C(C(CCC2(C=CC=CC=2))N3)=O)=O)=O)NC(NC(C(=O)[O-])C(C)CC)=O)=O)=O</smiles>
+		<description>[Schizopeptins]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CMP</id>
+		<name>CMP</name>
+		<formula>[M1];[C9H12N3O8P]n</formula>
+		<inchi />
+		<smiles>C2(N(C1(C(C(C(O1)COP([O-])([O-])=O)O)O))C(N=C(C=2)N)=O)</smiles>
+		<description>[Ribonucleoside-Monophosphates, Pyrimidine-Related]</description>
+		<synonyms>
+			<synonym>5&apos;-cytidylic acid</synonym>
+			<synonym>cytidine-5&apos;-monophosphate</synonym>
+			<synonym>cytidylate</synonym>
+			<synonym>cytidylic acid</synonym>
+			<synonym>C</synonym>
+			<synonym>cytidine-P</synonym>
+			<synonym>cytidine-monophosphate</synonym>
+			<synonym>cytidine-phosphate</synonym>
+			<synonym>cytidine-5&apos;-phosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>COA-GROUP</id>
+		<name>coenzyme-A-group</name>
+		<formula>[M1];[C21H32N7O16P3S]n</formula>
+		<inchi />
+		<smiles>C1(OC(C(OP([O-])(=O)[O-])C(O)1)COP(=O)(OP(=O)(OCC(C)(C)C(O)C(=O)NCCC(=O)NCCS)[O-])[O-])N3(C2(=C(C(N)=NC=N2)N=C3))</smiles>
+		<description>[Groups]</description>
+		<synonyms>
+			<synonym>CoA</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>GLN</id>
+		<name>L-glutamine</name>
+		<formula>[M1];[C5H10N2O3]n</formula>
+		<inchi />
+		<smiles>C(=O)([O-])C([N+])CCC(=O)N</smiles>
+		<description>[Uncharged-polar-amino-acids, Amino-Acids-20, L-Amino-Acids, Neutral-Amino-Acids]</description>
+		<synonyms>
+			<synonym>Q</synonym>
+			<synonym>proglumide</synonym>
+			<synonym>glum</synonym>
+			<synonym>gln</synonym>
+			<synonym>glutamine</synonym>
+			<synonym>glumin</synonym>
+			<synonym>2-aminoglutaramic acid</synonym>
+			<synonym>glutamic acid 5-amide</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>X-PHOSPHATE-GROUP</id>
+		<name>x-phosphate-group</name>
+		<formula>[M1];[HO3P]n</formula>
+		<inchi />
+		<smiles>P(=O)([O-])O</smiles>
+		<description>[Simple-Groups]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>OXALACETIC_ACID</id>
+		<name>oxaloacetate</name>
+		<formula>[M1];[C4H2O5]n</formula>
+		<inchi />
+		<smiles>C([O-])(CC(=O)C([O-])=O)=O</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>keto-oxaloacetate</synonym>
+			<synonym>oxaloacetic acid</synonym>
+			<synonym>oxalacetic acid</synonym>
+			<synonym>oxalacetate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>GLT</id>
+		<name>L-glutamate</name>
+		<formula>[M1];[C5H8NO4]n</formula>
+		<inchi />
+		<smiles>C(=O)([O-])C([N+])CCC(=O)[O-]</smiles>
+		<description>[Negatively-charged-polar-amino-acids, Amino-Acids-20, L-Amino-Acids]</description>
+		<synonyms>
+			<synonym>L-Glutamate</synonym>
+			<synonym>1-amino-propane-1,3-dicarboxylic acid</synonym>
+			<synonym>glutacid</synonym>
+			<synonym>glutaminic acid</synonym>
+			<synonym>L-glutamic acid</synonym>
+			<synonym>&amp;alpha;-aminoglutaric acid</synonym>
+			<synonym>E</synonym>
+			<synonym>glt</synonym>
+			<synonym>glu</synonym>
+			<synonym>glut</synonym>
+			<synonym>glutamate</synonym>
+			<synonym>L-glu</synonym>
+			<synonym>2-aminopentanedioic acid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>PRPP</id>
+		<name>5-phosphoribosyl 1-pyrophosphate</name>
+		<formula>[M1];[C5H8O14P3]n</formula>
+		<inchi />
+		<smiles>C(OP(=O)([O-])[O-])C1(OC(OP(=O)([O-])OP(=O)([O-])[O-])C(O)C(O)1)</smiles>
+		<description>[Sugar-Phosphate]</description>
+		<synonyms>
+			<synonym>PRPP</synonym>
+			<synonym>5-phospho-&amp;alpha;-D-ribose 1-diphosphate</synonym>
+			<synonym>5-phosphoribosyl diphosphate</synonym>
+			<synonym>5-phosphoribosyl-1-PP</synonym>
+			<synonym>5-phosphoribosyl-PP</synonym>
+			<synonym>5-phosphoribosyl-1-pyrophosphate</synonym>
+			<synonym>5-phosphoribosylpyrophosphate</synonym>
+			<synonym>phosphoribosylpyrophosphate</synonym>
+			<synonym>5-phospho-ribosyl-pyrophosphate</synonym>
+			<synonym>&amp;alpha;-D-5-phosphoribosylPP</synonym>
+			<synonym>&amp;alpha;-D-5-P-RibosylPP</synonym>
+			<synonym>5-phospho-&amp;alpha;-D-ribose-1-diphosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-2343</id>
+		<name>3-keto-L-gulonate 6-phosphate</name>
+		<formula>[M1];[C6H8O10P]n</formula>
+		<inchi />
+		<smiles>C(C(O)C(C(O)C(O)COP([O-])([O-])=O)=O)(=O)[O-]</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>3-keto-L-gulonate 6-P</synonym>
+			<synonym>3-keto-L-gulonate-6-phosphate</synonym>
+			<synonym>3-dehydro-L-gulonate-6-phosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>ACET</id>
+		<name>acetate</name>
+		<formula>[M1];[C2H3O2]n</formula>
+		<inchi />
+		<smiles>C(C)([O-])=O</smiles>
+		<description>[Carboxylates]</description>
+		<synonyms>
+			<synonym>acetic acid</synonym>
+			<synonym>ethanoic acid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>GLC-6-P</id>
+		<name>&amp;beta;-D-glucose-6-phosphate</name>
+		<formula>[M1];[C6H11O9P]n</formula>
+		<inchi />
+		<smiles>C1(C(C(C(C(O1)COP([O-])([O-])=O)O)O)O)O</smiles>
+		<description>[D-glucose-6-phosphate]</description>
+		<synonyms>
+			<synonym>D-glucose-6-P</synonym>
+			<synonym>glucose-6-P</synonym>
+			<synonym>glucose-6-phosphate</synonym>
+			<synonym>&amp;beta;-D-glucose-6-P</synonym>
+			<synonym>D-glucose-6-phosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>L-ALPHA-ALANINE</id>
+		<name>L-alanine</name>
+		<formula>[M1];[C3H7NO2]n</formula>
+		<inchi />
+		<smiles>C(=O)([O-])C([N+])C</smiles>
+		<description>[Amino-Acids-20, Non-polar-amino-acids, L-Amino-Acids, Neutral-Amino-Acids]</description>
+		<synonyms>
+			<synonym>alanine</synonym>
+			<synonym>L-&amp;alpha;-alanine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>AMP</id>
+		<name>AMP</name>
+		<formula>[M1];[C10H12N5O7P]n</formula>
+		<inchi />
+		<smiles>C(C3(C(C(C(N2(C1(=C(C(=NC=N1)N)N=C2)))O3)O)O))OP([O-])([O-])=O</smiles>
+		<description>[Ribonucleoside-Monophosphates, Purine-Related]</description>
+		<synonyms>
+			<synonym>adenosine-phosphate</synonym>
+			<synonym>5&apos;-AMP</synonym>
+			<synonym>adenosine-monophosphate</synonym>
+			<synonym>adenylic acid</synonym>
+			<synonym>adenosine-5&apos;-phosphate</synonym>
+			<synonym>adenosine 5&apos;-monophosphate</synonym>
+			<synonym>adenylate</synonym>
+			<synonym>5&apos;-adenylic acid</synonym>
+			<synonym>5&apos;-adenosine monophosphate</synonym>
+			<synonym>adenosine 5&apos;-phosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>ETOH</id>
+		<name>ethanol</name>
+		<formula>[M1];[C2H6O]n</formula>
+		<inchi />
+		<smiles>C(O)C</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>absolute alcohol</synonym>
+			<synonym>alcohol</synonym>
+			<synonym>EtOH</synonym>
+			<synonym>eth</synonym>
+			<synonym>ethyl alcohol</synonym>
+			<synonym>grain alcohol</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>UTP</id>
+		<name>UTP</name>
+		<formula>[M1];[C9H11N2O15P3]n</formula>
+		<inchi />
+		<smiles>C1(=CC(=O)NC(=O)N1C2(OC(COP(=O)([O-])OP(=O)([O-])OP(=O)([O-])[O-])C(O)C(O)2))</smiles>
+		<description>[Pyrimidine-Triphosphates, Pyrimidine-Related]</description>
+		<synonyms>
+			<synonym>uridine-triphosphate</synonym>
+			<synonym>uridine-5&apos;-triphosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>THYMIDINE</id>
+		<name>thymidine</name>
+		<formula>[M1];[C10H14N2O5]n</formula>
+		<inchi />
+		<smiles>C(O)C1(C(CC(O1)N2(C(NC(=O)C(=C2)C)=O))O)</smiles>
+		<description>[Deoxy-Ribonucleosides, Pyrimidine-Related]</description>
+		<synonyms>
+			<synonym>deoxythymidine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>AMMONIA</id>
+		<name>ammonia</name>
+		<formula>[M1];[H3N]n</formula>
+		<inchi />
+		<smiles>[NH3]</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>NH3</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>FORMATE</id>
+		<name>formate</name>
+		<formula>[M1];[CHO2]n</formula>
+		<inchi />
+		<smiles>C([O-])=O</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>formic acid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>DEOXY-RIBOSE-1P</id>
+		<name>deoxyribose-1-phosphate</name>
+		<formula>[M1];[C5H9O7P]n</formula>
+		<inchi />
+		<smiles>C1(OC(C(C1)O)CO)(OP(=O)([O-])[O-])</smiles>
+		<description>[PENTOSE-1-PHOSPHATES]</description>
+		<synonyms>
+			<synonym>2-deoxy-D-ribose-1-phosphate</synonym>
+			<synonym>2-deoxy-&amp;alpha;-D-ribose 1-phosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>DGDP</id>
+		<name>2&apos;-deoxyguanosine-5&apos;-diphosphate</name>
+		<formula>[M1];[C10H12N5O10P2]n</formula>
+		<inchi />
+		<smiles>C(OP(=O)([O-])OP(=O)([O-])[O-])C1(OC(CC(O)1)N3(C=NC2(C(=O)NC(N)=NC=23)))</smiles>
+		<description>[Deoxy-Ribonucleoside-Diphosphates, Purine-Related]</description>
+		<synonyms>
+			<synonym>dGDP</synonym>
+			<synonym>deoxyguanosine-diphosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-26</id>
+		<name>hexulose 6-phosphate</name>
+		<formula>[M1];[C6H11O9P]n</formula>
+		<inchi />
+		<smiles>C(OP([O-])([O-])=O)C(O)C(O)C(=O)C(O)CO</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>H6P</synonym>
+			<synonym>D-arabino-3-hexulose 6-P</synonym>
+			<synonym>D-arabino-3-hexulose 6-phosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>DUDP</id>
+		<name>dUDP</name>
+		<formula>[M1];[C9H11N2O11P2]n</formula>
+		<inchi />
+		<smiles>C1(=CC(=O)NC(=O)N1C2(CC(O)C(COP(=O)([O-])OP(=O)([O-])[O-])O2))</smiles>
+		<description>[Deoxy-Ribonucleoside-Diphosphates, Pyrimidine-Related]</description>
+		<synonyms>
+			<synonym>2&apos;-deoxyuridine-5&apos;-diphosphate</synonym>
+			<synonym>deoxyuridine-diphosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10390</id>
+		<name>bistratamide B</name>
+		<formula>[M1];[C27H32N6O4S2]n</formula>
+		<inchi />
+		<smiles>C23(C(C(C)C)NC(C5(=CSC(C(CC1(C=CC=CC=1))NC(C4(CSC(C(C)NC(C(C(C)O2)N=3)=O)=N4))=O)=N5))=O)</smiles>
+		<description>[Bistratamides]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>ERYTHROSE-4P</id>
+		<name>D-erythrose-4-phosphate</name>
+		<formula>[M1];[C4H7O7P]n</formula>
+		<inchi />
+		<smiles>C(OP([O-])([O-])=O)C(C(C=O)O)O</smiles>
+		<description>[Sugar-Phosphate]</description>
+		<synonyms>
+			<synonym>erythrose-4P</synonym>
+			<synonym>threose 4-phosphate</synonym>
+			<synonym>erythrose-4-phosphate</synonym>
+			<synonym>erythrose-4-P</synonym>
+			<synonym>D-erythrose-4-P</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10391</id>
+		<name>bistratamide E</name>
+		<formula>[M1];[C25H34N6O4S2]n</formula>
+		<inchi />
+		<smiles>C12(C(C(C)C)NC(C4(=CSC(C(C(C)C)NC(C3(=CSC(C(C(C)C)NC(C(C(C)O1)N=2)=O)=N3))=O)=N4))=O)</smiles>
+		<description>[Bistratamides]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10290</id>
+		<name>gramicidin S</name>
+		<formula>[M1];[C60H94N12O10]n</formula>
+		<inchi />
+		<smiles>C2(=O)(NC(C(C)C)C(=O)NC(CCC[N+])C(=O)NC(CC(C)C)C(=O)NC(C(N4(C(C(=O)NC(C(C)C)C(=O)NC(CCC[N+])C(=O)NC(CC(C)C)C(=O)NC(C(=O)N1(C(CCC1)2))CC3(C=CC=CC=3))CCC4))=O)CC5(C=CC=CC=5))</smiles>
+		<description>[Antibiotics, Gramicidins]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10393</id>
+		<name>dendroamide A</name>
+		<formula>[M1];[C21H24N6O4S2]n</formula>
+		<inchi />
+		<smiles>C12(C(C(C)C)NC(C4(=C(C)OC(C(C)NC(C3(=CSC(C(C)NC(C(=CS1)N=2)=O)=N3))=O)=N4))=O)</smiles>
+		<description>[Dendroamides]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10394</id>
+		<name>obyanamide</name>
+		<formula>[M1];[C30H41N5O6S]n</formula>
+		<inchi />
+		<smiles>C2(=O)(NC(C)C1(SC=C(N=1)C(=O)NC(CC)CC(=O)OC(C)C(=O)N(C)C(C(C)C)C(=O)N(C)C2CC3(=CC=CC=C3)))</smiles>
+		<description>[Cyclamides]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10395</id>
+		<name>nostocyclamide</name>
+		<formula>[M1];[C20H22N6O4S2]n</formula>
+		<inchi />
+		<smiles>C12(C(C(C)C)NC(C4(=CSC(CNC(C3(=C(C)OC(C(C)NC(C(=CS1)N=2)=O)=N3))=O)=N4))=O)</smiles>
+		<description>[Nostocyclamides]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>PRO</id>
+		<name>L-proline</name>
+		<formula>[M1];[C5H9NO2]n</formula>
+		<inchi />
+		<smiles>C(=O)([O-])C1([N+]CCC1)</smiles>
+		<description>[Amino-Acids-20, Non-polar-amino-acids, L-Amino-Acids, Neutral-Amino-Acids]</description>
+		<synonyms>
+			<synonym>2-pyrrolidinecarboxylic acid</synonym>
+			<synonym>P</synonym>
+			<synonym>proline</synonym>
+			<synonym>prol</synonym>
+			<synonym>pro</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-444</id>
+		<name>5-methylthioribose-1-phosphate</name>
+		<formula>[M1];[C6H11O7PS]n</formula>
+		<inchi />
+		<smiles>C1(C(C(C(O1)CSC)O)O)OP([O-])([O-])=O</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>S5-methyl-5-thio-D-ribose-1-phosphate</synonym>
+			<synonym>5-methylthio-D-ribose-1-phosphate</synonym>
+			<synonym>5-MTR-1-P</synonym>
+			<synonym>1-phosphomethylthioribose</synonym>
+			<synonym>1-phospho-5-S-methylthioribose</synonym>
+			<synonym>1-PMTR</synonym>
+			<synonym>1-phospho-5-S-methylthio-&amp;alpha;-D-ribofuranoside</synonym>
+			<synonym>S-methyl-5-thio-&amp;alpha;-D-ribose 1-phosphate</synonym>
+			<synonym>S-methyl-5-thio-D-ribose 1-phosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10396</id>
+		<name>nostocyclamide M</name>
+		<formula>[M1];[C20H22N6O4S3]n</formula>
+		<inchi />
+		<smiles>C12(C(CCSC)NC(C4(=CSC(CNC(C3(=C(C)OC(C(C)NC(C(=CS1)N=2)=O)=N3))=O)=N4))=O)</smiles>
+		<description>[Nostocyclamides]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10398</id>
+		<name>raocyclamide A</name>
+		<formula>[M1];[C27H30N6O5S]n</formula>
+		<inchi />
+		<smiles>CC(CC)C4(C1(=NC(=CS1)C(NC(CC2(C=CC=CC=2))C5(=NC(C(NC(C)C3(=NC(=CO3)C(N4)=O))=O)CO5))=O))</smiles>
+		<description>[Raocyclamides]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10399</id>
+		<name>raocyclamide B</name>
+		<formula>[M1];[C27H32N6O6S]n</formula>
+		<inchi />
+		<smiles>CC(CC)C2(C4(=NC(C(NC(C(NC(CO)C(NC(C)C1(=NC(=CO1)C(N2)=O))=O)=O)CC3(C=CC=CC=3))=O)=CS4))</smiles>
+		<description>[Raocyclamides]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>DEOXYCYTIDINE</id>
+		<name>deoxycytidine</name>
+		<formula>[M1];[C9H13N3O4]n</formula>
+		<inchi />
+		<smiles>C1(=CC(N)=NC(=O)N1C2(CC(O)C(CO)O2))</smiles>
+		<description>[Deoxy-Ribonucleosides, Pyrimidine-Related]</description>
+		<synonyms>
+			<synonym>d-cytidine</synonym>
+			<synonym>2&apos;-deoxycytidine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>FRU1P</id>
+		<name>fructose-1-phosphate</name>
+		<formula>[M1];[C6H11O9P]n</formula>
+		<inchi />
+		<smiles>C(O)C1(OC(O)(COP(=O)([O-])[O-])C(O)C(O)1)</smiles>
+		<description>[HEXOSE-6-PHOSPHATES]</description>
+		<synonyms>
+			<synonym>fructose-1-P</synonym>
+			<synonym>D-fructose-1-phosphate</synonym>
+			<synonym>&amp;beta;-D-fructose-1-P</synonym>
+			<synonym>&amp;beta;-D-fructose-1-phosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>DUTP</id>
+		<name>dUTP</name>
+		<formula>[M1];[C9H11N2O14P3]n</formula>
+		<inchi />
+		<smiles>C1(=CC(=O)NC(=O)N1C2(CC(O)C(COP(=O)([O-])OP(=O)([O-])OP(=O)([O-])[O-])O2))</smiles>
+		<description>[Deoxy-Ribonucleoside-Triphosphates, Pyrimidine-Related]</description>
+		<synonyms>
+			<synonym>deoxy-UTP</synonym>
+			<synonym>2&apos;-deoxyuridine-5&apos;-triphosphate</synonym>
+			<synonym>deoxyuridine-triphosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10379</id>
+		<name>aeruginosin A</name>
+		<formula>[M1];[C14H10N3O2]n</formula>
+		<inchi />
+		<smiles>C(C1(=CC=CC3(=C1N=C2(C=CC(C=C2N(C)3)=[NH]))))(=O)[O-]</smiles>
+		<description>[Aeruginosins]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>N-ACETYL-D-GALACTOSAMINE-6-PHOSPHATE</id>
+		<name>N-acetyl-D-galactosamine-6-phosphate</name>
+		<formula>[M1];[C8H14NO9P]n</formula>
+		<inchi />
+		<smiles>CC(=O)NC1(C(O)OC(COP(=O)([O-])[O-])C(O)C(O)1)</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>PANTETHEINE-P</id>
+		<name>4&apos;-phosphopantetheine</name>
+		<formula>[M1];[C11H21N2O7PS]n</formula>
+		<inchi />
+		<smiles>CC(C(O)C(=O)NCCC(NCCS)=O)(C)COP([O-])(=O)[O-]</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>phosphopantotheine</synonym>
+			<synonym>pantotheine-4&apos;-phosphate</synonym>
+			<synonym>pantetheine 4&apos;-phosphate</synonym>
+			<synonym>phosphopantetheine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>PSEUDOURIDINE-5-P</id>
+		<name>pseudouridine 5&apos;-phosphate</name>
+		<formula>[M1];[C9H11N2O9P]n</formula>
+		<inchi />
+		<smiles>C1(=C(C(=O)NC(=O)N1)C2(OC(COP(=O)([O-])[O-])C(O)C(O)2))</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>DCDP</id>
+		<name>dCDP</name>
+		<formula>[M1];[C9H12N3O10P2]n</formula>
+		<inchi />
+		<smiles>C2(N(C1(CC(C(O1)COP(OP(=O)([O-])[O-])([O-])=O)O))C(N=C(C=2)N)=O)</smiles>
+		<description>[Deoxy-Ribonucleoside-Diphosphates, Pyrimidine-Related]</description>
+		<synonyms>
+			<synonym>2&apos;-deoxycytidine diphosphate</synonym>
+			<synonym>2&apos;-deoxycytidine-5&apos;-diphosphate</synonym>
+			<synonym>deoxycytidine-diphosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>GAP</id>
+		<name>D-glyceraldehyde-3-phosphate</name>
+		<formula>[M1];[C3H5O6P]n</formula>
+		<inchi />
+		<smiles>C(=O)C(O)COP(=O)([O-])[O-]</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>D-glyceraldehdye-3-phosphate</synonym>
+			<synonym>3-phosphoglyceraldehyde</synonym>
+			<synonym>D-glyceraldehyde-3-P</synonym>
+			<synonym>glyceraldehyde-3-phosphate</synonym>
+			<synonym>gap</synonym>
+			<synonym>glyceraldehyde-phosphate</synonym>
+			<synonym>glyceraldehyde-P</synonym>
+			<synonym>glyceraldehyde-3-P</synonym>
+			<synonym>(2R)-2-hydroxy-3-(phosphonooxy)-propanal</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>FRUCTOSE-6P</id>
+		<name>D-fructose-6-phosphate</name>
+		<formula>[M1];[C6H11O9P]n</formula>
+		<inchi />
+		<smiles>C(O)C1(O)(OC(COP(=O)([O-])[O-])C(O)C(O)1)</smiles>
+		<description>[HEXOSE-6-PHOSPHATES]</description>
+		<synonyms>
+			<synonym>F6P</synonym>
+			<synonym>fructose-6P</synonym>
+			<synonym>fructose-6-P</synonym>
+			<synonym>fruc6p</synonym>
+			<synonym>fru-6-P</synonym>
+			<synonym>fructose-6-phosphate</synonym>
+			<synonym>A-D-fructose-6-P</synonym>
+			<synonym>D-fructose-6-P</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>DPG</id>
+		<name>1,3-diphosphateglycerate</name>
+		<formula>[M1];[C3H4O10P2]n</formula>
+		<inchi />
+		<smiles>C(OP(=O)([O-])[O-])(=O)C(O)COP(=O)([O-])[O-]</smiles>
+		<description>[Glycerates]</description>
+		<synonyms>
+			<synonym>glycerate 1,3-diphosphate</synonym>
+			<synonym>3-phospho-D-glyceroyl-phosphate</synonym>
+			<synonym>3-phosphoglyceroyl-P</synonym>
+			<synonym>P-glyceroyl-P</synonym>
+			<synonym>phosphoglyceroyl-P</synonym>
+			<synonym>3-phosphoglyceroyl-phosphate</synonym>
+			<synonym>3-P-glyceroyl-P</synonym>
+			<synonym>DPG</synonym>
+			<synonym>13-DPG</synonym>
+			<synonym>glycerate 1,3-bisphosphate</synonym>
+			<synonym>1,3-biphosphoglycerate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CO-A</id>
+		<name>coenzyme A</name>
+		<formula>[M1];[C21H32N7O16P3S]n</formula>
+		<inchi />
+		<smiles>C1(OC(COP(=O)(OP(=O)(OCC(C)(C)C(O)C(=O)NCCC(=O)NCCS)[O-])[O-])C(OP([O-])(=O)[O-])C(O)1)N3(C2(=C(C(N)=NC=N2)N=C3))</smiles>
+		<description>[Coenzymes]</description>
+		<synonyms>
+			<synonym>CoA</synonym>
+			<synonym>co-A-SH</synonym>
+			<synonym>co-enzyme-A</synonym>
+			<synonym>co-A</synonym>
+			<synonym>HS-CoA</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10380</id>
+		<name>microginin 690</name>
+		<formula>[M1];[C34H50N4O9S]n</formula>
+		<inchi />
+		<smiles>C(C(C(CCCCCCC)N)O)(N(C)C(C(NC(C(NC(C(=O)O)CC1(C=CC(=CC=1)O))=O)CC2(C=CC(=CC=2)O))=O)CCS(C)=O)=O</smiles>
+		<description>[Microginins]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10381</id>
+		<name>aeruginopeptin 95B</name>
+		<formula>[M1];[C56H79N9O17]n</formula>
+		<inchi />
+		<smiles>C5(CCC1(C(N(C(C(N(C)C(C(NC(C(=O)OC(C)C(C(NC(C(N1)=O)CC2(C=CC(CC2)O))=O)NC(C(CCC(N)=O)NC(C(C(C)O)NC(C(CC3(C=CC(=CC=3)O))O)=O)=O)=O)C(C)CC)=O)CC4(C=CC=CC=4))=O)C(C)O)5)=O))O</smiles>
+		<description>[Aeruginopeptins]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10384</id>
+		<name>aeruginopeptin 228A</name>
+		<formula>[M1];[C52H68N8O15]n</formula>
+		<inchi />
+		<smiles>C5(CCC2(C(N(C(C(N(C)C(C(NC(C(=O)OC(C)C(C(NC(CC1(C=CC(=CC=1)O))C(N2)=O)=O)NC(C(CCC(N)=O)NC(C(CC3(C=CC(=CC=3)O))O)=O)=O)C(C)CC)=O)CC4(C=CC=CC=4))=O)C(C)O)5)=O))O</smiles>
+		<description>[Aeruginopeptins]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10385</id>
+		<name>aeruginopeptin 917S-B</name>
+		<formula>[M1];[C54H76N8O15]n</formula>
+		<inchi />
+		<smiles>C1(CCC2(C(N1C(C(N(C)C(C(NC(C(=O)OC(C)C(C(NC(C(N2)=O)CC3(C=CC(CC3)O))=O)NC(C(CCC(N)=O)NC(C(CC4(C=CC(=CC=4)O))O)=O)=O)C(C)CC)=O)CC5(C=CC(=CC=5)O))=O)CC(C)C)=O))O</smiles>
+		<description>[Aeruginopeptins]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10382</id>
+		<name>aeruginopeptin 95A</name>
+		<formula>[M1];[C56H75N9O17]n</formula>
+		<inchi />
+		<smiles>C5(CCC2(C(N(C(C(N(C)C(C(NC(C(=O)OC(C)C(C(NC(CC1(C=CC(=CC=1)O))C(N2)=O)=O)NC(C(CCC(N)=O)NC(C(C(C)O)NC(C(CC3(C=CC(=CC=3)O))O)=O)=O)=O)C(C)CC)=O)CC4(C=CC=CC=4))=O)C(C)O)5)=O))O</smiles>
+		<description>[Aeruginopeptins]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>IMINOASPARTATE</id>
+		<name>&amp;alpha;-iminosuccinate</name>
+		<formula>[M1];[C4H3NO4]n</formula>
+		<inchi />
+		<smiles>C(=O)([O-])CC(=N)C(=O)[O-]</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CTP</id>
+		<name>CTP</name>
+		<formula>[M1];[C9H12N3O14P3]n</formula>
+		<inchi />
+		<smiles>C1(=CC(N)=NC(=O)N1C2(OC(COP(=O)([O-])OP(=O)([O-])OP(=O)([O-])[O-])C(O)C(O)2))</smiles>
+		<description>[Pyrimidine-Triphosphates, Pyrimidine-Related]</description>
+		<synonyms>
+			<synonym>cytidine-triphosphate</synonym>
+			<synonym>cytidine-5&apos;-triphosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10383</id>
+		<name>aeruginopeptin 228B</name>
+		<formula>[M1];[C52H72N8O15]n</formula>
+		<inchi />
+		<smiles>C5(CCC1(C(N(C(C(N(C)C(C(NC(C(=O)OC(C)C(C(NC(C(N1)=O)CC2(C=CC(CC2)O))=O)NC(C(CCC(N)=O)NC(C(CC3(C=CC(=CC=3)O))O)=O)=O)C(C)CC)=O)CC4(C=CC=CC=4))=O)C(C)O)5)=O))O</smiles>
+		<description>[Aeruginopeptins]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10388</id>
+		<name>nodularin V</name>
+		<formula>[M1];[C40H61N5O10]n</formula>
+		<inchi />
+		<smiles>CC(CCC1(C(C(NC(C(=O)[O-])CCC(N(C)C(CC)C(NC(C(=O)[O-])C(C)C(NC(C(C)C)C(N1)=O)=O)=O)=O)=O)C))CC(C)C(CC2(C=CC=CC=2))OC</smiles>
+		<description>[Microcystins]</description>
+		<synonyms>
+			<synonym>motuporin</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10389</id>
+		<name>bistratamide A</name>
+		<formula>[M1];[C27H34N6O4S2]n</formula>
+		<inchi />
+		<smiles>C23(C(C(C)C)NC(C5(CSC(C(CC1(C=CC=CC=1))NC(C4(CSC(C(C)NC(C(C(C)O2)N=3)=O)=N4))=O)=N5))=O)</smiles>
+		<description>[Bistratamides]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>DADP</id>
+		<name>2&apos;-deoxyadenosine-5&apos;-diphosphate</name>
+		<formula>[M1];[C10H12N5O9P2]n</formula>
+		<inchi />
+		<smiles>C(C3(C(CC(N2(C1(=C(C(=NC=N1)N)N=C2)))O3)O))OP(OP([O-])([O-])=O)([O-])=O</smiles>
+		<description>[Deoxy-Ribonucleoside-Diphosphates, Purine-Related]</description>
+		<synonyms>
+			<synonym>deoxyadenosine-diphosphate</synonym>
+			<synonym>dADP</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10386</id>
+		<name>aeruginopeptin 917S-C</name>
+		<formula>[M1];[C51H74N8O14]n</formula>
+		<inchi />
+		<smiles>C1(CCC2(C(N1C(C(N(C)C(C(NC(C(=O)OC(C)C(C(NC(CC(C)C)C(N2)=O)=O)NC(C(CCC(N)=O)NC(C(CC3(C=CC(=CC=3)O))O)=O)=O)C(C)CC)=O)CC4(C=CC(=CC=4)O))=O)CC(C)C)=O))O</smiles>
+		<description>[Aeruginopeptins]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-10387</id>
+		<name>aeruginopeptin 917S-A</name>
+		<formula>[M1];[C54H72N8O15]n</formula>
+		<inchi />
+		<smiles>C1(CCC3(C(N1C(C(N(C)C(C(NC(C(=O)OC(C)C(C(NC(CC2(C=CC(=CC=2)O))C(N3)=O)=O)NC(C(CCC(N)=O)NC(C(CC4(C=CC(=CC=4)O))O)=O)=O)C(C)CC)=O)CC5(C=CC(=CC=5)O))=O)CC(C)C)=O))O</smiles>
+		<description>[Aeruginopeptins]</description>
+		<synonyms>
+			<synonym>microcystilide A</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>L-XYLULOSE-5-P</id>
+		<name>L-xylulose-5-phosphate</name>
+		<formula>[M1];[C5H9O8P]n</formula>
+		<inchi />
+		<smiles>C(O)C(=O)C(C(O)COP(=O)([O-])[O-])O</smiles>
+		<description>[PENTOSE-5-PHOSPHATES]</description>
+		<synonyms>
+			<synonym>L-xylulose-5-P</synonym>
+			<synonym>xylulose-5-phosphate</synonym>
+			<synonym>xylulose-5-P</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>SPERMIDINE</id>
+		<name>spermidine</name>
+		<formula>[M1];[C7H22N3]n</formula>
+		<inchi />
+		<smiles>C(CCC[N+]CCC[N+])[N+]</smiles>
+		<description>[Aliphatic-Alpha-Omega-Diamines]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>K+</id>
+		<name>K+</name>
+		<formula>[M1];[K]n</formula>
+		<inchi />
+		<smiles>[K+]</smiles>
+		<description>[Cations]</description>
+		<synonyms>
+			<synonym>potassium</synonym>
+			<synonym>potassium ion</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>ADENINE</id>
+		<name>adenine</name>
+		<formula>[M1];[C5H5N5]n</formula>
+		<inchi />
+		<smiles>C1(C2(=C(N=CN=1)N=CN2))N</smiles>
+		<description>[Purine-Bases, Purines]</description>
+		<synonyms>
+			<synonym>6-aminopurine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>MG+2</id>
+		<name>Mg2+</name>
+		<formula>[M1];[Mg]n</formula>
+		<inchi />
+		<smiles>[Mg++]</smiles>
+		<description>[Cations]</description>
+		<synonyms>
+			<synonym>magnesium</synonym>
+			<synonym>Mg+2</synonym>
+			<synonym>Mg++</synonym>
+			<synonym>magnesium ion</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>ACETYL-P</id>
+		<name>acetylphosphate</name>
+		<formula>[M1];[C2H3O5P]n</formula>
+		<inchi />
+		<smiles>CC(OP([O-])(=O)[O-])=O</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>acetyl-P</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>GLC-D-LACTONE</id>
+		<name>glucono-&amp;delta;-lactone</name>
+		<formula>[M1];[C6H10O6]n</formula>
+		<inchi />
+		<smiles>C1(C(C(C(C(O1)CO)O)O)O)=O</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>gluconolactone</synonym>
+			<synonym>glucono-1,5-lactone</synonym>
+			<synonym>1,5-gluconolactone</synonym>
+			<synonym>D-gluconolactone</synonym>
+			<synonym>D-glucono-1,5-lactone</synonym>
+			<synonym>&amp;delta;-gluconolactone</synonym>
+			<synonym>D-glucono-&amp;delta;-lactone</synonym>
+			<synonym>gluconic lactone</synonym>
+			<synonym>gluconic acid lactone</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>GLYCERALD</id>
+		<name>glyceraldehyde</name>
+		<formula>[M1];[C3H6O3]n</formula>
+		<inchi />
+		<smiles>C(C(O)C=O)O</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>D-glyceraldehyde</synonym>
+			<synonym>&amp;alpha;,&amp;beta;-dihydroxypropionaldehyde</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CPD-560</id>
+		<name>S-methyl-5-thio-D-ribose</name>
+		<formula>[M1];[C6H12O4S]n</formula>
+		<inchi />
+		<smiles>C1(C(C(C(O1)CSC)O)O)O</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>S5-methyl-5-thio-D-ribose</synonym>
+			<synonym>5-methylthio-D-ribose</synonym>
+			<synonym>MTR</synonym>
+			<synonym>5-methylthioribose</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>NICOTINAMIDE_NUCLEOTIDE</id>
+		<name>nicotinamide mononucleotide</name>
+		<formula>[M1];[C11H14N2O8P]n</formula>
+		<inchi />
+		<smiles>C(C1(OC(C(C1O)O)[N+]2(=CC=CC(=C2)C(=O)N)))OP(=O)([O-])[O-]</smiles>
+		<description>[Compounds]</description>
+		<synonyms>
+			<synonym>&amp;beta;-nicotinamide D-ribonucleotide</synonym>
+			<synonym>nicotinamide ribonucleotide</synonym>
+			<synonym>nicotinamide nucleotide</synonym>
+			<synonym>NMN</synonym>
+			<synonym>nicotinamide D-ribonucleotide</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>N-ACETYL-D-GLUCOSAMINE-6-P</id>
+		<name>N-acetyl-D-glucosamine-6-phosphate</name>
+		<formula>[M1];[C8H14NO9P]n</formula>
+		<inchi />
+		<smiles>CC(=O)NC1(C(O)OC(COP(=O)([O-])[O-])C(O)C(O)1)</smiles>
+		<description>[SUGAR-6-PHOSPHATES]</description>
+		<synonyms>
+			<synonym>N-acetylglucosamine-6-P</synonym>
+			<synonym>GlcNAc-6-P</synonym>
+			<synonym>N-acetyl-D-glucosamine-6-P</synonym>
+			<synonym>N-acetyl-glucosamine-6-phosphate</synonym>
+			<synonym>N-acetyl-glucosamine-6-P</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>URIDINE</id>
+		<name>uridine</name>
+		<formula>[M1];[C9H12N2O6]n</formula>
+		<inchi />
+		<smiles>C1(=CC(=O)NC(=O)N1C2(OC(CO)C(O)C(O)2))</smiles>
+		<description>[Pyrimidine-Ribonucleosides, Ribonucleosides]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>PYRUVATE</id>
+		<name>pyruvate</name>
+		<formula>[M1];[C3H3O3]n</formula>
+		<inchi />
+		<smiles>C(C(C)=O)(=O)[O-]</smiles>
+		<description>[2-Oxo-Acids]</description>
+		<synonyms>
+			<synonym>alpha-ketopropionic acid</synonym>
+			<synonym>BTS</synonym>
+			<synonym>&amp;alpha;-ketopropionic acid</synonym>
+			<synonym>acetylformic acid</synonym>
+			<synonym>pyroracemic acid</synonym>
+			<synonym>2-oxopropanoic acid</synonym>
+			<synonym>pyruvic acid</synonym>
+			<synonym>2-oxopropanoate</synonym>
+			<synonym>2-oxo-propionic acid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>S-ADENOSYLMETHIONINE</id>
+		<name>S-adenosyl-L-methionine</name>
+		<formula>[M1];[C15H23N6O5S]n</formula>
+		<inchi />
+		<smiles>C(CC([N+])C(=O)[O-])[S+](C)CC3(OC(N2(C=NC1(C(N)=NC=NC=12)))C(O)C(O)3)</smiles>
+		<description>[Non-standard-amino-acids]</description>
+		<synonyms>
+			<synonym>AdoMet</synonym>
+			<synonym>SAM</synonym>
+			<synonym>2-S-adenosyl-L-methionine</synonym>
+			<synonym>S-adenosyl-methionine</synonym>
+			<synonym>adenosylmethionine</synonym>
+			<synonym>S-adenosylmethionine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>MAL</id>
+		<name>malate</name>
+		<formula>[M1];[C4H4O5]n</formula>
+		<inchi />
+		<smiles>C(CC(C(=O)[O-])O)([O-])=O</smiles>
+		<description>[RS-Malate]</description>
+		<synonyms>
+			<synonym>hydroxysuccinic acid</synonym>
+			<synonym>hydroxybutanedioic acid</synonym>
+			<synonym>malic acid</synonym>
+			<synonym>L-mal</synonym>
+			<synonym>mal</synonym>
+			<synonym>L-malate</synonym>
+			<synonym>(S)-malate</synonym>
+			<synonym>DL-malic acid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>DEOXYINOSINE</id>
+		<name>deoxyinosine</name>
+		<formula>[M1];[C10H12N4O4]n</formula>
+		<inchi />
+		<smiles>C2(NC=NC1(N(C=NC=12)C3(OC(CO)C(O)C3)))(=O)</smiles>
+		<description>[Deoxy-Ribonucleosides, Purine-Related]</description>
+		<synonyms>
+			<synonym>2-deoxyinosine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>DEOXYURIDINE</id>
+		<name>deoxyuridine</name>
+		<formula>[M1];[C9H12N2O5]n</formula>
+		<inchi />
+		<smiles>C1(=CC(=O)NC(=O)N1C2(CC(O)C(CO)O2))</smiles>
+		<description>[Deoxy-Ribonucleosides, Pyrimidine-Related]</description>
+		<synonyms>
+			<synonym>2&apos;-deoxyuridine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>UDP-MURNAC-TETRAPEPTIDE</id>
+		<name>UDP-N-acetylmuramoyl-L-alanyl-D-glutamyl-meso-2,6-diaminoheptanedioate-D-alanine</name>
+		<formula>[M1];[C38H56N8O27P2]n</formula>
+		<inchi />
+		<smiles>CC(=O)NC1(C(OC(CO)C(O)C(OC(C)C(=O)NC(C)C(=O)NC(CCC(=O)NC(CCCC([N+])C(=O)[O-])C(=O)NC(C)C(=O)[O-])C(=O)[O-])1)OP(=O)([O-])OP(=O)([O-])OCC2(OC(C(O)C(O)2)N3(C=CC(=O)NC(=O)3)))</smiles>
+		<description>[UDP-sugar, OLIGOPEPTIDES]</description>
+		<synonyms>
+			<synonym>UDP-N-acetylmuramoyl-L-alanyl-D-&amp;gamma;-glutamyl-meso-2,6-diaminopimelate-D-alanine</synonym>
+			<synonym>UDP-MurNAc-tetrapeptide</synonym>
+			<synonym>uridine 5&apos;-pyrophosphoryl N-acetylmuramyl-tetrapeptide</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>DCTP</id>
+		<name>dCTP</name>
+		<formula>[M1];[C9H12N3O13P3]n</formula>
+		<inchi />
+		<smiles>C2(N(C1(OC(C(C1)O)COP(OP(OP([O-])([O-])=O)([O-])=O)([O-])=O))C(N=C(C=2)N)=O)</smiles>
+		<description>[Deoxy-Ribonucleoside-Triphosphates, Pyrimidine-Related]</description>
+		<synonyms>
+			<synonym>2&apos;-deoxycytidine-5&apos;-triphosphate</synonym>
+			<synonym>deoxycytidine-triphosphate</synonym>
+			<synonym>deoxy-CTP</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>STERONE-RING</id>
+		<name>sterone-ring</name>
+		<formula>[M1];[C17H28]n</formula>
+		<inchi />
+		<smiles>C12(CCCC1C3(CCC4(C(C(CC2)3)CCCC4)))</smiles>
+		<description>[Rings]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>X-PYROPHOSPHATE-GROUP</id>
+		<name>x-pyrophosphate-group</name>
+		<formula>[M1];[O5P2]n</formula>
+		<inchi />
+		<smiles>[O-]P(OP([O-])=O)=O</smiles>
+		<description>[Simple-Groups]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>LEU</id>
+		<name>L-leucine</name>
+		<formula>[M1];[C6H13NO2]n</formula>
+		<inchi />
+		<smiles>C(=O)([O-])C([N+])CC(C)C</smiles>
+		<description>[Amino-Acids-20, Branched-Amino-Acids, Non-polar-amino-acids, L-Amino-Acids, Neutral-Amino-Acids]</description>
+		<synonyms>
+			<synonym>(2S)-&amp;alpha;-2-amino-4-methylvaleric acid</synonym>
+			<synonym>L</synonym>
+			<synonym>leu</synonym>
+			<synonym>leucine</synonym>
+			<synonym>2-amino-4-methylvaleric acid</synonym>
+			<synonym>(2S)-&amp;alpha;-leucine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>CARBOXYL-GROUP</id>
+		<name>a carboxyl group</name>
+		<formula>[M1];[CHO2]n</formula>
+		<inchi />
+		<smiles>C(=O)[O-]</smiles>
+		<description>[Simple-Groups]</description>
+		<synonyms>
+		</synonyms>
+	</compound>
+</compounds>

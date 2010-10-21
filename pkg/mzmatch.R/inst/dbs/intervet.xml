@@ -1,0 +1,1883 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<compounds>
+	<compound>
+		<id>INTV_GLUCOSE</id>
+		<name>D-Glucose</name>
+		<formula>[M1];[C6H12O6]n</formula>
+		<inchi>InChI=1/C6H12O6/c7-1-2-3(8)4(9)5(10)6(11)12-2/h2-11H,1H2/t2-,3-,4+,5-,6u/m1/s1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>(+)-Glucose</synonym>
+			<synonym>Anhydrous dextrose</synonym>
+			<synonym>CPC hydrate</synonym>
+			<synonym>Cerelose</synonym>
+			<synonym>Cerelose 2001</synonym>
+			<synonym>Clearsweet 95</synonym>
+			<synonym>Clintose L</synonym>
+			<synonym>Corn sugar</synonym>
+			<synonym>D(+)-Glucose</synonym>
+			<synonym>Dextropur</synonym>
+			<synonym>Dextrose</synonym>
+			<synonym>Dextrosol</synonym>
+			<synonym>Glucodin</synonym>
+			<synonym>Glucolin</synonym>
+			<synonym>Glucose</synonym>
+			<synonym>Goldsugar</synonym>
+			<synonym>Grape sugar</synonym>
+			<synonym>Meritose</synonym>
+			<synonym> Roferose ST</synonym>
+			<synonym>Staleydex 111</synonym>
+			<synonym>Staleydex 95M</synonym>
+			<synonym>Tabfine 097(HS)</synonym>
+			<synonym>Vadex</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_ACETATE</id>
+		<name>Acetic acid</name>
+		<formula>[M1];[C2H4O2]n</formula>
+		<inchi>InChI=1/C2H4O2/c1-2(3)4/h1H3,(H,3,4)</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>Acetate</synonym>
+			<synonym>Ethanoate</synonym>
+			<synonym>Ethanoic acid</synonym>
+			<synonym>Ethylate</synonym>
+			<synonym>Ethylic acid</synonym>
+			<synonym>Glacial acetate</synonym>
+			<synonym>Glacial acetic acid</synonym>
+			<synonym>Kyselina octova</synonym>
+			<synonym>Methanecarboxylate</synonym>
+			<synonym>Methanecarboxylic acid</synonym>
+			<synonym>Vinegar</synonym>
+			<synonym>Vinegar acid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_LACTATE</id>
+		<name>D-Lactic acid</name>
+		<formula>[M1];[C3H6O3]n</formula>
+		<inchi>InChI=1/C3H6O3/c1-2(4)3(5)6/h2,4H,1H3,(H,5,6)/t2-/m1/s1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>(-)-Lactate</synonym>
+			<synonym>(-)-Lactic acid</synonym>
+			<synonym>(R)-(-)-Lactate</synonym>
+			<synonym>(R)-(-)-Lactic acid</synonym>
+			<synonym>(R)-2-Hydroxypropanoate</synonym>
+			<synonym>(R)-2-Hydroxypropanoic acid</synonym>
+			<synonym>(R)-2-Hydroxypropionate</synonym>
+			<synonym>(R)-2-Hydroxypropionic acid</synonym>
+			<synonym>(R)-Lactate</synonym>
+			<synonym>(R)-Lactic acid</synonym>
+			<synonym>(R)-a-Hydroxypropionate</synonym>
+			<synonym>(R)-a-Hydroxypropionic acid</synonym>
+			<synonym>(R)-alpha-Hydroxypropionate</synonym>
+			<synonym>(R)-alpha-Hydroxypropionic acid</synonym>
+			<synonym>D-(-)-Lactate</synonym>
+			<synonym>D-(-)-Lactic acid</synonym>
+			<synonym>D-2-Hydroxypropanoate</synonym>
+			<synonym>D-2-Hydroxypropanoic acid</synonym>
+			<synonym>D-2-Hydroxypropionate</synonym>
+			<synonym>D-2-Hydroxypropionic acid</synonym>
+			<synonym>D-Lactate</synonym>
+			<synonym>DLA</synonym>
+			<synonym>L-(+)-Lactate</synonym>
+			<synonym>L-Lactic acid</synonym>
+			<synonym>Propel</synonym>
+			<synonym>Tisulac</synonym>
+			<synonym>delta-(-)-Lactate</synonym>
+			<synonym>delta-(-)-Lactic acid</synonym>
+			<synonym>delta-2-Hydroxypropanoate</synonym>
+			<synonym>delta-2-Hydroxypropanoic acid</synonym>
+			<synonym>delta-2-Hydroxypropionate</synonym>
+			<synonym>delta-2-Hydroxypropionic acid</synonym>
+			<synonym>delta-Lactate</synonym>
+			<synonym>delta-Lactic acid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_GLYCEROL</id>
+		<name>Glycerol</name>
+		<formula>[M1];[C3H8O3]n</formula>
+		<inchi>InChI=1/C3H8O3/c4-1-3(6)2-5/h3-6H,1-2H2</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>1,2,3-Trihydroxypropane</synonym>
+			<synonym>Bulbold</synonym>
+			<synonym>Cristal</synonym>
+			<synonym>E 422</synonym>
+			<synonym>Emery 916</synonym>
+			<synonym>Glyceol Opthalgan</synonym>
+			<synonym>Glycerin</synonym>
+			<synonym>Glycerine</synonym>
+			<synonym>Glyceritol</synonym>
+			<synonym>Glycyl alcohol</synonym>
+			<synonym>Glyrol</synonym>
+			<synonym>Glysanin</synonym>
+			<synonym>IFP</synonym>
+			<synonym>Incorporation factor</synonym>
+			<synonym>Mackstat H 66</synonym>
+			<synonym>Osmoglyn</synonym>
+			<synonym>Pricerine 9091</synonym>
+			<synonym>Propanetriol</synonym>
+			<synonym>RG-S</synonym>
+			<synonym>Trihydroxypropane</synonym>
+			<synonym>Tryhydroxypropane</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_GLYCEROL_PHOSPHATE</id>
+		<name>Glycerol 3-phosphate</name>
+		<formula>[M1];[C3H9O6P]n</formula>
+		<inchi>InChI=1/C3H9O6P/c4-1-3(5)2-9-10(6,7)8/h3-5H,1-2H2,(H2,6,7,8)/t3-/m1/s1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>1-(dihydrogen phosphate) Glycerol</synonym>
+			<synonym>1-Glycerophosphate</synonym>
+			<synonym>1-Glycerophosphorate</synonym>
+			<synonym>1-Glycerophosphoric acid</synonym>
+			<synonym>3-Glycerophosphate</synonym>
+			<synonym>DL-Glycerol 1-phosphate</synonym>
+			<synonym>DL-Glycerol 3-phosphate</synonym>
+			<synonym>DL-a-Glycerol phosphate</synonym>
+			<synonym>DL-a-Glycerophosphate</synonym>
+			<synonym>DL-a-Glycerophosphorate</synonym>
+			<synonym>DL-a-Glycerophosphoric acid</synonym>
+			<synonym>DL-a-Glyceryl phosphate</synonym>
+			<synonym>Glycerol 1-phosphate</synonym>
+			<synonym>Glycerol a-phosphate</synonym>
+			<synonym>Glycerol monophosphate</synonym>
+			<synonym>Glycerophosphate</synonym>
+			<synonym>Glycerophosphorate</synonym>
+			<synonym>Glycerophosphoric acid</synonym>
+			<synonym>Glycerophosphoric acid I</synonym>
+			<synonym>Glyceryl phosphate</synonym>
+			<synonym>Glyceryl phosphic acid</synonym>
+			<synonym>a-Glycerophosphate</synonym>
+			<synonym>a-Glycerophosphorate</synonym>
+			<synonym>a-Glycerophosphoric acid</synonym>
+			<synonym>a-Phosphoglycerol</synonym>
+			<synonym>dihydrogen a-glycerophosphate</synonym>
+			<synonym>DL-alpha-Glycerol phosphate</synonym>
+			<synonym>DL-alpha-Glycerophosphate</synonym>
+			<synonym>DL-alpha-Glycerophosphorate</synonym>
+			<synonym>DL-alpha-Glycerophosphoric acid</synonym>
+			<synonym>DL-alpha-Glyceryl phosphate</synonym>
+			<synonym>alpha-Glycerophosphate</synonym>
+			<synonym>alpha-Glycerophosphorate</synonym>
+			<synonym>alpha-Glycerophosphoric acid</synonym>
+			<synonym>alpha-Phosphoglycerol</synonym>
+			<synonym>sn-Gro-1-P</synonym>
+			<synonym>sn-glycerol 3-phosphate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_INOSITOL</id>
+		<name>Inositol</name>
+		<formula>[M1];[C6H12O6]n</formula>
+		<inchi>InChI=1/C6H12O6/c7-1-3-4(9)5(10)6(11,2-8)12-3/h3-5,7-11H,1-2H2/t3-,4-,5+,6-/m1/s1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>Beta-d-arabino-hexulose</synonym>
+			<synonym>Beta-d-fructofuranose</synonym>
+			<synonym>Beta-d-fructose</synonym>
+			<synonym>Beta-fruit sugar</synonym>
+			<synonym>Beta-levulose</synonym>
+			<synonym>FRU</synonym>
+			<synonym>Fructon</synonym>
+			<synonym>Fructose</synonym>
+			<synonym>Levulose</synonym>
+			<synonym>D-(-)-Fructose</synonym>
+			<synonym>Beta-delta-arabino-hexulose</synonym>
+			<synonym>Beta-delta-fructofuranose</synonym>
+			<synonym>Beta-delta-fructose</synonym>
+			<synonym>delta-Fructose</synonym>
+			<synonym>delta-(-)-Fructose</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_CHOLESTEROL</id>
+		<name>Cholesterol</name>
+		<formula>[M1];[C27H46O]n</formula>
+		<inchi>InChI=1/C27H46O/c1-18(2)7-6-8-19(3)23-11-12-24-22-10-9-20-17-21(28)13-15-26(20,4)25(22)14-16-27(23,24)5/h9,18-19,21-25,28H,6-8,10-17H2,1-5H3/t19-,21?,22+,23-,24+,25+,26+,27-/m1/s1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>(+)-ent-Cholesterol</synonym>
+			<synonym>(-)-Cholesterol</synonym>
+			<synonym>(20bFH)-cholest-5-en-3b-ol</synonym>
+			<synonym>(3b)-cholest-5-en-3-ol</synonym>
+			<synonym>(3beta)-Cholest-5-en-3-ol</synonym>
+			<synonym>20-epi-cholesterol</synonym>
+			<synonym>20-iso-cholesterol</synonym>
+			<synonym>20bFH-cholest-5-en-3b-ol</synonym>
+			<synonym>3beta-Hydroxycholest-5-ene</synonym>
+			<synonym>5-Cholesten-3B-ol</synonym>
+			<synonym>5-Cholesten-3beta-ol</synonym>
+			<synonym>5:6-Cholesten-3-ol</synonym>
+			<synonym>5:6-Cholesten-3beta-ol</synonym>
+			<synonym>Cholest-5-en-3-ol</synonym>
+			<synonym>Cholest-5-en-3beta-ol</synonym>
+			<synonym>Cholesterin</synonym>
+			<synonym>Cholesterine</synonym>
+			<synonym>Cholesterol base H</synonym>
+			<synonym>Cholesteryl alcohol</synonym>
+			<synonym>Cholestrin</synonym>
+			<synonym>Cholestrol</synonym>
+			<synonym>Cordulan</synonym>
+			<synonym>Dastar</synonym>
+			<synonym>Dusoline</synonym>
+			<synonym>Dusoran</synonym>
+			<synonym>Dythol</synonym>
+			<synonym>Epicholesterol</synonym>
+			<synonym>Fancol CH</synonym>
+			<synonym>Hydrocerin</synonym>
+			<synonym>Kathro</synonym>
+			<synonym>Lanol</synonym>
+			<synonym>Liquid crystal CN/9</synonym>
+			<synonym>Nimco cholesterol base H</synonym>
+			<synonym>Nimco cholesterol base No. 712</synonym>
+			<synonym>Super hartolan</synonym>
+			<synonym>Tegolan</synonym>
+			<synonym>cholest-5-en-3b-ol</synonym>
+			<synonym>epicholesterin</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_OLEIC_ACID</id>
+		<name>Oleic acid</name>
+		<formula>[M1];[C18H34O2]n</formula>
+		<inchi>InChI=1/C18H34O2/c1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-18(19)20/h9-10H,2-8,11-17H2,1H3,(H,19,20)/b10-9-</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>(9Z)-9-Octadecenoate</synonym>
+			<synonym>(9Z)-9-Octadecenoic acid</synonym>
+			<synonym>(9Z)-Octadecenoate</synonym>
+			<synonym>(9Z)-Octadecenoic acid</synonym>
+			<synonym>(Z)-9-Octadecanoate</synonym>
+			<synonym>(Z)-9-Octadecanoic acid</synonym>
+			<synonym>(Z)-Octadec-9-enoate</synonym>
+			<synonym>(Z)-Octadec-9-enoic acid</synonym>
+			<synonym>9,10-Octadecenoate</synonym>
+			<synonym>9,10-Octadecenoic acid</synonym>
+			<synonym>9-(Z)-octadecenoate</synonym>
+			<synonym>9-(Z)-octadecenoic acid</synonym>
+			<synonym>9-Octadecenoate</synonym>
+			<synonym>9-Octadecenoic acid</synonym>
+			<synonym>Century cd fatty acid</synonym>
+			<synonym>Distoline</synonym>
+			<synonym>Elaate</synonym>
+			<synonym>Elaic acid</synonym>
+			<synonym>Elaidoate</synonym>
+			<synonym>Elaidoic acid</synonym>
+			<synonym>Emersol 210</synonym>
+			<synonym>Emersol 211</synonym>
+			<synonym>Emersol 213</synonym>
+			<synonym>Emersol 220 White Oleate</synonym>
+			<synonym>Emersol 220 White Oleic acid</synonym>
+			<synonym>Emersol 221 Low Titer White Oleate</synonym>
+			<synonym>Emersol 221 Low Titer White Oleic acid</synonym>
+			<synonym>Emersol 233ll</synonym>
+			<synonym>Emersol 6321</synonym>
+			<synonym>Emersol 6333 NF</synonym>
+			<synonym>Emersol 7021</synonym>
+			<synonym>Glycon ro</synonym>
+			<synonym>Glycon wo</synonym>
+			<synonym>Groco 2</synonym>
+			<synonym>Groco 4</synonym>
+			<synonym>Groco 5l</synonym>
+			<synonym>Groco 6</synonym>
+			<synonym>Industrene 104</synonym>
+			<synonym>Industrene 105</synonym>
+			<synonym>Industrene 205</synonym>
+			<synonym>Industrene 206</synonym>
+			<synonym>L&apos;acide oleique</synonym>
+			<synonym>Metaupon</synonym>
+			<synonym>Oelsauere</synonym>
+			<synonym>Oleate</synonym>
+			<synonym>Oleic acid 90-95%</synonym>
+			<synonym>Oleinate</synonym>
+			<synonym>Oleinic acid</synonym>
+			<synonym>Pamolyn</synonym>
+			<synonym>Pamolyn 100</synonym>
+			<synonym>Pamolyn 100 FG</synonym>
+			<synonym>Pamolyn 100 FGK</synonym>
+			<synonym>Pamolyn 125</synonym>
+			<synonym>Priolene 6900</synonym>
+			<synonym>Red oil</synonym>
+			<synonym>Tego-oleic 130</synonym>
+			<synonym>Vopcolene 27</synonym>
+			<synonym>Wecoline OO</synonym>
+			<synonym>Z-9-Octadecenoate</synonym>
+			<synonym>Z-9-Octadecenoic acid</synonym>
+			<synonym>cis-9-Octadecenoate</synonym>
+			<synonym>cis-9-Octadecenoic acid</synonym>
+			<synonym>cis-Octadec-9-enoate</synonym>
+			<synonym>cis-Octadec-9-enoic acid</synonym>
+			<synonym>cis-Oleate</synonym>
+			<synonym>cis-Oleic acid</synonym>
+			<synonym>oleic acid extra pure</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_PALMITIC_ACID</id>
+		<name>Palmitic acid</name>
+		<formula>[M1];[C16H32O2]n</formula>
+		<inchi>InChI=1/C16H32O2/c1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16(17)18/h2-15H2,1H3,(H,17,18)</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>Hexaectylic acid</synonym>
+			<synonym>Lunac P 95KC</synonym>
+			<synonym>Prifac 2960</synonym>
+			<synonym>Palmitate</synonym>
+			<synonym>Hydrofol</synonym>
+			<synonym>PLM</synonym>
+			<synonym>Lunac P 95</synonym>
+			<synonym>Hexadecylic acid</synonym>
+			<synonym>Hystrene 8016</synonym>
+			<synonym>Industrene 4516</synonym>
+			<synonym>Hexadecoic acid</synonym>
+			<synonym>Lunac P 98</synonym>
+			<synonym>Emersol 140</synonym>
+			<synonym>Hexadecanoic acid</synonym>
+			<synonym>PAM</synonym>
+			<synonym>Kortacid 1698</synonym>
+			<synonym>Hydrofol acid 1690</synonym>
+			<synonym>Pristerene 4934</synonym>
+			<synonym>Prifrac 2960</synonym>
+			<synonym>Univol U332</synonym>
+			<synonym>1-hexyldecanoic acid</synonym>
+			<synonym>palmitic acid</synonym>
+			<synonym>Palmitinsaeure</synonym>
+			<synonym>C16 fatty acid</synonym>
+			<synonym>Loxiol EP 278</synonym>
+			<synonym>Emersol 143</synonym>
+			<synonym>Edenor C16</synonym>
+			<synonym>Hystrene 9016</synonym>
+			<synonym>1-Pentadecanecarboxylic acid</synonym>
+			<synonym>Cetylic acid</synonym>
+			<synonym>Glycon P-45</synonym>
+			<synonym>Hexadecanoate</synonym>
+			<synonym>Palmitinate</synonym>
+			<synonym>Palmitinic acid</synonym>
+			<synonym>Pentadecanecarboxylate</synonym>
+			<synonym>Pentadecanecarboxylic acid</synonym>
+			<synonym>n-Hexadecanoate</synonym>
+			<synonym>n-Hexadecanoic acid</synonym>
+			<synonym>n-Hexadecoate</synonym>
+			<synonym>n-Hexadecoic acid</synonym>
+			<synonym>Hexadecanoic acid palmitic acid</synonym>
+			<synonym>Hexadecoate</synonym>
+			<synonym>1-hexyldecanoate</synonym>
+			<synonym>palmitoate</synonym>
+			<synonym>palmitoic acid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_SPERMINE</id>
+		<name>Spermine</name>
+		<formula>[M1];[C10H26N4]n</formula>
+		<inchi>InChI=1/C10H26N4/c11-5-3-9-13-7-1-2-8-14-10-4-6-12/h13-14H,1-12H2</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>1,5,10,14-Tetraazatetradecane</synonym>
+			<synonym>4,9-Diaza-1,12-dodecanediamine</synonym>
+			<synonym>4,9-Diazadodecamethylenediamine</synonym>
+			<synonym>4,9-Diazadodecane-1,12-diamine</synonym>
+			<synonym>Diaminopropyltetramethylenediamine</synonym>
+			<synonym>Gerontine</synonym>
+			<synonym>Musculamine</synonym>
+			<synonym>N,N&apos;-Bis(3-aminopropyl)-1,4-tetramethylenediamine</synonym>
+			<synonym>N,N&apos;-Bis(3-aminopropyl)butane-1,4-diamine</synonym>
+			<synonym>N,N&apos;-bis(3-aminopropyl)-1,4-Butanediamine</synonym>
+			<synonym>N1,N4-bis(3-aminopropyl)-1,4-butanediamine</synonym>
+			<synonym>Neuridine</synonym>
+			<synonym>SPM</synonym>
+			<synonym>Spermin</synonym>
+			<synonym>Spermine dihydrate</synonym>
+			<synonym>Spermine puriss</synonym>
+			<synonym>diaminopropyl-tetramethylenediamine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_NICOTINIC_ACID</id>
+		<name>Nicotinic acid</name>
+		<formula>[M1];[C6H5NO2]n</formula>
+		<inchi>InChI=1/C6H5NO2/c8-6(9)5-2-1-3-7-4-5/h1-4H,(H,8,9)</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>3-Carboxylpyridine</synonym>
+			<synonym>3-Carboxypyridine</synonym>
+			<synonym>3-Pyridinecarboxylate</synonym>
+			<synonym>3-Pyridinecarboxylic acid</synonym>
+			<synonym>3-Pyridylcarboxylate</synonym>
+			<synonym>3-Pyridylcarboxylic acid</synonym>
+			<synonym>Akotin</synonym>
+			<synonym>Apelagrin</synonym>
+			<synonym>Daskil</synonym>
+			<synonym>Efacin</synonym>
+			<synonym>Enduracin</synonym>
+			<synonym>Linic</synonym>
+			<synonym>Niac</synonym>
+			<synonym>Niacor</synonym>
+			<synonym>Nicacid</synonym>
+			<synonym>Nicangin</synonym>
+			<synonym>Nico-Span</synonym>
+			<synonym>Nicodelmine</synonym>
+			<synonym>Niconacid</synonym>
+			<synonym>Nicosan 3</synonym>
+			<synonym>Nicotinate</synonym>
+			<synonym>Nicotinipca</synonym>
+			<synonym>Nicyl</synonym>
+			<synonym>Nyclin</synonym>
+			<synonym>Pellagrin</synonym>
+			<synonym>Pelonin</synonym>
+			<synonym>Slo-niacin</synonym>
+			<synonym>niacin</synonym>
+			<synonym>niacine</synonym>
+			<synonym>nicamin</synonym>
+			<synonym>nicobid</synonym>
+			<synonym>nicocap</synonym>
+			<synonym>nicolar</synonym>
+			<synonym>wampocap</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_THIAMINE</id>
+		<name>Thiamine</name>
+		<formula>[M1];[C12H17N4OS]n</formula>
+		<inchi>InChI=1/C12H17N4OS/c1-8-11(3-4-17)18-7-16(8)6-10-5-14-9(2)15-12(10)13/h5,7,17H,3-4,6H2,1-2H3,(H2,13,14,15)/q+1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>Aneurin</synonym>
+			<synonym>Antiberiberi factor</synonym>
+			<synonym>Apate drops</synonym>
+			<synonym>Beatine</synonym>
+			<synonym>Bedome</synonym>
+			<synonym>Begiolan</synonym>
+			<synonym>Benerva</synonym>
+			<synonym>Bequin</synonym>
+			<synonym>Berin</synonym>
+			<synonym>Betalin s</synonym>
+			<synonym>Betaxin</synonym>
+			<synonym>Bethiazine</synonym>
+			<synonym>Beuion</synonym>
+			<synonym>Bevitex</synonym>
+			<synonym>Bevitine</synonym>
+			<synonym>Bewon</synonym>
+			<synonym>Biamine</synonym>
+			<synonym>Bithiamin</synonym>
+			<synonym>Biuno</synonym>
+			<synonym>Bivatin</synonym>
+			<synonym>Bivita</synonym>
+			<synonym>Cernevit-12</synonym>
+			<synonym>Clotiamina</synonym>
+			<synonym>Eskapen</synonym>
+			<synonym>Eskaphen</synonym>
+			<synonym>Hybee</synonym>
+			<synonym>Lixa-beta</synonym>
+			<synonym>Metabolin</synonym>
+			<synonym>Slowten</synonym>
+			<synonym>THD</synonym>
+			<synonym>Thiadoxine</synonym>
+			<synonym>Thiamin</synonym>
+			<synonym>Thiaminal</synonym>
+			<synonym>Thiaminium</synonym>
+			<synonym>Thiamol</synonym>
+			<synonym>Thiavit</synonym>
+			<synonym>Tiamidon</synonym>
+			<synonym>Tiaminal</synonym>
+			<synonym>Trophite</synonym>
+			<synonym>Vetalin S</synonym>
+			<synonym>VIB</synonym>
+			<synonym>Vinothiam</synonym>
+			<synonym>Vitamin B1</synonym>
+			<synonym>Vitaneuron</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_PYRIDOXAL</id>
+		<name>Pyridoxal</name>
+		<formula>[M1];[C8H9NO3]n</formula>
+		<inchi>InChI=1/C8H9NO3/c1-5-8(12)7(4-11)6(3-10)2-9-5/h2,4,10,12H,3H2,1H3</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>3-Hydroxy-5-(hydroxymethyl)-2-methylpyridine-4-carboxaldehyde</synonym>
+			<synonym>Pyridoxaldehyde</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_LIPOIC_ACID</id>
+		<name>Lipoic acid</name>
+		<formula>[M1];[C8H14O2S2]n</formula>
+		<inchi>InChI=1/C8H14O2S2/c9-8(10)4-2-1-3-7-5-6-11-12-7/h7H,1-6H2,(H,9,10)/t7-/m1/s1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>(+)-alpha-Lipoate</synonym>
+			<synonym>(+)-alpha-Lipoic acid</synonym>
+			<synonym>(+-)-1,2-Dithiolane-3-pentanoate</synonym>
+			<synonym>(+-)-1,2-Dithiolane-3-pentanoic acid</synonym>
+			<synonym>(+-)-1,2-Dithiolane-3-valerate</synonym>
+			<synonym>(+-)-1,2-Dithiolane-3-valeric acid</synonym>
+			<synonym>(R)-1,2-Dithiolane-3-pentanoate</synonym>
+			<synonym>(R)-1,2-Dithiolane-3-pentanoic acid</synonym>
+			<synonym>(RS)-Lipoate</synonym>
+			<synonym>(RS)-Lipoic acid</synonym>
+			<synonym>(RS)-alpha-Lipoate</synonym>
+			<synonym>(RS)-alpha-Lipoic acid</synonym>
+			<synonym>1,2-Dithiolane-3-pentanoate</synonym>
+			<synonym>1,2-Dithiolane-3-pentanoic acid</synonym>
+			<synonym>1,2-Dithiolane-3-valerate</synonym>
+			<synonym>1,2-Dithiolane-3-valeric acid</synonym>
+			<synonym>1,2-Dithiolane-3R-pentanoate</synonym>
+			<synonym>1,2-Dithiolane-3R-pentanoic acid</synonym>
+			<synonym>5-(1,2-Dithiolan-3-yl)pentanoate</synonym>
+			<synonym>5-(1,2-Dithiolan-3-yl)pentanoic acid</synonym>
+			<synonym>5-(1,2-Dithiolan-3-yl)valerate</synonym>
+			<synonym>5-(1,2-Dithiolan-3-yl)valeric acid</synonym>
+			<synonym>5-(Dithiolan-3-yl)valerate</synonym>
+			<synonym>5-(Dithiolan-3-yl)valeric acid</synonym>
+			<synonym>5-[3-(1,2-dithiolanyl)]pentanoate</synonym>
+			<synonym>5-[3-(1,2-dithiolanyl)]pentanoic acid</synonym>
+			<synonym>6,8-Dithiooctanoate</synonym>
+			<synonym>6,8-Dithiooctanoic acid</synonym>
+			<synonym>6,8-Thioctate</synonym>
+			<synonym>6,8-Thioctic acid</synonym>
+			<synonym>6,8-Thiotate</synonym>
+			<synonym>6,8-Thiotic acid</synonym>
+			<synonym>6-Thioctate</synonym>
+			<synonym>6-Thioctic acid</synonym>
+			<synonym>6-Thiotate</synonym>
+			<synonym>6-Thiotic acid</synonym>
+			<synonym>Acetate-replacing factor</synonym>
+			<synonym>Biletan</synonym>
+			<synonym>DL-1,2-Dithiolane 3-valerate</synonym>
+			<synonym>DL-1,2-Dithiolane 3-valeric acid</synonym>
+			<synonym>DL-6,8-Dithiooctanoate</synonym>
+			<synonym>DL-6,8-Dithiooctanoic acid</synonym>
+			<synonym>DL-6,8-Thioctate</synonym>
+			<synonym>DL-6,8-Thioctic acid</synonym>
+			<synonym>DL-6-Thioctate</synonym>
+			<synonym>DL-6-Thioctic acid</synonym>
+			<synonym>DL-Thioctic acid &gt; 98%</synonym>
+			<synonym>DL-alpha-Lipoate</synonym>
+			<synonym>DL-alpha-Lipoic acid</synonym>
+			<synonym>Heparlipon</synonym>
+			<synonym>Lip</synonym>
+			<synonym>Lipoate</synonym>
+			<synonym>Liposan</synonym>
+			<synonym>Lipothion</synonym>
+			<synonym>Protogen A</synonym>
+			<synonym>Pyruvate oxidation factor</synonym>
+			<synonym>R-Lipoate</synonym>
+			<synonym>R-Lipoic acid</synonym>
+			<synonym>Rac-lipoate</synonym>
+			<synonym>Thioctacid</synonym>
+			<synonym>Thioctan</synonym>
+			<synonym>Thioctate</synonym>
+			<synonym>Thioctic acid</synonym>
+			<synonym>Thioctic acid d-form</synonym>
+			<synonym>Thioctic acid dl-form</synonym>
+			<synonym>Thioctidase</synonym>
+			<synonym>Thioctsan</synonym>
+			<synonym>Thioktsaeure</synonym>
+			<synonym>Thiooctanoate</synonym>
+			<synonym>Thiooctanoic acid</synonym>
+			<synonym>Tioctacid</synonym>
+			<synonym>Tioctan</synonym>
+			<synonym>Tioctidasi</synonym>
+			<synonym>Tioctidasi acetate replacing factor</synonym>
+			<synonym>acetate replacing factor</synonym>
+			<synonym>alpha Lipoate</synonym>
+			<synonym>alpha Lipoic acid</synonym>
+			<synonym>alpha-Lipoate</synonym>
+			<synonym>alpha-Lipoic acid</synonym>
+			<synonym>alpha-Liponate</synonym>
+			<synonym>alpha-Liponic acid</synonym>
+			<synonym>alpha-Liponsaeure</synonym>
+			<synonym>delta-[3-(1,2-dithiacyclopentyl)]pentanoate</synonym>
+			<synonym>delta-[3-(1,2-dithiacyclopentyl)]pentanoic acid</synonym>
+			<synonym>dl-Lipoate</synonym>
+			<synonym>dl-Lipoic acid</synonym>
+			<synonym>dl-Thioctate</synonym>
+			<synonym>dl-Thioctic acid</synonym>
+			<synonym>liponate</synonym>
+			<synonym>liponic acid</synonym>
+			<synonym>Rac-lipoic acid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_CHOLINE_CL</id>
+		<name>Choline chloride</name>
+		<formula>[M1];[C5H14NOCl]n</formula>
+		<inchi>InChI=1/C5H14NOCl/c1-6(2,3)4-5-7/h7H,4-5H2,1-3H3/q+1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>(2-Hydroxyethyl)trimethyl ammonium chloride</synonym>
+			
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_CHOLINE</id>
+		<name>Choline</name>
+		<formula>[M1];[C5H14NO+]n</formula>
+		<inchi>InChI=1/C5H14NOCl/c1-6(2,3)4-5-7/h7H,4-5H2,1-3H3/q+1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>(2-Hydroxyethyl)trimethyl ammonium</synonym>
+			
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_PANTOTHENATE</id>
+		<name>Pantothenic acid</name>
+		<formula>[M1];[C9H17NO5]n</formula>
+		<inchi>InChI=1/C9H17NO5/c1-9(2,5-11)7(14)8(15)10-4-3-6(12)13/h7,11,14H,3-5H2,1-2H3,(H,10,15)(H,12,13)</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>(+)-Pantothenate</synonym>
+			<synonym>(+)-Pantothenic acid</synonym>
+			<synonym>(D)-(+)-Pantothenate</synonym>
+			<synonym>(D)-(+)-Pantothenic acid</synonym>
+			<synonym>Chick antidermatitis factor</synonym>
+			<synonym>D(+)-N-(2,4-Dihydroxy-3,3-dimethylbutyryl)-b-alanine</synonym>
+			<synonym>D-Pantothenate</synonym>
+			<synonym>D-Pantothenic acid</synonym>
+			<synonym>Pantothenate</synonym>
+			<synonym>Vitamin B5</synonym>
+			<synonym>D(+)-N-(2,4-Dihydroxy-3,3-dimethylbutyryl)-beta-alanine</synonym>
+			<synonym>delta-Pantothenate</synonym>
+			<synonym>delta-Pantothenic acid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_RIBOFLAVIN</id>
+		<name>Riboflavin</name>
+		<formula>[M1];[C17H20N4O6]n</formula>
+		<inchi>InChI=1/C17H20N4O6/c1-7-3-9-10(4-8(7)2)21(5-11(23)14(25)12(24)6-22)15-13(18-9)16(26)20-17(27)19-15/h3-4,11-12,14,22-25H,5-6H2,1-2H3,(H,20,26,27)/t11-,12+,14-/m0/s1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>(-)-Riboflavin</synonym>
+			<synonym>1-Deoxy-1-(3,4-dihydro-7,8-dimethyl-2,4-dioxobenzo[g]pteridin-10(2H)-yl)-D-ribitol</synonym>
+			<synonym>6,7-Dimethyl-9-D-ribitylisoalloxazine</synonym>
+			<synonym>6,7-Dimethyl-9-ribitylisoalloxazine</synonym>
+			<synonym>7,8-dimethyl-10-(D-ribo-2,3,4,5-tetrahydroxypentyl)-Benzo[g]pteridine-2,4(3H,10H)-dione</synonym>
+			<synonym>Beflavin</synonym>
+			<synonym>Beflavine</synonym>
+			<synonym>Benzo[g]pteridine riboflavin deriv.</synonym>
+			<synonym>E 101</synonym>
+			<synonym>Flavaxin</synonym>
+			<synonym>Flavin BB</synonym>
+			<synonym>Flaxain</synonym>
+			<synonym>Food Yellow 15</synonym>
+			<synonym>Hyre</synonym>
+			<synonym>Lactobene</synonym>
+			<synonym>Lactoflavin</synonym>
+			<synonym>Lactoflavine</synonym>
+			<synonym>Ribipca</synonym>
+			<synonym>Ribocrisina</synonym>
+			<synonym>Riboderm</synonym>
+			<synonym>Riboflavine</synonym>
+			<synonym>Ribosyn</synonym>
+			<synonym>Ribotone</synonym>
+			<synonym>Ribovel</synonym>
+			<synonym>Russupteridine yellow III</synonym>
+			<synonym>San Yellow B</synonym>
+			<synonym>Vitaflavine</synonym>
+			<synonym>Vitamin B2</synonym>
+			<synonym>Vitamin G</synonym>
+			<synonym>Vitasan B2</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_FOLIC_ACID</id>
+		<name>Folic acid</name>
+		<formula>[M1];[C19H19N7O6]n</formula>
+		<inchi>InChI=1/C19H19N7O6/c20-19-25-15-14(17(30)26-19)23-11(8-22-15)7-21-10-3-1-9(2-4-10)16(29)24-12(18(31)32)5-6-13(27)28/h1-4,8,12,21H,5-7H2,(H,24,29)(H,27,28)(H,31,32)(H3,20,22,25,26,30)/t12-/m0/s1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>Acifolic</synonym>
+			<synonym>Cytofol</synonym>
+			<synonym>Dosfolat B activ</synonym>
+			<synonym>Folacid</synonym>
+			<synonym>Folacin</synonym>
+			<synonym>Folate</synonym>
+			<synonym>Folbal</synonym>
+			<synonym>Folcidin</synonym>
+			<synonym>Foldine</synonym>
+			<synonym>Folettes</synonym>
+			<synonym>Foliamin</synonym>
+			<synonym>Folicet</synonym>
+			<synonym>Folipac</synonym>
+			<synonym>Folsan</synonym>
+			<synonym>Folsaure</synonym>
+			<synonym>Folsav</synonym>
+			<synonym>Folvite</synonym>
+			<synonym>Incafolic</synonym>
+			<synonym>Liver Lactobacillus casei factor</synonym>
+			<synonym>Millafol</synonym>
+			<synonym>Pteroyl-L-glutamate</synonym>
+			<synonym>Pteroyl-L-glutamic acid</synonym>
+			<synonym>Pteroyl-L-monoglutamate</synonym>
+			<synonym>Pteroyl-L-monoglutamic acid</synonym>
+			<synonym>Pteroylglutamate</synonym>
+			<synonym>Pteroylglutamic acid</synonym>
+			<synonym>Pteroylmonoglutamic acid</synonym>
+			<synonym>Vitamin Bc</synonym>
+			<synonym>Vitamin Be</synonym>
+			<synonym>Vitamin M</synonym>
+			<synonym>N-[4-[[(2-amino-3,4-dihydro-4-oxo-6-pteridinyl)methyl]amino]benzoyl]-L-glutamic acid</synonym>
+			<synonym>PGA</synonym>
+			<synonym>N-pteroyl-L-glutamic acid</synonym>
+			<synonym>PteGlu</synonym>
+			<synonym>N-[(4-{[(2-amino-4-oxo-1,4-dihydropteridin-6-yl)methyl]amino}phenyl)carbonyl]-L-glutamic acid</synonym>
+			<synonym>N-(4-{[(2-amino-4-oxo-3,4-dihydropteridin-6-yl)methyl]amino}benzoyl)-L-glutamic acid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_GUANINE</id>
+		<name>Guanine</name>
+		<formula>[M1];[C5H5N5O]n</formula>
+		<inchi>InChI=1/C5H5N5O/c6-5-9-3-2(4(11)10-5)7-1-8-3/h1H,(H4,6,7,8,9,10,11)</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>GUN</synonym>
+			<synonym>Guanine enol</synonym>
+			<synonym>Guanin</synonym>
+			<synonym>GUA</synonym>
+			<synonym>Dew Pearl</synonym>
+			<synonym>CI Natural white 1</synonym>
+			<synonym>C.I. Natural White 1</synonym>
+			<synonym>6-Hydroxy-2-aminopurine</synonym>
+			<synonym>2-Aminohypoxanthine</synonym>
+			<synonym>2-amino-Hypoxanthine</synonym>
+			<synonym>2-Amino-6-purinol</synonym>
+			<synonym>2-Amino-6-hydroxypurine</synonym>
+			<synonym>2-Amino-6-hydroxy-1H-purine</synonym>
+			<synonym>2-amino-3,7-dihydro-6H-purin-6-one</synonym>
+			<synonym>2-Amino-1,9-dihydro-purin-6-one</synonym>
+			<synonym>2-amino-1,9-dihydro-6H-purin-6-one</synonym>
+			<synonym>2-amino-1,7-dihydro-6H-Purin-6-one</synonym>
+			<synonym>Stella Polaris</synonym>
+			<synonym>Pearl Essence</synonym>
+			<synonym>Pathocidin</synonym>
+			<synonym>Naturon</synonym>
+			<synonym>Natural White 1</synonym>
+			<synonym>Natural pearl essence</synonym>
+			<synonym>Mearlmaid AA</synonym>
+			<synonym>Mearlmaid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_CYTIDINE</id>
+		<name>Cytidine</name>
+		<formula>[M1];[C9H13N3O5]n</formula>
+		<inchi>InChI=1/C9H13N3O5/c10-5-1-2-12(9(16)11-5)8-7(15)6(14)4(3-13)17-8/h1-2,4,6-8,13-15H,3H2,(H2,10,11,16)/t4-,6-,7-,8-/m1/s1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>1-(b-D-Ribofuranosyl)-2-oxo-4-amino-1,2-dihydro-1,3-diazine</synonym>
+			<synonym>1-b-D-Ribofuranosylcytosine</synonym>
+			<synonym>1-b-D-ribosyl-Cytosine</synonym>
+			<synonym>1-beta-D-Ribofuranosylcytosine</synonym>
+			<synonym>1-beta-D-ribofuranosyl-Cytosine</synonym>
+			<synonym>1beta-D-Ribofuranosylcytosine</synonym>
+			<synonym>1beta-Ribofuranosylcytosine</synonym>
+			<synonym>4-Amino-1-b-D-ribofuranosyl-2(1H)-pyrimidinone</synonym>
+			<synonym>Cytosine riboside</synonym>
+			<synonym>cytosine-1b-D-Ribofuranoside</synonym>
+			<synonym>cytosine-1beta-D-Ribofuranoside</synonym>
+			<synonym>1-(b-delta-Ribofuranosyl)-2-oxo-4-amino-1,2-dihydro-1,3-diazine</synonym>
+			<synonym>1-beta-delta-Ribofuranosylcytosine</synonym>
+			<synonym>1-beta-delta-ribosyl-Cytosine</synonym>
+			<synonym>1-beta-delta-ribofuranosyl-Cytosine</synonym>
+			<synonym>1beta-delta-Ribofuranosylcytosine</synonym>
+			<synonym>4-Amino-1-beta-delta-ribofuranosyl-2(1H)-pyrimidinone</synonym>
+			<synonym>cytosine-1b-delta-Ribofuranoside</synonym>
+			<synonym>cytosine-1beta-delta-Ribofuranoside</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_ADENINE</id>
+		<name>Adenine</name>
+		<formula>[M1];[C5H5N5]n</formula>
+		<inchi>InChI=1/C5H5N5/c6-4-3-5(9-1-7-3)10-2-8-4/h1-2H,(H3,6,7,8,9,10)</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>1,6-Dihydro-6-iminopurine</synonym>
+			<synonym>1H-Purin-6-amine</synonym>
+			<synonym>1H-Purine-6-amine</synonym>
+			<synonym>3,6-Dihydro-6-iminopurine</synonym>
+			<synonym>6-Amino-1H-purine</synonym>
+			<synonym>6-Amino-3H-purine</synonym>
+			<synonym>6-Amino-7H-purine</synonym>
+			<synonym>6-Amino-9H-purine</synonym>
+			<synonym>6-Aminopurine</synonym>
+			<synonym>6-amino-Purine</synonym>
+			<synonym>9H-Purin-6-amine</synonym>
+			<synonym>9H-Purin-6-yl-amin</synonym>
+			<synonym>9H-Purine-6-amine</synonym>
+			<synonym>9H-purin-6-ylamine</synonym>
+			<synonym>Ade</synonym>
+			<synonym>Adenin</synonym>
+			<synonym>Adeninimine</synonym>
+			<synonym>Vitamin B4</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_CYSTEINE</id>
+		<name>Cysteine</name>
+		<formula>[M1];[C3H7NO2S]n</formula>
+		<inchi>InChI=1/C3H7NO2S/c4-2(1-7)3(5)6/h2,7H,1,4H2,(H,5,6)/t2-/m0/s1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>(+)-2-Amino-3-mercaptopropionic acid</synonym>
+			<synonym>(2R)-2-amino-3-mercaptopropanoic acid</synonym>
+			<synonym>(2R)-2-amino-3-sulfanylpropanoic acid</synonym>
+			<synonym>(R)-2-Amino-3-mercaptopropanoate</synonym>
+			<synonym>(R)-2-amino-3-mercapto-Propanoic acid</synonym>
+			<synonym>(R)-(+)-cysteine</synonym>
+			<synonym>(R)-cysteine</synonym>
+			<synonym>2-Amino-3-mercaptopropanoic acid</synonym>
+			<synonym>2-Amino-3-mercaptopropionate</synonym>
+			<synonym>2-Amino-3-mercaptopropionic acid</synonym>
+			<synonym>3-mercapto-L-Alanine</synonym>
+			<synonym>B-mercaptoalanine</synonym>
+			<synonym>Carbocysteine</synonym>
+			<synonym>Cisteina</synonym>
+			<synonym>Cisteinum</synonym>
+			<synonym>Cystein</synonym>
+			<synonym>Cysteine</synonym>
+			<synonym>Cysteinum</synonym>
+			<synonym>Half-cystine</synonym>
+			<synonym>Free cysteine</synonym>
+			<synonym>L cysteine</synonym>
+			<synonym>L-(+)-cysteine</synonym>
+			<synonym>L-2-Amino-3-mercaptopropanoic acid</synonym>
+			<synonym>L-2-Amino-3-mercaptopropionic acid</synonym>
+			<synonym>L-cystein</synonym>
+			<synonym>L-cysteine</synonym>
+			<synonym>Polycysteine</synonym>
+			<synonym>Thioserine</synonym>
+			<synonym>alpha-amino-beta-thiolpropionic acid</synonym>
+			<synonym>beta-mercaptoalanine</synonym>
+			<synonym>acetylcysteine</synonym>
+			<synonym>(2R)-2-amino-3-mercaptopropanoate</synonym>
+			<synonym>(2R)-2-amino-3-sulfanylpropanoate</synonym>
+			<synonym>(R)-2-Amino-3-mercaptopropanoic acid</synonym>
+			<synonym>(R)-2-amino-3-mercapto-Propanoate</synonym>
+			<synonym>2-Amino-3-mercaptopropanoate</synonym>
+			<synonym>L-2-Amino-3-mercaptopropanoate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_GLYCINE</id>
+		<name>Glycine</name>
+		<formula>[M1];[C2H5NO2]n</formula>
+		<inchi>InChI=1/C2H5NO2/c3-1-2(4)5/h1,3H2,(H,4,5)</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>2-Aminoacetate</synonym>
+			<synonym>2-Aminoacetic acid</synonym>
+			<synonym>Aciport</synonym>
+			<synonym>Aminoacetate</synonym>
+			<synonym>Aminoacetic acid</synonym>
+			<synonym>Aminoethanoate</synonym>
+			<synonym>Aminoethanoic acid</synonym>
+			<synonym>Glicoamin</synonym>
+			<synonym>Glycocoll</synonym>
+			<synonym>Glycolixir</synonym>
+			<synonym>Glycosthene</synonym>
+			<synonym>Gyn-Hydralin</synonym>
+			<synonym>Padil</synonym>
+			<synonym>amino-Acetate</synonym>
+			<synonym>amino-Acetic acid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_CARNITINE</id>
+		<name>Carnitine</name>
+		<formula>[M1];[C7H15NO3]n</formula>
+		<inchi>InChI=1/C7H15NO3/c1-8(2,3)5-6(9)4-7(10)11/h6,9H,4-5H2,1-3H3/t6-/m0/s1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>(-)-(R)-3-Hydroxy-4-(trimethylammonio)butyrate</synonym>
+			<synonym>(-)-carnitine</synonym>
+			<synonym>(R)-(3-Carboxy-2-hydroxypropyl)trimethylammonium hydroxide</synonym>
+			<synonym>(r)-carnitine</synonym>
+			<synonym>(s)-carnitine</synonym>
+			<synonym>1-carnitine</synonym>
+			<synonym>3-carboxy-2-hydroxy-N,N,N-trimethyl-1-propanaminium</synonym>
+			<synonym>Bicarnesine</synonym>
+			<synonym>Carnilean</synonym>
+			<synonym>Carnitene</synonym>
+			<synonym>Carnitine</synonym>
+			<synonym>Carnitor</synonym>
+			<synonym>D-carnitine</synonym>
+			<synonym>delta-carnitine</synonym>
+			<synonym>DL-carnitine</synonym>
+			<synonym>Gamma-trimethyl-ammonium-beta-hydroxybutirate</synonym>
+			<synonym>Gamma-trimethyl-beta-hydroxybutyrobetaine</synonym>
+			<synonym>Gamma-trimethyl-hydroxybutyrobetaine</synonym>
+			<synonym>Karnitin</synonym>
+			<synonym>L-(-)-carnitine</synonym>
+			<synonym>L-carnitine</synonym>
+			<synonym>L-gamma-trimethyl-beta-hydroxybutyrobetaine</synonym>
+			<synonym>Levocarnitina</synonym>
+			<synonym>Levocarnitine</synonym>
+			<synonym>Levocarnitinum</synonym>
+			<synonym>R-(-)-3-hydroxy-4-trimethylaminobutyrate</synonym>
+			<synonym>Vitamin BT</synonym>
+			<synonym>Carniking</synonym>
+			<synonym>Carniking 50</synonym>
+			<synonym>Carnipass</synonym>
+			<synonym>Carnipass 20</synonym>
+			<synonym>3-hydroxy-4-trimethylammoniobutanoate</synonym>
+			<synonym>3-hydroxy-4-trimethylammoniobutanoic acid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_GABA</id>
+		<name>Gamma-Aminobutyric acid</name>
+		<formula>[M1];[C4H9NO2]n</formula>
+		<inchi>InChI=1/C4H9NO2/c5-3-1-2-4(6)7/h1-3,5H2,(H,6,7)</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>3-Carboxypropylamine</synonym>
+			<synonym>4-Aminobutanoate</synonym>
+			<synonym>4-Aminobutanoic acid</synonym>
+			<synonym>4-Aminobutyrate</synonym>
+			<synonym>4-Aminobutyric acid</synonym>
+			<synonym>Aminalon</synonym>
+			<synonym>GABA</synonym>
+			<synonym>Gaballon</synonym>
+			<synonym>Gamarex</synonym>
+			<synonym>Gamma aminobutyrate</synonym>
+			<synonym>Gamma aminobutyric acid</synonym>
+			<synonym>Gamma-aminobutyrate</synonym>
+			<synonym>Gamma-aminobutyric acid</synonym>
+			<synonym>Gammalon</synonym>
+			<synonym>Gammalone</synonym>
+			<synonym>Gammar</synonym>
+			<synonym>Gammasol</synonym>
+			<synonym>Mielogen</synonym>
+			<synonym>Mielomade</synonym>
+			<synonym>Piperidate</synonym>
+			<synonym>Piperidic acid</synonym>
+			<synonym>Piperidinate</synonym>
+			<synonym>Piperidinic acid</synonym>
+			<synonym>w-Aminobutyrate</synonym>
+			<synonym>w-Aminobutyric acid</synonym>
+			<synonym>omega-Aminobutyrate</synonym>
+			<synonym>omega-Aminobutyric acid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_LEUCINE</id>
+		<name>Leucine</name>
+		<formula>[M1];[C6H13NO2]n</formula>
+		<inchi>InChI=1/C6H13NO2/c1-4(2)3-5(7)6(8)9/h4-5H,3,7H2,1-2H3,(H,8,9)/t5-/m0/s1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>(2S)-2-Amino-4-methylpentanoate</synonym>
+			<synonym>(2S)-2-Amino-4-methylpentanoic acid</synonym>
+			<synonym>(S)-(+)-Leucine</synonym>
+			<synonym>(S)-2-Amino-4-methylpentanoate</synonym>
+			<synonym>(S)-2-Amino-4-methylpentanoic acid</synonym>
+			<synonym>(S)-2-Amino-4-methylvalerate</synonym>
+			<synonym>(S)-2-Amino-4-methylvaleric acid</synonym>
+			<synonym>(S)-Leucine</synonym>
+			<synonym>4-methyl-L-Norvaline</synonym>
+			<synonym>L-(+)-Leucine</synonym>
+			<synonym>L-a-Aminoisocaproate</synonym>
+			<synonym>L-a-Aminoisocaproic acid</synonym>
+			<synonym>Leu</synonym>
+			<synonym>L-alpha-Aminoisocaproate</synonym>
+			<synonym>L-alpha-Aminoisocaproic acid</synonym>
+			<synonym>Leucine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_PHENYLALANINE</id>
+		<name>L-Phenylalanine</name>
+		<formula>[M1];[C9H11NO2]n</formula>
+		<inchi>InChI=1/C9H11NO2/c10-8(9(11)12)6-7-4-2-1-3-5-7/h1-5,8H,6,10H2,(H,11,12)/t8-/m0/s1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>(-)-beta-Phenylalanine</synonym>
+			<synonym>(L)-Phenylalanine</synonym>
+			<synonym>(S)-(-)-Phenylalanine</synonym>
+			<synonym>(S)-2-Amino-3-phenylpropionate</synonym>
+			<synonym>(S)-2-Amino-3-phenylpropionic acid</synonym>
+			<synonym>(S)-2-amino-3-phenylpropanoate</synonym>
+			<synonym>(S)-2-amino-3-phenylpropanoic acid</synonym>
+			<synonym>(S)-Phenylalanine</synonym>
+			<synonym>(S)-alpha-Amino-benzenepropanoate</synonym>
+			<synonym>(S)-alpha-Amino-benzenepropanoic acid</synonym>
+			<synonym>(S)-alpha-Amino-beta-phenylpropionate</synonym>
+			<synonym>(S)-alpha-Amino-beta-phenylpropionic acid</synonym>
+			<synonym>(S)-alpha-Aminobenzenepropanoate</synonym>
+			<synonym>(S)-alpha-Aminobenzenepropanoic acid</synonym>
+			<synonym>(S)-alpha-Aminohydrocinnamate</synonym>
+			<synonym>(S)-alpha-Aminohydrocinnamic acid</synonym>
+			<synonym>3-Phenyl-L-alanine</synonym>
+			<synonym>L-2-Amino-3-phenylpropionate</synonym>
+			<synonym>L-2-Amino-3-phenylpropionic acid</synonym>
+			<synonym>Phe</synonym>
+			<synonym>Phenylalamine</synonym>
+			<synonym>Phenylalanine</synonym>
+			<synonym>alpha-Aminohydrocinnamate</synonym>
+			<synonym>alpha-Aminohydrocinnamic acid</synonym>
+			<synonym>beta-Phenyl-L-alanine</synonym>
+			<synonym>beta-Phenyl-alpha-alanine</synonym>
+			<synonym>beta-Phenylalanine</synonym>
+			<synonym>phenyl-Alanine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_THREONINE</id>
+		<name>Threonine</name>
+		<formula>[M1];[C4H9NO3]n</formula>
+		<inchi>InChI=1/C4H9NO3/c1-2(6)3(5)4(7)8/h2-3,6H,5H2,1H3,(H,7,8)/t2-,3+/m1/s1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>(2S,3R)-(-)-Threonine</synonym>
+			<synonym>(2S,3R)-2-Amino-3-hydroxybutyrate</synonym>
+			<synonym>(2S,3R)-2-Amino-3-hydroxybutyric acid</synonym>
+			<synonym>(R-(R*,S*))-2-Amino-3-hydroxybutanoate</synonym>
+			<synonym>(R-(R*,S*))-2-Amino-3-hydroxybutanoic acid</synonym>
+			<synonym>(S)-Threonine</synonym>
+			<synonym>2-Amino-3-hydroxybutanoate</synonym>
+			<synonym>2-Amino-3-hydroxybutanoic acid</synonym>
+			<synonym>2-Amino-3-hydroxybutyrate</synonym>
+			<synonym>2-Amino-3-hydroxybutyric acid</synonym>
+			<synonym>L-(-)-Threonine</synonym>
+			<synonym>L-2-Amino-3-hydroxybutyrate</synonym>
+			<synonym>L-2-Amino-3-hydroxybutyric acid</synonym>
+			<synonym>L-alpha-Amino-beta-hydroxybutyrate</synonym>
+			<synonym>L-alpha-Amino-beta-hydroxybutyric acid</synonym>
+			<synonym> Threonin</synonym>
+			<synonym>Threonine</synonym>
+			<synonym>[R-(R*,S*)]-2-Amino-3-hydroxybutanoate</synonym>
+			<synonym>[R-(R*,S*)]-2-Amino-3-hydroxybutanoic acid</synonym>
+			<synonym>[R-(R*,S*)]-2-amino-3-hydroxy-Butanoate</synonym>
+			<synonym>[R-(R*,S*)]-2-amino-3-hydroxy-Butanoic acid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_HOMOCYSTEINE</id>
+		<name>Homocysteine</name>
+		<formula>[M1];[C4H9NO2S]n</formula>
+		<inchi>InChI=1/C4H9NO2S/c5-3(1-2-8)4(6)7/h3,8H,1-2,5H2,(H,6,7)</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>(+-)-homocysteine</synonym>
+			<synonym>(S)-2-amino-4-mercapto-Butanoic acid</synonym>
+			<synonym>2-Amino-4-mercaptobutyric acid</synonym>
+			<synonym>2-amino-4-mercapto-Butanoic acid</synonym>
+			<synonym>2-amino-4-mercapto-Butyric acid</synonym>
+			<synonym>2-amino-4-mercapto-DL-Butyrate</synonym>
+			<synonym>2-amino-4-mercapto-DL-Butyric acid</synonym>
+			<synonym>2-amino-4-sulfanylbutanoic acid</synonym>
+			<synonym>D,l-homocysteine</synonym>
+			<synonym>DL-2-Amino-4-mercaptobutyric acid</synonym>
+			<synonym>DL-2-amino-4-mercapto-Butyric acid</synonym>
+			<synonym>DL-Homocysteine</synonym>
+			<synonym>DL-homocysteine (free base)</synonym>
+			<synonym>HCY</synonym>
+			<synonym>Homo-CYS</synonym>
+			<synonym>L-2-amino-4-mercapto-Butyric acid</synonym>
+			<synonym>L-Homocysteine</synonym>
+			<synonym>Usaf B-12</synonym>
+			<synonym>homocysteine</synonym>
+			<synonym>(S)-2-amino-4-mercapto-Butanoate</synonym>
+			<synonym>2-amino-4-mercapto-Butanoate</synonym>
+			<synonym>2-amino-4-sulfanylbutanoate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_METHIONINE</id>
+		<name>L-Methionine</name>
+		<formula>[M1];[C5H11NO2S]n</formula>
+		<inchi>InChI=1/C5H11NO2S/c1-9-3-2-4(6)5(7)8/h4H,2-3,6H2,1H3,(H,7,8)/t4-/m0/s1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>(2S)-2-amino-4-(methylsulfanyl)butanoic acid</synonym>
+			<synonym>(S)-2-Amino-4-(methylthio)butanoate</synonym>
+			<synonym>(S)-2-Amino-4-(methylthio)butanoic acid</synonym>
+			<synonym>(S)-2-amino-4-(methylthio)-Butanoate</synonym>
+			<synonym>(S)-2-amino-4-(methylthio)-Butanoic acid</synonym>
+			<synonym>(S)-2-amino-4-(methylthio)butyric acid</synonym>
+			<synonym>(l)-methionine</synonym>
+			<synonym>(s)-(+)-methionine</synonym>
+			<synonym>(s)-methionine</synonym>
+			<synonym>2-Amino-4-(methylthio)butyrate</synonym>
+			<synonym>2-Amino-4-(methylthio)butyric acid</synonym>
+			<synonym>2-Amino-4-methylthiobutanoic acid</synonym>
+			<synonym>A-amino-g-methylmercaptobutyrate</synonym>
+			<synonym>A-amino-g-methylmercaptobutyric acid</synonym>
+			<synonym>Acimethin</synonym>
+			<synonym>Alpha-amino-gamma-methylmercaptobutyric acid</synonym>
+			<synonym>Cymethion</synonym>
+			<synonym>G-methylthio-a-aminobutyrate</synonym>
+			<synonym>G-methylthio-a-aminobutyric acid</synonym>
+			<synonym>H-met-h</synonym>
+			<synonym>H-met-oh</synonym>
+			<synonym>L(-)-amino-alpha-amino-alpha-aminobutyric acid</synonym>
+			<synonym>L(-)-amino-gamma-methylthiobutyric acid</synonym>
+			<synonym>L-(-)-methionine</synonym>
+			<synonym>L-2-Amino-4methylthiobutyric acid</synonym>
+			<synonym>L-a-amino-g-methylthiobutyrate</synonym>
+			<synonym>L-a-amino-g-methylthiobutyric acid</synonym>
+			<synonym>L-alpha-amino-gamma-methylmercaptobutyric acid</synonym>
+			<synonym>L-alpha-amino-gamma-methylthiobutyric acid</synonym>
+			<synonym>L-gamma-methylthio-alpha-aminobutyric acid</synonym>
+			<synonym>L-methionin</synonym>
+			<synonym>L-methioninum</synonym>
+			<synonym>Liquimeth</synonym>
+			<synonym>MET</synonym>
+			<synonym>Mepron</synonym>
+			<synonym>Methilanin</synonym>
+			<synonym>Methionine</synonym>
+			<synonym>Methioninum</synonym>
+			<synonym>Metionina</synonym>
+			<synonym>Neo-methidin</synonym>
+			<synonym>Poly-l-methionine</synonym>
+			<synonym>Polymethionine</synonym>
+			<synonym>S-methionine</synonym>
+			<synonym>S-methyl-l-homocysteine</synonym>
+			<synonym>Toxin WAR</synonym>
+			<synonym>alpha-amino-alpha-aminobutyric acid</synonym>
+			<synonym>gamma-methylthio-alpha-aminobutyric acid</synonym>
+			<synonym>l-2-Amino-4-(methylthio)butyric acid</synonym>
+			<synonym>alpha-amino-gamma-methylmercaptobutyrate</synonym>
+			<synonym>gamma-methylthio-alpha-aminobutyrate</synonym>
+			<synonym>L-alpha-amino-gamma-methylthiobutyrate</synonym>
+			<synonym>(2S)-2-amino-4-(methylsulfanyl)butanoate</synonym>
+			<synonym>2-Amino-4-methylthiobutanoate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_Alanine</id>
+		<name>Alanine</name>
+		<formula>[M1];[C3H7NO2]n</formula>
+		<inchi>InChI=1/C3H7NO2/c1-2(4)3(5)6/h2H,4H2,1H3,(H,5,6)/t2-/m0/s1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>(2S)-2-Aminopropanoate</synonym>
+			<synonym>(2S)-2-Aminopropanoic acid</synonym>
+			<synonym>(S)-(+)-Alanine</synonym>
+			<synonym>(S)-2-Aminopropanoate</synonym>
+			<synonym>(S)-2-Aminopropanoic acid</synonym>
+			<synonym>(S)-2-amino-Propanoate</synonym>
+			<synonym>(S)-2-amino-Propanoic acid</synonym>
+			<synonym>(S)-Alanine</synonym>
+			<synonym>2-Aminopropanoate</synonym>
+			<synonym>2-Aminopropanoic acid</synonym>
+			<synonym>2-Aminopropionate</synonym>
+			<synonym>2-Aminopropionic acid</synonym>
+			<synonym>2-Ammoniopropanoate</synonym>
+			<synonym>Ala</synonym>
+			<synonym>Alanine</synonym>
+			<synonym>L-(+)-Alanine</synonym>
+			<synonym>L-2-Aminopropanoate</synonym>
+			<synonym>L-2-Aminopropanoic acid</synonym>
+			<synonym>L-2-Aminopropionate</synonym>
+			<synonym>L-2-Aminopropionic acid</synonym>
+			<synonym>L-a-Alanine</synonym>
+			<synonym>L-a-Aminopropionate</synonym>
+			<synonym>L-a-Aminopropionic acid</synonym>
+			<synonym>a-Alanine</synonym>
+			<synonym>a-Aminopropionate</synonym>
+			<synonym>a-Aminopropionic acid</synonym>
+			<synonym>alpha-Aminopropanoate</synonym>
+			<synonym>alpha-Aminopropanoic acid</synonym>
+			<synonym>L-alpha-Alanine</synonym>
+			<synonym>L-alpha-Aminopropionate</synonym>
+			<synonym>L-alpha-Aminopropionic acid</synonym>
+			<synonym>alpha-Alanine</synonym>
+			<synonym>alpha-Aminopropionate</synonym>
+			<synonym>alpha-Aminopropionic acid</synonym>
+			<synonym>2-Ammoniopropanoic acid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_CITRULLINE</id>
+		<name>Citrulline</name>
+		<formula>[M1];[C6H13N3O3]n</formula>
+		<inchi>InChI=1/C6H13N3O3/c7-4(5(10)11)2-1-3-9-6(8)12/h4H,1-3,7H2,(H,10,11)(H3,8,9,12)/t4-/m0/s1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>(2S)-2-amino-5-(carbamoylamino)pentanoic acid</synonym>
+			<synonym>(S)-2-Amino-5-ureidopentanoate</synonym>
+			<synonym>(S)-2-Amino-5-ureidopentanoic acid</synonym>
+			<synonym>(S)-2-amino-5-(aminocarbonyl)aminopentanoic acid</synonym>
+			<synonym>2-Amino-5-uredovalerate</synonym>
+			<synonym>2-Amino-5-uredovaleric acid</synonym>
+			<synonym>2-Amino-5-ureidovalerate</synonym>
+			<synonym>2-Amino-5-ureidovaleric acid</synonym>
+			<synonym>A-amino-d-ureidovalerate</synonym>
+			<synonym>A-amino-d-ureidovaleric acid</synonym>
+			<synonym>Alpha-amino-delta-ureidovalerate</synonym>
+			<synonym>Alpha-amino-delta-ureidovaleric acid</synonym>
+			<synonym>Alpha-amino-gamma-ureidovalerate</synonym>
+			<synonym>Alpha-amino-gamma-ureidovaleric acid</synonym>
+			<synonym>Amino-ureidovalerate</synonym>
+			<synonym>Amino-ureidovaleric acid</synonym>
+			<synonym>CIR</synonym>
+			<synonym>CIT</synonym>
+			<synonym>Cytrulline</synonym>
+			<synonym>D-ureidonorvaline</synonym>
+			<synonym>DL-citrulline</synonym>
+			<synonym>Delta-ureidonorvaline</synonym>
+			<synonym>Gammaureidonorvaline</synonym>
+			<synonym>H-cit-oh</synonym>
+			<synonym>L(+)-2-Amino-5-ureidovalerate</synonym>
+			<synonym>L(+)-2-Amino-5-ureidovaleric acid</synonym>
+			<synonym>L(+)-citrulline</synonym>
+			<synonym>L-2-Amino-5-ureido-valerate</synonym>
+			<synonym>L-2-Amino-5-ureido-valeric acid</synonym>
+			<synonym>L-2-Amino-5-ureidovalerate</synonym>
+			<synonym>L-2-Amino-5-ureidovaleric acid</synonym>
+			<synonym>L-N5-carbamoyl-Ornithine</synonym>
+			<synonym>L-citrulline</synonym>
+			<synonym>L-cytrulline</synonym>
+			<synonym>N()-carbamylornithine</synonym>
+			<synonym>N(5)-(aminocarbonyl)-DL-Ornithine</synonym>
+			<synonym>N(delta)-carbamylornithine</synonym>
+			<synonym>N-carbamylornithine</synonym>
+			<synonym>N5-(Aminocarbonyl)-L-ornithine</synonym>
+			<synonym>N5-(Aminocarbonyl)ornithine</synonym>
+			<synonym>N5-(aminocarbonyl)-Ornithine</synonym>
+			<synonym>N5-Carbamoyl-L-ornithine</synonym>
+			<synonym>N5-carbamoylornithine</synonym>
+			<synonym>N5-carbamylornithine</synonym>
+			<synonym>N&lt;SUP&gt;5&lt;/SUP&gt;-(aminocarbonyl)ornithine</synonym>
+			<synonym>ND-carbamylornithine</synonym>
+			<synonym>Ndelta-carbamy-ornithine</synonym>
+			<synonym>Ndelta-carbamylornithine</synonym>
+			<synonym>Ngamma-carbamylornithine</synonym>
+			<synonym>Sitrulline</synonym>
+			<synonym>Ureidonorvaline</synonym>
+			<synonym>Ureidovalerate</synonym>
+			<synonym>Ureidovaleric acid</synonym>
+			<synonym>(2S)-2-amino-5-(carbamoylamino)pentanoate</synonym>
+			<synonym>(S)-2-amino-5-(aminocarbonyl)aminopentanoate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_GLUTAMATE</id>
+		<name>L-Glutamic acid</name>
+		<formula>[M1];[C5H9NO4]n</formula>
+		<inchi>InChI=1/C5H9NO4/c6-3(5(9)10)1-2-4(7)8/h3H,1-2,6H2,(H,7,8)(H,9,10)/t3-/m0/s1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>(2S)-2-Aminopentanedioate</synonym>
+			<synonym>(2S)-2-Aminopentanedioic acid</synonym>
+			<synonym>(S)-(+)-Glutamate</synonym>
+			<synonym>(S)-(+)-Glutamic acid</synonym>
+			<synonym>(S)-2-Aminopentanedioate</synonym>
+			<synonym>(S)-2-Aminopentanedioic acid</synonym>
+			<synonym>(S)-Glutamate</synonym>
+			<synonym>(S)-Glutamic acid</synonym>
+			<synonym>1-Aminopropane-1,3-dicarboxylate</synonym>
+			<synonym>1-Aminopropane-1,3-dicarboxylic acid</synonym>
+			<synonym>1-amino-propane-1,3-dicarboxylate</synonym>
+			<synonym>1-amino-propane-1,3-dicarboxylic acid</synonym>
+			<synonym>2-Aminoglutarate</synonym>
+			<synonym>2-Aminoglutaric acid</synonym>
+			<synonym>2-Aminopentanedioate</synonym>
+			<synonym>2-Aminopentanedioic acid</synonym>
+			<synonym>Aciglut</synonym>
+			<synonym>E</synonym>
+			<synonym>Glusate</synonym>
+			<synonym>Glutacid</synonym>
+			<synonym> Glutamicol</synonym>
+			<synonym>Glutamidex</synonym>
+			<synonym>Glutaminate</synonym>
+			<synonym>Glutaminic acid</synonym>
+			<synonym>Glutaminol</synonym>
+			<synonym>Glutaton</synonym>
+			<synonym>L-(+)-Glutamate</synonym>
+			<synonym>L-(+)-Glutamic acid</synonym>
+			<synonym>L-Glutamate</synonym>
+			<synonym>L-Glutaminate</synonym>
+			<synonym>L-Glutaminic acid</synonym>
+			<synonym>L-a-Aminoglutarate</synonym>
+			<synonym>L-a-Aminoglutaric acid</synonym>
+			<synonym>L-glu</synonym>
+			<synonym>a-Aminoglutarate</synonym>
+			<synonym>a-Aminoglutaric acid</synonym>
+			<synonym>a-Glutamate</synonym>
+			<synonym>a-Glutamic acid</synonym>
+			<synonym>aminoglutarate</synonym>
+			<synonym>aminoglutaric acid</synonym>
+			<synonym>glt</synonym>
+			<synonym>glu</synonym>
+			<synonym>glut</synonym>
+			<synonym>L-alpha-Aminoglutarate</synonym>
+			<synonym>L-alpha-Aminoglutaric acid</synonym>
+			<synonym>alpha-Aminoglutarate</synonym>
+			<synonym>alpha-Aminoglutaric acid</synonym>
+			<synonym>alpha-Glutamate</synonym>
+			<synonym>alpha-Glutamic acid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_HISTIDINE</id>
+		<name>Histidine</name>
+		<formula>[M1];[C6H9N3O2]n</formula>
+		<inchi>InChI=1/C6H9N3O2/c7-5(6(10)11)1-4-2-8-3-9-4/h2-3,5H,1,7H2,(H,8,9)(H,10,11)/t5-/m0/s1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>(S)-1H-Imidazole-4-alanine</synonym>
+			<synonym>(S)-2-Amino-3-(4-imidazolyl)propionsaeure</synonym>
+			<synonym>(S)-4-(2-Amino-2-carboxyethyl)imidazole</synonym>
+			<synonym>(S)-Histidine</synonym>
+			<synonym>(S)-a-Amino-1H-imidazole-4-propanoate</synonym>
+			<synonym>(S)-a-Amino-1H-imidazole-4-propanoic acid</synonym>
+			<synonym>(S)-alpha-Amino-1H-imidazole-4-propanoate</synonym>
+			<synonym>(S)-alpha-Amino-1H-imidazole-4-propanoic acid</synonym>
+			<synonym>(S)-alpha-Amino-1H-imidazole-4-propionate</synonym>
+			<synonym>(S)-alpha-Amino-1H-imidazole-4-propionic acid</synonym>
+			<synonym>(S)1H-Imidazole-4-alanine</synonym>
+			<synonym>3-(1H-imidazol-4-yl)-L-Alanine</synonym>
+			<synonym>Glyoxaline-5-alanine</synonym>
+			<synonym>His</synonym>
+			<synonym>Histidine</synonym>
+			<synonym>L-(-)-Histidine</synonym>
+			<synonym>amino-1H-imidazole-4-propanoate</synonym>
+			<synonym>amino-1H-imidazole-4-propanoic acid</synonym>
+			<synonym>amino-4-imidazoleproprionate</synonym>
+			<synonym>amino-4-imidazoleproprionic acid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_LYSINE</id>
+		<name>Lysine</name>
+		<formula>[M1];[C6H14N2O2]n</formula>
+		<inchi>InChI=1/C6H14N2O2/c7-4-2-1-3-5(8)6(9)10/h5H,1-4,7-8H2,(H,9,10)/t5-/m0/s1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>(+)-S-Lysine</synonym>
+			<synonym>(S)-2,6-Diaminohexanoate</synonym>
+			<synonym>(S)-2,6-Diaminohexanoic acid</synonym>
+			<synonym>(S)-2,6-diamino-Hexanoate</synonym>
+			<synonym>(S)-2,6-diamino-Hexanoic acid</synonym>
+			<synonym>(S)-Lysine</synonym>
+			<synonym>(S)-a,e-Diaminocaproate</synonym>
+			<synonym>(S)-a,e-Diaminocaproic acid</synonym>
+			<synonym>2,6-Diaminohexanoate</synonym>
+			<synonym>2,6-Diaminohexanoic acid</synonym>
+			<synonym>6-amino-Aminutrin</synonym>
+			<synonym>6-amino-L-Norleucine</synonym>
+			<synonym>Aminutrin</synonym>
+			<synonym>L-(+)-Lysine</synonym>
+			<synonym>L-2,6-Diainohexanoate</synonym>
+			<synonym>L-2,6-Diainohexanoic acid</synonym>
+			<synonym>L-2,6-Diaminocaproate</synonym>
+			<synonym>L-2,6-Diaminocaproic acid</synonym>
+			<synonym>L-Lys</synonym>
+			<synonym>Lys</synonym>
+			<synonym>Lysine</synonym>
+			<synonym>Lysine acid</synonym>
+			<synonym>a-Lysine</synonym>
+			<synonym>h-Lys-oh</synonym>
+			<synonym>alpha-Lysine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_PROLINE</id>
+		<name>Proline</name>
+		<formula>[M1];[C5H9NO2]n</formula>
+		<inchi>InChI=1/C5H9NO2/c7-5(8)4-2-1-3-6-4/h4,6H,1-3H2,(H,7,8)/t4-/m0/s1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>(-)-(S)-Proline</synonym>
+			<synonym>(-)-2-Pyrrolidinecarboxylate</synonym>
+			<synonym>(-)-2-Pyrrolidinecarboxylic acid</synonym>
+			<synonym>(-)-Proline</synonym>
+			<synonym>(S)-(-)-Proline</synonym>
+			<synonym>(S)-(-)-Pyrrolidine-2-carboxylate</synonym>
+			<synonym>(S)-(-)-Pyrrolidine-2-carboxylic acid</synonym>
+			<synonym>(S)-2-Carboxypyrrolidine</synonym>
+			<synonym>(S)-2-Pyrralidinecarboxylate</synonym>
+			<synonym>(S)-2-Pyrralidinecarboxylic acid</synonym>
+			<synonym>(S)-2-Pyrrolidinecarboxylate</synonym>
+			<synonym>(S)-2-Pyrrolidinecarboxylic acid</synonym>
+			<synonym>(S)-Proline</synonym>
+			<synonym>2-Pyrrolidinecarboxylate</synonym>
+			<synonym>2-Pyrrolidinecarboxylic acid</synonym>
+			<synonym>Proline</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_TRYPTOPHAN</id>
+		<name>L-Tryptophan</name>
+		<formula>[M1];[C11H12N2O2]n</formula>
+		<inchi>InChI=1/C11H12N2O2/c12-9(11(14)15)5-7-6-13-10-4-2-1-3-8(7)10/h1-4,6,9,13H,5,12H2,(H,14,15)/t9-/m0/s1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>(-)-tryptophan</synonym>
+			<synonym>(2S)-2-amino-3-(1H-indol-3-yl)propanoic acid</synonym>
+			<synonym>(S)-1H-Indole-3-alanine</synonym>
+			<synonym>(S)-2-Amino-3-(3-indolyl)propionic acid</synonym>
+			<synonym>(S)-a-Amino-1H-indole-3-propanoate</synonym>
+			<synonym>(S)-a-Amino-1H-indole-3-propanoic acid</synonym>
+			<synonym>(S)-a-Aminoindole-3-propionate</synonym>
+			<synonym>(S)-a-Aminoindole-3-propionic acid</synonym>
+			<synonym>(S)-alpha-Amino-1H-indole-3-propanoic acid</synonym>
+			<synonym>(S)-alpha-Amino-beta-(3-indolyl)-propionic acid</synonym>
+			<synonym>(S)-alpha-Aminoindole-3-propionic acid</synonym>
+			<synonym>(l)-tryptophan</synonym>
+			<synonym>(s)-a-amino-b-indolepropionate</synonym>
+			<synonym>(s)-a-amino-b-indolepropionic acid</synonym>
+			<synonym>(s)-alpha-amino-beta-indolepropionic acid</synonym>
+			<synonym>(s)-tryptophan</synonym>
+			<synonym>1-beta-3-Indolylalanine</synonym>
+			<synonym>1H-Indole-3-Alanine</synonym>
+			<synonym>1beta-3-Indolylalanine</synonym>
+			<synonym>2-Amino-3-indolylpropanoate</synonym>
+			<synonym>2-Amino-3-indolylpropanoic acid</synonym>
+			<synonym>3-Indol-3-ylalanine</synonym>
+			<synonym>Ardeytropin</synonym>
+			<synonym>H-TRP-oh</synonym>
+			<synonym>Indole-3-alanine</synonym>
+			<synonym>Kalma</synonym>
+			<synonym>L-(-)-tryptophan</synonym>
+			<synonym>3-(1H-indol-3-yl)-L-Alanine</synonym>
+			<synonym>L-alpha-amino-3-indolepropionic acid</synonym>
+			<synonym>L-alpha-aminoindole-3-propionic acid</synonym>
+			<synonym>L-beta-3-indolylalanine</synonym>
+			<synonym>L-tryptofan</synonym>
+			<synonym>L-tryptophane</synonym>
+			<synonym>Lopac-T-0254</synonym>
+			<synonym>Lyphan</synonym>
+			<synonym>Optimax</synonym>
+			<synonym>Pacitron</synonym>
+			<synonym>Sedanoct</synonym>
+			<synonym>Triptofano</synonym>
+			<synonym>Trofan</synonym>
+			<synonym>Tryptacin</synonym>
+			<synonym>Tryptan</synonym>
+			<synonym>Tryptophan</synonym>
+			<synonym>Tryptophane</synonym>
+			<synonym>Tryptophanum</synonym>
+			<synonym>alpha&apos;-Amino-3-indolepropionic acid</synonym>
+			<synonym>alpha-Aminoindole-3-propionic acid</synonym>
+			<synonym>l-b-3-Indolylalanine</synonym>
+			<synonym>(S)-alpha-Amino-1H-indole-3-propanoate</synonym>
+			<synonym>(S)-alpha-Aminoindole-3-propionate</synonym>
+			<synonym>(s)-alpha-amino-beta-indolepropionate</synonym>
+			<synonym>(2S)-2-amino-3-(1H-indol-3-yl)propanoate</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_ARGININE</id>
+		<name>Arginine</name>
+		<formula>[M1];[C6H14N4O2]n</formula>
+		<inchi>InChI=1/C6H14N4O2/c7-4(5(11)12)2-1-3-10-6(8)9/h4H,1-3,7H2,(H,11,12)(H4,8,9,10)/t4-/m1/s1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>D-2-Amino-5-guanidinovalerate</synonym>
+			<synonym>D-2-Amino-5-guanidinovaleric acid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_GLUTAMINE</id>
+		<name>Glutamine</name>
+		<formula>[M1];[C5H10N2O3]n</formula>
+		<inchi>InChI=1/C5H10N2O3/c6-3(5(9)10)1-2-4(7)8/h3H,1-2,6H2,(H2,7,8)(H,9,10)/t3-/m1/s1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>D-2-Aminoglutaramate</synonym>
+			<synonym>D-2-Aminoglutaramic acid</synonym>
+			<synonym>Nutrestore</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_HYDROXYPROLYNE</id>
+		<name>Hydroxy-proline</name>
+		<formula>[M1];[C5H9NO3]n</formula>
+		<inchi>InChI=1/C5H9NO3/c7-3-1-4(5(8)9)6-2-3/h3-4,6-7H,1-2H2,(H,8,9)/t3?,4-/m0/s1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>L-4-hydroxy-proline</synonym>
+			<synonym>L-4-Hydroxyproline</synonym>
+			<synonym>L-4-allo-hydroxy-Proline</synonym>
+			<synonym>4-hydroxy-L-Proline</synonym>
+			<synonym>cis-4-hydroxy-L-Proline</synonym>
+			<synonym>cis-4-hydroxyproline;(2S)-4-hydroxypyrrolidine-2-carboxylic acid</synonym>
+			<synonym>(4S)-4-hydroxy-L-Proline</synonym>
+			<synonym>allo-4-Hydroxy-L-proline</synonym>
+			<synonym>allo-4-Hydroxyproline</synonym>
+			<synonym>allo-hydroxy-L-Proline</synonym>
+			<synonym>L-Allohydroxyproline</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_SERINE</id>
+		<name>Serine</name>
+		<formula>[M1];[C3H7NO3]n</formula>
+		<inchi>InChI=1/C3H7NO3/c4-2(1-5)3(6)7/h2,5H,1,4H2,(H,6,7)/t2-/m1/s1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>(2R)-2-amino-3-hydroxypropanoate</synonym>
+			<synonym>(2R)-2-amino-3-hydroxypropanoic acid</synonym>
+			<synonym>(R)-2-amino-3-hydroxypropanoate</synonym>
+			<synonym>(R)-2-amino-3-hydroxypropanoic acid</synonym>
+			<synonym>D-Serin</synonym>
+			<synonym>DL-Serine</synonym>
+			<synonym>DSN</synonym>
+			<synonym>Serine D-form</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_TYROSINE</id>
+		<name>Tyrosine</name>
+		<formula>[M1];[C9H11NO3]n</formula>
+		<inchi>InChI=1/C9H11NO3/c10-8(9(12)13)5-6-1-3-7(11)4-2-6/h1-4,8,11H,5,10H2,(H,12,13)/t8-/m0/s1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>(-)-a-Amino-p-hydroxyhydrocinnamate</synonym>
+			<synonym>(-)-a-Amino-p-hydroxyhydrocinnamic acid</synonym>
+			<synonym>(-)-alpha-Amino-p-hydroxyhydrocinnamate</synonym>
+			<synonym>(-)-alpha-Amino-p-hydroxyhydrocinnamic acid</synonym>
+			<synonym>(S)-(-)-Tyrosine</synonym>
+			<synonym>(S)-2-Amino-3-(p-hydroxyphenyl)propionate</synonym>
+			<synonym>(S)-2-Amino-3-(p-hydroxyphenyl)propionic acid</synonym>
+			<synonym>(S)-3-(p-Hydroxyphenyl)alanine</synonym>
+			<synonym>(S)-Tyrosine</synonym>
+			<synonym>(S)-a-Amino-4-hydroxybenzenepropanoate</synonym>
+			<synonym>(S)-a-Amino-4-hydroxybenzenepropanoic acid</synonym>
+			<synonym>(S)-a-amino-4-hydroxy-Benzenepropanoate</synonym>
+			<synonym>(S)-a-amino-4-hydroxy-Benzenepropanoic acid</synonym>
+			<synonym>(S)-alpha-amino-4-hydroxy-Benzenepropanoate</synonym>
+			<synonym>(S)-alpha-amino-4-hydroxy-Benzenepropanoic acid</synonym>
+			<synonym>2-amino-3-(4-hydroxyphen yl)-2-amino-3-(4-hydroxyphenyl)-Propanoate</synonym>
+			<synonym>2-amino-3-(4-hydroxyphen yl)-2-amino-3-(4-hydroxyphenyl)-Propanoic acid</synonym>
+			<synonym>3-(4-Hydroxyphenyl)-L-alanine</synonym>
+			<synonym>4-hydroxy-L-Phenylalanine</synonym>
+			<synonym>Benzenepropanoate</synonym>
+			<synonym>Benzenepropanoic acid</synonym>
+			<synonym>L-p-Tyrosine</synonym>
+			<synonym>L-tyrosine</synonym>
+			<synonym>Tyr</synonym>
+			<synonym>Tyrosine</synonym>
+			<synonym>p-Tyrosine</synonym>
+			<synonym>(S)-alpha-Amino-4-hydroxybenzenepropanoate</synonym>
+			<synonym>(S)-alpha-Amino-4-hydroxybenzenepropanoic acid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_ASPARTATE</id>
+		<name>Aspartic acid</name>
+		<formula>[M1];[C4H7NO4]n</formula>
+		<inchi>InChI=1/C4H7NO4/c5-2(4(8)9)1-3(6)7/h2H,1,5H2,(H,6,7)(H,8,9)/t2-/m0/s1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>(+)-Aspartate</synonym>
+			<synonym>(+)-Aspartic acid</synonym>
+			<synonym>(2S)-Aspartate</synonym>
+			<synonym>(2S)-Aspartic acid</synonym>
+			<synonym>(L)-Aspartate</synonym>
+			<synonym>(L)-Aspartic acid</synonym>
+			<synonym>(R)-2-aminosuccinate</synonym>
+			<synonym>(S)-(+)-Aspartate</synonym>
+			<synonym>(S)-(+)-Aspartic acid</synonym>
+			<synonym>(S)-2-aminosuccinate</synonym>
+			<synonym>(S)-2-aminosuccinic acid</synonym>
+			<synonym>(S)-Aminobutanedioate</synonym>
+			<synonym>(S)-Aminobutanedioic acid</synonym>
+			<synonym>(S)-Aspartate</synonym>
+			<synonym>(S)-Aspartic acid</synonym>
+			<synonym>(S)-amino-Butanedioate</synonym>
+			<synonym>(S)-amino-Butanedioic acid</synonym>
+			<synonym>2-Amino-3-methylsuccinate</synonym>
+			<synonym>2-Amino-3-methylsuccinic acid</synonym>
+			<synonym>2-Aminosuccinate</synonym>
+			<synonym>2-Aminosuccinic acid</synonym>
+			<synonym>Aminosuccinate</synonym>
+			<synonym> Asp</synonym>
+			<synonym>Asparagate</synonym>
+			<synonym>Asparagic acid</synonym>
+			<synonym>Asparaginate</synonym>
+			<synonym>Asparaginic acid</synonym>
+			<synonym>Asparatate</synonym>
+			<synonym>Aspartate</synonym>
+			<synonym>H-Asp-OH</synonym>
+			<synonym>L-(+)-Aspartate</synonym>
+			<synonym>L-(+)-Aspartic acid</synonym>
+			<synonym>L-Aminosuccinate</synonym>
+			<synonym>L-Aminosuccinic acid</synonym>
+			<synonym>L-Asparagate</synonym>
+			<synonym>L-Asparagic acid</synonym>
+			<synonym>L-Asparaginate</synonym>
+			<synonym>L-Asparaginic acid</synonym>
+			<synonym>L-Aspartate</synonym>
+			<synonym>alpha-Aminosuccinate</synonym>
+			<synonym>alpha-Aminosuccinic acid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_HOMOCYSTINE</id>
+		<name>Homocystine</name>
+		<formula>[M1];[C8H16N2O4S2]n</formula>
+		<inchi>InChI=1/C8H16N2O4S2/c9-5(7(11)12)1-3-15-16-4-2-6(10)8(13)14/h5-6H,1-4,9-10H2,(H,11,12)(H,13,14)</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>4,4&apos;-Dithiobis</synonym>
+			<synonym>Homocystine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_CYSTINE</id>
+		<name>Cystine</name>
+		<formula>[M1];[C6H12N2O4S2]n</formula>
+		<inchi>InChI=1/C6H12N2O4S2/c7-3(5(9)10)1-13-14-2-4(8)6(11)12/h3-4H,1-2,7-8H2,(H,9,10)(H,11,12)/t3-,4-/m0/s1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>(-)-Cystine</synonym>
+			<synonym>(R-(R*,R*))-3,3&apos;-Dithiobis</synonym>
+			<synonym>2-Amino-3-[(2-amino-2-carboxyethyl)dithio]propanoate</synonym>
+			<synonym>2-Amino-3-[(2-amino-2-carboxyethyl)dithio]propanoic acid</synonym>
+			<synonym>2-amino-3-(2-amino-2-carboxy-ethyl)disulfanyl-propanoate</synonym>
+			<synonym>2-amino-3-(2-amino-2-carboxy-ethyl)disulfanyl-propanoic acid</synonym>
+			<synonym>3,3&apos;-Dithiobis</synonym>
+			<synonym>3,3&apos;-Dithiodialanine</synonym>
+			<synonym>3,3&apos;-dithiobis-L-Alanine</synonym>
+			<synonym>3,3&apos;-dithiobis[2-amino-[R-(R*,R*)]-Propanoate</synonym>
+			<synonym>3,3&apos;-dithiobis[2-amino-[R-(R*,R*)]-Propanoic acid</synonym>
+			<synonym>Bis(b-amino-b-carboxyethyl) disulfide</synonym>
+			<synonym>Cysteine disulfide</synonym>
+			<synonym>Cystin</synonym>
+			<synonym>Cystine</synonym>
+			<synonym>Cystine acid</synonym>
+			<synonym>D(+)-3,3&apos;-Dithiobis(2-aminopropanoate</synonym>
+			<synonym>D(+)-3,3&apos;-Dithiobis(2-aminopropanoic acid</synonym>
+			<synonym>Dicysteine</synonym>
+			<synonym>Gelucystine</synonym>
+			<synonym>L-(-)-Cystine</synonym>
+			<synonym>L-Cysteine disulfide</synonym>
+			<synonym>L-Cystin</synonym>
+			<synonym>Oxidized L-cysteine</synonym>
+			<synonym>[R-(R*,R*)]-3,3&apos;-Dithiobis</synonym>
+			<synonym>b,b&apos;-Diamino-b,b&apos;-dicarboxydiethyl disulfide</synonym>
+			<synonym>b,b&apos;-Dithiodialanine</synonym>
+			<synonym>beta,beta&apos;-Dithiobisalanine</synonym>
+			<synonym>beta,beta&apos;-Dithiodialanine</synonym>
+			<synonym>l-Cystine</synonym>
+			<synonym>Bis(b-amino-beta-carboxyethyl) disulfide</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_GLUTATHIONE</id>
+		<name>Glutathione</name>
+		<formula>[M1];[C10H17N3O6S]n</formula>
+		<inchi>InChI=1/C10H17N3O6S/c11-5(10(18)19)1-2-7(14)13-6(4-20)9(17)12-3-8(15)16/h5-6,20H,1-4,11H2,(H,12,17)(H,13,14)(H,15,16)(H,18,19)/t5-,6-/m0/s1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>5-L-Glutamyl-L-cysteinylglycine</synonym>
+			<synonym>Agifutol S</synonym>
+			<synonym>Bakezyme RX</synonym>
+			<synonym>Copren</synonym>
+			<synonym>Deltathione</synonym>
+			<synonym>GSH</synonym>
+			<synonym>Glutathion</synonym>
+			<synonym>Glutathione red</synonym>
+			<synonym>Glutathione reduced</synonym>
+			<synonym>Glutathione-SH</synonym>
+			<synonym>Glutatiol</synonym>
+			<synonym>Glutatione</synonym>
+			<synonym>Glutide</synonym>
+			<synonym>Glutinal</synonym>
+			<synonym>L-g-glutamyl-L-cysteinyl-glycine</synonym>
+			<synonym>L-gamma-glutamyl-L-cysteinyl-glycine</synonym>
+			<synonym>Isethion</synonym>
+			<synonym>L-Glutathione</synonym>
+			<synonym>L-Glutathione reduce</synonym>
+			<synonym>L-gamma-glutamyl-L-cysteinylglycine</synonym>
+			<synonym>L-glutamyl-L-cysteinylglycine</synonym>
+			<synonym>Ledac</synonym>
+			<synonym>Neuthion</synonym>
+			<synonym>Reduced glutathione</synonym>
+			<synonym>Tathion</synonym>
+			<synonym>Tathione</synonym>
+			<synonym>Triptide</synonym>
+			<synonym>gamma-Glutamylcysteinylglycine</synonym>
+			<synonym>gamma-L-Glutamyl-L-cysteinylglycine</synonym>
+			<synonym>gamma-L-glutamyl-L-cysteinyl-glycine</synonym>
+			<synonym>red. glutathione</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_ISOLEUCINE</id>
+		<name>Isoleucine</name>
+		<formula>[M1];[C6H13NO2]n</formula>
+		<inchi>InChI=1/C6H13NO2/c1-3-4(2)5(7)6(8)9/h4-5H,3,7H2,1-2H3,(H,8,9)/t4-,5-/m0/s1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>(2S,3S)-2-Amino-3-methylpentanoate</synonym>
+			<synonym>(2S,3S)-2-Amino-3-methylpentanoic acid</synonym>
+			<synonym>(2S,3S)-2-amino-3-methyl-Pentanoate</synonym>
+			<synonym>(2S,3S)-2-amino-3-methyl-Pentanoic acid</synonym>
+			<synonym>(2S,3S)-a-Amino-b-methyl-n-valerate</synonym>
+			<synonym>(2S,3S)-a-Amino-b-methyl-n-valeric acid</synonym>
+			<synonym>(2S,3S)-a-Amino-b-methylvalerate</synonym>
+			<synonym>(2S,3S)-a-Amino-b-methylvaleric acid</synonym>
+			<synonym>(2S,3S)-alph-Amino-beta-methylvalerate</synonym>
+			<synonym>(2S,3S)-alph-Amino-beta-methylvaleric acid</synonym>
+			<synonym>(2S,3S)-alpha-Amino-beta-merthyl-n-valerate</synonym>
+			<synonym>(2S,3S)-alpha-Amino-beta-merthyl-n-valeric acid</synonym>
+			<synonym>(2S,3S)-alpha-Amino-beta-merthylvalerate</synonym>
+			<synonym>(2S,3S)-alpha-Amino-beta-merthylvaleric acid</synonym>
+			<synonym>(2S,3S)-alpha-Amino-beta-methyl-n-valerate</synonym>
+			<synonym>(2S,3S)-alpha-Amino-beta-methyl-n-valeric acid</synonym>
+			<synonym>(2S,3S)-alpha-Amino-beta-methylvalerate</synonym>
+			<synonym>(2S,3S)-alpha-Amino-beta-methylvaleric acid</synonym>
+			<synonym>(S)-Isoleucine</synonym>
+			<synonym>(S,S)-Isoleucine</synonym>
+			<synonym>2-Amino-3-methylpentanoate</synonym>
+			<synonym>2-Amino-3-methylpentanoic acid</synonym>
+			<synonym>2-Amino-3-methylvalerate</synonym>
+			<synonym>2-Amino-3-methylvaleric acid</synonym>
+			<synonym>2S,3S-Isoleucine</synonym>
+			<synonym>Ile</synonym>
+			<synonym>Isoleucine</synonym>
+			<synonym>L-(+)-Isoleucine</synonym>
+			<synonym>L-Ile</synonym>
+			<synonym>[S-(R*,R*)]-2-Amino-3-methylpentanoate</synonym>
+			<synonym>[S-(R*,R*)]-2-Amino-3-methylpentanoic acid</synonym>
+			<synonym>erythro-L-Isoleucine</synonym>
+			<synonym>iso-leucine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_ORNITHINE</id>
+		<name>Ornithine</name>
+		<formula>[M1];[C5H12N2O2]n</formula>
+		<inchi>InChI=1/C5H12N2O2/c6-3-1-2-4(7)5(8)9/h4H,1-3,6-7H2,(H,8,9)/t4-/m0/s1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>(+)-S-Ornithine</synonym>
+			<synonym>(S)-2,5-Diaminopentanoate</synonym>
+			<synonym>(S)-2,5-Diaminopentanoic acid</synonym>
+			<synonym>(S)-Ornithine</synonym>
+			<synonym>(S)-a,d-Diaminovalerate</synonym>
+			<synonym>(S)-a,d-Diaminovaleric acid</synonym>
+			<synonym>5-amino-L-Norvaline</synonym>
+			<synonym>L-(-)-Ornithine</synonym>
+			<synonym>L-Ornithine</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_TAURINE</id>
+		<name>Taurine</name>
+		<formula>[M1];[C2H7NO3S]n</formula>
+		<inchi>InChI=1/C2H7NO3S/c3-1-2-7(4,5)6/h1-3H2,(H,4,5,6)</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>1-Aminoethane-2-sulfonate</synonym>
+			<synonym>1-Aminoethane-2-sulfonic acid</synonym>
+			<synonym>2-Aminoethanesulfonate</synonym>
+			<synonym>2-Aminoethanesulfonic acid</synonym>
+			<synonym>2-Aminoethylsulfonate</synonym>
+			<synonym>2-Aminoethylsulfonic acid</synonym>
+			<synonym>2-Sulfoethylamine</synonym>
+			<synonym>Aminoethylsulfonate</synonym>
+			<synonym>Aminoethylsulfonic acid</synonym>
+			<synonym>b-Aminoethylsulfonate</synonym>
+			<synonym>b-Aminoethylsulfonic acid</synonym>
+			<synonym>beta-Aminoethylsulfonate</synonym>
+			<synonym>beta-Aminoethylsulfonic acid</synonym>
+		</synonyms>
+	</compound>
+	<compound>
+		<id>INTV_VALINE</id>
+		<name>L-Valine</name>
+		<formula>[M1];[C5H11NO2]n</formula>
+		<inchi>InChI=1/C5H11NO2/c1-3(2)4(6)5(7)8/h3-4H,6H2,1-2H3,(H,7,8)/t4-/m0/s1</inchi>
+		<smiles />
+		<description />
+		<synonyms>
+			<synonym>(2S)-2-Amino-3-methylbutanoate</synonym>
+			<synonym>(2S)-2-Amino-3-methylbutanoic acid</synonym>
+			<synonym>(S)-2-Amino-3-methylbutanoate</synonym>
+			<synonym>(S)-2-Amino-3-methylbutanoic acid</synonym>
+			<synonym>(S)-2-Amino-3-methylbutyrate</synonym>
+			<synonym>(S)-2-Amino-3-methylbutyric acid</synonym>
+			<synonym>(S)-2-amino-3-methyl-Butanoate</synonym>
+			<synonym>(S)-2-amino-3-methyl-Butanoic acid</synonym>
+			<synonym>(S)-Valine</synonym>
+			<synonym>(S)-a-Amino-b-methylbutyrate</synonym>
+			<synonym>(S)-a-Amino-b-methylbutyric acid</synonym>
+			<synonym>2-Amino-3-methylbutanoate</synonym>
+			<synonym>2-Amino-3-methylbutanoic acid</synonym>
+			<synonym>2-Amino-3-methylbutyrate</synonym>
+			<synonym>2-Amino-3-methylbutyric acid</synonym>
+			<synonym>L-(+)-a-Aminoisovalerate</synonym>
+			<synonym>L-(+)-a-Aminoisovaleric acid</synonym>
+			<synonym>L-a-Amino-b-methylbutyrate</synonym>
+			<synonym>L-a-Amino-b-methylbutyric acid</synonym>
+			<synonym>L-valine</synonym>
+			<synonym>valine</synonym>
+			<synonym>(S)-alpha-Amino-beta-methylbutyrate</synonym>
+			<synonym>(S)-alpha-Amino-beta-methylbutyric acid</synonym>
+			<synonym>L-(+)-alpha-Aminoisovalerate</synonym>
+			<synonym>L-(+)-alpha-Aminoisovaleric acid</synonym>
+			<synonym>L-alpha-Amino-beta-methylbutyrate</synonym>
+			<synonym>L-alpha-Amino-beta-methylbutyric acid</synonym>
+		</synonyms>
+	</compound>
+</compounds>
