@@ -6,7 +6,6 @@
 mzmatch and PeakML integration for XCMS and R
 }
 \description{
-More about what it does (maybe more than one line)
 mzMatch is a modular, open source and platform independent data processing pipeline for metabolomics LC/MS data written in the Java language. It was designed to provide small tools for the common processing tasks for LC/MS data. The mzMatch environment was based entirely on the PeakML file format and core library, which provides a common framework for all the tools.
 With the introduction of the PeakML file format, the tools can share their data output with the other software. This means that we can integrate with other tools, for which we provide a first implementation integration mzMatch with XCMS an R environment. This package provides integration between the mzMatch/PeakML Java library (and its file formats) and the XCMS R library. Content of the mzmatch.R library is extended with several R functions for visualisation and statistical analysis of LC/MS data sets.
 License: GNU General Public License (GPL)
