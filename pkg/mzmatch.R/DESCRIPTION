@@ -10,3 +10,4 @@ Suggests:
 Description:  This package provides integration between the PeakML Java library (and its file formats) and the XCMS library.
 License: GPL (>= 2)
 LazyLoad: yes
+
