@@ -14,7 +14,7 @@
   will fail.
 }
 \item{attribute}{
-  Name of the attribute from PeakML file header which should be read. Currently supports 'MeasurementNames': will return character vector of sample names present in PeakML file. "IntensitiesTable":  will return matrix of peak intensities - samples as rows, peaks as columns. 'NA' values is set if peak is not present in this sample. "CompleTeble": will return list which contains three matrices, first contain peak intensity values, second measured mass and third contains retention time. "getGroupAnnotation" and "getAnnotation": returns character vector of attribute values in peakml groups and masschromatograms levels. Values is set to 'NA' if annoation is not set for current peak or group.
+  Name of the attribute from PeakML file header which should be read. Currently supports 'MeasurementNames': will return character vector of sample names present in PeakML file. "IntensitiesTable":  will return matrix of peak intensities - samples as rows, peaks as columns. 'NA' values is set if peak is not present in this sample. "CompleTable": will return list which contains three matrices, first contain peak intensity values, second measured mass and third contains retention time. "getGroupAnnotation" and "getAnnotation": returns character vector of attribute values in peakml groups and masschromatograms levels. Values is set to 'NA' if annoation is not set for current peak or group.
 }
 \item{annotations}{
 	Character vector of annotation names which sould should be extracted, if function argument attribute is set to 'getGroupAnnotation' or 'getAnnotation'. For example: c("identification","relation.id","ppm","relation.ship") for 'getGroupAnnotations'.
