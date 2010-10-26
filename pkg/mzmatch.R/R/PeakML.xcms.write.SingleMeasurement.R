@@ -81,7 +81,7 @@ PeakML.xcms.write.SingleMeasurement <- function(xset, filename,ionisation="detec
 	{
 		#public void addScanAnnotation(int measurementid, int scanid, String label, String value)
 		.jcall(project, returnSig="V", method="addScanAnnotation", as.integer(0),as.integer(scannum-1),as.character("RT_raw"),as.character(xset@rt$raw[[1]][scannum]))
-	}		
+	}
 	
 	# bollocks - now we need to load all the files again and retrieve the mass chromatogram data ... idiots; who thinks of these things
 	cat("retrieving raw data\n")
