@@ -165,6 +165,8 @@ PeakML.xcms.write.SingleMeasurement <- function(xset, filename,ionisation="detec
 	}
 
 	## Now we can filter on mass chromatogram as we want and how much we want. 
+	## Filter out these chromatograms for which intensities at the end or beginnings is max of all intensity. 
+	## So removing half detected peaks
 	for (chromnum in 1:length(accepted))
 	{
 		chrom <- chromatograms[[accepted[chromnum]]]
@@ -177,21 +179,16 @@ PeakML.xcms.write.SingleMeasurement <- function(xset, filename,ionisation="detec
 	
 	# finally we can store the mass chromatogram in our project
 		# subtract 1 from the measurementid to get in line with java
+	TESting <- matrix(ncol=4,nrow=length(accepted))
 	for (chromnum in 1:length(accepted))
 	{
 		chrom <- chromatograms[[accepted[chromnum]]]
 		.jcall(project, returnSig="V", method="addMassChromatogram", as.integer(0), as.integer(chrom[1,]), chrom[2,],chrom[3,], chrom[4,], as.character(ionisation))
-		# cat(peakid,length(scans),length(masses),"\n")
+		TESting[chromnum,]<- c(accepted[chromnum], ncol(chrom),mean(chrom[3,]),max(chrom[4,]))
 	}
-	# now the mass chromatogram data has been collected the sets can be created - *sigh* memory consumption is such a bitch
-	# -> this assumes that the sorting remains constant
-	for (i in 1:length(accepted))
-	{
-		.jcall(project, returnSig="V", method="addPeakSet", as.integer(i-1))
-	}
-
+	
 	# and finally store the resulting data
-	.jcall(project, returnSig="V", method="write", filename)
+	.jcall (project,returnSig="V",method="writeMeasurements",filename)
 	
 	## Write rejected chromatograms in saparate file
 	if (writeRejected==TRUE)
@@ -214,6 +211,6 @@ PeakML.xcms.write.SingleMeasurement <- function(xset, filename,ionisation="detec
 		filename2 <- paste(filename2,"_rejected.peakml",sep="")
 		.jcall(project, returnSig="V", method="write", filename2)
 	}
-
+	cat (length(accepted)," peaks exported.\n")
 }
 
