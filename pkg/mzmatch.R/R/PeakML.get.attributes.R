@@ -8,21 +8,21 @@ PeakML.get.attributes <- function(filename,attribute="MeasurementNames",annotati
 		
 	if (attribute=="MeasurementNames")
 	{
-		attr <- .jcall(project,returnSig="[S", method="getMeasurementNames")	
+		attr <- .jcall(project,returnSig="[S", method="getMeasurementNames")
 	}
 	
 	if (attribute=="GroupNames")
 	{
 		setsnumber <- .jcall(project,returnSig="I",method="getNrPeaksets")
-		attr <- rep(NA,setsnumber)		
-		for (setnum in 1:setsnumber)	
+		attr <- rep(NA,setsnumber)
+		for (setnum in 1:setsnumber)
 		{	
 			plotname <- .jcall(project,returnSig="S", method="getGroupAnnotation",as.integer(setnum-1),"identification")
 			if (is.null(plotname))
 			{
-				plotname <- NA		
+				plotname <- NA
 			}
-		attr[setnum] <- paste(plotname,sep=",")		
+		attr[setnum] <- paste(plotname,sep=",")
 		}
 	}
 	
@@ -30,8 +30,8 @@ PeakML.get.attributes <- function(filename,attribute="MeasurementNames",annotati
 	{
 		if(!is.null(annotations))
 		{
-			setsnumber <- .jcall(project,returnSig="I",method="getNrPeaksets")			
-			attr <- vector("list",length(annotations))			
+			setsnumber <- .jcall(project,returnSig="I",method="getNrPeaksets")
+			attr <- vector("list",length(annotations))
 			for (ann in 1:length(annotations))
 			{
 				for (setnum in 1: setsnumber)
@@ -39,9 +39,9 @@ PeakML.get.attributes <- function(filename,attribute="MeasurementNames",annotati
 					value <-.jcall(project,returnSig="S", method="getGroupAnnotation",as.integer(setnum-1),as.character(annotations)[ann])
 					if (is.null(value))
 					{
-						value <- NA					
+						value <- NA
 					}
-					attr[[ann]][setnum] <- value								
+					attr[[ann]][setnum] <- value
 				}	
 			}	
 		} else
@@ -54,8 +54,8 @@ PeakML.get.attributes <- function(filename,attribute="MeasurementNames",annotati
 	{
 		if(!is.null(annotations))
 		{
-			setsnumber <- .jcall(project,returnSig="I",method="getNrPeaksets")			
-			attr <- vector("list",length(annotations))			
+			setsnumber <- .jcall(project,returnSig="I",method="getNrPeaksets")
+			attr <- vector("list",length(annotations))
 			for (ann in 1:length(annotations))
 			{
 				for (setnum in 1: setsnumber)
@@ -63,30 +63,30 @@ PeakML.get.attributes <- function(filename,attribute="MeasurementNames",annotati
 					value <-.jcall(project,returnSig="S", method="getAnnotation",as.integer(setnum-1),as.character(annotations)[ann])
 					if (is.null(value))
 					{
-						value <- NA					
+						value <- NA
 					}
-					attr[[ann]][setnum] <- value								
-				}	
-			}	
+					attr[[ann]][setnum] <- value
+				}
+			}
 		} else
 		{
 			cat ("Provide annotation names with parameter 'annotations'. \n")
-		}	
+		}
 	}
 	
 	if (attribute=="IntensitiesTable")
 	{
-		cat ("Loading masschromatograms from file \n")		
+		cat ("Loading masschromatograms from file \n")
 		st <- system.time(chromatograms <- .jcall(project,returnSig="[[D", method="getMassChromatograms"))
 		cat ("Done in:",st[3],"s \n")
 		## Table of intensities, sample ID, group ID, AvgMass,AvgRT
-		peakdata <- NULL	
+		peakdata <- NULL
 		for (chromnums in 1:length(chromatograms))
 		{
 			VEC <- .jevalArray(chromatograms[[chromnums]])[c(9,11,13,8,3)]
 			peakdata <- rbind (peakdata,VEC)
 		}
-		## How many groups (sets are there)	 
+		## How many groups (sets are there)
 		samplenames <- .jcall(project,returnSig="[S", method="getMeasurementNames")
 		## empty output data matrix
 		attr <- matrix(ncol=max(peakdata[,3])+1,nrow=length(samplenames))
@@ -109,7 +109,7 @@ PeakML.get.attributes <- function(filename,attribute="MeasurementNames",annotati
 	}
 	if (attribute=="CompleteTable")
 	{
-		cat ("Loading masschromatograms from file \n")		
+		cat ("Loading masschromatograms from file \n")
 		st <- system.time(chromatograms <- .jcall(project,returnSig="[[D", method="getMassChromatograms"))
 		cat ("Done in:",st[3],"s \n")
 		## Table of: intensities, sample ID, group ID, AvgMass,AvgRT
@@ -151,7 +151,7 @@ PeakML.get.attributes <- function(filename,attribute="MeasurementNames",annotati
 		for (i in 1:3)
 		{
 			rownames(attr[[i]]) <- samplenames
-		}				
+		}
 		## Calculate average masses for groups
 		colnames <- rep(NA,max(peakdata[,3])+1)
 		for (groupid in 1:(max(peakdata[,3]+1)))
@@ -159,10 +159,10 @@ PeakML.get.attributes <- function(filename,attribute="MeasurementNames",annotati
 			masses <- peakdata[peakdata[,3]==sort(unique(peakdata[,3]))[groupid],4]
 			colnames[groupid] <- mean(masses,na.rm=TRUE)
 		}
-		for (i in 1:3)		
-		{		
+		for (i in 1:3)
+		{
 			colnames(attr[[i]]) <- colnames
-		}	
+		}
 	}
 	attr
 }
