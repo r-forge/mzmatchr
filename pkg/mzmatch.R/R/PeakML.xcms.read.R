@@ -283,9 +283,23 @@ PeakML.xcms.read <- function(filename,ionisation="detect",Rawpath=NULL,annotatio
 		phenoData <- data.frame(class=sampleclasses[samplegroups[xset@peaks[,"sample"]==x][1]])
 		phenoData	
 	}	
-	xset@phenoData <- do.call(rbind,lapply(1:length(samplenames),samplelookfunction)) 
-	rownames(xset@phenoData) <- samplenames
+	phenoData <- do.call(rbind,lapply(1:length(samplenames),samplelookfunction)) 
+	rownames(phenoData) <- samplenames
+	
+	## Remove samples which are not present in all peaksets
+	#REM <- which(is.na(xset@phenoData[,1]))
+	#if (length(REM)!=0)
+	#{
+	#	phenoData <- data.frame(as.matrix(phenoData)[-c(REM),])
+	#	rawdatafullpaths <- rawdatafullpaths[-c(REM)]
+	#	colnames(phenoData) <- "class"
+	#}
+	
+	xset@phenoData <- phenoData
 	xset@filepaths <- rawdatafullpaths
+	
+	
+	
 	
 	##Restoring this stupid list of group indexes	
 	groupidx <- vector("list",length(unique(groupindex)))
@@ -306,7 +320,7 @@ PeakML.xcms.read <- function(filename,ionisation="detect",Rawpath=NULL,annotatio
 	
 	groupeaksfunction <- function (i)
 	{
-		groups <- matrix(ncol=7+length(sampleclasses),nrow=1)
+		groups <- matrix(ncol=7+length(levels(xset@phenoData[,1])),nrow=1)
 		grouppeaks <- xset@peaks[groupidx[[i]],]		
 		## avoid R to interpret matrix wiht 1 row as vector
 		grouppeaks <- rbind(grouppeaks,NULL)		
@@ -319,7 +333,7 @@ PeakML.xcms.read <- function(filename,ionisation="detect",Rawpath=NULL,annotatio
 		}
 		groups[7] <- nrow(grouppeaks)
 		## fill in for which sample classes peaks ar detected, I am not sure that we need this at all
-		detections <- rep(0,length(sampleclasses))
+		detections <- rep(0,length(levels(xset@phenoData[,1])))
 		## vector of length=nsamp and filled with zeros		
 		isdetectedinsample <- rep(0,nrow(xset@phenoData))
 		## If peak is detected for current sample, replace it with "1"	
@@ -327,13 +341,14 @@ PeakML.xcms.read <- function(filename,ionisation="detect",Rawpath=NULL,annotatio
 		## for each sample class, count amount of samples in which peak is deteced		
 		for (a in 1:length(levels(xset@phenoData[,1])))
 		{
-			detections[a] <- sum(isdetectedinsample[xset@phenoData[,1]==levels(xset@phenoData[,1])[a]])		
+			detections[a] <- sum(isdetectedinsample[!is.na(xset@phenoData[,1])][xset@phenoData[!is.na(xset@phenoData[,1]),1]==levels(xset@phenoData[,1])[a]])		
 		}
 		groups[8:(7+length(detections))] <- detections	
 		groups
 	}	
 		
 	ST <- system.time(groups <- do.call(rbind,lapply(1:length(groupidx),groupeaksfunction)))	
+	groups <- rbind(groups,NULL)
 	colnames(groups) <- c("mzmed","mzmin","mzmax","rtmed","rtmin","rtmax","npeaks",as.character(levels(xset@phenoData[,1])))
 	xset@groups <- groups
 	cat ("Groups table extracted in",ST[3],"s \n")
