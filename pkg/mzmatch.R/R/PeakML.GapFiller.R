@@ -402,8 +402,8 @@ PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfil
 	}
 
 	## Finally write file
-	cat(zerocount," of fillled in mass chromatograms are removed (length <3 scans)\n")	
-	cat (nonzerocount,"mass chromatogramms filled in.\n")
+	#cat(zerocount," of fillled in mass chromatograms are removed (length <3 scans)\n")	
+	#cat (nonzerocount,"mass chromatogramms filled in.\n")
 	.jcall(project, returnSig="V", method="write", outputfile)
 }
 
