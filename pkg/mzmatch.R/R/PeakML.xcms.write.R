@@ -27,7 +27,7 @@ PeakML.xcms.write <- function(xset, filename,ionisation="detect")
 	### ionisation: detect - default, from mzXML, negative, positive, unknown
 
 	# create a new Project
-	project <- .jnew("peakml/util/rjava/Project", rownames(xset@phenoData), xset@filepaths, as.character(xset@phenoData[,1]))	
+	project <- .jnew("peakml/util/rjava/Project", rownames(xset@phenoData), xset@filepaths, as.character(xset@phenoData[,1]))
 	## Setting up counter for mass chromatograms with length 0	
 	zerocount <- 0	
 	nonzerocount <- 0
