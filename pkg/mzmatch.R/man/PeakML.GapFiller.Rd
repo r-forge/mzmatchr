@@ -5,7 +5,7 @@
 	For each sample, identify peak sets where that sample is not represented. For each of those peak sets, extract an EIC from RAW data file and add it to the peak set.
 }
 \usage{
-  PeakML.GapFiller(filename, ionisation = "detect", Rawpath = NULL, outputfile)
+  PeakML.GapFiller(filename, ionisation = "detect", Rawpath = NULL, outputfile,ppm=0,rtwin=0)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -20,6 +20,12 @@
   }
   \item{outputfile}{
     The name of the PeakML file to write after gap filling.
+  }
+  \item{ppm}{
+    Mass window in ppm which to use when mass chromatogram is extracted from RAW data file, before exporting to peakml file. Default value is 0.
+  }
+  \item{rtwin}{
+    The retention time window in seconds, defining the range where to look for matches. Default values is 0.
   }
 }
 \details{
