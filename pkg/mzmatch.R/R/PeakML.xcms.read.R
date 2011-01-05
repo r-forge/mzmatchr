@@ -281,8 +281,8 @@ PeakML.xcms.read <- function(filename,ionisation="detect",Rawpath=NULL,annotatio
 	samplelookfunction <- function (x)	
 	{
 		phenoData <- data.frame(class=sampleclasses[samplegroups[xset@peaks[,"sample"]==x][1]])
-		phenoData	
-	}	
+		phenoData
+	}
 	phenoData <- do.call(rbind,lapply(1:length(samplenames),samplelookfunction)) 
 	rownames(phenoData) <- samplenames
 	
