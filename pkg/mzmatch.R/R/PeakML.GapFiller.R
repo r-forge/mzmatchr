@@ -139,7 +139,8 @@ PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfil
 	if (fileslocated=="N")
 	{
 		cat (errormessage)
-		cat ("Some of the raw data files are not accessible, you will not be able to fill in missing peaks. Please set \"Rawpath\" argument with location where files can be located\n")
+		cat ("Some of the raw data files are not accessible, we will not be able to fill in missing peaks. Please set \"Rawpath\" argument with location where files can be located\n")
+		stop ()
 	}
 
 	# Extract mass chromatograms
