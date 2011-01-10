@@ -33,15 +33,13 @@ PeakML.xcms.write.SingleMeasurement <- function(xset, filename,ionisation="detec
 	rejected <- NULL
 	accepted <- NULL
 	
+	# load the raw data
+	rawdata <- xcmsRaw(xset@filepaths[1])
 	# correction for ionisation mode		
 	if (ionisation=="detect") 
 	{
 		ionisation <- as.character(rawdata@polarity[1])
 	}
-
-	
-	# load the raw data
-	rawdata <- xcmsRaw(xset@filepaths[1])
 	rawdata <- split(rawdata,rawdata@polarity)
 	rawdata <- rawdata[[which(names(rawdata)==ionisation)]]	
 

@@ -231,85 +231,87 @@ PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfil
 	nonzerocount <- 0
 	fillednums <- NULL
 
-	system.time(
-	for (filenum in 1:length(samplenums))
+	if (length(samplenums!=0))
 	{
-		file <- samplenums[filenum]
-		rawfile <- xcmsRaw(rawdatafullpaths[file])
-		## detect which peaks to fill in for current data file
-		fillinnums <- notdetected[whichfiles==file]
-		
-		FillinPeaks <- function(peaknum)
+		system.time(
+		for (filenum in 1:length(samplenums))
 		{
-			whichpeakset <- numchromsexpected[fillinnums[peaknum],1]
-			## get a peaset RT and mass window from peakdata for all detected samples
-			subtable <- peakdata[peakdata[,10]==whichpeakset,]
-			subtable <- rbind(subtable,NULL)
-			subtable <- apply(subtable,2,mean,na.rm=TRUE)
-
-			## Eextract chromatogram
-			# now we can locate the retention time as they will be in the raw data
-			rt_start <- subtable[5]-rtwin
-			rt_finis <- subtable[6]+rtwin
-			mz_start <- subtable[2]
-			mz_finis <- subtable[3]
-			mz_start<- mz_start-(mz_start*ppm/10^6)
-			mz_finis<- mz_finis+(mz_finis*ppm/10^6)
-			######
-			#  Extract data form raw data files
-			######
-				 
-			C <- rawMat (rawfile,mzrange=cbind(mz_start, mz_finis),rtrange=c(rt_start,rt_finis))
-			C <- rbind (C,NULL)
-
-			## At some cases, two or more identical RT's are extracted, getting rid of them			
-			repeatingRTS <- as.numeric(names(which(table(C[,1])>=2)))
+			file <- samplenums[filenum]
+			rawfile <- xcmsRaw(rawdatafullpaths[file])
+			## detect which peaks to fill in for current data file
+			fillinnums <- notdetected[whichfiles==file]
 			
-			## Removing values with repeating RT's
-			## Row with largest intensity are selected				
-			if (length(repeatingRTS!=0))
-			{			
-				for (z in 1:length(repeatingRTS))
-				{	
-					Csub <- which(round(C[,1],5)==round(repeatingRTS[z],5))
-					Csub <- Csub[-c(which(C[Csub,3]==max(C[Csub,3]))[1])]
-					C <- C[-c(Csub),]
-					C <- rbind(C,NULL)
-				}
-			}
-			
-			scanids <- which(rawfile@scantime%in%C[,1])
-			## if RT correction was applied, scans should be extracted from raw RT's
-			
-			if (length(scanids)<3) 
+			FillinPeaks <- function(peaknum)
 			{
-				scanids <- c(-1,-1,-1)
-				retentiontimes <- c(-1,-1,-1)
-				masses <- c(-1,-1,-1)
-				intensities <- c(-1,-1,-1)
-				zerocount <- zerocount+1
-			} else {
-				retentiontimes <- C[,1]
-				#masses <- C[,2]+(protonmass*protonCoef)
-				masses <- C[,2]
-				intensities <- C[,3]
-				nonzerocount <- nonzerocount+1
-				fillednums <- append(fillednums,fillinnums[peaknum])
-			}
-			assign ("zerocount",zerocount,envir=.GlobalEnv)
-			assign ("nonzerocount",nonzerocount,envir=.GlobalEnv)
-			assign ("fillednums",fillednums,envir=.GlobalEnv)
-			OUT <- rbind(masses,intensities,retentiontimes,scanids)
-		}
-		filledlist <- lapply(1:length(fillinnums),FillinPeaks)
-		for (i in 1:length(filledlist))
-		{
-			chromslist[[fillinnums[i]]] <- filledlist[[i]]
-		}
-		rm (rawfile,filledlist)
-	}
-	)
+				whichpeakset <- numchromsexpected[fillinnums[peaknum],1]
+				## get a peaset RT and mass window from peakdata for all detected samples
+				subtable <- peakdata[peakdata[,10]==whichpeakset,]
+				subtable <- rbind(subtable,NULL)
+				subtable <- apply(subtable,2,mean,na.rm=TRUE)
 
+				## Eextract chromatogram
+				# now we can locate the retention time as they will be in the raw data
+				rt_start <- subtable[5]-rtwin
+				rt_finis <- subtable[6]+rtwin
+				mz_start <- subtable[2]
+				mz_finis <- subtable[3]
+				mz_start<- mz_start-(mz_start*ppm/10^6)
+				mz_finis<- mz_finis+(mz_finis*ppm/10^6)
+				######
+				#  Extract data form raw data files
+				######
+					 
+				C <- rawMat (rawfile,mzrange=cbind(mz_start, mz_finis),rtrange=c(rt_start,rt_finis))
+				C <- rbind (C,NULL)
+	
+				## At some cases, two or more identical RT's are extracted, getting rid of them			
+				repeatingRTS <- as.numeric(names(which(table(C[,1])>=2)))
+				
+				## Removing values with repeating RT's
+				## Row with largest intensity are selected				
+				if (length(repeatingRTS!=0))
+				{			
+					for (z in 1:length(repeatingRTS))
+					{	
+						Csub <- which(round(C[,1],5)==round(repeatingRTS[z],5))
+						Csub <- Csub[-c(which(C[Csub,3]==max(C[Csub,3]))[1])]
+						C <- C[-c(Csub),]
+						C <- rbind(C,NULL)
+					}
+				}
+			
+				scanids <- which(rawfile@scantime%in%C[,1])
+				## if RT correction was applied, scans should be extracted from raw RT's
+			
+				if (length(scanids)<3) 
+				{
+					scanids <- c(-1,-1,-1)
+					retentiontimes <- c(-1,-1,-1)
+					masses <- c(-1,-1,-1)
+					intensities <- c(-1,-1,-1)
+					zerocount <- zerocount+1
+				} else {
+					retentiontimes <- C[,1]
+					#masses <- C[,2]+(protonmass*protonCoef)
+					masses <- C[,2]
+					intensities <- C[,3]
+					nonzerocount <- nonzerocount+1
+					fillednums <- append(fillednums,fillinnums[peaknum])
+				}
+				assign ("zerocount",zerocount,envir=.GlobalEnv)
+				assign ("nonzerocount",nonzerocount,envir=.GlobalEnv)
+				assign ("fillednums",fillednums,envir=.GlobalEnv)
+				OUT <- rbind(masses,intensities,retentiontimes,scanids)
+			}
+			filledlist <- lapply(1:length(fillinnums),FillinPeaks)
+			for (i in 1:length(filledlist))
+			{
+				chromslist[[fillinnums[i]]] <- filledlist[[i]]
+			}
+			rm (rawfile,filledlist)
+		}
+		)
+	}
 	##SetNames, if peakml file has a several peaksets, they will be restored.
 	samplegroups=peakdata[,11]
 	sampleclasses <- .jcall(project,returnSig="[S", method="getSetNames")
