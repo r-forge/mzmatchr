@@ -253,6 +253,23 @@ PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfil
 				# now we can locate the retention time as they will be in the raw data
 				rt_start <- subtable[5]-rtwin
 				rt_finis <- subtable[6]+rtwin
+				if (rt_finis > max(rawfile@scantime))
+				{
+					rt_finis <- max(rawfile@scantime)
+				}
+				if (rt_start > max(rawfile@scantime))
+				{
+					rt_start <- max(rawfile@scantime)
+				}
+				if (rt_finis < min(rawfile@scantime))
+				{
+					rt_finis <- min(rawfile@scantime)
+				}
+				if (rt_start < min(rawfile@scantime))
+				{
+					rt_start <- min(rawfile@scantime)
+				}
+				
 				mz_start <- subtable[2]
 				mz_finis <- subtable[3]
 				mz_start<- mz_start-(mz_start*ppm/10^6)
@@ -260,8 +277,13 @@ PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfil
 				######
 				#  Extract data form raw data files
 				######
-					 
-				C <- rawMat (rawfile,mzrange=cbind(mz_start, mz_finis),rtrange=c(rt_start,rt_finis))
+				if (rt_start==rt_finis)
+				{
+					C <- c(1,1,1)
+				} else
+				{	 
+					C <- rawMat (rawfile,mzrange=cbind(mz_start, mz_finis),rtrange=c(rt_start,rt_finis))
+				}
 				C <- rbind (C,NULL)
 	
 				## At some cases, two or more identical RT's are extracted, getting rid of them			
@@ -304,6 +326,17 @@ PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfil
 				OUT <- rbind(masses,intensities,retentiontimes,scanids)
 			}
 			filledlist <- lapply(1:length(fillinnums),FillinPeaks)
+			
+			assign ("zerocount",zerocount,envir=.GlobalEnv)
+			assign ("nonzerocount",nonzerocount,envir=.GlobalEnv)
+			assign ("fillednums",fillednums,envir=.GlobalEnv)
+			
+			for (i in 1:length(fillinnums))
+			{
+				FillinPeaks(i)
+			}
+			
+			
 			for (i in 1:length(filledlist))
 			{
 				chromslist[[fillinnums[i]]] <- filledlist[[i]]

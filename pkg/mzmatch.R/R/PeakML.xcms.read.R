@@ -98,7 +98,7 @@ PeakML.xcms.read <- function(filename,ionisation="detect",Rawpath=NULL,annotatio
 	## Read samplenames from peakml file	
 	samplenames <- .jcall(project,returnSig="[S", method="getMeasurementNames")	
 	
-	# Check if data directory for raw files ir readable, and if files are present there, 
+	# Check if data directory for raw files is readable, and if files are present there, 
 	# if RaeDataPath is not set, check for raw data in default folder which is defined in PeakML file	
 	if (!is.null(Rawpath))
 	{
