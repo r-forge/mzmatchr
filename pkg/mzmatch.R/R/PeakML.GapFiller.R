@@ -277,7 +277,7 @@ PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfil
 				######
 				#  Extract data form raw data files
 				######
-				if (rt_start==rt_finis)
+				if ((rt_finis-rt_start)<5)
 				{
 					C <- c(1,1,1)
 				} else
@@ -327,6 +327,13 @@ PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfil
 			}
 			filledlist <- lapply(1:length(fillinnums),FillinPeaks)
 			
+			## For debug purpose only
+			#for (bd in 1: length(fillinnums))
+			#{
+			#	cat (bd,"\n")
+			#	FillinPeaks(bd)
+			#}
+
 			assign ("zerocount",zerocount,envir=.GlobalEnv)
 			assign ("nonzerocount",nonzerocount,envir=.GlobalEnv)
 			assign ("fillednums",fillednums,envir=.GlobalEnv)
