@@ -1,4 +1,4 @@
-PeakML.xcms.write.SingleMeasurement <- function(xset, filename,ionisation="detect",addscans=5,ppm=5,writeRejected=FALSE)
+PeakML.xcms.write.SingleMeasurement <- function(xset, filename,ionisation="detect",addscans=5,ppm=5,writeRejected=FALSE,ApodisationFilter=FALSE)
 {
 	#### Java calls	
 	## public int getNrPeaksets() - get the number of PeakSets (groups) in memory 
@@ -41,7 +41,7 @@ PeakML.xcms.write.SingleMeasurement <- function(xset, filename,ionisation="detec
 		ionisation <- as.character(rawdata@polarity[1])
 	}
 	rawdata <- split(rawdata,rawdata@polarity)
-	rawdata <- rawdata[[which(names(rawdata)==ionisation)]]	
+	rawdata <- rawdata[[which(names(rawdata)==ionisation)]]
 
 	## Detect which peak pickging algorithm were used to generate XCMS object, for matchedFilter peaks table contain columns "intf", for centWave columns name ir "intb".
 	intcolname <- colnames(xset@peaks)[8]
@@ -177,6 +177,37 @@ PeakML.xcms.write.SingleMeasurement <- function(xset, filename,ionisation="detec
 		}
 	}
 	accepted <- accepted[-c(which(accepted%in%rejected))]
+
+	## Filter out centroiding artefacts. It checks a mass withing 0.9 mass units and RT shift of 5s
+	if (ApodisationFilter==TRUE)
+	{
+		## mass, intensities for all peaks in accepted list
+		TESting <- matrix(ncol=3,nrow=length(accepted))
+		for (chromnum in 1:length(accepted))
+		{
+			chrom <- chromatograms[[accepted[chromnum]]]
+			TESting[chromnum,]<- c(chrom[2,which(chrom[4,]==max(chrom[4,]))[1]],mean(chrom[3,]),max(chrom[4,]))
+		}
+		REM <- NULL
+		system.time(
+		for (chromnum in 1:length(accepted))
+		{
+			RTMIN <- TESting[chromnum,1]-2.5
+			RTMAX <- TESting[chromnum,1]+2.5
+			MZMAX <- TESting[chromnum,2]+0.9
+			HITS <- which(TESting[,2]<MZMAX & TESting[,2]>=TESting[chromnum,2] & TESting[,1]<RTMAX & TESting[,1]>RTMIN)
+			if (length(HITS)>1)
+			{
+				REM <- append(REM,HITS[-c(which(TESting[HITS,3]==max(TESting[HITS,3])))[1]])
+			}
+		}
+		)
+		REM <- unique(REM)
+		rejected <- c(rejected,accepted[REM])
+		accepted <- accepted[-c(REM)]
+		rejected <- c(rejected,accepted[REM])
+	}
+
 	
 	# finally we can store the mass chromatogram in our project
 		# subtract 1 from the measurementid to get in line with java
