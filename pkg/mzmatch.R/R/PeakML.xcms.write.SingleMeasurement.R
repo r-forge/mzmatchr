@@ -178,34 +178,91 @@ PeakML.xcms.write.SingleMeasurement <- function(xset, filename,ionisation="detec
 	}
 	accepted <- accepted[-c(which(accepted%in%rejected))]
 
-	## Filter out centroiding artefacts. It checks a mass withing 0.9 mass units and RT shift of 5s
+	## Filter out centroiding artefacts. It checks a mass withing 0.9 mass units and RT shift of 5s. Remove peaks with intensity less than 2% of maximum intensity.
+
+	
 	if (ApodisationFilter==TRUE)
 	{
 		## mass, intensities for all peaks in accepted list
-		TESting <- matrix(ncol=3,nrow=length(accepted))
+		## Columns: chromID, RT, mass, intensity
+		intensitiesMatrix <- matrix(ncol=4,nrow=length(accepted))
 		for (chromnum in 1:length(accepted))
 		{
 			chrom <- chromatograms[[accepted[chromnum]]]
-			TESting[chromnum,]<- c(chrom[2,which(chrom[4,]==max(chrom[4,]))[1]],mean(chrom[3,]),max(chrom[4,]))
+			intensitiesMatrix[chromnum,]<- c(accepted[chromnum],chrom[2,which(chrom[4,]==max(chrom[4,]))[1]],weighted.mean(chrom[3,],chrom[4,]),max(chrom[4,]))
 		}
-		REM <- NULL
-		system.time(
-		for (chromnum in 1:length(accepted))
+
+		## Reorder matrix by mass
+		intensitiesMatrix <- intensitiesMatrix[order(intensitiesMatrix[,3]),]
+
+		## Split intensitiesMatrix in the list, by mass window of 0.9 Da
+		StartRow <- 1
+		massWinList <- vector("list")
+		listnum=1
+		while (!StartRow>nrow(intensitiesMatrix))
 		{
-			RTMIN <- TESting[chromnum,1]-2.5
-			RTMAX <- TESting[chromnum,1]+2.5
-			MZMAX <- TESting[chromnum,2]+0.9
-			HITS <- which(TESting[,2]<MZMAX & TESting[,2]>=TESting[chromnum,2] & TESting[,1]<RTMAX & TESting[,1]>RTMIN)
-			if (length(HITS)>1)
+			initMass <- intensitiesMatrix[StartRow,3]
+			finMass <- initMass + 0.9
+			hits <- which(intensitiesMatrix[,3]>=initMass & intensitiesMatrix[,3]<=finMass)
+			massWinList[[listnum]] <- intensitiesMatrix[hits,]
+			listnum <- listnum +1
+			StartRow <- max(hits)+1
+		}
+
+		## Now within each list where masses were stored, order these masses by RT, and split new list, based on RT window.
+
+		RTmassWinList <- vector ("list")
+		listnum=1
+		for (listindex in 1:length(massWinList))
+		{
+			datMat <- massWinList[[listindex]]
+			datMat <- rbind(datMat,NULL)
+			if (nrow(datMat)==1)
 			{
-				REM <- append(REM,HITS[-c(which(TESting[HITS,3]==max(TESting[HITS,3])))[1]])
+				RTmassWinList[[listnum]] <- datMat
+				listnum=listnum+1
+			} else
+			{
+				datMat <- datMat[order(datMat[,2]),]
+				StartRow <- 1
+				while (!StartRow>nrow(datMat))
+				{
+					initRT <- datMat[StartRow,2]
+					finRT <- initRT + 5
+					hits <- which(datMat[,2]>=initRT & datMat[,2]<=finRT)
+					RTmassWinList[[listnum]] <- datMat[hits,]
+					listnum <- listnum+1
+					StartRow <- max(hits)+1
+				}
 			}
 		}
-		)
-		REM <- unique(REM)
-		rejected <- c(rejected,accepted[REM])
-		accepted <- accepted[-c(REM)]
-		rejected <- c(rejected,accepted[REM])
+
+		## Now check each list in object RTmassWinList which has more than 1 row, and remove these peaks with intensity less than 2% of max int
+
+		REM <- NULL
+		for (listindex in 1:length(RTmassWinList))
+		{
+			datMat <- RTmassWinList[[listindex]]
+			datMat <- rbind(datMat,NULL)
+			if (nrow(datMat)!=1)
+			{
+				maxInt <- max(datMat[,4])
+				# Intensity threshold 2%
+				intTresh <- maxInt*0.02
+				hits <- which(datMat[,4]<intTresh)
+				if (length(hits)!=0)
+				{
+					REM <- append(REM,datMat[hits,1])
+				}
+			}
+		}
+
+		REM <- sort(unique(REM))
+		if (length(REM)!=0)
+		{
+			rejected <- sort(append(rejected,REM))
+			accepted <- accepted[-c(which(accepted%in%REM))]
+		}
 	}
 
 	
