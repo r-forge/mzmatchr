@@ -158,7 +158,7 @@ PeakML.xcms.write.SingleMeasurement <- function(xset, filename,ionisation="detec
 				{
 					val <- rbind(val[which(max(val[,3])==val[,3]),],NULL)
 				}
-				masses[detectedrts[rtt]] <- val[,2]
+				masses[detectedrts[rtt]] <- val[,2][1]
 			}
 			accepted <- append(accepted,peakid)
 		}
