@@ -305,7 +305,8 @@ PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfil
 				scanids <- which(rawfile@scantime%in%C[,1])
 				## if RT correction was applied, scans should be extracted from raw RT's
 			
-				if (length(scanids)<=3) 
+				## Remove artefacts
+				if (length(scanids)<=3 | length(unique(C[,3]))<=3) 
 				{
 					scanids <- c(-1,-1,-1)
 					retentiontimes <- c(-1,-1,-1)
