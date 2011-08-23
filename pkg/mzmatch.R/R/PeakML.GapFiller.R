@@ -67,7 +67,7 @@ PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfil
 	hydrogen <- 1.00782503214
 	electron <- 0.00054857990924
 	protonmass <- hydrogen-electron
-		
+	
 	
 	# create a new Project
 	project <- .jnew("peakml/util/rjava/Project", rep("A",3), rep("A",3), rep("A",3))
@@ -305,7 +305,7 @@ PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfil
 				scanids <- which(rawfile@scantime%in%C[,1])
 				## if RT correction was applied, scans should be extracted from raw RT's
 			
-				if (length(scanids)<3) 
+				if (length(scanids)<=3) 
 				{
 					scanids <- c(-1,-1,-1)
 					retentiontimes <- c(-1,-1,-1)
