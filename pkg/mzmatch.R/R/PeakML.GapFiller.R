@@ -339,10 +339,10 @@ PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfil
 			assign ("nonzerocount",nonzerocount,envir=.GlobalEnv)
 			assign ("fillednums",fillednums,envir=.GlobalEnv)
 			
-			for (i in 1:length(fillinnums))
-			{
-				FillinPeaks(i)
-			}
+			#for (i in 1:length(fillinnums))
+			#{
+			#	FillinPeaks(i)
+			#}
 			
 			
 			for (i in 1:length(filledlist))
