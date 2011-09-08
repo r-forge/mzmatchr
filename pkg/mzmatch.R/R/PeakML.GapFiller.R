@@ -247,12 +247,12 @@ PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfil
 				## get a peaset RT and mass window from peakdata for all detected samples
 				subtable <- peakdata[peakdata[,10]==whichpeakset,]
 				subtable <- rbind(subtable,NULL)
-				subtable <- apply(subtable,2,mean,na.rm=TRUE)
+				#subtable <- apply(subtable,2,mean,na.rm=TRUE)
 
 				## Eextract chromatogram
 				# now we can locate the retention time as they will be in the raw data
-				rt_start <- subtable[5]-rtwin
-				rt_finis <- subtable[6]+rtwin
+				rt_start <- min(subtable[,5])-rtwin
+				rt_finis <- max(subtable[,6])+rtwin
 				if (rt_finis > max(rawfile@scantime))
 				{
 					rt_finis <- max(rawfile@scantime)
@@ -270,8 +270,8 @@ PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfil
 					rt_start <- min(rawfile@scantime)
 				}
 				
-				mz_start <- subtable[2]
-				mz_finis <- subtable[3]
+				mz_start <- min(subtable[,2])
+				mz_finis <- max(subtable[,3])
 				mz_start<- mz_start-(mz_start*ppm/10^6)
 				mz_finis<- mz_finis+(mz_finis*ppm/10^6)
 				######
