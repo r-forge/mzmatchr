@@ -1,21 +1,22 @@
-\name{PeakML.Methods.getProtonCoef}
+\name{PeakML.Methods.getPeakData}
 \Rdversion{1.1}
-\alias{PeakML.Methods.getProtonCoef}
-\title{PeakML.Methods.getProtonCoef}
+\alias{PeakML.Methods.getPeakData}
+\title{PeakML.Methods.getPeakData}
 \description{
 
-	Returns the proton coefficient based on the ionisation mode. If ionisation argument is set to "detect", then the ionisation mode is detected from the first scan in the first sample. No ionisation switching is supported in mzmatch.R yet.
+	Returns peak data from mass chromatograms generated from PeakML files as a matrix of 11 columns. Each column represents average mz, min mz, max mz, averate RT (this is recalculated at maximum intensity of peak, warning -this approach differs from that one which is used in XCMS), min RT,  max RT, sum of intensity, max intensity, measurement id,  group id and peak count repectively.
+	
 }
 \usage{
-	PeakML.Methods.getProtonCoef(javaProject, ionisation="detect")
+	PeakML.Methods.getPeakData(javaProject, massCorrection)
 }
 
 \arguments{
 	\item{javaProject}{
 		The mzmatch java project
 	}
-	\item{ionisation}{
-		Defaults to "detect", to detect the ionisation from the scan data. Other accepted values are "positive" (proton coef = 1), "negative" (proton coef. = -1) and empty string (proton coef=0).
+	\item{massCorrection}{
+		To correct for masses based on the ionisation detected. 
 	}
 }
 
@@ -23,7 +24,7 @@
 The PeakML file format defines an open and extensible file format for storing extracted hyphenated mass spectrometry data. As such, the format will enable users to store intermediate data in a structured manner, but more importantly, to exchange data between different data analysis software. This will give complete flexible control to the users of data analysis software to cherry pick those components best suited to their needs. The PeakML.Methods contains a set of R functions that will enable end users to rapidly write scripts to manipulate PeakML files.
 }
 \value{
-  getProtonCoef returns proton coefficient, a numeric value.
+  A numeric matrix containing 11 columns representing - "AVGMZ","MINMZ","MAXMZ","AVGRT","MINRT",  "MAXRT", "SUMINTENSITY", "MAXINTENSITY", "measurement id", "group id", "peakcount" ,
 }
 \references{
 	PeakML/mzMatch: A File Format, Java Library, R Library, and Tool-Chain for Mass Spectrometry Data Analysis, Richard A. Scheltema, Andris Jankevics, Ritsert C. Jansen, Morris A. Swertz, Rainer Breitling, Analytical Chemistry, 2011 83 (7), 2786-2793.
@@ -35,7 +36,7 @@ The PeakML file format defines an open and extensible file format for storing ex
 }
 
 \seealso{
-  \code{\link{PeakML.GapFiller}}
+  \code{\link{PeakML.Methods.getMassCorrection}, \link{PeakML.Methods.getProtonCoef}}
 }
 
 \keyword{ mzmatch.R }
