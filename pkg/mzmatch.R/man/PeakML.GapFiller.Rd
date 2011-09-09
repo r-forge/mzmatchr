@@ -39,7 +39,7 @@
   PeakML/mzMatch - a file format, Java library, R library and tool-chain for mass spectrometry data analysis. In preparation.
 }
 \author{
-  Andris Jankevics (a.jankevics@rug.nl), Richard Scheltema (r.a.scheltema@rug.nl)
+  Andris Jankevics (a.jankevics@rug.nl), Richard Scheltema (r.a.scheltema@rug.nl), Achuthanuni Chokkathukalam (unni.chokkathukalam@glasgow.ac.uk)
 }
 
 \seealso{
