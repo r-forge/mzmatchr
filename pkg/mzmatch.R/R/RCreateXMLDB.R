@@ -32,7 +32,7 @@ RCreateXMLDB <- function (data,outputfile)
 	} else
 	{
 		## For every row in input data table, make child nodes with subnodes
-		XMLfile <- newXMLDoc ("treedoc")
+		##XMLfile <- newXMLDoc ("treedoc")
 		compounds <- xmlNode("compounds")
 		nodeGen <- function(nodenum)
 		{
