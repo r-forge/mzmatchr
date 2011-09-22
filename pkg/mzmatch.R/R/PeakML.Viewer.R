@@ -112,7 +112,7 @@ PeakML.Viewer <- function(arch="detect",install.path=NULL, JHeapSize=1024, unins
 			shell (start.command,wait=FALSE)
 		} else
 		{
-			system (start.command,wait=FALSE)
+			system (start.command,wait=FALSE,show.output.on.console = FALSE)
 		}
 		setwd (currentfolder)
 	}
