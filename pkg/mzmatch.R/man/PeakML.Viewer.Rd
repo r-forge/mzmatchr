@@ -10,7 +10,7 @@
 }
 \arguments{
 \item{arch}{
-  If set to "detect" installer will try to automatically detect an Operating system and machine arhitecture to download a PeakML Viewer version which can run on given machine.
+  If set to "detect" installer will try to automatically detect an Operating system and machine arhitecture to download a PeakML Viewer version which can run on given machine. Supported valuse are: "Windows_32", "Windows_64", Linux_32", "Linux_64", "OSX_32" and "OSX_64".
 }
 \item{install.path}{
   If set to "NULL" will isntall programm to "mzmatch.R" installation folder. User can specify desrired installation folder as a character vector.
