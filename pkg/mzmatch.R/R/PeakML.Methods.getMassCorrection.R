@@ -6,6 +6,6 @@ PeakML.Methods.getMassCorrection <- function(javaProject, ionisation="detect"){
 	
 	protonMass <- PeakML.Methods.getProtonMass()
 	protonCoef <- PeakML.Methods.getProtonCoef(javaProject, ionisation)
-	rv <- protonMass * protonCoef
+	rv <- protonMass * protonCoef[[1]]
 	rv
 }

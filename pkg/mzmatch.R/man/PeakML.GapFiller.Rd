@@ -5,7 +5,7 @@
 	For each sample, identify peak sets where that sample is not represented. For each of those peak sets, extract an EIC from RAW data file and add it to the peak set.
 }
 \usage{
-  PeakML.GapFiller(filename, ionisation = "detect", Rawpath = NULL, outputfile,ppm=0,rtwin=0)
+  PeakML.GapFiller(filename, ionisation = "detect", Rawpath = NULL, outputfile,ppm=0,rtwin=0,nSlaves=1)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -26,6 +26,9 @@
   }
   \item{rtwin}{
     The retention time window in seconds, defining the range where to look for matches. Default values is 0.
+  }
+  \item{nSlaves}{
+    The number of parralles instancet to be run simultaneously. (EXPERIMENTAL, USE AT YOUR OWN RISK)
   }
 }
 \details{

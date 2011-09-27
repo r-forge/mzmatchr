@@ -15,5 +15,5 @@ PeakML.Methods.getProtonCoef <- function(javaProject, ionisation="detect"){
 		protonCoef <- -1
 	} else	protonCoef <- 0
 	
-	protonCoef
+	list(protonCoef,ionisation)
 }
