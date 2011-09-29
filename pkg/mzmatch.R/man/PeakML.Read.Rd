@@ -1,12 +1,12 @@
-\name{PeakML.Methods.getChromPeakData}
+\name{PeakML.Read}
 \Rdversion{1.1}
 \alias{PeakML.Methods.getChromPeakData}
-\title{PeakML.Methods.getChromPeakData}
+\title{PeakML.Read}
 \description{
-	This function returns a list containing peak data matrix, list of chromatograms for each peak in the peak data matrix, sample classes, measurement names and mass correction applied to the data set.
+	This function returns a list containing peak data matrix, list of chromatograms for each peak in the peak data matrix, sample classes, measurement names, mass correction applied to the data set, sample groups, pheno data, corrected retentiontimes, raw retentiontimes, filename and raw data full paths.
 }
 \usage{
-	PeakML.Methods.getChromPeakData(filename, ionisation="detect")
+	PeakML.Read(filename, ionisation="detect", Rawpath=NULL)
 }
 
 \arguments{
@@ -15,6 +15,9 @@
 	}
 	\item{ionisation}{
 		Defaulted to "detect". See documentation for PeakML.Methods.getProtonCoef.
+	}
+	\item{Rawpath}{
+		Path to the raw data if different from the one stored in the PeakML file.
 	}
 }
 
