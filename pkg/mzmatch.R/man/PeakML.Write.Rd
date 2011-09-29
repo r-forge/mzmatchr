@@ -17,7 +17,7 @@
 	\item{chromDataList}{
 	  The list of chromatograms as provided by the function PeakML.Read
 	}
-	\item{sampleName}{
+	\item{sampleNames}{
 	  The sample names as a character vector
 	}
 	\item{rawdataFullPaths}{

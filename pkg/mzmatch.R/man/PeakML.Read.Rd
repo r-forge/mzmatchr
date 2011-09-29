@@ -1,6 +1,6 @@
 \name{PeakML.Read}
 \Rdversion{1.1}
-\alias{PeakML.Methods.getChromPeakData}
+\alias{PeakML.Read}
 \title{PeakML.Read}
 \description{
 	This function returns a list containing peak data matrix, list of chromatograms for each peak in the peak data matrix, sample classes, measurement names, mass correction applied to the data set, sample groups, pheno data, corrected retentiontimes, raw retentiontimes, filename and raw data full paths.
