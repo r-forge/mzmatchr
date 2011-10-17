@@ -7,15 +7,15 @@
 	This function returns a list containing chromatograms for each peak in the peak data matrix.
 }
 \usage{
-	PeakML.Methods.getChromData(javaProject, peakDataMtx, massCorrection)
+	PeakML.Methods.getChromData(filename, PeakMLtree, massCorrection)
 }
 
 \arguments{
-	\item{javaProject}{
-		The mzmatch java project
+	\item{filename}{
+		Name of the peakML data fall including full path.
 	}
-	\item{peakDataMtx}{
-		The peak data matrix obtained from PeakML.Methods.getPeakData
+	\item{PeakMLtree}{
+		XML tree of PeakML file content.
 	}
 	\item{massCorrection}{
 		To correct for masses based on the ionisation detected. 

@@ -7,15 +7,15 @@
 	Returns the mass correction based on the ionisation mode. If ionisation argument is set to "detect", then the ionisation mode is detected from the first scan in the first sample. No ionisation switching is supported in mzmatch.R yet.
 }
 \usage{
-	PeakML.Methods.getMassCorrection(javaProject, ionisation="detect")
+	PeakML.Methods.getMassCorrection(PeakMLtree, ionisation="detect")
 }
 
 \arguments{
-	\item{javaProject}{
-		The mzmatch java project
+	\item{PeakMLtree}{
+		XML tree of PeakML file content.
 	}
 	\item{ionisation}{
-		Defaults to "detect", to detect the ionisation from the scan data. Other accepted values are "positive" (proton coef = 1), "negative" (proton coef. = -1) and empty string (proton coef=0).
+		Defaults to "detect", to detect the ionisation from the scan data. Other accepted values are "positive" (proton coef = 1), "negative" (proton coef. = -1) and "neutral" (proton coef=0).
 	}
 }
 

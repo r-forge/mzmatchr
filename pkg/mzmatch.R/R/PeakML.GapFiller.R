@@ -67,8 +67,8 @@ PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfil
 	## Functions
 	FillinPeaks <- function(peaknum){
 		whichpeakset <- numchromsexpected[fillinnums[peaknum],1]
-		## get a peakset RT and mass window from peakdata for all detected samples
-		subtable <- peakdata[peakdata[,10]==whichpeakset,]
+		## get a peakset RT and mass window from PeakMLdata$peakDataMtx for all detected samples
+		subtable <- PeakMLdata$peakDataMtx[PeakMLdata$peakDataMtx[,10]==whichpeakset,]
 		subtable <- rbind(subtable,NULL)
 		#subtable <- apply(subtable,2,mean,na.rm=TRUE)
 
@@ -139,56 +139,56 @@ PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfil
 			OUT <- rbind(masses,intensities,retentiontimes,scanids)
 	}
 
+	st <- system.time (PeakMLdata <- PeakML.Read (filename,ionisation,Rawpath))
 
-	# create a new Project
-	project <- .jnew("peakml/util/rjava/Project", rep("A",3), rep("A",3), rep("A",3))
-	cat ("Loading peakML file in memory (it can take some time, sorry) \n")	
-	st <- system.time(.jcall(project, returnSig="V", method="load",filename))
-	cat ("Done in:",st[3],"s \n")
-	
-	#protonMass <- PeakML.Methods.getProtonMass()
-	ionisation <- PeakML.Methods.getProtonCoef(project, ionisation)[[2]]
-	massCorrection <- PeakML.Methods.getMassCorrection(project, ionisation)
-	samPath <- PeakML.Methods.getRawDataPaths(project, Rawpath)
-	samplenames <- samPath[[1]]
-	rawdatafullpaths <- samPath[[2]]
-	
+	ionisation <- PeakMLdata$massCorrection[[2]]
+	massCorrection <- PeakMLdata$massCorrection[[1]]
+	samplenames <- PeakMLdata$sampleNames
+	rawdatafullpaths <- PeakMLdata$rawDataFullPaths
 	
 	if (is.null(rawdatafullpaths)){
 		cat ("Some of the raw data files are not accessible, we will not be able to fill in missing peaks. Please set \"Rawpath\" argument with location where files can be located\n")
 		stop ()
 	}
 
-	## Generate a matrix of chromatogram numbers and peaksets
-	peakdata <- PeakML.Methods.getPeakData(project, massCorrection)
-
 	## Vector of all possible peaks for every sample in peakset
-	numchromsexpected <- unlist(lapply(1:max(peakdata[,10]),function (x) rep(x,length(samplenames))))
+	numchromsexpected <- unlist(lapply(1:max(PeakMLdata$peakDataMtx[,10]),function (x) rep(x,length(samplenames))))
 
-	## This table is used to generate information for chromatograms extraction/filling. 1st column - peakset number. 2nd-column presence/absence of the chromatogram in the peakml input file. 3rd column - data file number
-	numchromsexpected <- cbind(numchromsexpected,NA,c(1:length(samplenames)))
+	## This table is used to generate information for chromatograms extraction/filling. 1st column - peakset number. 2nd-column presence/absence of the chromatogram in the peakml input file. 3rd column - data file number. 4th columns - index of chromatograms in PeakMLdata$chromDataList
 
-	for (setnum in 1:max(peakdata[,10])){
+	numchromsexpected <- cbind(numchromsexpected,NA,NA,NA)
+
+	for (setnum in 1:max(PeakMLdata$peakDataMtx[,10])){
 		inset <- c(1:length(samplenames))
-		hit <- peakdata[peakdata[,10]==setnum,9]
+		rownums <- which(PeakMLdata$peakDataMtx[,10]==setnum,9)
+		hit <- PeakMLdata$peakDataMtx[PeakMLdata$peakDataMtx[,10]==setnum,9]
 		numchromsexpected[which(numchromsexpected[,1]==setnum),2] <- as.numeric(inset%in%hit)
+		missed <- which(inset%in%hit==FALSE)
+		if (length(missed)>0)
+		{
+			detectedpeaks <- c(rep(1,length(hit)),rep(0,length(missed)))
+			hit <- append(hit,missed)
+			rownums <- append(rownums,rep(0,length(missed)))
+		} else
+		{
+			detectedpeaks <- rep(1,length(hit))
+		}
+		numchromsexpected[which(numchromsexpected[,1]==setnum),3] <- hit
+		numchromsexpected[which(numchromsexpected[,1]==setnum),2] <- detectedpeaks
+		numchromsexpected[which(numchromsexpected[,1]==setnum),4] <- rownums
 	}
+	colnames(numchromsexpected) <- NULL
 
 	## List object with mass chromatograms which are already in file
 	chromslist <- vector("list",nrow(numchromsexpected))
 	
 	## Insert chromatograms from peakml file in the list
-	detected <- which(numchromsexpected[,2]==1)
+	#detected <- which(numchromsexpected[,2]==1)
 	
-	system.time(
-	for (chrnum in 1:nrow(peakdata)){
-		retentiontimes <- .jcall(project, returnSig="[D", method="getRetentionTimes", as.integer(chrnum-1))
-		intensities <- .jcall(project, returnSig="[D", method="getIntensities", as.integer(chrnum-1))
-		## We have to correct masses for ionisation mode, that why there is a protonCoef defined
-		masses <- .jcall(project, returnSig="[D", method="getMasses", as.integer(chrnum-1))+massCorrection
-		scanids <- .jcall(project, returnSig="[I", method="getScanIDs", as.integer(chrnum-1))
-		chromslist[[detected[chrnum]]] <- rbind(masses,intensities,retentiontimes,scanids)
-	})
+	#system.time(
+	#for (chrnum in 1:nrow(PeakMLdata$peakDataMtx)){
+	#	chromslist[[detected[chrnum]]] <- rbind(masses,intensities,retentiontimes,scanids)
+	#})
 
 	## Now fill in missing peaks
 	notdetected <- which(numchromsexpected[,2]==0)
@@ -223,11 +223,11 @@ PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfil
 				assign ("rawfile",rawfile,envir=.GlobalEnv)
 				assign ("numchromsexpected",numchromsexpected,envir=.GlobalEnv)
 				assign ("fillinnums",fillinnums,envir=.GlobalEnv)
-				assign ("peakdata",peakdata,envir=.GlobalEnv)
+				assign ("PeakMLdata$peakDataMtx",PeakMLdata$peakDataMtx,envir=.GlobalEnv)
 				assign ("ppm",ppm,envir=.GlobalEnv)
 				assign ("FillinPeaks",FillinPeaks,ppm,envir=.GlobalEnv)
 				assign ("rawMat",rawMat,envir=.GlobalEnv)
-				clusterExport(cl, list=c("rtwin","rawfile", "numchromsexpected", "fillinnums", "peakdata", "ppm","FillinPeaks","rawMat"))
+				clusterExport(cl, list=c("rtwin","rawfile", "numchromsexpected", "fillinnums", "PeakMLdata$peakDataMtx", "ppm","FillinPeaks","rawMat"))
 				filledlist <- parLapply(cl, c(1:length(fillinnums)), FillinPeaks)
 				stopCluster (cl)
 			}else{
@@ -254,60 +254,48 @@ PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfil
 	}
 	
 	##SetNames, if peakml file has a several peaksets, they will be restored.
-	samplegroups=peakdata[,11]
-	sampleclasses <- .jcall(project,returnSig="[S", method="getSetNames")
+	#samplegroups=PeakMLdata$peakDataMtx[,11]
+	#sampleclasses <- .jcall(project,returnSig="[S", method="getSetNames")
 
-	samplelookfunction <- function (x)	
-	{
-		phenoData <- sampleclasses[samplegroups[peakdata[,9]==x][1]]
-		phenoData
-	}
-	phenoData <- unlist(lapply(1:length(samplenames),samplelookfunction)) 
-
-	## Raw and corrected RT times, do we need these numbers?
-	RAWrt <- vector ("list",length(samplenames))
-	Corrt <- vector ("list",length(samplenames))
-
-	for (measurementid in 1:length(samplenames)){
-		Corrt[[measurementid]] <- .jcall(project,returnSig="[D", method="getMeasurementRetentionTimes",as.integer(measurementid-1))
-		raw_rt <- rep(NA,length(Corrt[[measurementid]]))
-		for (scannum in 1:length(raw_rt)){
-			raw_rt[scannum] <- as.numeric(.jcall(project,returnSig="S",method="getScanAnnotation",as.integer(measurementid-1), as.integer(scannum-1), as.character("RT_raw")))
-		}
-		RAWrt[[measurementid]] <- raw_rt
-	}
+	#samplelookfunction <- function (x)	
+	#{
+	#	phenoData <- sampleclasses[samplegroups[PeakMLdata$peakDataMtx[,9]==x][1]]
+	#	phenoData
+	#}
+	#phenoData <- PeakMLdata$phenoData
 
 	## Wipe out some unused large objects before writing
-#	rm (masschromatograms,project)
-	rm (project) # as masschromatograms is inside a function now
+	# rm (masschromatograms,project)
+	# rm (PeakMLdata) # as masschromatograms is inside a function now
 	## Write all of this out
 	
-	project <- .jnew("peakml/util/rjava/Project", samplenames, rawdatafullpaths, as.character(phenoData))
+	project <- .jnew("peakml/util/rjava/Project", samplenames, rawdatafullpaths, as.character(PeakMLdata$phenoData))
 	# Insert peakpicker method name ir peakML file header.
 	## public void addHeaderAnnotation(String label, String value)	
-	.jcall(project, returnSig="V", method="addHeaderAnnotation",as.character("peakproc"),as.character("unknown"))
+	.jcall(project, returnSig="V", method="addHeaderAnnotation",as.character("peakproc"),as.character("XCMS_Gapfilled"))
 	
 	# Inserting Scan numbers, RT corrected and RT raw for every sample
 	for (measurementid in 1:length(samplenames)){
-		for (scannum in 1:length(RAWrt[[measurementid]])){
-		.jcall(project, returnSig="V", method="addScanInfo", as.integer(measurementid-1),Corrt[[measurementid]][scannum],as.character(ionisation))
-		.jcall(project, returnSig="V", method="addScanAnnotation", as.integer(measurementid-1),as.integer(scannum-1),as.character("RT_raw"),as.character(RAWrt[[measurementid]][scannum]))
+		for (scannum in 1:length(PeakMLdata$correctedRTList[[measurementid]])){
+		.jcall(project, returnSig="V", method="addScanInfo", as.integer(measurementid-1),as.numeric(PeakMLdata$correctedRTList[[measurementid]][scannum]),as.character(ionisation))
+		.jcall(project, returnSig="V", method="addScanAnnotation", as.integer(measurementid-1),as.integer(scannum-1),as.character("RT_raw"),as.character(PeakMLdata$rawRTList[[measurementid]][scannum]))
 		}
 	}
 	
-	## Appending RT raw values to PeakMl header
-#	for (measurementid in 1:length(samplenames)){
-#		for (scannum in 1:length(RAWrt[[measurementid]])){
-#		#public void addScanAnnotation(int measurementid, int scanid, String label, String value)
-#		.jcall(project, returnSig="V", method="addScanAnnotation", as.integer(measurementid-1),as.integer(scannum-1),as.character("RT_raw"),as.character(RAWrt[[measurementid]][scannum]))
-#		}
-#	}
 
 	# finally we can store the mass chromatogram in our project
 	# subtract 1 from the measurementid to get in line with java
+	# Filled chromatograms are taken from chromslist object, but existing ones from PeakMLdata$chromDataList
 
 	for (i in 1:length(chromslist)){
-		chrom <- chromslist[[i]]
+		if (numchromsexpected[i,2]==0)
+		{
+			chrom <- chromslist[[i]]
+		} else
+		{
+			ind <- numchromsexpected[i,4]
+			chrom <- PeakMLdata$chromDataList[[ind]]
+		}
 		.jcall(project, returnSig="V", method="addMassChromatogram", as.integer(numchromsexpected[i,3]-1), as.integer(chrom[4,]), as.numeric(chrom[3,]),as.numeric(chrom[1,]), as.numeric(chrom[2,]), as.character(ionisation))
 	}
 
@@ -323,7 +311,17 @@ PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfil
 		.jcall(project, returnSig="V", method="addPeakSet", as.integer(setindexes[[ind]]-1))
 	}
 
+
+	## Restore peak annotations data
+
+	if (!is.null(PeakMLdata$GroupAnnotations))
+	{
+		PeakML.Methods.writeGroupAnnotations (project, PeakMLdata$GroupAnnotations)
+	}
+
 	## Add Annotations to the peaks which are filled in, and which not.
+	
+	
 	## Now we can add extra atributes to masschromatogram sets (groups in XCMS)
 	## public void addGroupAnnotation(int groupid, String label, String value)
 #	fillindex <- rep (0,length(setindexes))
