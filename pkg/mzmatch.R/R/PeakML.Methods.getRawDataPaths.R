@@ -1,10 +1,10 @@
-PeakML.Methods.getRawDataPaths <- function(javaProject, Rawpath = NULL){
+PeakML.Methods.getRawDataPaths <- function(PeakMLtree, Rawpath = NULL){
 	# PRE: 
-	#	javaProject, path of raw files if different from the ones referened in the peakml files
+	#	PeakMLtree, path of raw files if different from the ones referened in the peakml files
 	# POST:
 	#	Return the samples names and the full path to where the .mzXML files are located
-	sampleNames <- .jcall(javaProject, returnSig="[S", method="getMeasurementNames")
-	
+	sampleNames <- sapply(getNodeSet(PeakMLtree,"/peakml/header/measurements/measurement/label"),xmlValue)
+
 	if (!is.null(Rawpath)){
 		dirContent <- dir(Rawpath, recursive = TRUE, full.names=TRUE)
 		fileid <- rep(NA,length(sampleNames))
@@ -20,7 +20,9 @@ PeakML.Methods.getRawDataPaths <- function(javaProject, Rawpath = NULL){
 			rawDataPaths <- NULL
 		}
 	} else{
-		rawDataPaths <- .jcall(javaProject, returnSig="[S", method="getFileNames")
+		folders <- sapply(getNodeSet(PeakMLtree,"/peakml/header/measurements/measurement/files/file/location"),xmlValue)
+		filenames <- sapply(getNodeSet(PeakMLtree,"/peakml/header/measurements/measurement/files/file/name"),xmlValue)
+		rawDataPaths <- paste(folders,filenames,sep="/")
 		mzFiles <- which(file.exists(rawDataPaths)==TRUE)
 		if (length(mzFiles) == length(rawDataPaths)){
 			cat(paste("Raw data file located at: ", rawDataPaths, "\n", sep=""))

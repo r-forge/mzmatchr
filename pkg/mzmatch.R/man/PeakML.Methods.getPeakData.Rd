@@ -8,15 +8,15 @@
 	
 }
 \usage{
-	PeakML.Methods.getPeakData(javaProject, massCorrection)
+	PeakML.Methods.getPeakData(PeakMLtree, chromDataList)
 }
 
 \arguments{
-	\item{javaProject}{
-		The mzmatch java project
+	\item{PeakMLtree}{
+		XML tree structure of the PeakML file.
 	}
-	\item{massCorrection}{
-		To correct for masses based on the ionisation detected. 
+	\item{chromDataList}{
+		List of mass chromatogramms as an output of PeakML.Methods.getChromData
 	}
 }
 

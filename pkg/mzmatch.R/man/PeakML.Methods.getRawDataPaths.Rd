@@ -6,12 +6,12 @@
 	This function returns a list containing samples names and the full path of mzXML files that represent these sample names.
 }
 \usage{
-	PeakML.Methods.getRawDataPaths(javaProject, Rawpath=NULL)
+	PeakML.Methods.getRawDataPaths(PeakMLtree, Rawpath=NULL)
 }
 
 \arguments{
-	\item{javaProject}{
-		The java project object containing the combined PeakML file.
+	\item{PeakMLtree}{
+		XML tree of PeakML file content.
 	}
 	\item{Rawpath}{
 		Defaulted to NULL. A new path can be specified if mzXML files (from which PeakML files were created) are relocated.
