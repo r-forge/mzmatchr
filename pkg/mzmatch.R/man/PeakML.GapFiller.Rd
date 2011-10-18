@@ -5,7 +5,7 @@
 	For each sample, identify peak sets where that sample is not represented. For each of those peak sets, extract an EIC from RAW data file and add it to the peak set.
 }
 \usage{
-  PeakML.GapFiller(filename, ionisation = "detect", Rawpath = NULL, outputfile,ppm=0,rtwin=0,nSlaves=1)
+  PeakML.GapFiller(filename, ionisation = "detect", Rawpath = NULL, outputfile,ppm=0,rtwin=0,nSlaves=1, fillAll=FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -29,6 +29,9 @@
   }
   \item{nSlaves}{
     The number of parralles instancet to be run simultaneously. (EXPERIMENTAL, USE AT YOUR OWN RISK)
+  }
+  \item{fillAll}{
+	If set to TRUE all chromatograms (alse these which are present in peakml file) will be reintegrated from the raw data file with RT and mass window of the givern peak group (min and max RT and mass values are taken from all existing peaks.) This gives an output where all chromatograms have a constant RT window.+
   }
 }
 \details{

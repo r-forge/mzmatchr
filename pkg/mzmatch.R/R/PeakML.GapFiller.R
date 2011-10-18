@@ -1,4 +1,4 @@
-PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfile,ppm=0,rtwin=0, nSlaves=1)
+PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfile,ppm=0,rtwin=0, nSlaves=1, fillAll=FALSE)
 {
 	#####
 	# Methods
@@ -189,6 +189,13 @@ PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfil
 	#for (chrnum in 1:nrow(PeakMLdata$peakDataMtx)){
 	#	chromslist[[detected[chrnum]]] <- rbind(masses,intensities,retentiontimes,scanids)
 	#})
+
+
+	#if fillAll is set to TRUE, all peaks will be reintegrates with given RT and mass window.
+	if (fillAll==TRUE)
+	{
+		numchromsexpected[,2] <- 0
+	}
 
 	## Now fill in missing peaks
 	notdetected <- which(numchromsexpected[,2]==0)
