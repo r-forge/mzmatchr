@@ -22,6 +22,12 @@ PeakML.Methods.getRawDataPaths <- function(PeakMLtree, Rawpath = NULL){
 	} else{
 		folders <- sapply(getNodeSet(PeakMLtree,"/peakml/header/measurements/measurement/files/file/location"),xmlValue)
 		filenames <- sapply(getNodeSet(PeakMLtree,"/peakml/header/measurements/measurement/files/file/name"),xmlValue)
+		peakmlfiles <- grep(".peakml",filenames)
+		if (length(peakmlfiles)!=0)
+		{
+			folders <- folders[-c(peakmlfiles)]
+			filenames <- filenames[-c(peakmlfiles)]
+		}
 		rawDataPaths <- paste(folders,filenames,sep="/")
 		mzFiles <- which(file.exists(rawDataPaths)==TRUE)
 		if (length(mzFiles) == length(rawDataPaths)){
