@@ -21,7 +21,7 @@ PeakML.Methods.getGroupAnnotations <- function(PeakMLtree=NULL,filename=NULL)
 		val
 	}
 
-	nrpeakgroups <- length(sapply(getNodeSet(PeakMLtree,"/peakml/peaks/peak/patternid"),xmlValue))
+	nrpeakgroups <- as.numeric(sapply(getNodeSet(PeakMLtree,"/peakml/header/nrpeaks"),xmlValue))
 
 	system.time(annots <- lapply (1:nrpeakgroups,setidsrecord))
 	annots <- do.call (rbind,annots)
