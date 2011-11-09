@@ -13,7 +13,7 @@
 	\item{retTime}{
 		Original retention time in seconds.
 	}
-	\item{ppm}{
+	\item{time}{
 		Required time window in seconds.
 	}
 }
