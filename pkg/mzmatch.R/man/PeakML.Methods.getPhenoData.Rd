@@ -6,7 +6,7 @@
 	This function will return the phenotype of the data (eg: BLK, BLK, BLK, CO, CO, CO etc)
 }
 \usage{
-	PeakML.Methods.getPhenoData(sampleClasses, sampleNames, peakDataMtx)
+	PeakML.Methods.getPhenoData(sampleGroups, sampleNames, peakDataMtx)
 }
 
 \arguments{
