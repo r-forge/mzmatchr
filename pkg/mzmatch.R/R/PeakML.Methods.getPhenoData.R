@@ -7,7 +7,6 @@ PeakML.Methods.getPhenoData <- function(sampleGroups, sampleNames, peakDataMtx){
 	
 	getSampleClass <- function (x)
 	{
-		# This function will return the sample class (eg: BLK, CO, etc) given a measurement id
 		phenoData <- sampleGroups[sGroups[peakDataMtx[,9]==x][1]]
 		phenoData
 	}
