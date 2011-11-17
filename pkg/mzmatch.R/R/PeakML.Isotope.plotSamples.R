@@ -1,7 +1,21 @@
-
 PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMass, stdRT, sampleType, sampleGroups, plotOrder, useArea, followCarbon){
-#plotSamples <- function(isotopeChroms, plotOrder, sampleGroups, plotText, useArea, followCarbon){
 
+	processRatioMtx <- function(ratioMtx){
+		plotMtx <- matrix(nrow=nrow(ratioMtx), ncol=ncol(ratioMtx))
+		rownames(plotMtx) <- row.names(ratioMtx)
+		for (r in 1:nrow(ratioMtx)){
+			sumr <- sum(ratioMtx[r,])
+			for (c in 1:ncol(ratioMtx)){
+				if (!is.na(ratioMtx[r,c])) {
+					plotMtx[r,c] <- ratioMtx[r,c]/sumr
+				} else {
+					plotMtx[r,c] <- 0
+				}
+			}
+		}
+		plotMtx
+	}
+	
 	mzList <- isotopeChroms[[1]]
 	intList <- isotopeChroms[[2]]
 	rtList <- isotopeChroms[[3]]
@@ -11,13 +25,7 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 	numCarbons <- length(mzList[[1]][[1]])
 	numReplicates <- length(mzList[[1]][[1]][[1]])
 	
-#	metName <- plotText[1]
 	metName <- unlist(strsplit(as.character(metName), ", "))
-#	metFormula <- plotText[2]
-#	metMass <- as.numeric(plotText[4])
-#	sampleType <-  plotText[9]
-#	stdRT <- plotText[7]
-	if(stdRT==0) stdRT<-NA
 	
 	fillLabels <- c("UL" , paste(as.character("+"),c(1:numCarbons),sep=""))# create a list of isotop names
 	fillColor <- c(1:numCarbons)
@@ -25,7 +33,7 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 	
 	for (peakGroup in 1:numPeakGroups){
 		trendList <- PeakML.Isotope.getTrendList (intList, sampleGroups, useArea) [[peakGroup]]
-		ratioMtx <- PeakML.Isotope.getRatioMtxList (intList, sampleGroups, useArea, metName) [[peakGroup]]
+		ratioMtx <- processRatioMtx (t(PeakML.Isotope.getRatioMtxList (intList, sampleGroups, useArea, metName) [[peakGroup]]))
 		
 		par (mar=c(0,0,0,0))
 		plot (c(1:10), c(1:10), xlab="", ylab="", pch="", axes=F) 
@@ -134,4 +142,3 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 		}
 	}
 }
-

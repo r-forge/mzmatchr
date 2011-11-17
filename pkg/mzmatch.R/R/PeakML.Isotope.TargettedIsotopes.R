@@ -1,5 +1,4 @@
-PeakML.Isotope.TargettedIsotopes <- function(baseDir, sampleType = "NEG", molFormulaFile, outDirectory = "targettedIsotops", outFileName, mzXMLSrc=NULL, peakMLFile, sampleGroups = NULL, layoutMtx = NULL, 
-		massCorrection, ppm = 2, trendPlots = NULL, loadSavedData = TRUE, fillGaps, useArea=FALSE, stdRTWindow=NULL){
+PeakML.Isotope.TargettedIsotopes <- function(baseDir, molFormulaFile, outFileName, mzXMLSrc=NULL, sampleType = "NEG", outDirectory = "targettedIsotops",  peakMLFile="final_combined_related_identified.peakml", sampleGroups = NULL, layoutMtx = NULL, ppm = 3, trendPlots = NULL, fillGaps = "ALLPEAKS", useArea = FALSE, stdRTWindow = NULL){
 	# PRE:
 	#	peakMLFiles: the complete peakml dataset
 	#	molFormulaFile: file containing the list of molecules whoes isotops has to be found out
@@ -17,9 +16,13 @@ PeakML.Isotope.TargettedIsotopes <- function(baseDir, sampleType = "NEG", molFor
 	cat("Indentifying isotops in ", sampleType, " sample\n")
 	setwd (paste(baseDir, sampleType, sep="/"))
 	
-	if (!is.null(mzXMLSrc)) mzXMLSrc <- paste(mzXMLSrc, sampleType, sep="/")
+	if (!is.null(mzXMLSrc)){
+		mzXMLSrc <- paste(mzXMLSrc, sampleType, sep="/")
+	} else {
+		stop ("Please provide the location of the raw data (mzXML) files ")
+	}
 	
-	if (loadSavedData == TRUE){
+	if (file.exists("cpData.Rdata") == TRUE){
 		load("cpData.Rdata")
 	} else{
 		chromPeakData <- PeakML.Read(peakMLFile, ionisation = "neutral")

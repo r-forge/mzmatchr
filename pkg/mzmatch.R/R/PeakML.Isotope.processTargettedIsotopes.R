@@ -40,7 +40,12 @@ PeakML.Isotope.processTargettedIsotopes <- function (molFormulaFile, outDirector
 		metMass <- as.numeric(molFrame$mass[i])
 #		massWindow <- PeakML.Methods.getPPMWindow(metMass, ppm)
 		stdRT <- as.numeric(molFrame$rt[i]) * 60
-		followCarbon <- as.numeric(molFrame$follow[i])+1
+		
+		if (is.null(molFrame$follow[i])){
+			followCarbon <-  numCarbons + 1
+		}else{
+			followCarbon <- as.numeric(molFrame$follow[i])+1
+		}
 
 		cat(metName, ":\n")
 		if (numCarbons==0){
@@ -48,26 +53,27 @@ PeakML.Isotope.processTargettedIsotopes <- function (molFormulaFile, outDirector
 			next()
 		}
 		numCarbons <- numCarbons + 1 					# This is to account for the basal peaks as well.
-#		metData <- list(metName, metFormula, numCarbons, metMass, ppm, massWindow, stdRT, stdRTWindow, sampleType)
 
 		cat ("\tIdentifying isotopes: ")
 		# get the UID of isotops
-#		isotopeList <- PeakML.Isotope.getIsotopes (peakDataMtx, metData, sampleNames, mzXMLSrc, fillGaps, massCorrection)
 		isotopeList <- PeakML.Isotope.getIsotopes (peakDataMtx, mzXMLSrc, sampleNames, numCarbons, metMass, ppm, massCorrection, stdRT, stdRTWindow, fillGaps)
 		
 		if (!is.null(unlist(isotopeList))){
 			cat ("\n\tGenerating the plots. \n")
 			isotopeChroms <- PeakML.Isotope.getChromData (isotopeList, chromDataList, phenoData, sampleGroups)
-#			plotSamples(isotopeChroms, plotOrder, sampleGroups, metData, useArea, followCarbon)
 			PeakML.Isotope.plotSamples(isotopeChroms, metName, metFormula, metMass, stdRT, sampleType, sampleGroups, plotOrder, useArea, followCarbon)
 			
-			abunMtxList <- PeakML.Isotope.getAbunMtxList(isotopeChroms, sampleGroups, useArea)
-			molAbunList[[metName]] <- abunMtxList
+			ratioMtxList <- PeakML.Isotope.getRatioMtxList(isotopeChroms[[2]], sampleGroups, useArea, metName)
+			
+			molAbunList[[metName]] <- ratioMtxList
+			
 			cat("Metabolite: ", toupper(metName), "\t Formula: ", metFormula, "\tMass: ", metMass, "\n", file=csvFile, append=TRUE)
 			cat("-----------------------------------------------------------------------------\n", file=csvFile, append=TRUE)
-			for (pkgrp in 1:length(abunMtxList)){
-				cat(paste(metName,"_", metFormula, "_G", pkgrp, "\t", paste(sampleNames, collapse="\t") , "\n"), file=csvFile, append=TRUE)
-				write.table(abunMtxList[[pkgrp]] , sep="\t", na= " ", file=csvFile, quote=FALSE, col.names=FALSE, append=TRUE) 
+			for (pkgrp in 1:length(ratioMtxList)){
+				cat("Group: ", pkgrp, "\n", file=csvFile, append = TRUE)
+				sNames <- paste(sampleNames, collapse="\t")
+				cat(paste(metName, metFormula, "\t", sNames , "\n"), file=csvFile, append=TRUE)
+				write.table(ratioMtxList[[pkgrp]] , sep="\t", na= " ", file=csvFile, quote=FALSE, col.names=FALSE, append=TRUE) 
 				cat("\n", file=csvFile, append=TRUE)
 			}
 			cat("\n")

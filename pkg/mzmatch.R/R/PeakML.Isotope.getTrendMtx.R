@@ -16,3 +16,4 @@ PeakML.Isotope.getTrendMtx <- function (trendList, sampleGroups){
 	}
 	plotMtx
 }
+
