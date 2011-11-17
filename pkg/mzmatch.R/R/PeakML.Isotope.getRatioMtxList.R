@@ -7,28 +7,12 @@ PeakML.Isotope.getRatioMtxList <- function(intList, sampleGroups, useArea, metNa
 	# POST:
 	#	Returns the matrix for each peak group, containing the ratio of labelled vs unlabelled signals for each replicate normalized to one along the columns and isotopes along the columns.
 	
-	processRatioMtx <- function(ratioMtx){
-		plotMtx <- matrix(nrow=nrow(ratioMtx), ncol=ncol(ratioMtx))
-		rownames(plotMtx) <- row.names(ratioMtx)
-		for (r in 1:nrow(ratioMtx)){
-			sumr <- sum(ratioMtx[r,])
-			for (c in 1:ncol(ratioMtx)){
-				if (!is.na(ratioMtx[r,c])) {
-					plotMtx[r,c] <- ratioMtx[r,c]/sumr
-				} else {
-					plotMtx[r,c] <- 0
-				}
-			}
-		}
-		plotMtx
-	}
-	
 	getSignalRatioMtx <- function(abunList, sampleGroup, numCarbons, numReplicates){
 
 		abunMtx <- matrix(nrow = numReplicates, ncol = numCarbons) # +1 is for adding the rownames
 		rnames <- c(paste(sampleGroup, as.character(c(1:numReplicates)), sep=""))
 		row.names(abunMtx) <- rnames
-	
+		
 		for (itop in 2:numCarbons){
 			for (repl in 1:numReplicates){
 				if (!is.null(abunList[[1]][[repl]])){
@@ -71,11 +55,10 @@ PeakML.Isotope.getRatioMtxList <- function(intList, sampleGroups, useArea, metNa
 			}
 			ratioMtx <- rbind(ratioMtx, getSignalRatioMtx(abunList[[sampleGroup]], sampleGroups[[sampleGroup]], numIsotopes, numReplicates))
 		}
-		cNames <- paste(metName[1], as.character(c(0:(numIsotopes-1))))
-		colnames(ratioMtx) <- cNames 
+		cNames <- paste(metName, as.character(c(0:(numIsotopes-1))))
+		colnames(ratioMtx) <- cNames
 		ratioMtx[is.na(ratioMtx)] <- 0
-		ratioMtxList[[peakGroup]] <- processRatioMtx(ratioMtx)
+		ratioMtxList[[peakGroup]] <- t(ratioMtx)
 	}
 	ratioMtxList
 }
-

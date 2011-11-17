@@ -37,4 +37,3 @@ PeakML.Isotope.getTrendList <- function(intList, sampleGroups, useArea){
 	}
 	trendList
 }
-

@@ -94,7 +94,7 @@ PeakML.Isotope.getIsotopes <- function(peakDataMtx, mzXMLSrc, sampleNames, numCa
 					mWindow <- PeakML.Methods.getPPMWindow(aveMass, ppm)
 					gapFillHits <- PeakML.Methods.getRawSignals(mzXMLSrc, sampleName, rtWindow, mWindow, massCorrection)
 					if (max(gapFillHits[2,] != -1)){
-						unlabledList[[pdMtxMassFilteredGroup[rown,9]]] <- c("gapfilled", gapFillHits)
+						unlabledList[[pdMtxMassFilteredGroup[rown,9]]] <- list("gapfilled", gapFillHits)
 					}
 				} else {
 					unlabledList[[pdMtxMassFilteredGroup[rown,9]]] <- pdMtxMassFilteredGroup[rown,12]  
@@ -140,7 +140,7 @@ PeakML.Isotope.getIsotopes <- function(peakDataMtx, mzXMLSrc, sampleNames, numCa
 					sampleName <- sampleNames[es]
 					gapFillHits <- PeakML.Methods.getRawSignals(mzXMLSrc, sampleName, rtWindow, massWindow, massCorrection)
 					if (max(gapFillHits[2,] != -1)){
-						finalList[[gid]][[carbon+1]][[es]] <- c("gapfilled", gapFillHits)
+						finalList[[gid]][[carbon+1]][[es]] <- list("gapfilled", gapFillHits)
 					}
 				}
 			} else if(fillGaps=='ALLPEAKS'){
@@ -148,7 +148,7 @@ PeakML.Isotope.getIsotopes <- function(peakDataMtx, mzXMLSrc, sampleNames, numCa
 					sampleName <- sampleNames[es]
 					gapFillHits <- PeakML.Methods.getRawSignals(mzXMLSrc, sampleName, rtWindow, massWindow, massCorrection)
 					if (max(gapFillHits[2,] != -1)){
-						finalList[[gid]][[carbon+1]][[es]] <- c("gapfilled", gapFillHits)
+						finalList[[gid]][[carbon+1]][[es]] <- list("gapfilled", gapFillHits)
 					}
 				}
 			}
@@ -162,7 +162,7 @@ PeakML.Isotope.getIsotopes <- function(peakDataMtx, mzXMLSrc, sampleNames, numCa
 					gapFillHits <- PeakML.Methods.getRawSignals(mzXMLSrc, sampleName, rtWindow, massWindow, massCorrection)
 					if (max(gapFillHits[2,] != -1)){
 						gapFillHits[2,] <- PeakML.Methods.baseCorrection (gapFillHits[2,])
-						unlabledList[[es]] <- c("gapfilled", gapFillHits)
+						unlabledList[[es]] <- list("gapfilled", gapFillHits)
 					}
 				}
 				finalList[[gid]][[1]] <- unlabledList

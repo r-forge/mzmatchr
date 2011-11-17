@@ -45,7 +45,7 @@ PeakML.Isotope.getChromData <- function(isotopeList, chromDataList, phenoData, s
 			for (isotop in 1:numIsotopes){
 				for (replicate in 1:numReplicates){
 					sample <- replicatesList[[replicate]]
-					peakID <- isotopeList[[peakGroup]][[isotop]][[sample]]
+					peakID <- isotopeList[[peakGroup]][[isotop]][[sample]] # peakid can be either the id of the peak or the gapfilled value, I know the name couses misinter..
 					
 					if (!is.null(peakID)){
 						if (typeof(peakID) == "list" & peakID[[1]] == "gapfilled"){
@@ -65,7 +65,6 @@ PeakML.Isotope.getChromData <- function(isotopeList, chromDataList, phenoData, s
 					}
 				}
 			}
-		
 		}
 	}
 	list(mzList, intList, rtList)

@@ -14,4 +14,3 @@ PeakML.Isotope.getFCMtx <- function (trendList, sampleGroups, followCarbon){
 	}
 	plotMtx
 }
-

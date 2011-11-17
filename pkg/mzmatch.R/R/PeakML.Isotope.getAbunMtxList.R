@@ -7,6 +7,7 @@ PeakML.Isotope.getAbunMtxList <- function(isotopeChroms, sampleGroups, useArea){
 	#	Generates matrix containing the relative abundance of labelled vs unlabelled isotopes based on the the mean of the peaks in each groups
 
 	getAbunMtx <- function(abunList, sampleGroups, numCarbons){
+		cat("sampleGroups : ", sampleGroups, "\n")
 		abunMtx <- matrix(nrow = length(sampleGroups), ncol = numCarbons)
 		#row.names(abunMtx) <- sampleGroups
 		names(abunMtx) <- c("AI", 1:(numCarbons-1))
@@ -80,6 +81,7 @@ PeakML.Isotope.getAbunMtxList <- function(isotopeChroms, sampleGroups, useArea){
 				}
 			}
 		}
+		print(abunList)
 		abunMtxList[[peakGroup]] <- getAbunMtx(abunList, sampleGroups, numIsotopes)
 	}
 	abunMtxList
