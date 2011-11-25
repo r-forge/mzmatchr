@@ -23,7 +23,7 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 	numPeakGroups <- length(mzList)
 	numSampleGroups <- length(mzList[[1]])
 	numCarbons <- length(mzList[[1]][[1]])
-	numReplicates <- length(mzList[[1]][[1]][[1]])
+	#numReplicates <- length(mzList[[1]][[1]][[1]])
 	
 	metName <- unlist(strsplit(as.character(metName), ", "))
 	
@@ -133,6 +133,7 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 				par(mar=c(4,4,0.5,0.5), mgp=c(1.5,0.5,0))
 				plot (1, 1, pch="", xlab="", ylab="", xlim=c(minRT,maxRT), ylim=c(minIN,maxIN), cex.axis=0.75)
 				for (isotop in 1:numCarbons){
+					numReplicates <- length(rtList[[peakGroup]][[item]][[isotop]])
 					for (rep in 1:numReplicates){
 						points(rtList[[peakGroup]][[item]][[isotop]][[rep]], intList[[peakGroup]][[item]][[isotop]][[rep]], type="l",col=fillColor[[isotop]])
 					}
