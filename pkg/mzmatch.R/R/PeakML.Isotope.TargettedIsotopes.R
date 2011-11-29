@@ -33,13 +33,14 @@ PeakML.Isotope.TargettedIsotopes <- function(baseDir, molFormulaFile, outFileNam
 	chromDataList <- chromPeakData[[2]]
 	sampleClasses <- chromPeakData[[3]]
 	sampleNames <- chromPeakData[[4]]
+	massCorrection <- chromPeakData$massCorrection[[1]]
 	phenoData <- PeakML.Methods.getPhenoData(sampleClasses, sampleNames, peakDataMtx)
 
-	if (sampleType == "NEG"){
-		massCorrection <- -PeakML.Methods.getProtonMass()
-	} else if (sampleType == "POS"){
-		massCorrection <- +PeakML.Methods.getProtonMass()
-	}
+	#if (sampleType == "NEG"){
+	#	massCorrection <- -PeakML.Methods.getProtonMass()
+	#} else if (sampleType == "POS"){
+	#	massCorrection <- +PeakML.Methods.getProtonMass()
+	#}
 
 	if (is.null(sampleGroups)) sampleGroups <- unique(phenoData)		# To enable the user to change the order of the samples
 	if (is.null(trendPlots)) trendPlots <- c("RATIO","TREND", "LABELLED")
