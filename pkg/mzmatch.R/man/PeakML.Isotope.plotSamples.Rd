@@ -60,7 +60,7 @@ The PeakML file format defines an open and extensible file format for storing ex
 }
 
 \seealso{
-	\code{\link{PeakML.Isotope.getTrendList, PeakML.Isotope.processTargettedIsotopes, PeakML.Isotope.getIsotopes, PeakML.Isotope.getRatioMtxList}}
+	\code{\link{PeakML.Isotope.getTrendList} \link{PeakML.Isotope.processTargettedIsotopes} \link{PeakML.Isotope.getIsotopes} \link{PeakML.Isotope.getRatioMtxList}}
 }
 
 \keyword{ mzmatch.R }

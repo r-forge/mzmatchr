@@ -33,7 +33,7 @@ PeakML.Isotope.TargettedIsotopes <- function(baseDir, molFormulaFile, outFileNam
 	chromDataList <- chromPeakData[[2]]
 	sampleClasses <- chromPeakData[[3]]
 	sampleNames <- chromPeakData[[4]]
-	massCorrection <- chromPeakData$massCorrection[[1]]
+	massCorrection <- PeakML.Methods.getMassCorrection(filename=peakMLFile)
 	phenoData <- PeakML.Methods.getPhenoData(sampleClasses, sampleNames, peakDataMtx)
 
 	#if (sampleType == "NEG"){

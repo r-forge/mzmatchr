@@ -39,7 +39,7 @@ The PeakML file format defines an open and extensible file format for storing ex
 }
 
 \seealso{
-	\code{\link{PeakML.Methods.getMassWindow}}
+	\code{\link{PeakML.Isotope.getMassWindow}}
 }
 
 \keyword{ mzmatch.R }
