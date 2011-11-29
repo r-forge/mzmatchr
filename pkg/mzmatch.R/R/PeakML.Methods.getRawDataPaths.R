@@ -4,13 +4,21 @@ PeakML.Methods.getRawDataPaths <- function(PeakMLtree, Rawpath = NULL){
 	# POST:
 	#	Return the samples names and the full path to where the .mzXML files are located
 	sampleNames <- sapply(getNodeSet(PeakMLtree,"/peakml/header/measurements/measurement/label"),xmlValue)
+	folders <- sapply(getNodeSet(PeakMLtree,"/peakml/header/measurements/measurement/files/file/location"),xmlValue)
+	filenames <- sapply(getNodeSet(PeakMLtree,"/peakml/header/measurements/measurement/files/file/name"),xmlValue)
+	peakmlfiles <- grep(".peakml",filenames)
+	if (length(peakmlfiles)!=0)
+	{
+		folders <- folders[-c(peakmlfiles)]
+		filenames <- filenames[-c(peakmlfiles)]
+	}
 
 	if (!is.null(Rawpath)){
 		dirContent <- dir(Rawpath, recursive = TRUE, full.names=TRUE)
 		fileid <- rep(NA,length(sampleNames))
 		for (filenum in 1:length(sampleNames))
 		{
-			fileid[filenum] <- grep (sampleNames[filenum],dirContent)
+			fileid[filenum] <- grep (filenames[filenum],dirContent)
 		}
 	  	if(length(which(is.na(fileid)))==0){
 			rawDataPaths <- dirContent[fileid]
@@ -20,14 +28,6 @@ PeakML.Methods.getRawDataPaths <- function(PeakMLtree, Rawpath = NULL){
 			rawDataPaths <- NULL
 		}
 	} else{
-		folders <- sapply(getNodeSet(PeakMLtree,"/peakml/header/measurements/measurement/files/file/location"),xmlValue)
-		filenames <- sapply(getNodeSet(PeakMLtree,"/peakml/header/measurements/measurement/files/file/name"),xmlValue)
-		peakmlfiles <- grep(".peakml",filenames)
-		if (length(peakmlfiles)!=0)
-		{
-			folders <- folders[-c(peakmlfiles)]
-			filenames <- filenames[-c(peakmlfiles)]
-		}
 		rawDataPaths <- paste(folders,filenames,sep="/")
 		mzFiles <- which(file.exists(rawDataPaths)==TRUE)
 		if (length(mzFiles) == length(rawDataPaths)){

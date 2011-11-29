@@ -16,7 +16,7 @@ PeakML.Write <- function(peakDataMtx, chromDataList, sampleNames, rawdataFullPat
 
 	for (measID in 1:length(sampleNames)){
 		for (scanID in 1:length(rawRT[[measID]])){
-			.jcall(project, returnSig="V", method="addScanInfo", as.integer(measID-1), corRT[[measID]][scanID], as.character(ionisation))
+			.jcall(project, returnSig="V", method="addScanInfo", as.integer(measID-1), as.numeric(corRT[[measID]][scanID]), as.character(ionisation))
 			.jcall(project, returnSig="V", method="addScanAnnotation", as.integer(measID-1), as.integer(scanID-1), as.character("RT_raw"), as.character(rawRT[[measID]][scanID]))
 		}
 	}
