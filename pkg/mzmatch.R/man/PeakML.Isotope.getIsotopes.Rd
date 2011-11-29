@@ -61,7 +61,7 @@ The PeakML file format defines an open and extensible file format for storing ex
 }
 
 \seealso{
-	\code{\link{PeakML.Isotope.getMassWindow, PeakML.Isotope.filterPeaks, PeakML.Methods.getRawSignals, PeakML.Methods.getPPMWindow}}
+	\code{\link{PeakML.Isotope.getMassWindow} \link{PeakML.Isotope.filterPeaks} \link{PeakML.Methods.getRawSignals} \link{PeakML.Methods.getPPMWindow}}
 }
 
 \keyword{ mzmatch.R }

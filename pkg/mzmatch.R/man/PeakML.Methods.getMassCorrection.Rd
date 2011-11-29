@@ -7,7 +7,7 @@
 	Returns the mass correction based on the ionisation mode. If ionisation argument is set to "detect", then the ionisation mode is detected from the first scan in the first sample. No ionisation switching is supported in mzmatch.R yet.
 }
 \usage{
-	PeakML.Methods.getMassCorrection(PeakMLtree, ionisation="detect")
+	PeakML.Methods.getMassCorrection(PeakMLtree, ionisation="detect",filename=NULL)
 }
 
 \arguments{
@@ -16,6 +16,10 @@
 	}
 	\item{ionisation}{
 		Defaults to "detect", to detect the ionisation from the scan data. Other accepted values are "positive" (proton coef = 1), "negative" (proton coef. = -1) and "neutral" (proton coef=0).
+	}
+	\item{filename}{
+	The filename for the PeakML file. The path leading up to this file needs to exist, otherwise the function
+  will fail. If filenames is provided PeakMLtree argument will be igonred, and XML tree created from given peakml file.
 	}
 }
 
