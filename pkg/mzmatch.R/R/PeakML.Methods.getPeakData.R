@@ -23,7 +23,10 @@ PeakML.Methods.getPeakData <- function(PeakMLtree, chromDataList)
 	cat ("Extracting peak data from PeakMl file,\n")
 
 	SetMeasurementids <- sapply(getNodeSet(PeakMLtree,"/peakml/header/sets/set/measurementids"),xmlValue)
-	SetMeasurementids <- lapply (1:length(SetMeasurementids),function(i) {base64decode(SetMeasurementids[i], what="integer",endian="swap")+1})
+	if (length(SetMeasurementids>0))
+	{
+		SetMeasurementids <- lapply (1:length(SetMeasurementids),function(i) {base64decode(SetMeasurementids[i], what="integer",endian="swap")+1})
+	}
 	nrPeakSets <- as.numeric(sapply(getNodeSet(PeakMLtree, "/peakml/header/nrpeaks"),xmlValue))
 
 	st <- system.time({
@@ -35,13 +38,23 @@ PeakML.Methods.getPeakData <- function(PeakMLtree, chromDataList)
 	MAXRT <- sapply (1:length(chromDataList),function(i) {max(chromDataList[[i]][3,])})
 	SUMINTENSITY <- sapply (1:length(chromDataList),function(i) {sum(chromDataList[[i]][2,])})
 	MAXINTENSITY <- sapply (1:length(chromDataList),function(i) {max(chromDataList[[i]][2,])})
-	MEASUREMENTID <- as.numeric(sapply(getNodeSet(PeakMLtree,"/peakml/peaks/peak/peaks/peak/measurementid"),xmlValue))+1
-	GROUPSETSINDEX <- rep(NA,length(chromDataList))
-	for (i in 1:length(SetMeasurementids))
+	
+	## If peakML file contains only 1 sample, there are no GROUPSETINDEX and GROUPID.
+	if (length(SetMeasurementids)==0)
 	{
-		GROUPSETSINDEX[MEASUREMENTID%in%SetMeasurementids[[i]]] <- i
+		MEASUREMENTID <- 1
+		GROUPSETSINDEX <- NA
+		GROUPID <- NA
+	} else
+	{
+		MEASUREMENTID <- as.numeric(sapply(getNodeSet(PeakMLtree,"/peakml/peaks/peak/peaks/peak/measurementid"),xmlValue))+1
+		GROUPSETSINDEX <- rep(NA,length(chromDataList))
+		for (i in 1:length(SetMeasurementids))
+		{
+			GROUPSETSINDEX[MEASUREMENTID%in%SetMeasurementids[[i]]] <- i
+		}
+		GROUPID <- unlist(lapply(1:nrPeakSets,GroupIDfunction))
 	}
-	GROUPID <- unlist(lapply(1:nrPeakSets,GroupIDfunction))
 	peakDataMtx <- cbind (AVGMZ,MINMZ,MAXMZ,RT,MINRT,MAXRT,SUMINTENSITY,MAXINTENSITY,MEASUREMENTID,GROUPID,GROUPSETSINDEX)
 	rownames(peakDataMtx) <- NULL
 	})

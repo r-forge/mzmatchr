@@ -43,12 +43,17 @@ PeakML.Read <- function(filename, ionisation = "detect", Rawpath=NULL){
 	sampleGroups <- peakDataMtx[,11]
 	sampleClasses <- sapply (getNodeSet(PeakMLtree,"/peakml/header/sets/set/id"),xmlValue)
 	SetMeasurementids <- sapply(getNodeSet(PeakMLtree,"/peakml/header/sets/set/measurementids"),xmlValue)
-	SetMeasurementids <- lapply (1:length(SetMeasurementids),function(i) {base64decode(SetMeasurementids[i], what="integer",endian="swap")+1})
-
-	phenoData <- rep (NA,length(sampleNames))
-	for (cl in 1:length(SetMeasurementids))
+	if (length(SetMeasurementids)!=0)
 	{
-		phenoData[SetMeasurementids[[cl]]] <- sampleClasses[cl]
+		SetMeasurementids <- lapply (1:length(SetMeasurementids),function(i) {base64decode(SetMeasurementids[i], what="integer",endian="swap")+1})
+		phenoData <- rep (NA,length(sampleNames))
+		for (cl in 1:length(SetMeasurementids))
+		{
+			phenoData[SetMeasurementids[[cl]]] <- sampleClasses[cl]
+		}
+	} else
+	{
+		phenoData <- NA
 	}
 
 	rv = list()
@@ -63,6 +68,12 @@ PeakML.Read <- function(filename, ionisation = "detect", Rawpath=NULL){
 	rv$rawRTList <- rtScanList[[2]]
 	rv$fileName <- filename
 	rv$rawDataFullPaths <- rawDataFullPaths
-	rv$GroupAnnotations <- PeakML.Methods.getGroupAnnotations(PeakMLtree)
+	if (length(SetMeasurementids)!=0)
+	{
+		rv$GroupAnnotations <- PeakML.Methods.getGroupAnnotations(PeakMLtree)
+	} else
+	{
+		rv$GroupAnnotations <- NA
+	}
 	rv
 }
