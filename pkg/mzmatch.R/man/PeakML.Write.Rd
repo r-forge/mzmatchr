@@ -8,7 +8,7 @@
   fully reproducible representation of the contents of an XCMS set structure.
 }
 \usage{
-  PeakML.Write(peakDataMtx, chromDataList, sampleNames, rawdataFullPaths, phenoData, corRT, rawRT, outFileName, ionisation="neutral")
+  PeakML.Write(peakDataMtx, chromDataList, sampleNames, rawdataFullPaths, phenoData, corRT, rawRT, outFileName, ionisation="neutral",GroupAnnotations)
 }
 \arguments{
 	\item{peakDataMtx}{
@@ -18,27 +18,30 @@
 	  The list of chromatograms as provided by the function PeakML.Read
 	}
 	\item{sampleNames}{
-	  The sample names as a character vector
+	  The sample names as a character vector.
 	}
 	\item{rawdataFullPaths}{
-	  Paths to the raw data files as a character vector
+	  Paths to the raw data files as a character vector.
 	}
 	\item{phenoData}{
-	  The phenotypes as a character vector
+	  The phenotypes as a character vector.
 	}
 	\item{corRT}{
-	  The corrected retention times as list
+	  The corrected retention times as list.
 	}
 	\item{rawRT}{
-	  The raw retentiontimes as list
+	  The raw retentiontimes as list.
 	}
 	\item{outFileName}{
 	  The filename for the PeakML file. The path leading up to this file needs to exist, otherwise the function
 	  will fail.
 	}
 	\item{ionisation}{
-	  Character value to be set on to "positive" or "negative" if the mass has to be corrected accordingly, or leave it as "neutral"
-}
+	  Character value to be set on to "positive" or "negative" if the mass has to be corrected accordingly, or leave it as "neutral".
+	}
+	\item{GroupAnnotations}{
+	  List of annotations which should be written to PeakML file. List names should contain annotation names. And each list should contain a vector of the length equal to number of peak groups. NA values should be used if annotation is not present in given group.
+	}
 }
 \details{
   The PeakML file format defines an open and extensible file format for storing extracted hyphenated mass spectrometry

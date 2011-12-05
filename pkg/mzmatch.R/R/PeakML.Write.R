@@ -1,4 +1,4 @@
-PeakML.Write <- function(peakDataMtx, chromDataList, sampleNames, rawdataFullPaths, phenoData, corRT, rawRT, outFileName, ionisation="neutral"){
+PeakML.Write <- function(peakDataMtx, chromDataList, sampleNames, rawdataFullPaths, phenoData, corRT, rawRT, outFileName, ionisation="neutral",GroupAnnotations=NULL){
 	# PRE:
 	#	peakDataMtx <- PeakML.Methods.getPeakData$peakDataMtx
 	#	chromDataList <- PeaKML.Methods.getChromData or PeakML.Methods.getPeakData$chromDataList
@@ -35,5 +35,9 @@ PeakML.Write <- function(peakDataMtx, chromDataList, sampleNames, rawdataFullPat
 		.jcall(project, returnSig="V", method="addPeakSet", as.integer(setIndexes[[sid]]-1))
 	}
 
+	if (!is.null(GroupAnnotations))
+	{
+		PeakML.Methods.writeGroupAnnotations (project, GroupAnnotations)
+	}
 	.jcall(project, returnSig="V", method="write", outFileName)
 }
