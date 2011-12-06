@@ -6,11 +6,11 @@
 	Plot isotopes for all compounds listed in the molFormulaFile.
 }
 \usage{
-	PeakML.Isotope.TargettedIsotopes(baseDir, molFormulaFile, outFileName, mzXMLSrc=NULL, sampleType = "NEG", outDirectory = "targettedIsotops", 		peakMLFile="final_combined_related_identified.peakml", sampleGroups = NULL, layoutMtx = NULL, ppm = 3, trendPlots = NULL, fillGaps = "ALLPEAKS", useArea = FALSE, stdRTWindow = NULL)
+	PeakML.Isotope.TargettedIsotopes(PeakMLPath, molFormulaFile, outFileName, mzXMLSrc=NULL, outDirectory = "targettedIsotops", peakMLFile="final_combined_related_identified.peakml", sampleGroups = NULL, layoutMtx = NULL, ppm = 3, trendPlots = NULL, fillGaps = "ALLPEAKS", useArea = FALSE, stdRTWindow = NULL)
 }
 
 \arguments{
-	\item{baseDir}{
+	\item{PeakMLPath}{
 		The parent directory where PeakML files are located.
 	}
 	\item{molFormulaFile}{
@@ -21,9 +21,6 @@
 	}
 	\item{mzXMLSrc}{
 		The path to the raw data mzXML files.
-	}
-	\item{sampleType}{
-		The sample type, eg., negative ionisation.
 	}
 	\item{outDirectory}{
 		The output directory.
