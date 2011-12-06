@@ -1,4 +1,4 @@
-PeakML.Isotope.TargettedIsotopes <- function(baseDir, molFormulaFile, outFileName, mzXMLSrc=NULL, sampleType = "NEG", outDirectory = "targettedIsotops",  peakMLFile="final_combined_related_identified.peakml", sampleGroups = NULL, layoutMtx = NULL, ppm = 3, trendPlots = NULL, fillGaps = "ALLPEAKS", useArea = FALSE, stdRTWindow = NULL){
+PeakML.Isotope.TargettedIsotopes <- function(PeakMLPath, molFormulaFile, outFileName, mzXMLSrc=NULL, outDirectory = "targettedIsotops",  peakMLFile="final_combined_related_identified.peakml", sampleGroups = NULL, layoutMtx = NULL, ppm = 3, trendPlots = NULL, fillGaps = "ALLPEAKS", useArea = FALSE, stdRTWindow = NULL){
 	# PRE:
 	#	peakMLFiles: the complete peakml dataset
 	#	molFormulaFile: file containing the list of molecules whoes isotops has to be found out
@@ -13,12 +13,14 @@ PeakML.Isotope.TargettedIsotopes <- function(baseDir, molFormulaFile, outFileNam
 	
 	## Reads the peakml file & prepare the parameters to scan for isotops
 	## --------------------------------------------------------------------
-	cat("Indentifying isotops in ", sampleType, " sample\n")
-	setwd (paste(baseDir, sampleType, sep="/"))
+	cat("Indentifying isotopes in sample\n")
+	#setwd (paste(baseDir, sampleType, sep="/"))
+	setwd (PeakMLPath)
 	
-	if (!is.null(mzXMLSrc)){
-		mzXMLSrc <- paste(mzXMLSrc, sampleType, sep="/")
-	} else {
+	if (is.null(mzXMLSrc)){
+	#if (!is.null(mzXMLSrc)){
+	#	mzXMLSrc <- paste(mzXMLSrc, sampleType, sep="/")
+	#} else {
 		stop ("Please provide the location of the raw data (mzXML) files ")
 	}
 	
@@ -29,18 +31,19 @@ PeakML.Isotope.TargettedIsotopes <- function(baseDir, molFormulaFile, outFileNam
 		save("chromPeakData", file="cpData.Rdata")
 	}
 	
-	peakDataMtx <- chromPeakData[[1]]
-	chromDataList <- chromPeakData[[2]]
-	sampleClasses <- chromPeakData[[3]]
-	sampleNames <- chromPeakData[[4]]
+	peakDataMtx <- chromPeakData$peakDataMtx
+	chromDataList <- chromPeakData$chromDataList
+	sampleClasses <- chromPeakData$sampleClasses
+	sampleNames <- chromPeakData$sampleNames
 	massCorrection <- PeakML.Methods.getMassCorrection(filename=peakMLFile)
+	ion <- chromPeakData$massCorrection[[2]]
 	phenoData <- PeakML.Methods.getPhenoData(sampleClasses, sampleNames, peakDataMtx)
 
-	#if (sampleType == "NEG"){
-	#	massCorrection <- -PeakML.Methods.getProtonMass()
-	#} else if (sampleType == "POS"){
-	#	massCorrection <- +PeakML.Methods.getProtonMass()
-	#}
+	if (ion == "negative"){
+		sampleType = "NEG"
+	} else if (ion == "positive"){
+		sampleType = "POS"
+	}
 
 	if (is.null(sampleGroups)) sampleGroups <- unique(phenoData)		# To enable the user to change the order of the samples
 	if (is.null(trendPlots)) trendPlots <- c("RATIO","TREND", "LABELLED")
