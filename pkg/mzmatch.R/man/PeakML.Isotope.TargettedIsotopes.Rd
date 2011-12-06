@@ -6,11 +6,11 @@
 	Plot isotopes for all compounds listed in the molFormulaFile.
 }
 \usage{
-	PeakML.Isotope.TargettedIsotopes(PeakMLPath, molFormulaFile, outFileName, mzXMLSrc=NULL, outDirectory = "targettedIsotops", peakMLFile="final_combined_related_identified.peakml", sampleGroups = NULL, layoutMtx = NULL, ppm = 3, trendPlots = NULL, fillGaps = "ALLPEAKS", useArea = FALSE, stdRTWindow = NULL)
+	PeakML.Isotope.TargettedIsotopes(baseDir, molFormulaFile, outFileName, mzXMLSrc=NULL, outDirectory = "targettedIsotops", peakMLFile="final_combined_related_identified.peakml", sampleGroups = NULL, layoutMtx = NULL, ppm = 3, trendPlots = NULL, fillGaps = "ALLPEAKS", useArea = FALSE, stdRTWindow = NULL)
 }
 
 \arguments{
-	\item{PeakMLPath}{
+	\item{baseDir}{
 		The parent directory where PeakML files are located.
 	}
 	\item{molFormulaFile}{
