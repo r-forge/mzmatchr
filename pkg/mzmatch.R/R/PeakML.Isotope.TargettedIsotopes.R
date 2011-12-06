@@ -1,4 +1,4 @@
-PeakML.Isotope.TargettedIsotopes <- function(PeakMLPath, molFormulaFile, outFileName, mzXMLSrc=NULL, outDirectory = "targettedIsotops",  peakMLFile="final_combined_related_identified.peakml", sampleGroups = NULL, layoutMtx = NULL, ppm = 3, trendPlots = NULL, fillGaps = "ALLPEAKS", useArea = FALSE, stdRTWindow = NULL){
+PeakML.Isotope.TargettedIsotopes <- function(baseDir, molFormulaFile, outFileName, mzXMLSrc=NULL, outDirectory = "targettedIsotops",  peakMLFile="final_combined_related_identified.peakml", sampleGroups = NULL, layoutMtx = NULL, ppm = 3, trendPlots = NULL, fillGaps = "ALLPEAKS", useArea = FALSE, stdRTWindow = NULL){
 	# PRE:
 	#	peakMLFiles: the complete peakml dataset
 	#	molFormulaFile: file containing the list of molecules whoes isotops has to be found out
@@ -15,7 +15,7 @@ PeakML.Isotope.TargettedIsotopes <- function(PeakMLPath, molFormulaFile, outFile
 	## --------------------------------------------------------------------
 	cat("Indentifying isotopes in sample\n")
 	#setwd (paste(baseDir, sampleType, sep="/"))
-	setwd (PeakMLPath)
+	setwd (baseDir)
 	
 	if (is.null(mzXMLSrc)){
 	#if (!is.null(mzXMLSrc)){
@@ -27,7 +27,7 @@ PeakML.Isotope.TargettedIsotopes <- function(PeakMLPath, molFormulaFile, outFile
 	if (file.exists("cpData.Rdata") == TRUE){
 		load("cpData.Rdata")
 	} else{
-		chromPeakData <- PeakML.Read(peakMLFile, ionisation = "neutral")
+		chromPeakData <- PeakML.Read(peakMLFile, ionisation = "neutral", mzXMLSrc)
 		save("chromPeakData", file="cpData.Rdata")
 	}
 	
@@ -43,6 +43,8 @@ PeakML.Isotope.TargettedIsotopes <- function(PeakMLPath, molFormulaFile, outFile
 		sampleType = "NEG"
 	} else if (ion == "positive"){
 		sampleType = "POS"
+	} else {
+		sampleType = "NONE"
 	}
 
 	if (is.null(sampleGroups)) sampleGroups <- unique(phenoData)		# To enable the user to change the order of the samples
@@ -56,8 +58,7 @@ PeakML.Isotope.TargettedIsotopes <- function(PeakMLPath, molFormulaFile, outFile
 		if (length(sampleGroups)==10) plotOrder <- c(sampleGroups, trendPlots)
 	}
 	
-	PeakML.Isotope.processTargettedIsotopes(molFormulaFile, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow, sampleType,
-	sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, 
+	PeakML.Isotope.processTargettedIsotopes(molFormulaFile, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow, sampleType, sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, 
 	fillGaps, massCorrection, useArea)
 
 }
