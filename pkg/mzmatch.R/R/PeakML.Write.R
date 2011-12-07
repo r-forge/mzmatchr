@@ -1,4 +1,4 @@
-PeakML.Write <- function(peakDataMtx, chromDataList, sampleNames, rawdataFullPaths, phenoData, corRT, rawRT, outFileName, ionisation="neutral",GroupAnnotations=NULL){
+PeakML.Write <- function(peakMLdata=NULL, peakDataMtx=NULL, chromDataList=NULL, sampleNames=NULL, rawDataFullPaths=NULL, phenoData=NULL, corRT=NULL, rawRT=NULL, ionisation=NULL, GroupAnnotations=NULL, outFileName){
 	# PRE:
 	#	peakDataMtx <- PeakML.Methods.getPeakData$peakDataMtx
 	#	chromDataList <- PeaKML.Methods.getChromData or PeakML.Methods.getPeakData$chromDataList
@@ -11,8 +11,27 @@ PeakML.Write <- function(peakDataMtx, chromDataList, sampleNames, rawdataFullPat
 	#	ionisation <- the ionisation, leave it as default
 	# POST:
 	#	write the peakml the the file specified
-	
-	project <- .jnew("peakml/util/rjava/Project", sampleNames, rawdataFullPaths, phenoData)
+
+	if (!is.null(peakMLdata))
+	{
+		peakDataMtx <- peakMLdata$peakDataMtx
+		chromDataList <- peakMLdata$chromDataList
+		sampleNames <- peakMLdata$sampleNames
+		rawDataFullPaths <- peakMLdata$rawDataFullPaths
+		phenoData <- peakMLdata$phenoData
+		corRT <- peakMLdata$correctedRTList
+		rawRT <- peakMLdata$rawRTList
+		ionisation <- peakMLdata$massCorrection[[2]]
+		GroupAnnotations <- peakMLdata$GroupAnnotations
+	}
+
+	if (length(sampleNames)>1)
+	{
+		project <- .jnew("peakml/util/rjava/Project", sampleNames, rawDataFullPaths, phenoData)
+	} else
+	{
+		project <- .jnew("peakml/util/rjava/ProjectSingleMeasurement", sampleNames, rawDataFullPaths)
+	}
 
 	for (measID in 1:length(sampleNames)){
 		for (scanID in 1:length(rawRT[[measID]])){
@@ -25,19 +44,26 @@ PeakML.Write <- function(peakDataMtx, chromDataList, sampleNames, rawdataFullPat
 		chrom <- chromDataList[[peakID]]
 		.jcall(project, returnSig="V", method="addMassChromatogram", as.integer(peakDataMtx[peakID,9]-1), as.integer(chrom[4,]), as.numeric(chrom[3,]),as.numeric(chrom[1,]), as.numeric(chrom[2,]), as.character(ionisation))
 	}
-	
-	setIndexes <- vector("list",length(unique(peakDataMtx[,10])))
-	for (sid in 1:length(setIndexes)){
-		setIndexes[[sid]] <- which(peakDataMtx[,10]==sid)
-	}
-	
-	for (sid in 1:length(setIndexes)){
-		.jcall(project, returnSig="V", method="addPeakSet", as.integer(setIndexes[[sid]]-1))
-	}
 
-	if (!is.null(GroupAnnotations))
+	if (length(sampleNames)>1)
 	{
-		PeakML.Methods.writeGroupAnnotations (project, GroupAnnotations)
+		setIndexes <- vector("list",length(unique(peakDataMtx[,10])))
+		for (sid in 1:length(setIndexes))
+		{
+			setIndexes[[sid]] <- which(peakDataMtx[,10]==sid)
+		}
+	
+		for (sid in 1:length(setIndexes)){
+			.jcall(project, returnSig="V", method="addPeakSet", as.integer(setIndexes[[sid]]-1))
+		}
+
+		if (!is.null(GroupAnnotations))
+		{
+			PeakML.Methods.writeGroupAnnotations (project, GroupAnnotations)
+		}
+		.jcall(project, returnSig="V", method="write", outFileName)
+	} else
+	{
+		.jcall (project,returnSig="V",method="writeMeasurements", outFileName)
 	}
-	.jcall(project, returnSig="V", method="write", outFileName)
 }

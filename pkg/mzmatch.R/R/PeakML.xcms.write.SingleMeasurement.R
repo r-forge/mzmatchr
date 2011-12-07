@@ -60,7 +60,7 @@ PeakML.xcms.write.SingleMeasurement <- function(xset, filename,ionisation="detec
 		peakpicker="unknown"	
 	}
 
-	# Insert peakpicker method name ir peakML file header.
+	# Insert peakpicker method name in peakML file header.
 	## public void addHeaderAnnotation(String label, String value)	
 	.jcall(project, returnSig="V", method="addHeaderAnnotation",as.character("peakproc"),as.character(peakpicker))
 
