@@ -8,9 +8,12 @@
   fully reproducible representation of the contents of an XCMS set structure.
 }
 \usage{
-  PeakML.Write(peakDataMtx, chromDataList, sampleNames, rawdataFullPaths, phenoData, corRT, rawRT, outFileName, ionisation="neutral",GroupAnnotations)
+  PeakML.Write(peakMLdata=NULL, peakDataMtx=NULL, chromDataList=NULL, sampleNames=NULL, rawDataFullPaths=NULL, phenoData=NULL, corRT=NULL, rawRT=NULL, ionisation=NULL, GroupAnnotations=NULL, outFileName)
 }
 \arguments{
+	\item{peakMLdata}{
+	  The list of peak data as provided by the function PeakML.Read. If it is provided all other function arguments beside "outFileName" will be ignored.
+	}
 	\item{peakDataMtx}{
 	  The peak data matrix as provided by the function PeakML.Read
 	}
@@ -20,7 +23,7 @@
 	\item{sampleNames}{
 	  The sample names as a character vector.
 	}
-	\item{rawdataFullPaths}{
+	\item{rawDataFullPaths}{
 	  Paths to the raw data files as a character vector.
 	}
 	\item{phenoData}{
