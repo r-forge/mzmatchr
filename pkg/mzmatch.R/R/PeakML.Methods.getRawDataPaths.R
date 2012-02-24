@@ -18,7 +18,11 @@ PeakML.Methods.getRawDataPaths <- function(PeakMLtree, Rawpath = NULL){
 		fileid <- rep(NA,length(sampleNames))
 		for (filenum in 1:length(sampleNames))
 		{
-			fileid[filenum] <- grep (filenames[filenum],dirContent)
+			hit <- grep (filenames[filenum],dirContent, fixed=TRUE)
+			if (length(hit)!=0)
+			{
+				fileid[filenum] <- hit[1]
+			}
 		}
 	  	if(length(which(is.na(fileid)))==0){
 			rawDataPaths <- dirContent[fileid]
