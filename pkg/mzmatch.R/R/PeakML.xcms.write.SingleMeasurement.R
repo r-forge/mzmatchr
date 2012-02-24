@@ -109,6 +109,17 @@ PeakML.xcms.write.SingleMeasurement <- function(xset, filename,ionisation="detec
 		indx_start <- which(rettime == peak["rtmin"])[1]-addscans
 		indx_finis <- which(rettime == peak["rtmax"])[1]+addscans
 		
+		# if RT's are corrected and does not match original measured ones, detect scan index from the closest RT value
+		if (is.na(indx_start))
+		{
+			indx_start <- which(peak["rtmin"] <= rettime)[1]
+		}
+		if (is.na(indx_finis))
+		{
+			indx_finis <- which(peak["rtmax"] <= rettime)[1]
+		}
+
+
 		if (indx_start < 1)
 			indx_start <- 1
 		if (indx_finis > length(rawdata@scantime))
