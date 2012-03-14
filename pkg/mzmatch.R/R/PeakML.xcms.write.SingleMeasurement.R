@@ -113,10 +113,18 @@ PeakML.xcms.write.SingleMeasurement <- function(xset, filename,ionisation="detec
 		if (is.na(indx_start))
 		{
 			indx_start <- which(peak["rtmin"] <= rettime)[1]
+			if (is.na(indx_start))
+			{
+				indx_start <- 1
+			}
 		}
 		if (is.na(indx_finis))
 		{
 			indx_finis <- which(peak["rtmax"] <= rettime)[1]
+			if (is.na(indx_finis))
+			{
+				indx_finis <- length(rettime)
+			}
 		}
 
 
