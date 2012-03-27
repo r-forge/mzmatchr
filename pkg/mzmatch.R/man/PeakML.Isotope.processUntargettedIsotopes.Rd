@@ -1,18 +1,21 @@
-\name{PeakML.Isotope.processTargettedIsotopes}
+\name{PeakML.Isotope.processUntargettedIsotopes}
 \Rdversion{1.1}
-\alias{PeakML.Isotope.processTargettedIsotopes}
-\title{PeakML.Isotope.processTargettedIsotopes}
+\alias{PeakML.Isotope.processUntargettedIsotopes}
+\title{PeakML.Isotope.processUntargettedIsotopes}
 \description{
-	Read the compound id, name and formula from a file and process the plot for all isotopes for that compound. The resulting pdf is stored in the given filename at the given location.
+	Retreives the list of all identified compounds from the PeakML file and generate isotope plots for all of them, if present. The output is stored under the given filename at the given location.
 }
 \usage{
-	PeakML.Isotope.processTargettedIsotopes(molFormulaFile, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow, sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, 
-	fillGaps, massCorrection, useArea)
+	PeakML.Isotope.processUntargettedIsotopes(peakMLFile, databases, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow, sampleType,
+	sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, fillGaps, massCorrection, useArea)
 }
 
 \arguments{
-	\item{molFormulaFile}{
-		A tab separated file containing compound id, compound name, compound formula, followCarbon (the labelling of the carbon to be tracked) along the rows.
+	\item{peakMLFile}{
+		The name of the PeakML file which contains the combined peaks of all samples that are filtered, gap filled and identified. See the advanced metabolomics data processing tutorial at http://mzmatch.sourceforge.net/tutorial.mzmatch.r.advanced.html for more information.
+	}
+	\item{databases}{
+		A vector containing databases (in numbers) based on which initial annotations were made. For more information, see 'Identify peaks from data bases' section at http://mzmatch.sourceforge.net/tutorial.mzmatch.r.advanced.php
 	}
 	\item{outDirectory}{
 		The output directory.
@@ -28,6 +31,9 @@
 	}
 	\item{stdRTWindow}{
 		The standard retention time  window. Leave it to NULL if no standard retention time is available for the compound.
+	}
+	\item{sampleType}{
+		The sample type, eg., negative ionisation.
 	}
 	\item{sampleNames}{
 		The names of samples.
@@ -67,7 +73,7 @@ The PeakML file format defines an open and extensible file format for storing ex
 }
 
 \value{
-	PeakML.Isotope.processTargettedIsotopes generated a pdf document containing the plots of isotopes of each compound listed in the file (molFormulaFile) specifed.
+	PeakML.Isotope.processUntargettedIsotopes generates a pdf document containing the plots of isotopes of each identified compound in the PeakML file specified.
 }
 
 \references{

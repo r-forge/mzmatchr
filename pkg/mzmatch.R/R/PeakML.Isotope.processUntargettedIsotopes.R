@@ -1,23 +1,8 @@
-PeakML.Isotope.processTargettedIsotopes <- function (molFormulaFile, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow,
+#PeakML.Isotope.UntargettedIsotopes(baseDir="/home/cbaunni/Project/data_analysis/hct1162/trunk/NEG/", outFileName="utgt_test", mzXMLSrc="/home/cbaunni/Project/data_analysis/hct1162/mzxml/", fillGaps="NONE", useArea=TRUE)
+
+PeakML.Isotope.processUntargettedIsotopes <- function (peakMLFile, databases, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow, sampleType,
 	sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, 
 	fillGaps, massCorrection, useArea){
-
-	readTargetsFromFile<- function(inputFile){
-		# PRE: 
-		#	inputFile: a tab separated csv file that conforms to RCreateXMLDB format e.i. "id", "name", "formula" as column headings
-		# POST:
-		#	Contents of the input file as a dataFrame that has masses added in column "mass"
-	
-		# Load the java project where the java class is located with dummy parameters
-
-		molFrame <- read.csv(inputFile, sep="\t") # read the file as a data frame
-		molMasses <- NULL
-		for (imol in 1:length(molFrame$formula)){
-			molMasses <- c (molMasses, PeakML.Methods.formula2mass(as.character(molFrame$formula)[imol]))
-		}
-		molFrame$mass <- molMasses
-		molFrame
-	}
 
 	dir.create (outDirectory, showWarnings = FALSE)
 	# To generate the tab delimited file
@@ -29,42 +14,44 @@ PeakML.Isotope.processTargettedIsotopes <- function (molFormulaFile, outDirector
 	# Create the layout for the pdf
 	layout(layoutMtx, heights=c(0.4, rep(1, nrow(layoutMtx)-1)),TRUE)
 	# Reading the list of targets in the mol formula file
-	molFrame <- readTargetsFromFile(molFormulaFile) # reading the molformula file
+	molFrame <- PeakML.Isotope.DB2Text(peakMLFile, databases)
 	# To save the abundance matrix if needed for later processing .
 	molAbunList <- vector("list", nrow(molFrame))
 
-	if (massCorrection < 0){
-		sampleType = "NEG"
-	} else if (massCorrection > 0){
-		sampleType = "POS"
-	} else {
-		sampleType = "NONE"
-	}
-
 	for (i in 1:nrow(molFrame)){
 		metName <- as.character(molFrame$name[i])
-		metFormula <- as.character(molFrame$formula[i])
+		metFormula <- strsplit(as.character(molFrame$formula[i]), ",")[[1]][1]#as.character(molFrame$formula[i]) **********GLITCH**********
 		numCarbons <- PeakML.Methods.getCarbon(metFormula)
 		metMass <- as.numeric(molFrame$mass[i])
 #		massWindow <- PeakML.Methods.getPPMWindow(metMass, ppm)
-		stdRT <- as.numeric(molFrame$rt[i]) * 60
+		stdRT <- as.numeric(molFrame$rt[i])# * 60
 		
 		if (is.null(molFrame$follow[i])){
 			followCarbon <-  numCarbons + 1
 		}else{
 			followCarbon <- as.numeric(molFrame$follow[i])+1
 		}
-
+		
+		
 		cat(metName, ":\n")
+		cat(metFormula, numCarbons, "\n")
+
 		if (numCarbons==0){
 			cat("\tThere are no carbons in ", metName, ", hence skipping. \n")
 			next()
 		}
+		cat("\n")
+		
 		numCarbons <- numCarbons + 1 					# This is to account for the basal peaks as well.
 
 		cat ("\tIdentifying isotopes: ")
 		# get the UID of isotops
 		isotopeList <- PeakML.Isotope.getIsotopes (peakDataMtx, mzXMLSrc, sampleNames, numCarbons, metMass, ppm, massCorrection, stdRT, stdRTWindow, fillGaps)
+		
+		
+		# This is where to include the isotop level filter.
+		isotopeList <- PeakML.Isotope.filteroutUnlabelled(isotopeList, numCarbons, fillGaps, sampleNames, stringency=30)
+		
 		
 		if (!is.null(unlist(isotopeList))){
 			cat ("\n\tGenerating the plots. \n")
