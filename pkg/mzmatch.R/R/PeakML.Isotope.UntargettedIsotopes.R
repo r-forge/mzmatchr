@@ -1,4 +1,4 @@
-PeakML.Isotope.TargettedIsotopes <- function(baseDir, molFormulaFile, outFileName, mzXMLSrc=NULL, outDirectory = "targettedIsotops",  peakMLFile="final_combined_related_identified.peakml", sampleGroups = NULL, layoutMtx = NULL, ppm = 3, trendPlots = NULL, fillGaps = "ALLPEAKS", useArea = FALSE, stdRTWindow = NULL){
+PeakML.Isotope.UntargettedIsotopes <- function(baseDir, outFileName, mzXMLSrc=NULL, outDirectory = "untargettedIsotops",  peakMLFile="final_combined_related_identified.peakml", databases = c(2,3), sampleGroups = NULL, layoutMtx = NULL, ppm = 3, trendPlots = NULL, fillGaps = "ALLPEAKS", useArea = FALSE, stdRTWindow = 35){
 	# PRE:
 	#	peakMLFiles: the complete peakml dataset
 	#	molFormulaFile: file containing the list of molecules whoes isotops has to be found out
@@ -36,11 +36,18 @@ PeakML.Isotope.TargettedIsotopes <- function(baseDir, molFormulaFile, outFileNam
 	sampleClasses <- chromPeakData$sampleClasses
 	sampleNames <- chromPeakData$sampleNames
 	massCorrection <- PeakML.Methods.getMassCorrection(filename=peakMLFile)
+	ion <- chromPeakData$massCorrection[[2]]
 	phenoData <- PeakML.Methods.getPhenoData(sampleClasses, sampleNames, peakDataMtx)
 
+	if (ion == "negative"){
+		sampleType = "NEG"
+	} else if (ion == "positive"){
+		sampleType = "POS"
+	} else {
+		sampleType = "NONE"
+	}
 
 	if (is.null(sampleGroups)) sampleGroups <- unique(phenoData)		# To enable the user to change the order of the samples
-
 	if (is.null(trendPlots)) trendPlots <- c("RATIO","TREND", "LABELLED")
 	
 	if (length(sampleGroups)>10) {
@@ -51,7 +58,7 @@ PeakML.Isotope.TargettedIsotopes <- function(baseDir, molFormulaFile, outFileNam
 		if (length(sampleGroups)==10) plotOrder <- c(sampleGroups, trendPlots)
 	}
 	
-	PeakML.Isotope.processTargettedIsotopes(molFormulaFile, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow, sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, 
+	PeakML.Isotope.processUntargettedIsotopes(peakMLFile, databases, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow, sampleType, sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, 
 	fillGaps, massCorrection, useArea)
 
 }

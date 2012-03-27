@@ -33,7 +33,7 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 	
 	for (peakGroup in 1:numPeakGroups){
 		trendList <- PeakML.Isotope.getTrendList (intList, sampleGroups, useArea) [[peakGroup]]
-		ratioMtx <- processRatioMtx (t(PeakML.Isotope.getRatioMtxList (intList, sampleGroups, useArea, metName) [[peakGroup]]))
+		ratioMtx <- processRatioMtx (t(PeakML.Isotope.getRatioMtxList (intList, sampleGroups, useArea, metName[1]) [[peakGroup]]))
 		
 		par (mar=c(0,0,0,0))
 		plot (c(1:10), c(1:10), xlab="", ylab="", pch="", axes=F) 
@@ -41,10 +41,12 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 		if(length(metName)==1){
 			text(1.5, 6, metName[1], cex = 2, pos=4)
 			text(1.5, 4, paste("Formula:", metFormula, "Mass:", round(metMass,3), "Std.RT:", stdRT, "Ion:", sampleType, sep = "  "), pos=4, cex = 1.5)
+#			text(1.5, 4, paste("Formula:", metFormula, "Mass:", round(metMass,3), "Std.RT:", stdRT, sep = "  "), pos=4, cex = 1.5)
 		} else {
 			text(1.5, 7, metName[1], cex = 2, pos=4)
 			text(1.5, 5, paste(metName[2:length(metName)], collapse=","), cex = .5, pos=4)
 			text(1.5, 4, paste("Formula:", metFormula, "Mass:", round(metMass,3), "Std.RT:", stdRT, "Ion:", sampleType, sep = "  "), pos=4, cex = 1)
+#			text(1.5, 4, paste("Formula:", metFormula, "Mass:", round(metMass,3), "Std.RT:", stdRT, sep = "  "), pos=4, cex = 1)
 		}
 		legend(1.5, 3,fill=fillColor, fillLabels[1:numCarbons], bty="n", horiz=TRUE)
 		
@@ -71,8 +73,8 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 				trendMtx.sd <- apply(trendMtx, 2, sd)
 				ylimit <- sum(max(trendMtx.sum), max(trendMtx.sd))
 				# calculate std err
-				errMtx <- replace(trendMtx, trendMtx==0, NA)
-				stdErr <- apply(errMtx, 2, PeakML.Methods.getStdErr)
+				#errMtx <- replace(trendMtx, trendMtx==0, NA)
+				#stdErr <- apply(errMtx, 2, PeakML.Methods.getStdErr)
 
 				par(mar=c(4,2.5,0.5,3))
 				if (useArea == FALSE){
@@ -87,21 +89,51 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 
 			} else if (plotOrder[item] == "LABELLED"){
 			
-				if(is.na(followCarbon)) followCarbon <- numCarbons
+				if(is.na(followCarbon)) followCarbon <- 2
 
-				fcMtx <- PeakML.Isotope.getFCMtx (trendList, sampleGroups, followCarbon)
-
+				if (followCarbon == 2){
+					tMtx <-PeakML.Isotope.getFCMtxAbun(trendList, sampleGroups, followCarbon)
+					fcMtx <- tMtx[[1]]
+					colvector <- tMtx[[2]]
+					print (fcMtx)
+					#print(colvector)
+				} else {
+					fcMtx <- PeakML.Isotope.getFCMtx(trendList, sampleGroups, followCarbon)
+				}
+				
 				if (useArea == FALSE){
 					ylabel <- paste(metName[1], "(mean peak height)", sep= " ")
 				} else {
 					ylabel <- paste(metName[1], "(mean peak area)", sep= " ")
 				}
 
-				ylimit <- max(fcMtx)
+				ylimit <- max(apply(fcMtx,2,sum))
+				cat("------------------")
+				print(ylimit)
 				if (!ylimit==0){
 					par(mar=c(4,2.5,0.5,3))
-					barplot(fcMtx, beside=FALSE, col=fillColor[followCarbon], axisnames=FALSE, ylab=ylabel, ylim=c(0,ylimit), border=NA)
+
+					if (followCarbon==2){
+						overlap <- "#993399" # purple
+						measuredLarger <- "#FF9988" # red > expected
+						expectedLarger <- "#8877FF" # blue
+						
+						
+						COLORS <- c(overlap, measuredLarger, expectedLarger)
+						colvector[colvector==1] <- COLORS[1]
+						colvector[colvector==2] <- COLORS[2]
+						colvector[colvector==3] <- COLORS[3]
+						print(colvector)
+					} else {
+						colvector <- c(followCarbon)
+					}
+					
+					barplot(fcMtx, beside=FALSE, col=colvector, axisnames=FALSE, ylab=ylabel, ylim=c(0,ylimit), border=NA)
 					axis(1, las=3, at=c(1:length(sampleGroups)), lab=sampleGroups, lwd=0, cex.axis=.8)
+					
+					if (followCarbon==2){
+						legend("topright",fill=COLORS, c("Overlap", "<Expected", ">Expected"), bty="n")
+					}
 				} else {
 					par(mar=c(0.5,0.5,0.5,0.5))
 					plot (1, 1, xlab="", ylab="", pch="", axes=F)
