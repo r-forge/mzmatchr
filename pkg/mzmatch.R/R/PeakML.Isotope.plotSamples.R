@@ -95,7 +95,7 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 					tMtx <-PeakML.Isotope.getFCMtxAbun(trendList, sampleGroups, followCarbon)
 					fcMtx <- tMtx[[1]]
 					colvector <- tMtx[[2]]
-					print (fcMtx)
+					#print (fcMtx)
 					#print(colvector)
 				} else {
 					fcMtx <- PeakML.Isotope.getFCMtx(trendList, sampleGroups, followCarbon)
@@ -123,7 +123,7 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 						colvector[colvector==1] <- COLORS[1]
 						colvector[colvector==2] <- COLORS[2]
 						colvector[colvector==3] <- COLORS[3]
-						print(colvector)
+						#print(colvector)
 					} else {
 						colvector <- c(followCarbon)
 					}
