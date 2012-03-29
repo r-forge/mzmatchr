@@ -10,7 +10,7 @@ PeakML.Isotope.processTargettedIsotopes <- function (molFormulaFile, outDirector
 	
 		# Load the java project where the java class is located with dummy parameters
 
-		molFrame <- read.csv(inputFile, sep="\t") # read the file as a data frame
+		molFrame <- read.table(inputFile, sep="\t", header=TRUE) # read the file as a data frame
 		molMasses <- NULL
 		for (imol in 1:length(molFrame$formula)){
 			molMasses <- c (molMasses, PeakML.Methods.formula2mass(as.character(molFrame$formula)[imol]))

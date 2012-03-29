@@ -108,8 +108,8 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 				}
 
 				ylimit <- max(apply(fcMtx,2,sum))
-				cat("------------------")
-				print(ylimit)
+				#cat("------------------")
+				#print(ylimit)
 				if (!ylimit==0){
 					par(mar=c(4,2.5,0.5,3))
 
