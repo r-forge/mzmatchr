@@ -76,66 +76,58 @@ PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfil
 		# now we can locate the retention time as they will be in the raw data
 		rt_start <- min(subtable[,5])-rtwin
 		rt_finis <- max(subtable[,6])+rtwin
-		if (rt_finis > max(rawfile@scantime)){
-			rt_finis <- max(rawfile@scantime)
+		if (rt_finis > max(correctedRT)){
+			rt_finis <- max(correctedRT)
 		}
-		if (rt_start > max(rawfile@scantime)){
-			rt_start <- max(rawfile@scantime)
+		if (rt_start > max(correctedRT)){
+			rt_start <- max(correctedRT)
 		}
-		if (rt_finis < min(rawfile@scantime)){
-			rt_finis <- min(rawfile@scantime)
+		if (rt_finis < min(correctedRT)){
+			rt_finis <- min(correctedRT)
 		}
-		if (rt_start < min(rawfile@scantime)){
-			rt_start <- min(rawfile@scantime)
+		if (rt_start < min(correctedRT)){
+			rt_start <- min(correctedRT)
 		}
 		
 		mz_start <- min(subtable[,2])
 		mz_finis <- max(subtable[,3])
 		mz_start<- mz_start-(mz_start*ppm/10^6)
 		mz_finis<- mz_finis+(mz_finis*ppm/10^6)
+
+		# Detect MS scan inteval for RT window, if RT correction was used use raw RT's.
+		scan_start <- which(correctedRT >= rt_start)[1]-1
+		if (scan_start==0) scan_start=1
+		scan_finis <- which(correctedRT >= rt_finis)[1]
+
 		######
 		#  Extract data form raw data files
 		######
-		if ((rt_finis-rt_start)<5){
-			C <- c(1,1,1)
-		} else{
-			C <- rawMat (rawfile,mzrange=cbind(mz_start, mz_finis),rtrange=c(rt_start,rt_finis))
+		C <- try(PeakML.Methods.getRawMat (rawfile,scan_start, scan_finis, mz_start, mz_finis,correctedRT,uncorrectedRT))
+		if (class(C)=="try-error")
+		{
+			C <- c(1,1,1,1,1)
 		}
 		C <- rbind (C,NULL)
-	
-		## At some cases, two or more identical RT's are extracted, getting rid of them
-		repeatingRTS <- as.numeric(names(which(table(C[,1])>=2)))
-	
-		## Removing values with repeating RT's
-		## Row with largest intensity are selected
-		if (length(repeatingRTS!=0)){
-			for (z in 1:length(repeatingRTS)){
-				Csub <- which(round(C[,1],5)==round(repeatingRTS[z],5))
-				Csub <- Csub[-c(which(C[Csub,3]==max(C[Csub,3]))[1])]
-				C <- C[-c(Csub),]
-				C <- rbind(C,NULL)
-			}
-		}
-			
-		scanids <- which(rawfile@scantime%in%C[,1])
-		## if RT correction was applied, scans should be extracted from raw RT's
-		## Remove artefacts
-		if (length(scanids)<=3 | length(unique(C[,3]))<=3){
+
+		## Artefacts where intensities in all scans is constant will be also removed.
+		if (nrow(C)<=3 | length(unique(C[,5]))<=3){
 			scanids <- c(-1,-1,-1)
 			retentiontimes <- c(-1,-1,-1)
 			masses <- c(-1,-1,-1)
 			intensities <- c(-1,-1,-1)
 #			zerocount <- zerocount+1
 		} else {
-			retentiontimes <- C[,1]
-			masses <- C[,2]
-			intensities <- C[,3]
+			scanids <- C[,3]
+			retentiontimes <- C[,2]
+			masses <- C[,4]
+			intensities <- C[,5]
 #			nonzerocount <- nonzerocount+1
 #			fillednums <- append(fillednums,fillinnums[peaknum])
 		}
 			#assign ("zerocount",zerocount,envir=.GlobalEnv)
 #			assign ("nonzerocount",nonzerocount,envir=.GlobalEnv)
 #			assign ("fillednums",fillednums,envir=.GlobalEnv)
+			#cat (peaknum," ")
 			OUT <- rbind(masses,intensities,retentiontimes,scanids)
 	}
 
@@ -191,9 +183,10 @@ PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfil
 	#})
 
 
-	#if fillAll is set to TRUE, all peaks will be reintegrates with given RT and mass window.
+	#if fillAll is set to TRUE, all peaks will be reintegrated with given RT and mass window.
 	if (fillAll==TRUE)
 	{
+		detectedchromatograms <- numchromsexpected[,2]
 		numchromsexpected[,2] <- 0
 	}
 
@@ -210,7 +203,20 @@ PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfil
 		{
 		for (filenum in 1:length(samplenums)){
 			samplefile <- samplenums[filenum]
-			rawfile <- xcmsRaw(rawdatafullpaths[samplefile])
+
+			# Retention times vector is used to detect scan numbers
+			# rawfile <- xcmsRaw(rawdatafullpaths[samplefile])
+			rawfile <- openMSfile (rawdatafullpaths[samplefile],verbose=FALSE)
+			correctedRT <- as.numeric(PeakMLdata$correctedRTList[[samplefile]])
+			uncorrectedRT <- header(rawfile)$retentionTime
+			if (all(correctedRT==uncorrectedRT))
+			{
+				rtCorrection <- FALSE
+			} else
+			{
+				rtCorrection <- TRUE
+			}
+
 			## detect which peaks to fill in for current data file
 			fillinnums <- notdetected[whichfiles==samplefile]
 			
@@ -255,6 +261,7 @@ PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfil
 			for (i in 1:length(filledlist)){
 				chromslist[[fillinnums[i]]] <- filledlist[[i]]
 			}
+			close (rawfile)
 			rm (rawfile,filledlist)
 		}
 		})

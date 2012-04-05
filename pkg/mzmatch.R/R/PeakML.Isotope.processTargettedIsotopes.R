@@ -25,7 +25,7 @@ PeakML.Isotope.processTargettedIsotopes <- function (molFormulaFile, outDirector
 	cat("\n", file=csvFile)
 	# To generate the pdf plots
 	pdfFile <- paste(outDirectory, "/", outFileName, ".pdf", sep="")
-	pdf (file=pdfFile, page="a4", height=10, width=7)
+	pdf (file=pdfFile, paper="a4", height=10, width=7)
 	# Create the layout for the pdf
 	layout(layoutMtx, heights=c(0.4, rep(1, nrow(layoutMtx)-1)),TRUE)
 	# Reading the list of targets in the mol formula file

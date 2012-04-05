@@ -45,7 +45,7 @@ The PeakML file format defines an open and extensible file format for storing ex
 }
 
 \seealso{
-	\code{\link{PeakML.Methods.getPhenoData} \link{PeakML.Methods.processUntargettedIsotopes}}
+	\code{\link{PeakML.Methods.getPhenoData} \link{PeakML.Isotope.processUntargettedIsotopes}}
 }
 
 \keyword{ mzmatch.R }

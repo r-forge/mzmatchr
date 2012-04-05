@@ -8,10 +8,10 @@ mzmatch.XML.data.base.parser <- function (dbfile,elements=c("name","inchi","clas
 	formulas <- getNodeSet(DBcontent, "/compounds/compound/formula")
 	formulas <- sapply (formulas,xmlValue)
 	OUTPUT <- data.frame (id=ids,formula=formulas)
-	masses <- rep(NA,length(formulas))					
+	masses <- rep(NA,length(formulas))
 	for (formula in 1:length(formulas))
 	{		
-		masses[formula] <- .jcall (project,return="D",method="formulaToMass",as.character(formulas[formula]))
+		masses[formula] <- .jcall (project,returnSig="D",method="formulaToMass",as.character(formulas[formula]))
 	}
 	OUTPUT$mass <- masses
 	OUT <- matrix(ncol=length(elements),nrow=length(ids))
@@ -20,7 +20,7 @@ mzmatch.XML.data.base.parser <- function (dbfile,elements=c("name","inchi","clas
 		value <- getNodeSet(DBcontent, paste("/compounds/compound/",elements[element],sep=""))
 		value <- sapply (value,xmlValue)
 		if (length(value)!=0)
-		{		
+		{
 			OUT[,element] <- value
 		}
 	}
