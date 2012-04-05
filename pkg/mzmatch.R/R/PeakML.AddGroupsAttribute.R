@@ -77,7 +77,7 @@ PeakML.AddGroupsAttribute <- function(filename,outputfile,GroupAttributes=NULL,i
 
 	if (ionisation=="detect") 
 	{
-		ionisation <- .jcall (project,return="S",method="getIonisation",as.integer(0),as.integer(0))
+		ionisation <- .jcall (project,returnSig="S",method="getIonisation",as.integer(0),as.integer(0))
 	}
 
 	if (ionisation!="negative" & ionisation!="positive")
@@ -186,7 +186,7 @@ PeakML.AddGroupsAttribute <- function(filename,outputfile,GroupAttributes=NULL,i
 		vec <- rep(NA,length(unique(peakdata[,10])))
 		for (c in 1:length(vec))
 		{
-			val <- .jcall (project,return="S",method="getGroupAnnotation",as.integer(c-1),as.character(Gattr[ga]))
+			val <- .jcall (project,returnSig="S",method="getGroupAnnotation",as.integer(c-1),as.character(Gattr[ga]))
 			if (!is.null(val))
 			{
 				vec[c] <- val

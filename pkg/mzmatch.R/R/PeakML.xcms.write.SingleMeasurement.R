@@ -101,8 +101,8 @@ PeakML.xcms.write.SingleMeasurement <- function(xset, filename,ionisation="detec
 		# retrieve the current peak and check whether it is part of the current measurement 
 		# this assumes that all the peaks are sorted on xset@peaks["sample"]
 		peak <- xset@peaks[peakid,]
-		mz <- peak["mz"]
-		mzdiff <- mz*ppm*10^-6
+		mz_start <- peak["mzmin"]-(peak["mzmin"]*ppm*10^-6)
+		mz_finis <- peak["mzmax"]+(peak["mzmax"]*ppm*10^-6)
 
 		# first locate the index of the rtmin/rtmax in the corrected retention time table
 		rettime <- as.numeric(xset@rt$corrected[1][[1]])
@@ -112,7 +112,7 @@ PeakML.xcms.write.SingleMeasurement <- function(xset, filename,ionisation="detec
 		# if RT's are corrected and does not match original measured ones, detect scan index from the closest RT value
 		if (is.na(indx_start))
 		{
-			indx_start <- which(peak["rtmin"] <= rettime)[1]
+			indx_start <- which(peak["rtmin"] <= rettime)[1]-1
 			if (is.na(indx_start))
 			{
 				indx_start <- 1
@@ -127,36 +127,38 @@ PeakML.xcms.write.SingleMeasurement <- function(xset, filename,ionisation="detec
 			}
 		}
 
-
 		if (indx_start < 1)
 			indx_start <- 1
 		if (indx_finis > length(rawdata@scantime))
 			indx_finis <- length(rawdata@scantime)
-		length <- indx_finis - indx_start
-
-		# now we can locate the retention time as they will be in the raw data
-		rt_start <- xset@rt$raw[1][[1]][indx_start]
-		rt_finis <- xset@rt$raw[1][[1]][indx_finis]
-
-		
 
 		######
 		#  Extract data form raw data files
 		######
-				 		
-		## Extract extraplated peaks from raw data file
-		C <- rawEIC (rawdata,mzrange=cbind(mz-mzdiff, mz+mzdiff),scanrange=cbind(indx_start,indx_finis))
+		C <- rawMat (rawdata,mzrange=cbind(mz_start, mz_finis),scanrange=cbind(indx_start,indx_finis))
+		C <- rbind(C,NULL)
+		
+	
+		## At some cases, two or more identical RT's are extracted, getting rid of them			
+		## Removing values with repeating RT's
+		## Row with largest intensity are selected
 
-		## To get the accurate mass measured at each scan, I use this extra call
-		Ca <- rawMat (rawdata,mzrange=cbind(mz-mzdiff, mz+mzdiff),scanrange=cbind(indx_start,indx_finis))
+		repeatingRTS <- as.numeric(names(which(table(C[,1])>=2)))
+		if (length(repeatingRTS!=0)){
+			for (z in 1:length(repeatingRTS)){
+				Csub <- which(round(C[,1],5)==round(repeatingRTS[z],5))
+				Csub <- Csub[-c(which(C[Csub,3]==max(C[Csub,3]))[1])]
+				C <- C[-c(Csub),]
+				C <- rbind(C,NULL)
+			}
+		}
+		
 
 		##plot (C[,3],type="l",axes=F)
 		
-		## At some cases, two or more identical RT's are extracted, getting rid of them			
-		
-		scans <- C$scan
+		scans <- which(xset@rt$raw[[1]]%in%C[,1])
 
-		if (length(scans)<3 | all(C$intensity==0)) 
+		if (length(scans)<3 | length(unique(C[,3]))<=3)
 		{
 			scans <- c(-1,-1,-1)
 			retentiontimes <- c(-1,-1,-1)
@@ -164,21 +166,9 @@ PeakML.xcms.write.SingleMeasurement <- function(xset, filename,ionisation="detec
 			intensities <- c(-1,-1,-1)
 			rejected <- append(rejected,peakid)
 		} else {
-			retentiontimes <-  unlist(xset@rt$corrected[1])[scans]
-			intensities <- C$intensity
-			masses <- rep(peak["mz"],length(retentiontimes))
-			# Fill in these correct masses, for which signal is detected, this is needed to plot complete peks
-			detectedrts <- which(retentiontimes%in%Ca[,1])
-			for (rtt in 1:length(detectedrts))
-			{
-				val <- retentiontimes[detectedrts[rtt]]
-				val <- rbind(Ca[Ca[,1]==val,],NULL)
-				if (nrow(val)>1)
-				{
-					val <- rbind(val[which(max(val[,3])==val[,3]),],NULL)
-				}
-				masses[detectedrts[rtt]] <- val[,2][1]
-			}
+			retentiontimes <- rettime[scans]
+			intensities <- C[,3]
+			masses <- C[,2]
 			accepted <- append(accepted,peakid)
 		}
 		chromatograms[[peakid]] <- rbind(scans,retentiontimes,masses,intensities)

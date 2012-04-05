@@ -79,7 +79,7 @@ PeakML.xcms.read <- function(filename,ionisation="detect",Rawpath=NULL,annotatio
 	
 	if (ionisation=="detect")
 	{
-		ionisation<- .jcall (project,return="S",method="getIonisation",as.integer(0),as.integer(0))		
+		ionisation<- .jcall (project,returnSig="S",method="getIonisation",as.integer(0),as.integer(0))		
 	}
 	
 	if (ionisation!="negative" & ionisation!="positive")

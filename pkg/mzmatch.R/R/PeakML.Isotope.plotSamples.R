@@ -84,7 +84,7 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 				}
 
 				barx <- barplot(trendMtx, beside=FALSE, col=fillColor, ylab=ylabel,ylim=c(0,ylimit), border=NA, axisnames=FALSE)
-				axis(1, las=2, at=c(1:length(sampleGroups)), lab=sampleGroups, lwd=0, cex.axis=.8)
+				axis(1, las=2, at=c(1:length(sampleGroups)), labels=sampleGroups, lwd=0, cex.axis=.8)
 				errBar(barx, trendMtx.sum, trendMtx.sd/numCarbons, lwd=.3)
 
 			} else if (plotOrder[item] == "LABELLED"){
@@ -129,7 +129,7 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 					}
 					
 					barplot(fcMtx, beside=FALSE, col=colvector, axisnames=FALSE, ylab=ylabel, ylim=c(0,ylimit), border=NA)
-					axis(1, las=3, at=c(1:length(sampleGroups)), lab=sampleGroups, lwd=0, cex.axis=.8)
+					axis(1, las=3, at=c(1:length(sampleGroups)), labels=sampleGroups, lwd=0, cex.axis=.8)
 					
 					if (followCarbon==2){
 						legend("topright",fill=COLORS, c("Overlap", "<Expected", ">Expected"), bty="n")
@@ -143,7 +143,7 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 
 				par(mar=c(4,4,3,2))
 				barplot(t(ratioMtx), beside=FALSE, col=fillColor, ylab="% area under peak", ylim = c(0,1), border=NA, axisnames=FALSE)
-				axis(1, las=3, at=c(1:length(row.names(ratioMtx))), lab=row.names(ratioMtx), lwd=0, cex.axis=.5)
+				axis(1, las=3, at=c(1:length(row.names(ratioMtx))), labels=row.names(ratioMtx), lwd=0, cex.axis=.5)
 				
 			} else if (plotOrder[item] == "EMPTY"){
 
