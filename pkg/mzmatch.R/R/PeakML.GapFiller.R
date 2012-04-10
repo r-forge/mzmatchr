@@ -199,8 +199,6 @@ PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfil
 #	fillednums <- NULL
 
 	if (length(samplenums!=0)){
-		system.time(
-		{
 		for (filenum in 1:length(samplenums)){
 			samplefile <- samplenums[filenum]
 
@@ -261,10 +259,9 @@ PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfil
 			for (i in 1:length(filledlist)){
 				chromslist[[fillinnums[i]]] <- filledlist[[i]]
 			}
-			close (rawfile)
-			rm (rawfile,filledlist)
+			mzR::close (rawfile)
+			rm (filledlist)
 		}
-		})
 	}
 	
 	##SetNames, if peakml file has a several peaksets, they will be restored.
