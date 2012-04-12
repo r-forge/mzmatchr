@@ -1,24 +1,21 @@
-\name{PeakML.Isotope.processUntargettedIsotopes}
+\name{PeakML.Isotope.plotUntargettedIsotopes}
 \Rdversion{1.1}
-\alias{PeakML.Isotope.processUntargettedIsotopes}
-\title{PeakML.Isotope.processUntargettedIsotopes}
+\alias{PeakML.Isotope.plotUntargettedIsotopes}
+\title{PeakML.Isotope.plotUntargettedIsotopes}
 \description{
-	Determines the type of analysis that has to be used to perform the untargetted isotope quantification and parallalizes the process.
+	Retreives the list of all identified compounds from the PeakML file and generate isotope plots for all of them, if present. The output is stored under the given filename at the given location.
 }
 \usage{
-	PeakML.Isotope.processUntargettedIsotopes(peakMLFile, analyse, databases, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow, sampleType,
-	sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, fillGaps, massCorrection, useArea, numSlaves)
+	PeakML.Isotope.plotUntargettedIsotopes(peakMLFile, molFrame, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow, sampleType,
+	sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, fillGaps, massCorrection, useArea)
 }
 
 \arguments{
 	\item{peakMLFile}{
 		The name of the PeakML file which contains the combined peaks of all samples that are filtered, gap filled and identified. See the advanced metabolomics data processing tutorial at http://mzmatch.sourceforge.net/tutorial.mzmatch.r.advanced.html for more information.
 	}
-	\item{analyse}{
-		Indicates what type of analysis you want to run. The tree possible values at the moment are "identified", "databases" and "allmasses". "identified" and "allmasses" can be used to run an untargetted isotope identification procedure on the given PeakML file looking for all the identified compounds or all masses detected. "databases" can be used to run entire databases such as KEGG and HMDB.
-	}
-	\item{databases}{
-		A vector containing databases as numbers or strings based on which initial annotations were made or the databases that has to be used for identification. For more information, see 'Identify peaks from data bases' section at http://mzmatch.sourceforge.net/tutorial.mzmatch.r.advanced.php
+	\item{molFrame}{
+		A list containing containing data.frames of compound id, name and formula.
 	}
 	\item{outDirectory}{
 		The output directory.
@@ -68,9 +65,6 @@
 	\item{useArea}{
 		TRUE if sum of intensities has to be used instead of the maximum of intensities for peak intensity calculations.
 	}
-	\item{numSlaves}{
-		This parameter can be set to indicate the number of CPU cores that can be used for isotope identification and quantification.
-	}
 }
 
 
@@ -79,7 +73,7 @@ The PeakML file format defines an open and extensible file format for storing ex
 }
 
 \value{
-	PeakML.Isotope.processUntargettedIsotopes generates a pdf document containing the plots of isotopes of each identified compound in the PeakML file specified.
+	PeakML.Isotope.plotUntargettedIsotopes generates a pdf document containing the plots of isotopes of each identified compound in the PeakML file specified.
 }
 
 \references{

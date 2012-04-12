@@ -3,7 +3,7 @@ PeakML.Methods.getCarbon <- function(formula){
 	
 	carbons <- 0
 	elements <- c("Ca", "Cl", "Co", "Cr", "Cu", "Ce", "Cm", "Cf")
-	bonds <- c("CH")
+	bonds <- c("CH", "CC", "CO", "CS", "CF", "CB", "CN","CP", "CR")
 	
 	formula <- as.character(formula)
 	index <- grep("C", strsplit(formula,"")[[1]])

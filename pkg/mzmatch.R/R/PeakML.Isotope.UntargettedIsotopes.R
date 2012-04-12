@@ -1,4 +1,18 @@
-PeakML.Isotope.UntargettedIsotopes <- function(baseDir, outFileName, mzXMLSrc=NULL, outDirectory = "untargettedIsotops",  peakMLFile="final_combined_related_identified.peakml", databases = c(2,3), sampleGroups = NULL, layoutMtx = NULL, ppm = 3, trendPlots = NULL, fillGaps = "ALLPEAKS", useArea = FALSE, stdRTWindow = 35){
+PeakML.Isotope.UntargettedIsotopes <- function(baseDir, 
+	outFileName,
+	mzXMLSrc=NULL, 
+	outDirectory = "untargettedIsotops",  
+	peakMLFile="final_combined_related_identified.peakml", 
+	analyse = "databases",
+	databases = c("kegg"), 
+	sampleGroups = NULL, 
+	layoutMtx = NULL, 
+	ppm = 3,
+	trendPlots = NULL, 
+	fillGaps = "ALLPEAKS", 
+	useArea = FALSE, 
+	stdRTWindow = NULL,
+	numSlaves = 1){
 	# PRE:
 	#	peakMLFiles: the complete peakml dataset
 	#	molFormulaFile: file containing the list of molecules whoes isotops has to be found out
@@ -58,8 +72,7 @@ PeakML.Isotope.UntargettedIsotopes <- function(baseDir, outFileName, mzXMLSrc=NU
 		if (length(sampleGroups)==10) plotOrder <- c(sampleGroups, trendPlots)
 	}
 	
-	PeakML.Isotope.processUntargettedIsotopes(peakMLFile, databases, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow, sampleType, sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, 
-	fillGaps, massCorrection, useArea)
+	PeakML.Isotope.processUntargettedIsotopes(peakMLFile, analyse, databases, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow, sampleType, sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, fillGaps, massCorrection, useArea, numSlaves)
 
 }
 
