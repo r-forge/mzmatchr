@@ -6,7 +6,7 @@
 	Plot isotopes of all identified compounds in the PeakML file.
 }
 \usage{
-	PeakML.Isotope.UntargettedIsotopes(baseDir, outFileName, mzXMLSrc=NULL, outDirectory = "untargettedIsotops", peakMLFile="final_combined_related_identified.peakml", databases = c(2,3), sampleGroups = NULL, layoutMtx = NULL, ppm = 3, trendPlots = NULL, fillGaps = "ALLPEAKS", useArea = FALSE, stdRTWindow = 35)
+	PeakML.Isotope.UntargettedIsotopes(baseDir, outFileName, mzXMLSrc=NULL, outDirectory = "untargettedIsotops", peakMLFile="final_combined_related_identified.peakml", analyse = "databases", databases = c("kegg"), sampleGroups = NULL, layoutMtx = NULL, ppm = 3, trendPlots = NULL, fillGaps = "ALLPEAKS", useArea = FALSE, stdRTWindow = NULL, numSlaves=1)
 }
 
 \arguments{
@@ -25,8 +25,11 @@
 	\item{peakMLFile}{
 		The name of the PeakML file which contains the combined peaks of all samples that are filtered, gap filled and identified. See the advanced metabolomics data processing tutorial at http://mzmatch.sourceforge.net/tutorial.mzmatch.r.advanced.html for more information.
 	}
+	\item{analyse}{
+		Indicates what type of analysis you want to run. The tree possible values at the moment are "identified", "databases" and "allmasses". "identified" and "allmasses" can be used to run an untargetted isotope identification procedure on the given PeakML file looking for all the identified compounds or all masses detected. "databases" can be used to run entire databases such as KEGG and HMDB.
+	}
 	\item{databases}{
-		A vector containing databases (in numbers) based on which initial annotations were made. For more information, see 'Identify peaks from data bases' section at http://mzmatch.sourceforge.net/tutorial.mzmatch.r.advanced.php
+		A vector containing databases as numbers or strings based on which initial annotations were made or the databases that has to be used for identification. For more information, see 'Identify peaks from data bases' section at http://mzmatch.sourceforge.net/tutorial.mzmatch.r.advanced.php
 	}
 	\item{sampleGroups}{
 		The sample groups.
@@ -48,6 +51,9 @@
 	}
 	\item{stdRTWindow}{
 		The standard retention time  window. Leave it to NULL if no standard retention time is available for the compound.
+	}
+	\item{numSlaves}{
+		This parameter can be set to indicate the number of CPU cores that can be used for isotope identification and quantification.
 	}
 }
 
