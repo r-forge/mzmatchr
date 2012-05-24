@@ -1,4 +1,4 @@
-PeakML.Isotope.getIsotopes <- function(peakDataMtx, mzXMLSrc, sampleNames, numCarbons, metMass, ppm, massCorrection,  stdRT=NA, stdRTWindow=NULL, fillGaps="ALLPEAKS"){
+PeakML.Isotope.getIsotopes <- function(peakDataMtx, mzXMLSrc, sampleNames, numCarbons, metMass, ppm, massCorrection, baseCorrection, stdRT=NA, stdRTWindow=NULL, fillGaps="ALLPEAKS"){
 	#
 	# Returns a list that has all isotopes of the given mass in the form isotope[[peak_group]][[isotope]][[sample]] <- peak id from peak data matrix
 	# PRE: 
@@ -32,10 +32,14 @@ PeakML.Isotope.getIsotopes <- function(peakDataMtx, mzXMLSrc, sampleNames, numCa
 	}
 	
 	pdMtxMassFiltered <- rbind(peakDataMtx[massFilterHits,])
-	pdMtxMassFiltered <- cbind(pdMtxMassFiltered, massFilterHits) # append the original massFilterHits to keep track of the id
-	colnames(pdMtxMassFiltered)[12] <- "" # remove the colname from the matrix to keep it all similar
+	
 	
 	uniqueGroups <- unique(pdMtxMassFiltered[,10]) 		# to arrage the final list in the form of groups -> samples -> peakdata
+
+	massFillterHits <- which(peakDataMtx[,10]%in%uniqueGroups)
+	pdMtxMassFiltered <- peakDataMtx[which(peakDataMtx[,10]%in%uniqueGroups),]
+	pdMtxMassFiltered <- cbind(pdMtxMassFiltered, massFilterHits) # append the original massFilterHits to keep track of the id
+	colnames(pdMtxMassFiltered)[12] <- "" # remove the colname from the matrix to keep it all similar
 
 	if (is.null(stdRTWindow)){
 		if (length(uniqueGroups)==0){
@@ -161,7 +165,9 @@ PeakML.Isotope.getIsotopes <- function(peakDataMtx, mzXMLSrc, sampleNames, numCa
 					sampleName <- sampleNames[es]
 					gapFillHits <- PeakML.Methods.getRawSignals(mzXMLSrc, sampleName, rtWindow, massWindow, massCorrection)
 					if (max(gapFillHits[2,] != -1)){
-						gapFillHits[2,] <- PeakML.Methods.baseCorrection (gapFillHits[2,])
+						if (baseCorrection == TRUE){
+							gapFillHits[2,] <- PeakML.Methods.baseCorrection (gapFillHits[2,])
+						}
 						unlabledList[[es]] <- list("gapfilled", gapFillHits)
 					}
 				}

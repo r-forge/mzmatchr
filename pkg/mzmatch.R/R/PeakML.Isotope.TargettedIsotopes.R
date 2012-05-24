@@ -1,4 +1,4 @@
-PeakML.Isotope.TargettedIsotopes <- function(baseDir, molFormulaFile, outFileName, mzXMLSrc=NULL, outDirectory = "targettedIsotops",  peakMLFile="final_combined_related_identified.peakml", sampleGroups = NULL, layoutMtx = NULL, ppm = 3, trendPlots = NULL, fillGaps = "ALLPEAKS", useArea = FALSE, stdRTWindow = NULL){
+PeakML.Isotope.TargettedIsotopes <- function(baseDir, molFormulaFile, outFileName, mzXMLSrc=NULL, outDirectory = "targettedIsotops",  peakMLFile="final_combined_related_identified.peakml", sampleGroups = NULL, layoutMtx = NULL, ppm = 3, trendPlots = NULL, fillGaps = "ALLPEAKS", useArea = FALSE, stdRTWindow = NULL, baseCorrection=TRUE){
 	# PRE:
 	#	peakMLFiles: the complete peakml dataset
 	#	molFormulaFile: file containing the list of molecules whoes isotops has to be found out
@@ -52,7 +52,7 @@ PeakML.Isotope.TargettedIsotopes <- function(baseDir, molFormulaFile, outFileNam
 	}
 	
 	PeakML.Isotope.processTargettedIsotopes(molFormulaFile, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow, sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, 
-	fillGaps, massCorrection, useArea)
+	fillGaps, massCorrection, useArea, baseCorrection)
 
 }
 

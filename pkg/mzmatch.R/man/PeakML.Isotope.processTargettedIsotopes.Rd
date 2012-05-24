@@ -7,7 +7,7 @@
 }
 \usage{
 	PeakML.Isotope.processTargettedIsotopes(molFormulaFile, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow, sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, 
-	fillGaps, massCorrection, useArea)
+	fillGaps, massCorrection, useArea, baseCorrection)
 }
 
 \arguments{
@@ -58,6 +58,9 @@
 	}
 	\item{useArea}{
 		TRUE if sum of intensities has to be used instead of the maximum of intensities for peak intensity calculations.
+	}
+	\item{baseCorrection}{
+		Specifies if baseCorrection has to be applied for all peaks. This is especially helpfull while analysing noisy peaks. Leave it to TRUE in most cases.
 	}
 }
 

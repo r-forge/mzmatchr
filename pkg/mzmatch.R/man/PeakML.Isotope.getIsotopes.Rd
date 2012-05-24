@@ -6,7 +6,7 @@
 	This function will return location of isotope peaks in the peak data matrix that fall in the given mass window and retention time window (if provided).
 }
 \usage{
-	PeakML.Isotope.getIsotopes(peakDataMtx, mzXMLSrc, sampleNames, numCarbons, metMass, ppm, massCorrection, stdRT=NA, stdRTWindow=NULL, fillGaps="ALLPEAKS")
+	PeakML.Isotope.getIsotopes(peakDataMtx, mzXMLSrc, sampleNames, numCarbons, metMass, ppm, massCorrection, baseCorrection, stdRT=NA, stdRTWindow=NULL, fillGaps="ALLPEAKS")
 }
 
 \arguments{
@@ -31,6 +31,9 @@
 	\item{massCorrection}{
 		Requied if gap fill is TRUE. This is to correct the natural mass with the ionised mass. See PeakML.Methods.getMassCorrection().
 	}
+	\item{baseCorrection}{
+		Specifies if baseCorrection has to be applied for all peaks. This is especially helpfull while analysing noisy peaks. Leave it to TRUE in most cases.
+	}
 	\item{stdRT}{
 		The stand RT if available else provide NA to this function.
 	}
@@ -40,7 +43,6 @@
 	\item{fillGaps}{
 		"ALLPEAKS" if all the peaks are to gap filled, requied to fill missing signals in some part of the curve. "MISSINGPEAKS", if only the missing peaks have to be filled Or "NONE" if no peaks have to be gap filled. Defaults to "ALLPEAKS".
 	}
-
 }
 
 \details{

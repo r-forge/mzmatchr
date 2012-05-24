@@ -92,11 +92,10 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 				if(is.na(followCarbon)) followCarbon <- 2
 
 				if (followCarbon == 2){
-					tMtx <-PeakML.Isotope.getFCMtxAbun(trendList, sampleGroups, followCarbon)
-					fcMtx <- tMtx[[1]]
-					colvector <- tMtx[[2]]
-					#print (fcMtx)
-					#print(colvector)
+					fcMtx <-PeakML.Isotope.getFCMtxAbun(trendList, sampleGroups, followCarbon)
+					#tMtx <-PeakML.Isotope.getFCMtxAbun(trendList, sampleGroups, followCarbon)
+					#fcMtx <- tMtx[[1]]
+					#colvector <- tMtx[[2]]
 				} else {
 					fcMtx <- PeakML.Isotope.getFCMtx(trendList, sampleGroups, followCarbon)
 				}
@@ -107,22 +106,20 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 					ylabel <- paste(metName[1], "(mean peak area)", sep= " ")
 				}
 
-				ylimit <- max(apply(fcMtx,2,sum))
-				#cat("------------------")
-				#print(ylimit)
+				ylimit <- max(apply(fcMtx, 2, sum))
 				if (!ylimit==0){
 					par(mar=c(4,2.5,0.5,3))
 
 					if (followCarbon==2){
-						overlap <- "#993399" # purple
-						measuredLarger <- "#FF9988" # red > expected
-						expectedLarger <- "#8877FF" # blue
-						
-						
-						COLORS <- c(overlap, measuredLarger, expectedLarger)
-						colvector[colvector==1] <- COLORS[1]
-						colvector[colvector==2] <- COLORS[2]
-						colvector[colvector==3] <- COLORS[3]
+						overlap <- "#993399" # expected NA / NA whichever is smaller
+						expectedLarger <- "#FF9988" # expected natuabun is greater
+						measuredLarger <- "#8877FF" # blue
+						colvector <- c(overlap, expectedLarger, measuredLarger)
+						#COLORS <- c(overlap, expectedLarger, measuredLarger)
+
+						#colvector[colvector==1] <- COLORS[1]
+						#colvector[colvector==2] <- COLORS[2]
+						#colvector[colvector==3] <- COLORS[3]
 						#print(colvector)
 					} else {
 						colvector <- c(followCarbon)
@@ -132,7 +129,7 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 					axis(1, las=3, at=c(1:length(sampleGroups)), labels=sampleGroups, lwd=0, cex.axis=.8)
 					
 					if (followCarbon==2){
-						legend("topright",fill=COLORS, c("Overlap", "<Expected", ">Expected"), bty="n")
+						legend("topright",fill=colvector, c("Overlap", "<Expected", ">Expected"), bty="n")
 					}
 				} else {
 					par(mar=c(0.5,0.5,0.5,0.5))
