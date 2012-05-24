@@ -1,6 +1,6 @@
 PeakML.Isotope.processTargettedIsotopes <- function (molFormulaFile, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow,
 	sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, 
-	fillGaps, massCorrection, useArea){
+	fillGaps, massCorrection, useArea, baseCorrection){
 
 	readTargetsFromFile<- function(inputFile){
 		# PRE: 
@@ -64,7 +64,7 @@ PeakML.Isotope.processTargettedIsotopes <- function (molFormulaFile, outDirector
 
 		cat ("\tIdentifying isotopes: ")
 		# get the UID of isotops
-		isotopeList <- PeakML.Isotope.getIsotopes (peakDataMtx, mzXMLSrc, sampleNames, numCarbons, metMass, ppm, massCorrection, stdRT, stdRTWindow, fillGaps)
+		isotopeList <- PeakML.Isotope.getIsotopes (peakDataMtx, mzXMLSrc, sampleNames, numCarbons, metMass, ppm, massCorrection, baseCorrection, stdRT, stdRTWindow, fillGaps)
 		
 		if (!is.null(unlist(isotopeList))){
 			cat ("\n\tGenerating the plots. \n")

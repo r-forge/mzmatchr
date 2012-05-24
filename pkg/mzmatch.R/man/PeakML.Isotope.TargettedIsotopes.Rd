@@ -6,7 +6,7 @@
 	Plot isotopes for all compounds listed in the molFormulaFile.
 }
 \usage{
-	PeakML.Isotope.TargettedIsotopes(baseDir, molFormulaFile, outFileName, mzXMLSrc=NULL, outDirectory = "targettedIsotops", peakMLFile="final_combined_related_identified.peakml", sampleGroups = NULL, layoutMtx = NULL, ppm = 3, trendPlots = NULL, fillGaps = "ALLPEAKS", useArea = FALSE, stdRTWindow = NULL)
+	PeakML.Isotope.TargettedIsotopes(baseDir, molFormulaFile, outFileName, mzXMLSrc=NULL, outDirectory = "targettedIsotops", peakMLFile="final_combined_related_identified.peakml", sampleGroups = NULL, layoutMtx = NULL, ppm = 3, trendPlots = NULL, fillGaps = "ALLPEAKS", useArea = FALSE, stdRTWindow = NULL, baseCorrection=TRUE)
 }
 
 \arguments{
@@ -48,6 +48,9 @@
 	}
 	\item{stdRTWindow}{
 		The standard retention time  window. Leave it to NULL if no standard retention time is available for the compound.
+	}
+	\item{baseCorrection}{
+		Specifies if baseCorrection has to be applied for all peaks. This is especially helpfull while analysing noisy peaks. Leave it to TRUE in most cases.
 	}
 }
 
