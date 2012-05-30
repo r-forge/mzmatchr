@@ -50,7 +50,7 @@ PeakML.Write <- function(peakMLdata=NULL, peakDataMtx=NULL, chromDataList=NULL, 
 		setIndexes <- vector("list",length(unique(peakDataMtx[,10])))
 		for (sid in 1:length(setIndexes))
 		{
-			setIndexes[[sid]] <- which(peakDataMtx[,10]==sid)
+			setIndexes[[sid]] <- which(peakDataMtx[,10]==unique(peakDataMtx[,10])[sid])
 		}
 	
 		for (sid in 1:length(setIndexes)){

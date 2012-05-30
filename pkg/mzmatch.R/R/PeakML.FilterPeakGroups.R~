@@ -1,0 +1,64 @@
+PeakML.FilterPeakGroups <- function (filename, ionisation="detect", Rawpath=NULL, ppm=5, rtwin=60, outputfile)
+{
+	st <- system.time (PeakMLdata <- PeakML.Read (filename,ionisation,Rawpath))
+	PeakTable <- PeakML.Methods.getCompleteTable (PeakMLdata)
+	Masses <- apply(PeakTable[[2]],2,median,na.rm=TRUE)
+	RTs <- apply(PeakTable[[3]],2,median,na.rm=TRUE)
+
+	MassOrder <- order(Masses)
+	Masses <- sort(Masses)
+	RTs <- RTs[MassOrder]
+
+	validSetIndex <- rep(1,length(Masses))
+
+	for (mm in 1:length(Masses))
+	{
+		if(!is.na(Masses[mm]))
+		{
+			massWindow <- PeakML.Methods.getPPMWindow(Masses[mm],5)
+			HITS <- which(Masses >= massWindow [[1]] & Masses<=massWindow[[2]])
+			if (length(HITS)>1)
+			{
+				selRTs <- RTs[HITS]
+				RTmax <- selRTs[selRTs==min(selRTs)[1]]+rtwin
+				HITS <- HITS[which (selRTs<=RTmax)]
+				if (length(HITS)>1)
+				{
+					setsToCheck <- MassOrder[HITS]
+					nsamples <- rep(NA,length(setsToCheck))
+					maxint <- rep(NA,length(setsToCheck))
+					rtwith <- rep(NA,length(setsToCheck))
+					for (setn in 1:length(setsToCheck))
+					{
+						## number of sampes in peak set
+						nsamples[setn] <- nrow(PeakMLdata$peakDataMtx[PeakMLdata$peakDataMtx[,10]==setsToCheck[setn],])
+						## max signal intensity
+						maxint[setn] <- max(PeakMLdata$peakDataMtx[PeakMLdata$peakDataMtx[,10]==setsToCheck[setn],8])
+						## delta RT between largest and smalles RT in peak set
+						rtwith[setn] <- max(PeakMLdata$peakDataMtx[PeakMLdata$peakDataMtx[,10]==setsToCheck[setn],6])-min(PeakMLdata$peakDataMtx[PeakMLdata$peakDataMtx[,10]==setsToCheck[setn],5])
+					}
+					setsToKeep <- which(nsamples==max(nsamples))
+					if (length(setsToKeep)>1)
+					{
+						setsToKeep <- which(nsamples==max(nsamples) & rtwith==max(rtwith))
+					}
+					if (length(setsToKeep)>1)
+					{
+						setsToKeep <- which(nsamples==max(nsamples) & rtwith==max(rtwith) & maxint==max(maxint))[1]
+					}
+					validSetIndex[setsToCheck[-c(setsToKeep)]] <- 0
+				}
+			}
+			Masses[HITS] <- NA
+		}
+	}
+
+	## Write valid sets 
+	PeakML.Methods.extractPeakGroups (PeakMLdata=PeakMLdata, outputfile=outputfile, sets=which(validSetIndex==1))
+
+	## Write discarded sets 
+	PeakML.Methods.extractPeakGroups (PeakMLtdata=PeakMLdata, outputfile=paste("removed_",outputfile,sep=""), sets=which(validSetIndex==0))
+}
+
+
+

@@ -27,6 +27,7 @@ PeakML.Methods.getPeakData <- function(PeakMLtree, chromDataList)
 	{
 		SetMeasurementids <- lapply (1:length(SetMeasurementids),function(i) {base64decode(SetMeasurementids[i], what="integer",endian="swap")+1})
 	}
+	
 	nrPeakSets <- as.numeric(sapply(getNodeSet(PeakMLtree, "/peakml/header/nrpeaks"),xmlValue))
 
 	st <- system.time({
