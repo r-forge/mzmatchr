@@ -18,5 +18,5 @@ PeakML.Methods.combinePeakMLfiles <- function(PeakMLfiles, outputfile, ionisatio
 	}
 	})
 	
-	system.time(PeakML.Write (peakMLdata=PeakMLtree, outFileName=outputfile))	
+	system.time(PeakML.Write (peakMLdata=PeakMLtree, outFileName=outputfile))
 }
