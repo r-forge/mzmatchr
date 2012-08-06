@@ -2,7 +2,7 @@ Package: mzmatch.R
 Type: Package
 Title: mzmatch and PeakML integration for XCMS.
 Version: 1.1-20
-Date: 2012-02-07
+Date: 2012-07-08
 Author: Richard Scheltema <r.a.scheltema@rug.nl>, Andris Jankevics <a.jankevics@rug.nl>, Achuthanuni Chokkathukalam (unni.chokkathukalam@glasgow.ac.uk).
 Maintainer: Andris Jankevics <a.jankevics@rug.nl>
 Depends: R (>= 2.13.2), rJava (>= 0.9-1), xcms (>= 1.26.0), XML (>= 3.4-0), snow (>= 0.3-6), caTools (>= 1.11), bitops (>= 1.0-4.1), ptw (>= 1.0-1), mzR (>= 1.2.0)
