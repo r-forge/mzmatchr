@@ -8,9 +8,12 @@ RCreateXMLDB <- function (data,outputfile)
 
 		## Add all the rest nodes beside default ones
 		notfilled <- which(!childnames%in%c("id","formula","name"))
-		for (nd in 1:length(notfilled))
+		if (length(notfilled)!=0)
 		{
-			compound[[notfilled[nd]]] <- xmlNode (childnames[notfilled[nd]],data[nodenum,notfilled[nd]])
+			for (nd in 1:length(notfilled))
+			{
+				compound[[notfilled[nd]]] <- xmlNode (childnames[notfilled[nd]],data[nodenum,notfilled[nd]])
+			}
 		}
 		compound
 	}	
