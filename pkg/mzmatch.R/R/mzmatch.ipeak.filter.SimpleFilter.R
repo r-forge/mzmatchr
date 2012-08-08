@@ -1,7 +1,7 @@
 mzmatch.ipeak.filter.SimpleFilter <- function(JHeapSize=1425,i=NULL, o=NULL, rejected=NULL, databases=NULL, ppm=NULL, n=NULL, offset=NULL, mindetections=NULL, minscanid=NULL, maxscanid=NULL, minretentiontime=NULL, maxretentiontime=NULL, minmass=NULL, maxmass=NULL, minintensity=NULL, maxintensity=NULL, annotations=NULL, h=NULL, v=NULL)
 {
 	## define the java runtime parameters
-	java <- "java -da -dsa -Xmn1g -Xss128k -XX:+UseParallelGC -XX:ParallelGCThreads=10"
+	java <- "java -da -dsa -Xmn1g -Xss160k -XX:+UseParallelGC -XX:ParallelGCThreads=10"
 	## locate the mzmatch.jar file (it's included in the peakmlR package)
 	## JHeapSize - define amount of RAM availiable for java VM
 	JHeapSize <- paste(JHeapSize,"m",sep="")
@@ -10,7 +10,7 @@ mzmatch.ipeak.filter.SimpleFilter <- function(JHeapSize=1425,i=NULL, o=NULL, rej
 	
 	## setup the tool
 	tool <- paste(mzmatch, "mzmatch.ipeak.filter.SimpleFilter")
-	if (!is.null(i))
+		if (!is.null(i))
 		tool <- paste(tool, "-i", i)
 	if (!is.null(o))
 		tool <- paste(tool, "-o", o)

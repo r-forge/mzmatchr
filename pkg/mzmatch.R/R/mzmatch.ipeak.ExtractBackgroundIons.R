@@ -1,7 +1,7 @@
 mzmatch.ipeak.ExtractBackgroundIons <- function(JHeapSize=1425,i=NULL, o=NULL, ppm=NULL, threshold=NULL, h=NULL, v=NULL)
 {
 	## define the java runtime parameters
-	java <- "java -da -dsa -Xmn1g -Xss128k -XX:+UseParallelGC -XX:ParallelGCThreads=10"
+	java <- "java -da -dsa -Xmn1g -Xss160k -XX:+UseParallelGC -XX:ParallelGCThreads=10"
 	## locate the mzmatch.jar file (it's included in the peakmlR package)
 	## JHeapSize - define amount of RAM availiable for java VM
 	JHeapSize <- paste(JHeapSize,"m",sep="")
@@ -10,7 +10,7 @@ mzmatch.ipeak.ExtractBackgroundIons <- function(JHeapSize=1425,i=NULL, o=NULL, p
 	
 	## setup the tool
 	tool <- paste(mzmatch, "mzmatch.ipeak.ExtractBackgroundIons")
-	if (!is.null(i))
+		if (!is.null(i))
 		tool <- paste(tool, "-i", i)
 	if (!is.null(o))
 		tool <- paste(tool, "-o", o)
@@ -18,9 +18,9 @@ mzmatch.ipeak.ExtractBackgroundIons <- function(JHeapSize=1425,i=NULL, o=NULL, p
 		tool <- paste(tool, "-ppm", ppm)
 	if (!is.null(threshold))
 		tool <- paste(tool, "-threshold", threshold)
-	if (!is.null(h) & h==T)
+	if (!is.null(h) && h==T)
 		tool <- paste(tool, "-h")
-	if (!is.null(v) & v==T)
+	if (!is.null(v) && v==T)
 		tool <- paste(tool, "-v")
 
 	system(tool)

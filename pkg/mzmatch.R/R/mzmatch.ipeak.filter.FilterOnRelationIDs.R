@@ -1,7 +1,7 @@
 mzmatch.ipeak.filter.FilterOnRelationIDs <- function(JHeapSize=1425,i=NULL, relationids=NULL, o=NULL, rejected=NULL, h=NULL, v=NULL)
 {
 	## define the java runtime parameters
-	java <- "java -da -dsa -Xmn1g -Xss128k -XX:+UseParallelGC -XX:ParallelGCThreads=10"
+	java <- "java -da -dsa -Xmn1g -Xss160k -XX:+UseParallelGC -XX:ParallelGCThreads=10"
 	## locate the mzmatch.jar file (it's included in the peakmlR package)
 	## JHeapSize - define amount of RAM availiable for java VM
 	JHeapSize <- paste(JHeapSize,"m",sep="")
@@ -10,7 +10,7 @@ mzmatch.ipeak.filter.FilterOnRelationIDs <- function(JHeapSize=1425,i=NULL, rela
 	
 	## setup the tool
 	tool <- paste(mzmatch, "mzmatch.ipeak.filter.FilterOnRelationIDs")
-	if (!is.null(i))
+		if (!is.null(i))
 		tool <- paste(tool, "-i", i)
 	if (!is.null(relationids))
 		tool <- paste(tool, "-relationids", relationids)
