@@ -8,7 +8,7 @@ Matching is performed only on mass, which is taken from the topmost structure. I
 }
 
 \usage{
-mzmatch.ipeak.util.Identify(JHeapSize=1425, i, o,rtwindow, h, v, minrt, ppm, databases, maxrt)
+mzmatch.ipeak.util.Identify(JHeapSize=1425, i, o, ppm, databases, minrt, maxrt, rtwindow, h, v)
 }
 
 \arguments{
