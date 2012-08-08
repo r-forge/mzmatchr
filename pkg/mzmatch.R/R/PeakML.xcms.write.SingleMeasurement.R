@@ -40,8 +40,11 @@ PeakML.xcms.write.SingleMeasurement <- function(xset, filename,ionisation="detec
 	{
 		ionisation <- as.character(rawdata@polarity[1])
 	}
-	rawdata <- split(rawdata,rawdata@polarity)
-	rawdata <- rawdata[[which(names(rawdata)==ionisation)]]
+	if (ionisation=="positive" | ionisation=="negative")
+	{
+		rawdata <- split(rawdata,rawdata@polarity)
+		rawdata <- rawdata[[which(names(rawdata)==ionisation)]]
+	}
 
 	## Detect which peak pickging algorithm were used to generate XCMS object, for matchedFilter peaks table contain columns "intf", for centWave columns name ir "intb".
 	intcolname <- colnames(xset@peaks)[8]
