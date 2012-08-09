@@ -41,7 +41,7 @@ PeakML.Isotope.TargettedIsotopes <- function(baseDir, molFormulaFile, outFileNam
 
 	if (is.null(sampleGroups)) sampleGroups <- unique(phenoData)		# To enable the user to change the order of the samples
 
-	if (is.null(trendPlots)) trendPlots <- c("RATIO","TREND", "LABELLED")
+	if (is.null(trendPlots)) trendPlots <- c("RATIO","TREND", "LABELLED", "TOTRATIO")
 	
 	if (length(sampleGroups)>22) {
 		if (is.null(layoutMtx)) stop("You have more than 22 samples to plot. Please specify an appropriate layout matrix.\n") else plotOrder <- c(sampleGroups, trendPlots)
@@ -51,7 +51,7 @@ PeakML.Isotope.TargettedIsotopes <- function(baseDir, molFormulaFile, outFileNam
 			if (is.null(layoutMtx)) layoutMtx <- matrix(c(1,1,1,1,2, 3,4,5,6,7, 8,9,10,11,12, 13 ,14,14, 15,15),4,5, byrow=TRUE)
 			plotOrder <- c(sampleGroups, rep("EMPTY", 10-numSG), trendPlots)
 		} else if (numSG > 10 & numSG <=14){
-			 if (is.null(layoutMtx)) layoutMtx <- matrix(c(1,1,1,1,1,1,2, 3,4,5,6,7,8,9, 10,11,12,13,14,15,16, 17 ,18,18,18, 19,19,19),4,7, byrow=TRUE)
+			 if (is.null(layoutMtx)) layoutMtx <- matrix(c(1,1,1,1,1,1,2, 3,4,5,6,7,8,9, 10,11,12,13,14,15,16, 17,18,18,19,19,20,20),4,7, byrow=TRUE)
 			plotOrder <- c(sampleGroups, rep("EMPTY", 14-numSG), trendPlots)
 		} else if (numSG > 14 & numSG <=18){
 			 if (is.null(layoutMtx)) layoutMtx <- matrix(c(1,1,1,1,1,1,1,2,2, 3,4,5,6,7,8,9,10,11, 12,13,14,15,16,17,18,19,20, 21,21, 22,22,22,22, 23,23,23),4,9, byrow=TRUE)
