@@ -1,5 +1,17 @@
 PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMass, stdRT, sampleType, sampleGroups, plotOrder, useArea, followCarbon){
-
+	
+	clrs <- c("black",
+rgb(0.750,0.700,1.000),  rgb(0.400,0.320,0.800), rgb(0.150,0.060,0.600), 
+rgb(0.700,0.900,1.000),  rgb(0.320,0.640,0.800), rgb(0.060,0.420,0.600), 
+rgb(0.900,1.000,0.700),  rgb(0.640,0.800,0.320), rgb(0.420,0.600,0.060), 
+rgb(1.000,0.850,0.700),  rgb(0.800,0.560,0.320), rgb(0.600,0.330,0.060), 
+rgb(1.000,0.700,0.700),  rgb(0.800,0.320,0.320), rgb(0.600,0.060,0.060)
+	)
+	
+	clrs1 <- c("black", rgb(1.000,0.750,0.500), rgb(1.000,0.500,0.000), rgb(1.000,1.000,0.600), rgb(0.700,1.000,0.550), rgb(0.200,1.000,0.000), rgb(0.650,0.930,1.000), rgb(0.100,0.700,1.000), rgb(0.800,0.750,1.000), rgb(0.400,0.300,1.000), rgb(1.000,0.600,0.750), rgb(1.000,1.000,0.200), rgb(0.900,0.100,0.200))
+	
+	par(oma=c(0,0,0,0))
+	
 	processRatioMtx <- function(ratioMtx){
 		plotMtx <- matrix(nrow=nrow(ratioMtx), ncol=ncol(ratioMtx))
 		rownames(plotMtx) <- row.names(ratioMtx)
@@ -15,7 +27,11 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 		}
 		plotMtx
 	}
-	
+
+
+# 0800 0490150
+
+
 	mzList <- isotopeChroms[[1]]
 	intList <- isotopeChroms[[2]]
 	rtList <- isotopeChroms[[3]]
@@ -28,9 +44,16 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 	metName <- unlist(strsplit(as.character(metName), ", "))
 	
 	fillLabels <- c("UL" , paste(as.character("+"),c(1:numCarbons),sep=""))# create a list of isotop names
-	fillColor <- c(1:numCarbons)
-	if (numCarbons > 7) fillColor <- c("black", rainbow(numCarbons, alpha=0.5))
+	fillColor <- clrs[1:numCarbons]
+	#if (numCarbons > 26) fillColor <- c("black", rainbow(numCarbons, alpha=0.5))
 	
+	
+	if (numCarbons > 16) {
+		n = numCarbons - 26
+		rainClrs <- rainbow(n, s = 1, v = 1, start = 0, end = max(1,n - 1)/n, alpha = 1)
+		fillColor <- c(clrs, rainClrs)
+	}
+
 	for (peakGroup in 1:numPeakGroups){
 		trendList <- PeakML.Isotope.getTrendList (intList, sampleGroups, useArea) [[peakGroup]]
 		ratioMtx <- processRatioMtx (t(PeakML.Isotope.getRatioMtxList (intList, sampleGroups, useArea, metName[1]) [[peakGroup]]))
@@ -48,7 +71,7 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 			text(1.5, 4, paste("Formula:", metFormula, "Mass:", round(metMass,3), "Std.RT:", stdRT, "Ion:", sampleType, sep = "  "), pos=4, cex = 1)
 #			text(1.5, 4, paste("Formula:", metFormula, "Mass:", round(metMass,3), "Std.RT:", stdRT, sep = "  "), pos=4, cex = 1)
 		}
-		legend(1.5, 3,fill=fillColor, fillLabels[1:numCarbons], bty="n", horiz=TRUE)
+		legend(1.5, 3, fill=fillColor, fillLabels[1:numCarbons], bty="n", horiz=TRUE)
 		
 		plot (1, 1, xlab="", ylab="", pch="", axes=F)
 		text(1, 1, paste("G", as.character(peakGroup), sep=""), cex = 3)
@@ -56,7 +79,8 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 		for (item in 1:length(plotOrder)){
 			if(plotOrder[item] == "LEGEND"){
 
-				par(mar=c(0.5,0.5,0.5,0.5))
+				#par(mar=c(0.5,0.5,0.5,0.5))
+				par (mar=c(0,0,0,0))
 				plot (1, 1, xlab="", ylab="", pch="", axes=F)
 				legend("topleft",fill=fillColor, fillLabels[1:numCarbons], bty="n")
 
@@ -75,17 +99,27 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 				# calculate std err
 				#errMtx <- replace(trendMtx, trendMtx==0, NA)
 				#stdErr <- apply(errMtx, 2, PeakML.Methods.getStdErr)
-
-				par(mar=c(4,2.5,0.5,3))
+				
+				#par (mar=c(2,4,2,0))
+				par (mar=c(2,4,2,0), mgp=c(2,1,0))
+#				par(mar=c(4,2.5,0.5,3))
 				if (useArea == FALSE){
 					ylabel <- paste(metName[1], "(mean peak height)", sep= " ")
 				} else {
 					ylabel <- paste(metName[1], "(mean peak area)", sep= " ")
 				}
 
-				barx <- barplot(trendMtx, beside=FALSE, col=fillColor, ylab=ylabel,ylim=c(0,ylimit), border=NA, axisnames=FALSE)
-				axis(1, las=2, at=c(1:length(sampleGroups)), labels=sampleGroups, lwd=0, cex.axis=.8)
-				errBar(barx, trendMtx.sum, trendMtx.sd/numCarbons, lwd=.3)
+#				barx <- barplot(trendMtx, beside=FALSE, col=fillColor, ylab=ylabel,ylim=c(0,ylimit), border=NA, axisnames=FALSE)
+#				axis(1, las=2, at=c(1:length(sampleGroups)), labels=sampleGroups, lwd=0, cex.axis=.8)
+#				errBar(barx, trendMtx.sum, trendMtx.sd/numCarbons, lwd=.3)
+				
+				mp<-barplot(trendMtx, beside=FALSE, col=fillColor, ylab=ylabel, ylim=c(0,ylimit), border=NA, axisnames=FALSE, axes=FALSE)
+				text(mp, par("usr")[3], labels = sampleGroups, srt = 45, adj = 1, xpd =TRUE, cex=0.8)
+#				axis(1, at = mp,labels = FALSE)
+				errBar(mp, trendMtx.sum, trendMtx.sd/numCarbons, lwd=.3)
+				title("Labelling trend", cex.main=0.8)
+				axis(2)
+				
 
 			} else if (plotOrder[item] == "LABELLED"){
 			
@@ -108,39 +142,124 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 
 				ylimit <- max(apply(fcMtx, 2, sum))
 				if (!ylimit==0){
-					par(mar=c(4,2.5,0.5,3))
-
+					
+#					par (mar=c(2,4,2,0))
+					par (mar=c(2,4,2,0), mgp=c(2,1,0))
+#					par(mar=c(4,2.5,0.5,3))
 					if (followCarbon==2){
 						overlap <- "#993399" # expected NA / NA whichever is smaller
 						expectedLarger <- "#FF9988" # expected natuabun is greater
 						measuredLarger <- "#8877FF" # blue
 						colvector <- c(overlap, expectedLarger, measuredLarger)
-						#COLORS <- c(overlap, expectedLarger, measuredLarger)
 
-						#colvector[colvector==1] <- COLORS[1]
-						#colvector[colvector==2] <- COLORS[2]
-						#colvector[colvector==3] <- COLORS[3]
-						#print(colvector)
 					} else {
-						colvector <- c(followCarbon)
+						colvector <- fillColor[followCarbon]
 					}
 					
-					barplot(fcMtx, beside=FALSE, col=colvector, axisnames=FALSE, ylab=ylabel, ylim=c(0,ylimit), border=NA)
-					axis(1, las=3, at=c(1:length(sampleGroups)), labels=sampleGroups, lwd=0, cex.axis=.8)
+#					barplot(fcMtx, beside=FALSE, col=colvector, axisnames=FALSE, ylab=ylabel, ylim=c(0,ylimit), border=NA)
+#					axis(1, las=3, at=c(1:length(sampleGroups)), labels=sampleGroups, lwd=0, cex.axis=.8)
+					
+					mp<-barplot(fcMtx, beside=FALSE, col=colvector, ylab=ylabel, ylim=c(0,ylimit), border=NA, axisnames=FALSE, axes=FALSE)
+					text(mp, par("usr")[3], labels = sampleGroups, srt = 45, adj = 1, xpd =TRUE, cex=0.8)
+#					axis(1, at = mp, labels = FALSE)
+					title("Trend of carbon followed", cex.main=0.8)
+					axis(2)
 					
 					if (followCarbon==2){
 						legend("topright",fill=colvector, c("Overlap", "<Expected", ">Expected"), bty="n")
 					}
 				} else {
-					par(mar=c(0.5,0.5,0.5,0.5))
+#					par (mar=c(2,4,2,0))
+					par(mar=c(2,4,2,0), mgp=c(2,1,0))
+#					par(mar=c(0.5,0.5,0.5,0.5))
 					plot (1, 1, xlab="", ylab="", pch="", axes=F)
 				}
 
 			} else if (plotOrder[item] == "RATIO") {
 
-				par(mar=c(4,4,3,2))
-				barplot(t(ratioMtx), beside=FALSE, col=fillColor, ylab="% area under peak", ylim = c(0,1), border=NA, axisnames=FALSE)
-				axis(1, las=3, at=c(1:length(row.names(ratioMtx))), labels=row.names(ratioMtx), lwd=0, cex.axis=.5)
+#				par (mar=c(2,4,2,0))
+				par(mar=c(2,4,2,0), mgp=c(2,1,0))
+#				par(mar=c(4,4,3,2))
+				
+				
+				#check out https://stat.ethz.ch/pipermail/r-help/2002-October/025879.html				
+				#labels <- paste("This is bar #", 1:16, sep ="")
+				#mp <- barplot(1:16, axes = FALSE, axisnames = FALSE)
+				#text(mp, par("usr")[3] - 0.5, labels = labels, srt = 45, adj = 1, xpd =TRUE)
+				#axis(1, at = mp, labels = FALSE)
+				#axis(2)
+
+				#mp<-barplot(t(ratioMtx), beside=FALSE, col=fillColor, ylab="% area under peak", ylim = c(0,1), border=NA, axisnames=FALSE)
+				#axis(1, las=3, at=c(1:length(row.names(ratioMtx))), labels=row.names(ratioMtx), lwd=0, cex.axis=.5)
+
+
+				mp<-barplot(t(ratioMtx), beside=FALSE, col=fillColor, ylab="% area under peak", ylim = c(0,1), border=NA, axisnames=FALSE, axes=FALSE)
+				text(mp, par("usr")[3], labels = row.names(ratioMtx), srt = 45, adj = 1, xpd =TRUE, cex=0.2)
+#				axis(1, at = mp, labels = FALSE)
+				title("Ratio", cex.main=0.8)
+				axis(2)
+				
+			} else if (plotOrder[item] == "TOTRATIO") {
+				getRelAbunMtx <- function (trendList, sampleGroups, followCarbon){
+					numCarbons <-  length(trendList[[1]])
+					plotMtx <- matrix(nrow = 1, ncol = length(sampleGroups))
+					dimnames(plotMtx) <- list(c("RelAbun"), sampleGroups)
+	
+					for (sam in 1:length(sampleGroups)){
+						for (row in 1:length(rownames(plotMtx))){
+							x <- trendList[[sam]][[followCarbon]]
+							y <- sum(unlist(trendList[[sam]]))
+			
+							if (is.null(x)){
+								x <- 0
+							}
+							if (is.null(y)){
+								y <- 0
+							}
+		
+							plotMtx[row, sam] <- x/y*100
+						}
+					}
+					plotMtx
+				}
+
+
+				if(is.na(followCarbon)) followCarbon <- 2
+				
+				fcMtx <- getRelAbunMtx(trendList, sampleGroups, followCarbon)
+				fcMtx[is.nan(fcMtx)] <- 0
+
+				if (useArea == FALSE){
+					ylabel <- paste(metName[1], "(mean peak height)", sep= " ")
+				} else {
+					ylabel <- paste(metName[1], "(mean peak area)", sep= " ")
+				}
+
+				ylimit <- max(apply(fcMtx, 2, sum))
+#				if (is.nan(ylimit)){ylimit<-0}
+				
+				if (!ylimit==0){
+					
+#					par (mar=c(2,4,2,0))
+					par (mar=c(2,4,2,0), mgp=c(2,1,0))
+#					par(mar=c(4,2.5,0.5,3))
+					
+					colvector <- fillColor[followCarbon]
+					
+#					barplot(fcMtx, beside=FALSE, col=colvector, axisnames=FALSE, ylab=ylabel, ylim=c(0,ylimit), border=NA)
+#					axis(1, las=3, at=c(1:length(sampleGroups)), labels=sampleGroups, lwd=0, cex.axis=.8)
+					
+					mp<-barplot(fcMtx, beside=FALSE, col=colvector, ylab=ylabel, ylim=c(0,ylimit), border=NA, axisnames=FALSE, axes=FALSE)				
+					text(mp, par("usr")[3], labels=sampleGroups, srt = 45, adj = 1, xpd =TRUE, cex=0.8)
+#					axis(1, at = mp, labels = FALSE)
+					title("Followed carbon vs total signal", cex.main=0.8)
+					axis(2)
+				} else {
+#					par (mar=c(2,4,2,0))
+					par(mar=c(2,4,2,0), mgp=c(2,1,0))
+#					par(mar=c(0.5,0.5,0.5,0.5))
+					plot (1, 1, xlab="", ylab="", pch="", axes=F)
+				}
 				
 			} else if (plotOrder[item] == "EMPTY"){
 
@@ -159,7 +278,8 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 					minIN <- 0
 				}
 
-				par(mar=c(4,4,0.5,0.5), mgp=c(1.5,0.5,0))
+#				par(mar=c(4,4,0.5,0.5), mgp=c(1.5,0.5,0))
+				par(mar=c(2,2,1,0), mgp=c(0.5,0.5,0))
 				plot (1, 1, pch="", xlab="", ylab="", xlim=c(minRT,maxRT), ylim=c(minIN,maxIN), cex.axis=0.75)
 				for (isotop in 1:numCarbons){
 					numReplicates <- length(rtList[[peakGroup]][[item]][[isotop]])
