@@ -47,17 +47,17 @@ PeakML.Isotope.TargettedIsotopes <- function(baseDir, molFormulaFile, outFileNam
 		if (is.null(layoutMtx)) stop("You have more than 22 samples to plot. Please specify an appropriate layout matrix.\n") else plotOrder <- c(sampleGroups, trendPlots)
 	} else {
 		numSG <- length(sampleGroups)
-		if (numSG <= 10){
-			if (is.null(layoutMtx)) layoutMtx <- matrix(c(1,1,1,1,2, 3,4,5,6,7, 8,9,10,11,12, 13 ,14,14, 15,15),4,5, byrow=TRUE)
-			plotOrder <- c(sampleGroups, rep("EMPTY", 10-numSG), trendPlots)
-		} else if (numSG > 10 & numSG <=14){
-			 if (is.null(layoutMtx)) layoutMtx <- matrix(c(1,1,1,1,1,1,2, 3,4,5,6,7,8,9, 10,11,12,13,14,15,16, 17,18,18,19,19,20,20),4,7, byrow=TRUE)
+		if (numSG <= 7){
+			if (is.null(layoutMtx)) layoutMtx <- matrix(c(1,1,1,1,1,1,2, 3,4,5,6,7,8,9, 10,11,11,12,12,13,13),3,7, byrow=TRUE)
+			plotOrder <- c(sampleGroups, rep("EMPTY", 7-numSG), trendPlots)
+		} else if (numSG > 7 & numSG <=14){
+			if (is.null(layoutMtx)) layoutMtx <- matrix(c(1,1,1,1,1,1,2, 3,4,5,6,7,8,9, 10,11,12,13,14,15,16, 17,18,18,19,19,20,20),4,7, byrow=TRUE)
 			plotOrder <- c(sampleGroups, rep("EMPTY", 14-numSG), trendPlots)
 		} else if (numSG > 14 & numSG <=18){
-			 if (is.null(layoutMtx)) layoutMtx <- matrix(c(1,1,1,1,1,1,1,2,2, 3,4,5,6,7,8,9,10,11, 12,13,14,15,16,17,18,19,20, 21,21, 22,22,22,22, 23,23,23),4,9, byrow=TRUE)
+			if (is.null(layoutMtx)) layoutMtx <- matrix(c(1,1,1,1,1,1,1,2,2, 3,4,5,6,7,8,9,10,11, 12,13,14,15,16,17,18,19,20, 21,21, 22,22,22, 23,23, 24,24),4,9, byrow=TRUE)
 			plotOrder <- c(sampleGroups, rep("EMPTY", 18-numSG), trendPlots)
 		} else if (numSG > 18 & numSG <=22){
-			 if (is.null(layoutMtx)) layoutMtx <- matrix(c(1,1,1,1,1,1,1,1,1,2,2, 3,4,5,6,7,8,9,10,11,12,13, 14,15,16,17,18,19,20,21,22,23,24, 25,25, 26,26,26,26,26, 27,27,27,27),4,11, byrow=TRUE)
+			 if (is.null(layoutMtx)) layoutMtx <- matrix(c(1,1,1,1,1,1,1,1,1,2,2, 3,4,5,6,7,8,9,10,11,12,13, 14,15,16,17,18,19,20,21,22,23,24, 25,25, 26,26,26, 27,27,27, 28,28,28),4,11, byrow=TRUE)
 			plotOrder <- c(sampleGroups, rep("EMPTY", 22-numSG), trendPlots)
 		}
 
