@@ -1,4 +1,4 @@
-mzmatch.ipeak.util.Identify <- function(JHeapSize=1425,i=NULL, o=NULL, ppm=NULL, databases=NULL, minrt=NULL, maxrt=NULL, rtwindow=NULL, h=NULL, v=NULL)
+mzmatch.ipeak.util.Identify <- function(JHeapSize=1425,i=NULL, o=NULL, ppm=NULL, databases=NULL, minrt=NULL, maxrt=NULL, rtwindow=NULL, massOverride=NULL, polarity=NULL, adducts=NULL, h=NULL, v=NULL)
 {
 	## define the java runtime parameters
 	java <- "java -da -dsa -Xmn1g -Xss160k -XX:+UseParallelGC -XX:ParallelGCThreads=10"
@@ -24,6 +24,12 @@ mzmatch.ipeak.util.Identify <- function(JHeapSize=1425,i=NULL, o=NULL, ppm=NULL,
 		tool <- paste(tool, "-maxrt", maxrt)
 	if (!is.null(rtwindow))
 		tool <- paste(tool, "-rtwindow", rtwindow)
+	if (!is.null(massOverride))
+		tool <- paste(tool, "-massOverride", massOverride)
+	if (!is.null(polarity))
+		tool <- paste(tool, "-polarity", polarity)
+	if (!is.null(adducts))
+		tool <- paste(tool, "-adducts", adducts)
 	if (!is.null(h) && h==T)
 		tool <- paste(tool, "-h")
 	if (!is.null(v) && v==T)
