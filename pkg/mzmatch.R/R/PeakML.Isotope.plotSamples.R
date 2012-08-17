@@ -1,6 +1,6 @@
 PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMass, stdRT, sampleType, sampleGroups, plotOrder, useArea, followCarbon){
 	
-	clrs <- c("black",
+	grads <- c("black",
 rgb(0.750,0.700,1.000),  rgb(0.400,0.320,0.800), rgb(0.150,0.060,0.600), 
 rgb(0.700,0.900,1.000),  rgb(0.320,0.640,0.800), rgb(0.060,0.420,0.600), 
 rgb(0.900,1.000,0.700),  rgb(0.640,0.800,0.320), rgb(0.420,0.600,0.060), 
@@ -8,8 +8,14 @@ rgb(1.000,0.850,0.700),  rgb(0.800,0.560,0.320), rgb(0.600,0.330,0.060),
 rgb(1.000,0.700,0.700),  rgb(0.800,0.320,0.320), rgb(0.600,0.060,0.060)
 	)
 	
-	clrs1 <- c("black", rgb(1.000,0.750,0.500), rgb(1.000,0.500,0.000), rgb(1.000,1.000,0.600), rgb(0.700,1.000,0.550), rgb(0.200,1.000,0.000), rgb(0.650,0.930,1.000), rgb(0.100,0.700,1.000), rgb(0.800,0.750,1.000), rgb(0.400,0.300,1.000), rgb(1.000,0.600,0.750), rgb(1.000,1.000,0.200), rgb(0.900,0.100,0.200))
+	cbp <- c("black", "#A6CEE3", "#1F78B4", "#B2DF8A", "#33A02C", "#FB9A99", "#E31A1C", "#FDBF6F","#FF7F00", "#CAB2D6", "#6A3D9A", "#FFFF99", "#B15928")
 	
+	dist_grads <- c("black", rgb(1.000,0.750,0.500), rgb(1.000,0.500,0.000), rgb(1.000,1.000,0.600), rgb(0.700,1.000,0.550), rgb(0.200,1.000,0.000), rgb(0.650,0.930,1.000), rgb(0.100,0.700,1.000), rgb(0.800,0.750,1.000), rgb(0.400,0.300,1.000), rgb(1.000,0.600,0.750), rgb(1.000,1.000,0.200), rgb(0.900,0.100,0.200))
+	
+	clrs <- cbp
+	numClrs <- length(clrs)
+	
+	axExFact <-1.1 # This is a buffer to get the y axis of the bar plots right
 	par(oma=c(0,0,0,0))
 	
 	processRatioMtx <- function(ratioMtx){
@@ -44,12 +50,11 @@ rgb(1.000,0.700,0.700),  rgb(0.800,0.320,0.320), rgb(0.600,0.060,0.060)
 	metName <- unlist(strsplit(as.character(metName), ", "))
 	
 	fillLabels <- c("UL" , paste(as.character("+"),c(1:numCarbons),sep=""))# create a list of isotop names
+
 	fillColor <- clrs[1:numCarbons]
-	#if (numCarbons > 26) fillColor <- c("black", rainbow(numCarbons, alpha=0.5))
-	
-	
-	if (numCarbons > 16) {
-		n = numCarbons - 26
+
+	if (numCarbons > numClrs) {
+		n = numCarbons - numClrs
 		rainClrs <- rainbow(n, s = 1, v = 1, start = 0, end = max(1,n - 1)/n, alpha = 1)
 		fillColor <- c(clrs, rainClrs)
 	}
@@ -114,7 +119,7 @@ rgb(1.000,0.700,0.700),  rgb(0.800,0.320,0.320), rgb(0.600,0.060,0.060)
 #				errBar(barx, trendMtx.sum, trendMtx.sd/numCarbons, lwd=.3)
 				
 				mp<-barplot(trendMtx, beside=FALSE, col=fillColor, ylab=ylabel, ylim=c(0,ylimit), border=NA, axisnames=FALSE, axes=FALSE)
-				text(mp, par("usr")[3], labels = sampleGroups, srt = 45, adj = 1, xpd =TRUE, cex=0.8)
+				text(mp, par("usr")[3], labels = sampleGroups, srt = 45, adj = 1, xpd =TRUE, cex=0.6)
 #				axis(1, at = mp,labels = FALSE)
 				errBar(mp, trendMtx.sum, trendMtx.sd/numCarbons, lwd=.3)
 				title("Labelling trend", cex.main=0.8)
@@ -140,7 +145,7 @@ rgb(1.000,0.700,0.700),  rgb(0.800,0.320,0.320), rgb(0.600,0.060,0.060)
 					ylabel <- paste(metName[1], "(mean peak area)", sep= " ")
 				}
 
-				ylimit <- max(apply(fcMtx, 2, sum))
+				ylimit <- max(apply(fcMtx, 2, sum)) * axExFact
 				if (!ylimit==0){
 					
 #					par (mar=c(2,4,2,0))
@@ -160,7 +165,7 @@ rgb(1.000,0.700,0.700),  rgb(0.800,0.320,0.320), rgb(0.600,0.060,0.060)
 #					axis(1, las=3, at=c(1:length(sampleGroups)), labels=sampleGroups, lwd=0, cex.axis=.8)
 					
 					mp<-barplot(fcMtx, beside=FALSE, col=colvector, ylab=ylabel, ylim=c(0,ylimit), border=NA, axisnames=FALSE, axes=FALSE)
-					text(mp, par("usr")[3], labels = sampleGroups, srt = 45, adj = 1, xpd =TRUE, cex=0.8)
+					text(mp, par("usr")[3], labels = sampleGroups, srt = 45, adj = 1, xpd =TRUE, cex=0.6)
 #					axis(1, at = mp, labels = FALSE)
 					title("Trend of carbon followed", cex.main=0.8)
 					axis(2)
@@ -185,7 +190,7 @@ rgb(1.000,0.700,0.700),  rgb(0.800,0.320,0.320), rgb(0.600,0.060,0.060)
 				#check out https://stat.ethz.ch/pipermail/r-help/2002-October/025879.html				
 				#labels <- paste("This is bar #", 1:16, sep ="")
 				#mp <- barplot(1:16, axes = FALSE, axisnames = FALSE)
-				#text(mp, par("usr")[3] - 0.5, labels = labels, srt = 45, adj = 1, xpd =TRUE)
+				#text(mp, par("usr")[3] - 0.5, labels = labels, srt = 45, adj = 1, xpd =FALSE)
 				#axis(1, at = mp, labels = FALSE)
 				#axis(2)
 
@@ -230,12 +235,15 @@ rgb(1.000,0.700,0.700),  rgb(0.800,0.320,0.320), rgb(0.600,0.060,0.060)
 				fcMtx[is.nan(fcMtx)] <- 0
 
 				if (useArea == FALSE){
-					ylabel <- paste(metName[1], "(mean peak height)", sep= " ")
+#					ylabel <- paste(metName[1], "(mean peak height)", sep= " ")
+					ylabel <- "Mean peak area of followed carbon / total signal"
 				} else {
-					ylabel <- paste(metName[1], "(mean peak area)", sep= " ")
+					ylabel <- "Mean peak area of followed carbon / total signal"
+					#ylabel <- paste(metName[1], "(mean peak height)", sep= " ")
 				}
 
-				ylimit <- max(apply(fcMtx, 2, sum))
+				ylimit <- max(apply(fcMtx, 2, sum)) * axExFact
+				if (ylimit>100) ylimit <- 100
 #				if (is.nan(ylimit)){ylimit<-0}
 				
 				if (!ylimit==0){
@@ -250,7 +258,7 @@ rgb(1.000,0.700,0.700),  rgb(0.800,0.320,0.320), rgb(0.600,0.060,0.060)
 #					axis(1, las=3, at=c(1:length(sampleGroups)), labels=sampleGroups, lwd=0, cex.axis=.8)
 					
 					mp<-barplot(fcMtx, beside=FALSE, col=colvector, ylab=ylabel, ylim=c(0,ylimit), border=NA, axisnames=FALSE, axes=FALSE)				
-					text(mp, par("usr")[3], labels=sampleGroups, srt = 45, adj = 1, xpd =TRUE, cex=0.8)
+					text(mp, par("usr")[3], labels=sampleGroups, srt = 45, adj = 1, xpd =TRUE, cex=0.6)
 #					axis(1, at = mp, labels = FALSE)
 					title("Followed carbon vs total signal", cex.main=0.8)
 					axis(2)
