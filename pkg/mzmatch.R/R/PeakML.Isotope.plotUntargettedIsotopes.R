@@ -55,7 +55,10 @@ PeakML.Isotope.plotUntargettedIsotopes <- function (peakMLFile, molFrame, outDir
 
 		cat ("\tIdentifying isotopes: ")
 		# get the UID of isotops
-		isotopeList <- PeakML.Isotope.getIsotopes (peakDataMtx, mzXMLSrc, sampleNames, numCarbons, metMass, ppm, massCorrection, stdRT, stdRTWindow, fillGaps)
+		
+		baseCorrection <- FALSE
+		
+		isotopeList <- PeakML.Isotope.getIsotopes (peakDataMtx, mzXMLSrc, sampleNames, numCarbons, metMass, ppm, massCorrection, baseCorrection, stdRT, stdRTWindow, fillGaps)
 		
 		# This is where to include the isotop level filter.
 		isotopeList <- PeakML.Isotope.filteroutUnlabelled(isotopeList, numCarbons, fillGaps, sampleNames, stringency=30)

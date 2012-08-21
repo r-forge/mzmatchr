@@ -17,14 +17,14 @@ PeakML.Isotope.processUntargettedIsotopes <- function(peakMLFile, analyse, datab
 					end <- length(row.names(mFrame))
 				}
 				dFrame <- mFrame[start:end,]
-				dFrame$rt <- ""
-				dFrame$follow <- ""
+				dFrame$rt <-NA
+				dFrame$follow <- NA
 				molFrames [[sp]] <- dFrame
 			}
 		} else {
 			dFrame <- mFrame
-			dFrame$rt <- ""
-			dFrame$follow <- ""
+			dFrame$rt <- NA
+			dFrame$follow <- NA
 			molFrames [[1]] <- dFrame
 		}
 	}
@@ -42,8 +42,8 @@ PeakML.Isotope.processUntargettedIsotopes <- function(peakMLFile, analyse, datab
 					end <- length(row.names(mFrame))
 				}
 				dFrame <- mFrame[start:end,]
-				dFrame$rt <- ""
-				dFrame$follow <- ""
+				dFrame$rt <- NA
+				dFrame$follow <- NA
 				molFrames [[sp]] <- dFrame
 			}
 		} else {

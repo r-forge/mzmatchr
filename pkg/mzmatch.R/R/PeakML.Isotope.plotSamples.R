@@ -76,7 +76,7 @@ rgb(1.000,0.700,0.700),  rgb(0.800,0.320,0.320), rgb(0.600,0.060,0.060)
 			text(1.5, 4, paste("Formula:", metFormula, "Mass:", round(metMass,3), "Std.RT:", stdRT, "Ion:", sampleType, sep = "  "), pos=4, cex = 1)
 #			text(1.5, 4, paste("Formula:", metFormula, "Mass:", round(metMass,3), "Std.RT:", stdRT, sep = "  "), pos=4, cex = 1)
 		}
-		legend(1.5, 3, fill=fillColor, fillLabels[1:numCarbons], bty="n", horiz=TRUE)
+		legend(1.5, 3, fill=fillColor, fillLabels[1:numCarbons], bty="n", horiz=TRUE, x.intersp=.1)
 		
 		plot (1, 1, xlab="", ylab="", pch="", axes=F)
 		text(1, 1, paste("G", as.character(peakGroup), sep=""), cex = 3)
