@@ -12,7 +12,7 @@ PeakML.Isotope.getIsotopes <- function(peakDataMtx, mzXMLSrc, sampleNames, numCa
 	stdRTWin <- NULL
 	massFilterHits <- c()
 	finalList<-NULL
-
+	
 	# get the mass filter hits from the peakML data within the range of the mass specified
 	if (is.null(stdRTWindow)){
 		massFilterHits <- which(peakDataMtx[,1]>=massWindow[[1]] & peakDataMtx[,1]<=massWindow[[2]])

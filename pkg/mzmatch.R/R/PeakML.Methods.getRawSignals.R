@@ -13,12 +13,7 @@ PeakML.Methods.getRawSignals <- function(mzXMLSrc, sampleName, rtWindow, massWin
 	if (is.null(curDir)){
 		curDir <- getwd()
 	}
-	curFile <- list.files(path=curDir, pattern=paste(sampleName, ".mzXML", sep=""), full.names=TRUE, recursive=TRUE)
-#	cat("---------------------------start-------------------------------------\n")
-#	print(curDir)
-#	cat("\n")
-#	print(curFile)
-#	cat("\n---------------------------end-------------------------------------")
+	curFile <- list.files(path=curDir, pattern=paste("^", sampleName, ".mzXML", sep=""), full.names=TRUE, recursive=TRUE)
 	rawFile <- xcmsRaw(curFile)
 	
 	
