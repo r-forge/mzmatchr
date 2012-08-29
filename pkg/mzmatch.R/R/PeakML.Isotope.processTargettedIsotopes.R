@@ -1,6 +1,6 @@
 PeakML.Isotope.processTargettedIsotopes <- function (molFormulaFile, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow,
 	sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, 
-	fillGaps, massCorrection, useArea, baseCorrection){
+	fillGaps, massCorrection, useArea, baseCorrection, label){
 
 	readTargetsFromFile<- function(inputFile){
 		# PRE: 
@@ -40,36 +40,40 @@ PeakML.Isotope.processTargettedIsotopes <- function (molFormulaFile, outDirector
 	} else {
 		sampleType = "NONE"
 	}
+	
+	element <- substr(label,1,1)
 
 	for (i in 1:nrow(molFrame)){
 		metName <- as.character(molFrame$name[i])
 		metFormula <- as.character(molFrame$formula[i])
-		numCarbons <- PeakML.Methods.getCarbon(metFormula)
+		
+		#numElements <- PeakML.Methods.getCarbon(metFormula)
+		numElements <- PeakML.Methods.getElements(metFormula, element)
+		
 		metMass <- as.numeric(molFrame$mass[i])
-#		massWindow <- PeakML.Methods.getPPMWindow(metMass, ppm)
 		stdRT <- as.numeric(molFrame$rt[i]) * 60
 		
 		if (is.null(molFrame$follow[i])){
-			followCarbon <-  numCarbons + 1
+			followCarbon <-  numElements + 1
 		}else{
 			followCarbon <- as.numeric(molFrame$follow[i])+1
 		}
 
 		cat(metName, ":\n")
-		if (numCarbons==0){
-			cat("\tThere are no carbons in ", metName, ", hence skipping. \n")
+		if (numElements==0){
+			cat("\tThe metabolite ", metName, " does not contain the preferred element (", element,"), hence skipping. \n")
 			next()
 		}
-		numCarbons <- numCarbons + 1 					# This is to account for the basal peaks as well.
+		numElements <- numElements + 1 				# This is to account for the basal peaks as well.
 
 		cat ("\tIdentifying isotopes: ")
 		# get the UID of isotops
-		isotopeList <- PeakML.Isotope.getIsotopes (peakDataMtx, mzXMLSrc, sampleNames, numCarbons, metMass, ppm, massCorrection, baseCorrection, stdRT, stdRTWindow, fillGaps)
+		isotopeList <- PeakML.Isotope.getIsotopes (peakDataMtx, mzXMLSrc, sampleNames, label, numElements, metMass, ppm, massCorrection, baseCorrection, stdRT, stdRTWindow, fillGaps)
 		
 		if (!is.null(unlist(isotopeList))){
 			cat ("\n\tGenerating the plots. \n")
 			isotopeChroms <- PeakML.Isotope.getChromData (isotopeList, chromDataList, phenoData, sampleGroups)
-			PeakML.Isotope.plotSamples(isotopeChroms, metName, metFormula, metMass, stdRT, sampleType, sampleGroups, plotOrder, useArea, followCarbon)
+			PeakML.Isotope.plotSamples(isotopeChroms, metName, metFormula, metMass, stdRT, sampleType, sampleGroups, plotOrder, useArea, followCarbon, label)
 			
 			ratioMtxList <- PeakML.Isotope.getRatioMtxList(isotopeChroms[[2]], sampleGroups, useArea, metName)
 			

@@ -56,6 +56,7 @@ PeakML.Isotope.plotUntargettedIsotopes <- function (peakMLFile, molFrame, outDir
 		cat ("\tIdentifying isotopes: ")
 		# get the UID of isotops
 		
+		#baseCorrection deprecated for untargeted analysis
 		baseCorrection <- FALSE
 		
 		isotopeList <- PeakML.Isotope.getIsotopes (peakDataMtx, mzXMLSrc, sampleNames, numCarbons, metMass, ppm, massCorrection, baseCorrection, stdRT, stdRTWindow, fillGaps)

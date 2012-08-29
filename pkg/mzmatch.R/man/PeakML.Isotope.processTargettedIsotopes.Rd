@@ -6,8 +6,7 @@
 	Read the compound id, name and formula from a file and process the plot for all isotopes for that compound. The resulting pdf is stored in the given filename at the given location.
 }
 \usage{
-	PeakML.Isotope.processTargettedIsotopes(molFormulaFile, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow, sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, 
-	fillGaps, massCorrection, useArea, baseCorrection)
+	PeakML.Isotope.processTargettedIsotopes(molFormulaFile, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow, sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, fillGaps, massCorrection, useArea, baseCorrection, label)
 }
 
 \arguments{
@@ -61,6 +60,9 @@
 	}
 	\item{baseCorrection}{
 		Specifies if baseCorrection has to be applied for all peaks. This is especially helpfull while analysing noisy peaks. Leave it to TRUE in most cases.
+	}
+	\item{label}{
+		Specify the isotope used for labelling as a string. The available options are C13, N15, etc. More will be added once tested with with some real dataset.
 	}
 }
 

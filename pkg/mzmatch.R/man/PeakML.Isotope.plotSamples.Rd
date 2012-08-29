@@ -6,7 +6,7 @@
 	Plots the isotopes of the specified compound as a pdf document. The pdf document in which the plots has to be placed has to be initiated prior to calling this function (see PeakML.Isotope.processTargettedIsotopes)
 }
 \usage{
-	PeakML.Isotope.plotSamples(isotopeChroms, metName, metFormula, metMass, stdRT, sampleType, sampleGroups, plotOrder, useArea, followCarbon)
+	PeakML.Isotope.plotSamples(isotopeChroms, metName, metFormula, metMass, stdRT, sampleType, sampleGroups, plotOrder, useArea, followCarbon, label)
 }
 
 \arguments{
@@ -39,6 +39,9 @@
 	}
 	\item{followCarbon}{
 		The number of the carbon in a compound whose labelled or unlabelled trend has to be plotted.
+	}
+	\item{label}{
+		The type of labelling used in the data being analysed.
 	}
 }
 

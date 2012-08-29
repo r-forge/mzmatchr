@@ -1,4 +1,6 @@
-PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMass, stdRT, sampleType, sampleGroups, plotOrder, useArea, followCarbon){
+PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMass, stdRT, sampleType, sampleGroups, plotOrder, useArea, followCarbon, label){
+	
+	element <- substr(label,1,1)
 	
 	grads <- c("black",
 rgb(0.750,0.700,1.000),  rgb(0.400,0.320,0.800), rgb(0.150,0.060,0.600), 
@@ -33,10 +35,6 @@ rgb(1.000,0.700,0.700),  rgb(0.800,0.320,0.320), rgb(0.600,0.060,0.060)
 		}
 		plotMtx
 	}
-
-
-# 0800 0490150
-
 
 	mzList <- isotopeChroms[[1]]
 	intList <- isotopeChroms[[2]]
@@ -114,10 +112,6 @@ rgb(1.000,0.700,0.700),  rgb(0.800,0.320,0.320), rgb(0.600,0.060,0.060)
 					ylabel <- paste(metName[1], "(mean peak area)", sep= " ")
 				}
 
-#				barx <- barplot(trendMtx, beside=FALSE, col=fillColor, ylab=ylabel,ylim=c(0,ylimit), border=NA, axisnames=FALSE)
-#				axis(1, las=2, at=c(1:length(sampleGroups)), labels=sampleGroups, lwd=0, cex.axis=.8)
-#				errBar(barx, trendMtx.sum, trendMtx.sd/numCarbons, lwd=.3)
-				
 				mp<-barplot(trendMtx, beside=FALSE, col=fillColor, ylab=ylabel, ylim=c(0,ylimit), border=NA, axisnames=FALSE, axes=FALSE)
 				text(mp, par("usr")[3], labels = sampleGroups, srt = 45, adj = 1, xpd =TRUE, cex=0.6)
 #				axis(1, at = mp,labels = FALSE)
@@ -131,10 +125,7 @@ rgb(1.000,0.700,0.700),  rgb(0.800,0.320,0.320), rgb(0.600,0.060,0.060)
 				if(is.na(followCarbon)) followCarbon <- 2
 
 				if (followCarbon == 2){
-					fcMtx <-PeakML.Isotope.getFCMtxAbun(trendList, sampleGroups, followCarbon)
-					#tMtx <-PeakML.Isotope.getFCMtxAbun(trendList, sampleGroups, followCarbon)
-					#fcMtx <- tMtx[[1]]
-					#colvector <- tMtx[[2]]
+					fcMtx <-PeakML.Isotope.getFCMtxAbun(trendList, sampleGroups, followCarbon, element)
 				} else {
 					fcMtx <- PeakML.Isotope.getFCMtx(trendList, sampleGroups, followCarbon)
 				}
@@ -184,18 +175,6 @@ rgb(1.000,0.700,0.700),  rgb(0.800,0.320,0.320), rgb(0.600,0.060,0.060)
 
 #				par (mar=c(2,4,2,0))
 				par(mar=c(2,4,2,0), mgp=c(2,1,0))
-#				par(mar=c(4,4,3,2))
-				
-				
-				#check out https://stat.ethz.ch/pipermail/r-help/2002-October/025879.html				
-				#labels <- paste("This is bar #", 1:16, sep ="")
-				#mp <- barplot(1:16, axes = FALSE, axisnames = FALSE)
-				#text(mp, par("usr")[3] - 0.5, labels = labels, srt = 45, adj = 1, xpd =FALSE)
-				#axis(1, at = mp, labels = FALSE)
-				#axis(2)
-
-				#mp<-barplot(t(ratioMtx), beside=FALSE, col=fillColor, ylab="% area under peak", ylim = c(0,1), border=NA, axisnames=FALSE)
-				#axis(1, las=3, at=c(1:length(row.names(ratioMtx))), labels=row.names(ratioMtx), lwd=0, cex.axis=.5)
 
 
 				mp<-barplot(t(ratioMtx), beside=FALSE, col=fillColor, ylab="% area under peak", ylim = c(0,1), border=NA, axisnames=FALSE, axes=FALSE)

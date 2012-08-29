@@ -1,4 +1,4 @@
-PeakML.Isotope.TargettedIsotopes <- function(baseDir, molFormulaFile, outFileName, mzXMLSrc=NULL, outDirectory = "targettedIsotops",  peakMLFile="final_combined_related_identified.peakml", sampleGroups = NULL, layoutMtx = NULL, ppm = 3, trendPlots = NULL, fillGaps = "ALLPEAKS", useArea = FALSE, stdRTWindow = NULL, baseCorrection=TRUE){
+PeakML.Isotope.TargettedIsotopes <- function(baseDir, molFormulaFile, outFileName, mzXMLSrc=NULL, outDirectory = "targettedIsotops",  peakMLFile="final_combined_related_identified.peakml", sampleGroups = NULL, layoutMtx = NULL, ppm = 3, trendPlots = NULL, fillGaps = "ALLPEAKS", useArea = FALSE, stdRTWindow = NULL, baseCorrection=TRUE, label=1){
 	# PRE:
 	#	peakMLFiles: the complete peakml dataset
 	#	molFormulaFile: file containing the list of molecules whoes isotops has to be found out
@@ -13,14 +13,18 @@ PeakML.Isotope.TargettedIsotopes <- function(baseDir, molFormulaFile, outFileNam
 	
 	## Reads the peakml file & prepare the parameters to scan for isotops
 	## --------------------------------------------------------------------
+	
+	labels <-  c("C13", "N15")
+	if (label <= length(labels)){
+		label <- labels[label]
+	} else {
+		stop ("Please specify the correct isotope used for labelling")
+	}
+	
 	cat("Indentifying isotopes in sample\n")
-	#setwd (paste(baseDir, sampleType, sep="/"))
 	setwd (baseDir)
 	
 	if (is.null(mzXMLSrc)){
-	#if (!is.null(mzXMLSrc)){
-	#	mzXMLSrc <- paste(mzXMLSrc, sampleType, sep="/")
-	#} else {
 		stop ("Please provide the location of the raw data (mzXML) files ")
 	}
 	
@@ -44,7 +48,11 @@ PeakML.Isotope.TargettedIsotopes <- function(baseDir, molFormulaFile, outFileNam
 	if (is.null(trendPlots)) trendPlots <- c("RATIO","TREND", "LABELLED", "TOTRATIO")
 	
 	if (length(sampleGroups)>22) {
-		if (is.null(layoutMtx)) stop("You have more than 22 samples to plot. Please specify an appropriate layout matrix.\n") else plotOrder <- c(sampleGroups, trendPlots)
+		if (is.null(layoutMtx)){
+			stop("You have more than 22 samples to plot. Please specify an appropriate layout matrix.\n")
+		} else {
+			plotOrder <- c(sampleGroups, trendPlots)
+		}
 	} else {
 		numSG <- length(sampleGroups)
 		if (numSG < 7){
@@ -57,17 +65,9 @@ PeakML.Isotope.TargettedIsotopes <- function(baseDir, molFormulaFile, outFileNam
 			if (is.null(layoutMtx)) layoutMtx <- matrix(c(1,1,1,1,1,1,2, 3,4,5,6,7,8,9, 10,11,12,13,14,15,16, 17,18,19,20,21,22,23, 24,25,25,26,26,27,27),5,7, byrow=TRUE)
 			plotOrder <- c(sampleGroups, rep("EMPTY", 18-numSG), trendPlots)
 		} 
-	#		else if (numSG > 18 & numSG <=22){
-	#			 if (is.null(layoutMtx)) layoutMtx <- matrix(c(1,1,1,1,1,1,1,1,1,2,2, 3,4,5,6,7,8,9,10,11,12,13, 14,15,16,17,18,19,20,21,22,23,24, 25,25, 26,26,26,26,26, 27,27,27,27),4,11, byrow=TRUE)
-	#			plotOrder <- c(sampleGroups, rep("EMPTY", 22-numSG), trendPlots)
-	#		}
 
-		#if (is.null(layoutMtx)) layoutMtx <- matrix(c(1,1,1,1,2, 3,4,5,6,7, 8,9,10,11,12, 13 ,14,14, 15,15),4,5, byrow=TRUE)
-		#if (length(sampleGroups)<10) plotOrder <- c(sampleGroups, rep("EMPTY", 10-length(sampleGroups)), trendPlots)
-		#if (length(sampleGroups)==10) plotOrder <- c(sampleGroups, trendPlots)
 	}
 	
-	PeakML.Isotope.processTargettedIsotopes(molFormulaFile, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow, sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, 
-	fillGaps, massCorrection, useArea, baseCorrection)
+	PeakML.Isotope.processTargettedIsotopes(molFormulaFile, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow, sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, fillGaps, massCorrection, useArea, baseCorrection, label)
 
 }
