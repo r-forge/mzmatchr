@@ -6,7 +6,7 @@
 	This function will return location of isotope peaks in the peak data matrix that fall in the given mass window and retention time window (if provided).
 }
 \usage{
-	PeakML.Isotope.getIsotopes(peakDataMtx, mzXMLSrc, sampleNames, numCarbons, metMass, ppm, massCorrection, baseCorrection, stdRT=NA, stdRTWindow=NULL, fillGaps="ALLPEAKS")
+	PeakML.Isotope.getIsotopes(peakDataMtx, mzXMLSrc, sampleNames, label, numElements, metMass, ppm, massCorrection, baseCorrection, stdRT=NA, stdRTWindow=NULL, fillGaps="ALLPEAKS")
 }
 
 \arguments{
@@ -19,8 +19,11 @@
 	\item{sampleNames}{
 		Sample names as a vector.
 	}
-	\item{numCarbons}{
-		The number of carbons in the compound plus one (this is to handle the unlabelled as well).
+	\item{label}{
+		The element whose isotope we are interested in.
+	}
+	\item{numElements}{
+		The number of specified element in the compound plus one (this is to handle the unlabelled as well).
 	}
 	\item{metMass}{
 		The unlabelled mass of the compound in question.

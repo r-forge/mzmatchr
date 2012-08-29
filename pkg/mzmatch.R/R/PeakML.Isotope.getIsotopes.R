@@ -1,13 +1,14 @@
-PeakML.Isotope.getIsotopes <- function(peakDataMtx, mzXMLSrc, sampleNames, numCarbons, metMass, ppm, massCorrection, baseCorrection, stdRT=NA, stdRTWindow=NULL, fillGaps="ALLPEAKS"){
+PeakML.Isotope.getIsotopes <- function(peakDataMtx, mzXMLSrc, sampleNames, label, numElements, metMass, ppm, massCorrection, baseCorrection, stdRT=NA, stdRTWindow=NULL, fillGaps="ALLPEAKS"){
 	#
 	# Returns a list that has all isotopes of the given mass in the form isotope[[peak_group]][[isotope]][[sample]] <- peak id from peak data matrix
 	# PRE: 
 	#	peakDataMtx <- the original peakDataMtx
-	# 	metData <- metName, metFormula, numCarbons, metMass, ppm, massWindow, stdRT, stdRTWindow, sampleType
+	# 	metData <- metName, metFormula, numElements, metMass, ppm, massWindow, stdRT, stdRTWindow, sampleType
 	# POST: 
 	#	returns a list all isotops like for each gid all isotops
 
 	massWindow <- PeakML.Methods.getPPMWindow(metMass, ppm)
+	element <- substr(label,1,1)
 
 	stdRTWin <- NULL
 	massFilterHits <- c()
@@ -55,12 +56,12 @@ PeakML.Isotope.getIsotopes <- function(peakDataMtx, mzXMLSrc, sampleNames, numCa
 		}
 	}
 
-	carbonsList <- vector("list", numCarbons)		# numCarbons+1 as we need to store the unlabelled as well
+	elementsList <- vector("list", numElements)		# numCarbons+1 as we need to store the unlabelled as well
 	for (a in 1:length(finalList)){
-		for (b in 1:length(carbonsList)){
-			carbonsList[[b]] <- vector("list", length(unique(peakDataMtx[,9])))   # For each group allocate a list whose size is of uni. samples
+		for (b in 1:length(elementsList)){
+			elementsList[[b]] <- vector("list", length(unique(peakDataMtx[,9])))   # For each group allocate a list whose size is of uni. samples
 		}
-		finalList[[a]] <- carbonsList
+		finalList[[a]] <- elementsList
 	}
 
 	for (gid in 1:length(finalList)){
@@ -108,8 +109,9 @@ PeakML.Isotope.getIsotopes <- function(peakDataMtx, mzXMLSrc, sampleNames, numCa
 		finalList[[gid]][[1]] <- unlabledList # stores peakid of unlabelled, in each selected group sample
 	
 		# STORING THE LABELLED
-		for (carbon in 1:(length(carbonsList)-1)){
-			massWindow <- PeakML.Isotope.getMassWindow(massAve, carbon, ppm)		# Window of isotope masses
+		for (nIsotope in 1:(length(elementsList)-1)){
+		
+			massWindow <- PeakML.Isotope.getMassWindow(massAve, nIsotope, ppm, element)		# Window of isotope masses
 
 			filterHits <- c()
 			if (!is.null(stdRTWindow)){
@@ -125,7 +127,7 @@ PeakML.Isotope.getIsotopes <- function(peakDataMtx, mzXMLSrc, sampleNames, numCa
 			if (fillGaps=="NONE"){
 				if (length(filterHits) != 0) {
 					for (fh in 1:length(filterHits)){
-						finalList[[gid]][[carbon+1]][[peakDataMtx[filterHits[[fh]],9]]] <- filterHits[[fh]] # peakData[[9]] is the measurement id
+						finalList[[gid]][[nIsotope+1]][[peakDataMtx[filterHits[[fh]],9]]] <- filterHits[[fh]] # peakData[[9]] is the measurement id
 					}
 				}
 			}else if(fillGaps=="MISSINGPEAKS"){
@@ -133,7 +135,7 @@ PeakML.Isotope.getIsotopes <- function(peakDataMtx, mzXMLSrc, sampleNames, numCa
 					storedSamples <- c()
 					for (fh in 1:length(filterHits)) {
 						storedSamples <- c(storedSamples, peakDataMtx[filterHits[[fh]],9]) # samples for which peaks are exisiting
-						finalList[[gid]][[carbon+1]][[peakDataMtx[filterHits[[fh]],9]]] <- filterHits[[fh]] # storing index of peaks that are existing
+						finalList[[gid]][[nIsotope+1]][[peakDataMtx[filterHits[[fh]],9]]] <- filterHits[[fh]] # storing index of peaks that are existing
 					}
 					emptySamples <- possibleSamples[-c(storedSamples)]
 				} else {
@@ -144,7 +146,7 @@ PeakML.Isotope.getIsotopes <- function(peakDataMtx, mzXMLSrc, sampleNames, numCa
 					sampleName <- sampleNames[es]
 					gapFillHits <- PeakML.Methods.getRawSignals(mzXMLSrc, sampleName, rtWindow, massWindow, massCorrection)
 					if (max(gapFillHits[2,] != -1)){
-						finalList[[gid]][[carbon+1]][[es]] <- list("gapfilled", gapFillHits)
+						finalList[[gid]][[nIsotope+1]][[es]] <- list("gapfilled", gapFillHits)
 					}
 				}
 			} else if(fillGaps=='ALLPEAKS'){
@@ -152,7 +154,7 @@ PeakML.Isotope.getIsotopes <- function(peakDataMtx, mzXMLSrc, sampleNames, numCa
 					sampleName <- sampleNames[es]
 					gapFillHits <- PeakML.Methods.getRawSignals(mzXMLSrc, sampleName, rtWindow, massWindow, massCorrection)
 					if (max(gapFillHits[2,] != -1)){
-						finalList[[gid]][[carbon+1]][[es]] <- list("gapfilled", gapFillHits)
+						finalList[[gid]][[nIsotope+1]][[es]] <- list("gapfilled", gapFillHits)
 					}
 				}
 			}

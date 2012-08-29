@@ -6,7 +6,7 @@
 	Returns the trend of labelled or unlabelled carbons in the compound as specified by the followCarbon parameter.
 }
 \usage{
-	PeakML.Isotope.getFCMtxAbun(trendList, sampleGroups, followCarbon)
+	PeakML.Isotope.getFCMtxAbun(trendList, sampleGroups, followCarbon, element)
 }
 
 \arguments{
@@ -18,6 +18,9 @@
 	}
 	\item{followCarbon}{
 		The number of the carbon in a compound whose trend is to be followed.
+	}
+	\item{element}{
+		The element such as C, N that is labelled in the data being analysed.
 	}
 
 }

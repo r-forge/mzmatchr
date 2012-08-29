@@ -6,18 +6,21 @@
 	This function will return mass window of the isotope of the given mass.
 }
 \usage{
-	PeakML.Isotope.getMassWindow(mass, carbons, ppm)
+	PeakML.Isotope.getMassWindow(mass, nIsotope, ppm, element)
 }
 
 \arguments{
 	\item{mass}{
 		Unlabelled mass of the compound.
 	}
-	\item{carbons}{
-		Number of labelled carbons.
+	\item{nIsotope}{
+		The isotope of interest.
 	}
 	\item{ppm}{
 		The ppm window required.
+	}
+	\item{element}{
+		The element whose isotopes has to be calculated.
 	}
 }
 
