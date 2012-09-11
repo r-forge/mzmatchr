@@ -17,7 +17,7 @@ PeakML.Methods.getElements <- function(formula, element){
 		}
 	}
 	if (is.na(numElement)){
-		if (element == substr(formula, nchar(formula), nchar(formula)){
+		if (element == substr(formula, nchar(formula), nchar(formula))){
 			numElement <- 1
 		} else {
 			numElement <- 0
