@@ -59,7 +59,11 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 		rainClrs <- rainbow(n, s = 1, v = 1, start = 0, end = max(1,n - 1)/n, alpha = 1)
 		fillColor <- c(clrs, rainClrs)
 	}
-
+	
+	if (followCarbon > numCarbons){
+		followCarbon <- numCarbons
+	}
+	
 	for (peakGroup in 1:numPeakGroups){
 		trendList <- PeakML.Isotope.getTrendList (intList, sampleGroups, useArea) [[peakGroup]]
 		ratioMtx <- processRatioMtx (t(PeakML.Isotope.getRatioMtxList (intList, sampleGroups, useArea, metName[1]) [[peakGroup]]))
@@ -110,16 +114,17 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 				par (mar=c(2,4,2,0), mgp=c(2,1,0))
 #				par(mar=c(4,2.5,0.5,3))
 				if (useArea == FALSE){
-					ylabel <- paste(metName[1], "(mean peak height)", sep= " ")
+					#ylabel <- paste(metName[1], "(mean peak height)", sep= " ")
+					ylabel <- "mean peak height"
 				} else {
-					ylabel <- paste(metName[1], "(mean peak area)", sep= " ")
+					#ylabel <- paste(metName[1], "(mean peak area)", sep= " ")
+					ylabel <- "mean peak area"
 				}
 
 				mp<-barplot(trendMtx, beside=FALSE, col=fillColor, ylab=ylabel, ylim=c(0,ylimit), border=NA, axisnames=FALSE, axes=FALSE)
 				text(mp, par("usr")[3], labels = sampleGroups, srt = 45, adj = 1, xpd =TRUE, cex=0.6)
-#				axis(1, at = mp,labels = FALSE)
 				errBar(mp, trendMtx.sum, trendMtx.sd/numCarbons, lwd=.3)
-				title("Labelling trend", cex.main=0.8)
+				title("Trend plot", cex.main=0.8)
 				axis(2)
 				
 
@@ -134,9 +139,11 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 				}
 				
 				if (useArea == FALSE){
-					ylabel <- paste(metName[1], "(mean peak height)", sep= " ")
+#					ylabel <- paste(metName[1], "(mean peak height)", sep= " ")
+					ylabel <- "mean peak height"
 				} else {
-					ylabel <- paste(metName[1], "(mean peak area)", sep= " ")
+#					ylabel <- paste(metName[1], "(mean peak area)", sep= " ")
+					ylabel <- "mean peak area"
 				}
 
 				ylimit <- max(apply(fcMtx, 2, sum)) * axExFact
@@ -161,7 +168,8 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 					mp<-barplot(fcMtx, beside=FALSE, col=colvector, ylab=ylabel, ylim=c(0,ylimit), border=NA, axisnames=FALSE, axes=FALSE)
 					text(mp, par("usr")[3], labels = sampleGroups, srt = 45, adj = 1, xpd =TRUE, cex=0.6)
 #					axis(1, at = mp, labels = FALSE)
-					title("Trend of carbon followed", cex.main=0.8)
+					title(paste("Trend of ", followCarbon-1,"", element, " labelled isotopomer"), cex.main=0.8)
+					#title(paste("Trend of natural abundance (", element, ")"), cex.main=0.8)
 					axis(2)
 					
 					if (followCarbon==2){
@@ -218,9 +226,9 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 
 				if (useArea == FALSE){
 #					ylabel <- paste(metName[1], "(mean peak height)", sep= " ")
-					ylabel <- "Mean peak area of followed carbon / total signal"
+					ylabel <- "% relative labelling"
 				} else {
-					ylabel <- "Mean peak area of followed carbon / total signal"
+					ylabel <- "% relative labelling"
 					#ylabel <- paste(metName[1], "(mean peak height)", sep= " ")
 				}
 
@@ -236,13 +244,10 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 					
 					colvector <- fillColor[followCarbon]
 					
-#					barplot(fcMtx, beside=FALSE, col=colvector, axisnames=FALSE, ylab=ylabel, ylim=c(0,ylimit), border=NA)
-#					axis(1, las=3, at=c(1:length(sampleGroups)), labels=sampleGroups, lwd=0, cex.axis=.8)
-					
 					mp<-barplot(fcMtx, beside=FALSE, col=colvector, ylab=ylabel, ylim=c(0,ylimit), border=NA, axisnames=FALSE, axes=FALSE)				
 					text(mp, par("usr")[3], labels=sampleGroups, srt = 45, adj = 1, xpd =TRUE, cex=0.6)
 #					axis(1, at = mp, labels = FALSE)
-					title("Followed carbon vs total signal", cex.main=0.8)
+					title("Relative labelling pattern", cex.main=0.8)
 					axis(2)
 				} else {
 #					par (mar=c(2,4,2,0))
