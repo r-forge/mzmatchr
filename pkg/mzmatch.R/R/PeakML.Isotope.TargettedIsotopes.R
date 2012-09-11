@@ -63,7 +63,7 @@ PeakML.Isotope.TargettedIsotopes <- function(baseDir, molFormulaFile, outFileNam
 			plotOrder <- c(sampleGroups, rep("EMPTY", 14-numSG), trendPlots)
 		} else if (numSG > 14 & numSG <=21){
 			if (is.null(layoutMtx)) layoutMtx <- matrix(c(1,1,1,1,1,1,2, 3,4,5,6,7,8,9, 10,11,12,13,14,15,16, 17,18,19,20,21,22,23, 24,25,25,26,26,27,27),5,7, byrow=TRUE)
-			plotOrder <- c(sampleGroups, rep("EMPTY", 18-numSG), trendPlots)
+			plotOrder <- c(sampleGroups, rep("EMPTY", 21-numSG), trendPlots)
 		} 
 
 	}
