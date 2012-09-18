@@ -65,18 +65,22 @@ PeakML.DilutionTrendFilter <- function(filename,ionisation="detect",Rawpath=NULL
 
 	PeakMLdata$GroupAnnotations$dillution.corr <- PeakSetCorrelations[,1]
 	PeakMLdata$GroupAnnotations$dillution.p.val <- PeakSetCorrelations[,2]
-
-	# Good peaksets
-	HITS <- which(PeakSetCorrelations[,2]<=p.value.thr)
-	if (length(HITS)>0 | p.value.thr==NULL)
+	if (is.null(p.value.thr))
 	{
-		PeakML.Methods.extractPeakGroups (PeakMLData=PeakMLdata, outputfile=outputfile, sets=HITS)
-	}
-	# Bad peaksets
-	HITS <- c(1:nrow(PeakSetCorrelations))[-c(HITS)]
-	if (length(HITS)>0)
+		PeakML.Write (peakMLdata=PeakMLdata,outFileName=outputfile)	
+	} else
 	{
-		PeakML.Methods.extractPeakGroups (PeakMLData=PeakMLdata, outputfile=paste("discarded_",outputfile,sep=""), sets=HITS)
+		# Good peaksets
+		HITS <- which(PeakSetCorrelations[,2]<=p.value.thr)
+		if (length(HITS)>0)
+		{
+			PeakML.Methods.extractPeakGroups (PeakMLData=PeakMLdata, outputfile=outputfile, sets=HITS)
+		}
+		# Bad peaksets
+		HITS <- c(1:nrow(PeakSetCorrelations))[-c(HITS)]
+		if (length(HITS)>0)
+		{
+			PeakML.Methods.extractPeakGroups (PeakMLData=PeakMLdata, outputfile=paste("discarded_",outputfile,sep=""), sets=HITS)
+		}
 	}
-	#PeakML.Write (peakMLdata=PeakMLdata,outFileName=outputfile)
 }
