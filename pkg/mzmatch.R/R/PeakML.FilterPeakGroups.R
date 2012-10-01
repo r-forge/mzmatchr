@@ -20,7 +20,7 @@ PeakML.FilterPeakGroups <- function (filename, ionisation="detect", Rawpath=NULL
 			if (length(HITS)>1)
 			{
 				selRTs <- RTs[HITS]
-				RTmax <- selRTs[selRTs==min(selRTs)[1]]+rtwin
+				RTmax <- selRTs[selRTs==min(selRTs)[1]][1]+rtwin
 				HITS <- HITS[which (selRTs<=RTmax)]
 				if (length(HITS)>1)
 				{
@@ -31,7 +31,7 @@ PeakML.FilterPeakGroups <- function (filename, ionisation="detect", Rawpath=NULL
 					for (setn in 1:length(setsToCheck))
 					{
 						## number of sampes in peak set
-						nsamples[setn] <- nrow(PeakMLdata$peakDataMtx[PeakMLdata$peakDataMtx[,10]==setsToCheck[setn],])
+						nsamples[setn] <- nrow(rbind(PeakMLdata$peakDataMtx[PeakMLdata$peakDataMtx[,10]==setsToCheck[setn],],NULL))
 						## max signal intensity
 						maxint[setn] <- max(PeakMLdata$peakDataMtx[PeakMLdata$peakDataMtx[,10]==setsToCheck[setn],8])
 						## delta RT between largest and smalles RT in peak set
