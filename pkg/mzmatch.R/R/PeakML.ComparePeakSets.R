@@ -1,5 +1,9 @@
 PeakML.ComparePeakSets <- function(standard_filename, filename, stdionisation="detect",ionisation="detect", stdRawpath=NULL, Rawpath=NULL, outputfile,ppm=5,rtwin=20,checkIntensity=TRUE,PeakShapeCor=TRUE,PeakShapeCor.thr=0.7)
 {
+	filename.strip <- function(path)
+	{
+		
+	}
 	st <- system.time (stdPeakMLdata <- PeakML.Read (standard_filename,stdionisation,Rawpath=stdRawpath))
 	st <- system.time (PeakMLdata <- PeakML.Read (filename,ionisation,Rawpath))
 
@@ -34,7 +38,7 @@ PeakML.ComparePeakSets <- function(standard_filename, filename, stdionisation="d
 		setRT <- c(stdpeakRTs[setnum]-rtwin,stdpeakRTs[setnum]+rtwin)
 
 		hits <- which(peakMasses>=setMass[1] & peakMasses<=setMass[2] & peakRTs>=setRT[1] & peakRTs<=setRT[2])
-		if (PeakShapeCor==TRUE)
+		if (PeakShapeCor==TRUE & length(hits)>0)
 		{
 			peak.cors <- rep(NA,length(hits))
 			maxint <- function (chrom,data)
