@@ -6,7 +6,7 @@
  This function will filter peak sets from one peakml file matching similar peak sets (based on RT and mass window) in the second file.
 }
 \usage{
-PeakML.ComparePeakSets (standard_filename, filename, stdionisation="detect",ionisation="detect", Rawpath=NULL, outputfile,ppm=5,rtwin=20)
+PeakML.ComparePeakSets (standard_filename, filename, stdionisation="detect",ionisation="detect", stdRawpath=NULL, Rawpath=NULL, outputfile,ppm=5,rtwin=20,checkIntensity=TRUE,PeakShapeCor=TRUE,PeakShapeCor.thr=0.7)
 }
 \arguments{
 \item{standard_filename}{
@@ -21,6 +21,9 @@ PeakML.ComparePeakSets (standard_filename, filename, stdionisation="detect",ioni
 \item{ionisation}{
 	Defaulted to "detect". See documentation for PeakML.Methods.getProtonCoef.
 }
+\item{stdRawpath}{
+	Path to the raw data in standard peakml file if different from the one stored in the PeakML file.
+}
 \item{Rawpath}{
 	Path to the raw data if different from the one stored in the PeakML file.
 }
@@ -33,7 +36,21 @@ PeakML.ComparePeakSets (standard_filename, filename, stdionisation="detect",ioni
 \item{rtwin}{
 	Retention time window to match peak groups in seconds.
 }
+\item{checkIntensity}{
+	When is set to TRUE only peak with highes intensity will be selected if more than one peak is matching RT and mass window.
+	This paramater will be ignored if PeakShapeCor is set to true.
 }
+\item{PeakShapeCor}{
+	Caclulate correlation of peak shape between standards file and matched peaks in input file. Peak with highest signal
+intensity in peakset is used from both peak sets.
+}
+
+\item{PeakShapeCor.thr}{
+	Correlation value threshold which to to retain matched peak sets. If more than one peak sets are matchin criteria,
+peak with highest correlation value will be kept.
+}
+}
+
 \details{
   The PeakML file format defines an open and extensible file format for storing extracted hyphenated mass spectrometry
   data. As such, the format will enable users to store intermediate data in a structured manner, but more importantly,
