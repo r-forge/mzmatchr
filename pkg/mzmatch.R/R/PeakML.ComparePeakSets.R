@@ -1,9 +1,5 @@
 PeakML.ComparePeakSets <- function(standard_filename, filename, stdionisation="detect",ionisation="detect", stdRawpath=NULL, Rawpath=NULL, outputfile,ppm=5,rtwin=20,checkIntensity=TRUE,PeakShapeCor=TRUE,PeakShapeCor.thr=0.7)
 {
-	filename.strip <- function(path)
-	{
-		
-	}
 	st <- system.time (stdPeakMLdata <- PeakML.Read (standard_filename,stdionisation,Rawpath=stdRawpath))
 	st <- system.time (PeakMLdata <- PeakML.Read (filename,ionisation,Rawpath))
 
