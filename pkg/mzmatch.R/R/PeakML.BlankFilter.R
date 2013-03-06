@@ -1,13 +1,11 @@
-PeakML.PlotRelatedPeaks <- function (filename, ionisation="detect", Rawpath=NULL,outputfile,BlankSample=NULL)
+PeakML.BlankFilter <- function (filename, ionisation="detect", Rawpath=NULL,outputfile,BlankSample=NULL)
 {
 	st <- system.time (PeakMLdata <- PeakML.Read (filename,ionisation,Rawpath))
 	PeakTable <- PeakML.Methods.getCompleteTable (PeakMLdata)
 	Masses <- apply(PeakTable[[2]],2,median,na.rm=TRUE)
 	RTs <- apply(PeakTable[[3]],2,median,na.rm=TRUE)
-	
 
 	## Check which samples are blanks
-
 	blanksamples <- which (PeakMLdata$phenoData==BlankSample)
 	if (length(blanksamples)<1)
 	{

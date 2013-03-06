@@ -1,4 +1,4 @@
-PeakML.PlotRelatedPeaks <- function (filename, ionisation="detect", Rawpath=NULL, DBS=dir(paste(.find.package("mzmatch.R"), "/dbs", sep=""),full.names=TRUE),outputfile,sampleClasses=NULL)
+PeakML.Plot.RelatedPeaks <- function (filename, ionisation="detect", Rawpath=NULL, DBS=dir(paste(.find.package("mzmatch.R"), "/dbs", sep=""),full.names=TRUE),outputfile,sampleClasses=NULL)
 {
 	plotPeak <- function (peakn)
 	{
@@ -22,7 +22,7 @@ PeakML.PlotRelatedPeaks <- function (filename, ionisation="detect", Rawpath=NULL
 			plot(1,1,xlab="",ylab="",pch="",axes=FALSE)
 		}
 		groupid <- which.peaksets[peakn]
-		PeakML.Methods.PlotChromatograms(PeakMLdata=PeakMLdata,groupid=groupid,sampleClasses=sampleClasses)
+		PeakML.Plot.Chromatograms(PeakMLdata=PeakMLdata,groupid=groupid,sampleClasses=sampleClasses)
 	}
 
 
