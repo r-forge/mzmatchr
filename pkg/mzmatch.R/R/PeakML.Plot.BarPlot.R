@@ -1,4 +1,4 @@
-PeakML.Methods.PlotBarPlot <- function(PeakMLdata,groupid,sampleClasses=NULL)
+PeakML.Plot.BarPlot <- function(PeakMLdata,groupid,sampleClasses=NULL)
 {
 	MAXf <- function (x,i) {max(PeakMLdata$chromDataList[[x]][i,])}
 	MINf <- function (x,i) {min(PeakMLdata$chromDataList[[x]][i,])}
