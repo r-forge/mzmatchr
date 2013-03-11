@@ -1,4 +1,4 @@
-PeakML.Isotope.getIsotopes <- function(peakDataMtx, mzXMLSrc, sampleNames, label, numElements, metMass, ppm, massCorrection, baseCorrection, stdRT=NA, stdRTWindow=NULL, fillGaps="ALLPEAKS"){
+PeakML.Isotope.getIsotopes <- function(peakDataMtx, mzXMLSrc, sampleNames, label, numElements, metMass, ppm, massCorrection, baseCorrection, stdRT=NULL, stdRTWindow=NULL, fillGaps="ALLPEAKS"){
 	#
 	# Returns a list that has all isotopes of the given mass in the form isotope[[peak_group]][[isotope]][[sample]] <- peak id from peak data matrix
 	# PRE: 
@@ -10,7 +10,7 @@ PeakML.Isotope.getIsotopes <- function(peakDataMtx, mzXMLSrc, sampleNames, label
 	massWindow <- PeakML.Methods.getPPMWindow(metMass, ppm)
 	element <- substr(label,1,1)
 
-	stdRTWin <- NULL
+	#stdRTWin <- NULL
 	massFilterHits <- c()
 	finalList<-NULL
 	
@@ -18,7 +18,7 @@ PeakML.Isotope.getIsotopes <- function(peakDataMtx, mzXMLSrc, sampleNames, label
 	if (is.null(stdRTWindow)){
 		massFilterHits <- which(peakDataMtx[,1]>=massWindow[[1]] & peakDataMtx[,1]<=massWindow[[2]])
 	} else{
-		if (!is.na(stdRT)){
+		if (!is.null(stdRT)){
 			stdRTWindow <- PeakML.Methods.getRTWindow(stdRT, stdRTWindow)
 			massFilterHits <- which(peakDataMtx[,1]>=massWindow[[1]] & peakDataMtx[,1]<=massWindow[[2]] & peakDataMtx[,4]>=stdRTWindow[[1]] & peakDataMtx[,4]<=stdRTWindow[[2]])
 		} else {

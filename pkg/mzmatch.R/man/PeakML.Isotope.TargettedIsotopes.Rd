@@ -6,7 +6,7 @@
 	Plot isotopes for all compounds listed in the molFormulaFile.
 }
 \usage{
-	PeakML.Isotope.TargettedIsotopes(baseDir, molFormulaFile, outFileName, mzXMLSrc=NULL, outDirectory = "targettedIsotops", peakMLFile="final_combined_related_identified.peakml", sampleGroups = NULL, layoutMtx = NULL, ppm = 3, trendPlots = NULL, fillGaps = "ALLPEAKS", useArea = FALSE, stdRTWindow = NULL, baseCorrection=TRUE, label=1)
+	PeakML.Isotope.TargettedIsotopes(baseDir, molFormulaFile, outFileName, mzXMLSrc=NULL, outDirectory = "targettedIsotops", peakMLFile="final_combined_related_identified.peakml", sampleGroups = NULL, layoutMtx = NULL, ppm = 3, trendPlots = NULL, fillGaps = "ALLPEAKS", useArea = FALSE, stdRTWindow = NULL, baseCorrection=TRUE, label=1, exclude_from_plots=NULL)
 }
 
 \arguments{
@@ -55,6 +55,10 @@
 	\item{label}{
 		Specify the isotope used for labelling as a number. The available options are C13, N15, etc. More will be added once tested with with some real dataset.
 	}
+    \item{exclude_from_plots}{
+        Exclude the groups in this list from the plots in the output.
+	}
+
 }
 
 

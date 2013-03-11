@@ -46,5 +46,6 @@ PeakML.Isotope.getFCMtxAbun <- function (trendList, sampleGroups, followCarbon, 
 			plotMtx[row, sam] <- VAL
 		}
 	}
+	print (plotMtx)
 	plotMtx
 }

@@ -6,7 +6,7 @@
 	Plots the isotopes of the specified compound as a pdf document. The pdf document in which the plots has to be placed has to be initiated prior to calling this function (see PeakML.Isotope.processTargettedIsotopes)
 }
 \usage{
-	PeakML.Isotope.plotSamples(isotopeChroms, metName, metFormula, metMass, stdRT, sampleType, sampleGroups, plotOrder, useArea, followCarbon, label)
+	PeakML.Isotope.plotSamples(isotopeChroms, metName, metFormula, metMass, stdRT, sampleType, sampleGroups, plotOrder, useArea, followCarbon, label, exclude_from_plots)
 }
 
 \arguments{
@@ -43,6 +43,10 @@
 	\item{label}{
 		The type of labelling used in the data being analysed.
 	}
+    \item{exclude_from_plots}{
+		Exclude the groups in this list from the plots in the output.
+	}
+
 }
 
 \details{
