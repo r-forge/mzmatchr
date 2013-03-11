@@ -1,6 +1,6 @@
 PeakML.Isotope.processTargettedIsotopes <- function (molFormulaFile, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow,
 	sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, 
-	fillGaps, massCorrection, useArea, baseCorrection, label){
+	fillGaps, massCorrection, useArea, baseCorrection, label, exclude_from_plots){
 
 	readTargetsFromFile<- function(inputFile){
 		# PRE: 
@@ -46,12 +46,10 @@ PeakML.Isotope.processTargettedIsotopes <- function (molFormulaFile, outDirector
 	for (i in 1:nrow(molFrame)){
 		metName <- as.character(molFrame$name[i])
 		metFormula <- as.character(molFrame$formula[i])
-		
-		#numElements <- PeakML.Methods.getCarbon(metFormula)
 		numElements <- PeakML.Methods.getElements(metFormula, element)
-		
 		metMass <- as.numeric(molFrame$mass[i])
 		stdRT <- as.numeric(molFrame$rt[i]) * 60
+		if(is.na(stdRT)) stdRT <- NULL
 		
 		if (is.null(molFrame$follow[i])){
 			followCarbon <-  numElements + 1
@@ -59,6 +57,12 @@ PeakML.Isotope.processTargettedIsotopes <- function (molFormulaFile, outDirector
 			followCarbon <- as.numeric(molFrame$follow[i])+1
 		}
 
+		if (is.na(molFrame$follow[i])) followCarbon <- 1
+
+		if ('include' %in% colnames(molFrame)){
+			if(as.character(molFrame$include[i]) == "") next()
+		}
+		
 		cat(metName, ":\n")
 		if (numElements==0){
 			cat("\tThe metabolite ", metName, " does not contain the preferred element (", element,"), hence skipping. \n")
@@ -73,7 +77,7 @@ PeakML.Isotope.processTargettedIsotopes <- function (molFormulaFile, outDirector
 		if (!is.null(unlist(isotopeList))){
 			cat ("\n\tGenerating the plots. \n")
 			isotopeChroms <- PeakML.Isotope.getChromData (isotopeList, chromDataList, phenoData, sampleGroups)
-			PeakML.Isotope.plotSamples(isotopeChroms, metName, metFormula, metMass, stdRT, sampleType, sampleGroups, plotOrder, useArea, followCarbon, label)
+			PeakML.Isotope.plotSamples(isotopeChroms, metName, metFormula, metMass, stdRT, sampleType, sampleGroups, plotOrder, useArea, followCarbon, label, exclude_from_plots)
 			
 			ratioMtxList <- PeakML.Isotope.getRatioMtxList(isotopeChroms[[2]], sampleGroups, useArea, metName)
 			

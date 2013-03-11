@@ -6,7 +6,7 @@
 	This function will return location of isotope peaks in the peak data matrix that fall in the given mass window and retention time window (if provided).
 }
 \usage{
-	PeakML.Isotope.getIsotopes(peakDataMtx, mzXMLSrc, sampleNames, label, numElements, metMass, ppm, massCorrection, baseCorrection, stdRT=NA, stdRTWindow=NULL, fillGaps="ALLPEAKS")
+	PeakML.Isotope.getIsotopes(peakDataMtx, mzXMLSrc, sampleNames, label, numElements, metMass, ppm, massCorrection, baseCorrection, stdRT=NULL, stdRTWindow=NULL, fillGaps="ALLPEAKS")
 }
 
 \arguments{
@@ -38,7 +38,7 @@
 		Specifies if baseCorrection has to be applied for all peaks. This is especially helpfull while analysing noisy peaks. Leave it to TRUE in most cases.
 	}
 	\item{stdRT}{
-		The stand RT if available else provide NA to this function.
+		The stand RT if available else provide NULL to this function.
 	}
 	\item{stdRTWindow}{
 		The time in seconds to get the retention time window. Else leave as NULL.

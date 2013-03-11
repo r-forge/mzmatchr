@@ -1,7 +1,7 @@
-PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMass, stdRT, sampleType, sampleGroups, plotOrder, useArea, followCarbon, label){
+PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMass, stdRT, sampleType, sampleGroups, plotOrder, useArea, followCarbon, label, exclude_from_plots){
 
 	element <- substr(label,1,1)
-	
+	if(is.null(stdRT)) stdRT <- NA
 #	grads <- c("black",
 #rgb(0.750,0.700,1.000),  rgb(0.400,0.320,0.800), rgb(0.150,0.060,0.600), 
 #rgb(0.700,0.900,1.000),  rgb(0.320,0.640,0.800), rgb(0.060,0.420,0.600), 
@@ -103,7 +103,14 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 				}
 				
 				trendMtx <- PeakML.Isotope.getTrendMtx(trendList, sampleGroups)
-				trendMtx.sum <- apply(trendMtx, 2, sum)
+
+                                if(!is.null(exclude_from_plots)){
+                                  trendMtx <- trendMtx[,- exclude_from_plots]
+                                  lbls <- setdiff(sampleGroups, sampleGroups[exclude_from_plots])
+                    
+                                }
+				
+                                trendMtx.sum <- apply(trendMtx, 2, sum)
 				trendMtx.sd <- apply(trendMtx, 2, sd)
 				ylimit <- sum(max(trendMtx.sum), max(trendMtx.sd))
 				# calculate std err
@@ -122,7 +129,7 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 				}
 
 				mp<-barplot(trendMtx, beside=FALSE, col=fillColor, ylab=ylabel, ylim=c(0,ylimit), border=NA, axisnames=FALSE, axes=FALSE)
-				text(mp, par("usr")[3], labels = sampleGroups, srt = 45, adj = 1, xpd =TRUE, cex=0.6)
+				text(mp, par("usr")[3], labels = lbls, srt = 45, adj = 1, xpd =TRUE, cex=0.6)
 				errBar(mp, trendMtx.sum, trendMtx.sd/numCarbons, lwd=.3)
 				title("Trend plot", cex.main=0.8)
 				axis(2)
@@ -132,11 +139,30 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 			
 				if(is.na(followCarbon)) followCarbon <- 2
 
+                                if(!is.null(exclude_from_plots)){
+                                  #fcMtx <- fcMtx[,- exclude_from_plots]
+                                  sg <- setdiff(sampleGroups, sampleGroups[exclude_from_plots])
+                                  lbls <- setdiff(sampleGroups, sampleGroups[exclude_from_plots])
+                                }else{
+                                  sg <- sampleGroups
+                                  lbls <- sampleGroups
+                                }
+		
+
 				if (followCarbon == 2){
-					fcMtx <-PeakML.Isotope.getFCMtxAbun(trendList, sampleGroups, followCarbon, element)
+					#fcMtx <-PeakML.Isotope.getFCMtxAbun(trendList, sampleGroups, followCarbon, element)
+                                  fcMtx <-PeakML.Isotope.getFCMtxAbun(trendList, sg, followCarbon, element)
 				} else {
-					fcMtx <- PeakML.Isotope.getFCMtx(trendList, sampleGroups, followCarbon)
+					#fcMtx <- PeakML.Isotope.getFCMtx(trendList, sampleGroups, followCarbon)
+                                  fcMtx <- PeakML.Isotope.getFCMtx(trendList, sg, followCarbon)
 				}
+                
+                
+                #if(!is.null(exclude_from_plots)){
+                #    fcMtx <- fcMtx[,- exclude_from_plots]
+                #    lbls <- setdiff(sampleGroups, sampleGroups[exclude_from_plots])
+                #    
+                #}
 				
 				if (useArea == FALSE){
 #					ylabel <- paste(metName[1], "(mean peak height)", sep= " ")
@@ -166,7 +192,7 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 #					axis(1, las=3, at=c(1:length(sampleGroups)), labels=sampleGroups, lwd=0, cex.axis=.8)
 					
 					mp<-barplot(fcMtx, beside=FALSE, col=colvector, ylab=ylabel, ylim=c(0,ylimit), border=NA, axisnames=FALSE, axes=FALSE)
-					text(mp, par("usr")[3], labels = sampleGroups, srt = 45, adj = 1, xpd =TRUE, cex=0.6)
+					text(mp, par("usr")[3], labels = lbls, srt = 45, adj = 1, xpd =TRUE, cex=0.6)
 #					axis(1, at = mp, labels = FALSE)
 					title(paste("Trend of ", followCarbon-1,"", element, " labelled isotopomer"), cex.main=0.8)
 					#title(paste("Trend of natural abundance (", element, ")"), cex.main=0.8)
@@ -186,6 +212,7 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 
 #				par (mar=c(2,4,2,0))
 				par(mar=c(2,4,2,0), mgp=c(2,1,0))
+                
 
 
 				mp<-barplot(t(ratioMtx), beside=FALSE, col=fillColor, ylab="% area under peak", ylim = c(0,1), border=NA, axisnames=FALSE, axes=FALSE)
@@ -193,69 +220,82 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 #				axis(1, at = mp, labels = FALSE)
 				title("Ratio", cex.main=0.8)
 				axis(2)
-				
-			} else if (plotOrder[item] == "TOTRATIO") {
+
+
+                     } else if (plotOrder[item] == "TOTRATIO") {
 				getRelAbunMtx <- function (trendList, sampleGroups, followCarbon){
 					numCarbons <-  length(trendList[[1]])
 					plotMtx <- matrix(nrow = 1, ncol = length(sampleGroups))
 					dimnames(plotMtx) <- list(c("RelAbun"), sampleGroups)
-	
+                    
 					for (sam in 1:length(sampleGroups)){
 						for (row in 1:length(rownames(plotMtx))){
 							x <- trendList[[sam]][[followCarbon]]
 							y <- sum(unlist(trendList[[sam]]))
-			
+                            
 							if (is.null(x)){
 								x <- 0
 							}
 							if (is.null(y)){
 								y <- 0
 							}
-		
+                            
 							plotMtx[row, sam] <- x/y*100
 						}
 					}
 					plotMtx
 				}
-
-
+                
+                
 				if(is.na(followCarbon)) followCarbon <- 2
-				
-				fcMtx <- getRelAbunMtx(trendList, sampleGroups, followCarbon)
-				fcMtx[is.nan(fcMtx)] <- 0
 
+                                if(!is.null(exclude_from_plots)){
+                                  #fcMtx <- fcMtx[,- exclude_from_plots]
+                                  sg <- setdiff(sampleGroups, sampleGroups[exclude_from_plots])
+                                  lbls <- setdiff(sampleGroups, sampleGroups[exclude_from_plots])
+                                } else {
+                                  sg <- sampleGroups
+                                  lbls <- sampleGroups
+                                }
+                                
+				ftMtx <- getRelAbunMtx(trendList, sg, followCarbon)
+				ftMtx[is.nan(ftMtx)] <- 0
+                
 				if (useArea == FALSE){
-#					ylabel <- paste(metName[1], "(mean peak height)", sep= " ")
+                    #					ylabel <- paste(metName[1], "(mean peak height)", sep= " ")
 					ylabel <- "% relative labelling"
 				} else {
 					ylabel <- "% relative labelling"
 					#ylabel <- paste(metName[1], "(mean peak height)", sep= " ")
 				}
-
-				ylimit <- max(apply(fcMtx, 2, sum)) * axExFact
+                
+				ylimit <- max(apply(ftMtx, 2, sum)) * axExFact
 				if (ylimit>100) ylimit <- 100
-#				if (is.nan(ylimit)){ylimit<-0}
+                #				if (is.nan(ylimit)){ylimit<-0}
 				
 				if (!ylimit==0){
 					
-#					par (mar=c(2,4,2,0))
+                    #					par (mar=c(2,4,2,0))
 					par (mar=c(2,4,2,0), mgp=c(2,1,0))
-#					par(mar=c(4,2.5,0.5,3))
+                    #					par(mar=c(4,2.5,0.5,3))
 					
 					colvector <- fillColor[followCarbon]
 					
-					mp<-barplot(fcMtx, beside=FALSE, col=colvector, ylab=ylabel, ylim=c(0,ylimit), border=NA, axisnames=FALSE, axes=FALSE)				
-					text(mp, par("usr")[3], labels=sampleGroups, srt = 45, adj = 1, xpd =TRUE, cex=0.6)
-#					axis(1, at = mp, labels = FALSE)
+					mp<-barplot(ftMtx, beside=FALSE, col=colvector, ylab=ylabel, ylim=c(0,ylimit), border=NA, axisnames=FALSE, axes=FALSE)
+					text(mp, par("usr")[3], labels=lbls, srt = 45, adj = 1, xpd =TRUE, cex=0.6)
+                    #					axis(1, at = mp, labels = FALSE)
 					title("Relative labelling pattern", cex.main=0.8)
 					axis(2)
 				} else {
-#					par (mar=c(2,4,2,0))
+                    #					par (mar=c(2,4,2,0))
 					par(mar=c(2,4,2,0), mgp=c(2,1,0))
-#					par(mar=c(0.5,0.5,0.5,0.5))
+                    #					par(mar=c(0.5,0.5,0.5,0.5))
 					plot (1, 1, xlab="", ylab="", pch="", axes=F)
 				}
-				
+                
+                
+                
+                
 			} else if (plotOrder[item] == "EMPTY"){
 
 				# This is a an empty plot for flexibility e.g. define empty if a plot is not needed

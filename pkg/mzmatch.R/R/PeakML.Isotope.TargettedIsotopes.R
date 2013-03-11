@@ -1,4 +1,18 @@
-PeakML.Isotope.TargettedIsotopes <- function(baseDir, molFormulaFile, outFileName, mzXMLSrc=NULL, outDirectory = "targettedIsotops",  peakMLFile="final_combined_related_identified.peakml", sampleGroups = NULL, layoutMtx = NULL, ppm = 3, trendPlots = NULL, fillGaps = "ALLPEAKS", useArea = FALSE, stdRTWindow = NULL, baseCorrection=TRUE, label=1){
+PeakML.Isotope.TargettedIsotopes <- function(baseDir, 
+	molFormulaFile, outFileName, 
+	mzXMLSrc=NULL, 
+	outDirectory = "targettedIsotops",  
+	peakMLFile="final_combined_related_identified.peakml", 
+	sampleGroups = NULL, 
+	layoutMtx = NULL, 
+	ppm = 3, 
+	trendPlots = NULL, 
+	fillGaps = "ALLPEAKS", 
+	useArea = FALSE, 
+	stdRTWindow = NULL, 
+	baseCorrection=TRUE, 
+	label=1,
+    exclude_from_plots=NULL){
 	# PRE:
 	#	peakMLFiles: the complete peakml dataset
 	#	molFormulaFile: file containing the list of molecules whoes isotops has to be found out
@@ -8,9 +22,9 @@ PeakML.Isotope.TargettedIsotopes <- function(baseDir, molFormulaFile, outFileNam
 	#	ionisation: set this if include_ionisation=TRUE
 	#	loadSavedData: load from the saved peakml file
 	# 	sampleType: the sample type eg. NEG, POS etc
+    #   exclude_from_plots: groups that are to be excluded from plots as a vector.
 	# POST:
 	#	vector containing the list of isotops
-	
 	## Reads the peakml file & prepare the parameters to scan for isotops
 	## --------------------------------------------------------------------
 	
@@ -67,7 +81,16 @@ PeakML.Isotope.TargettedIsotopes <- function(baseDir, molFormulaFile, outFileNam
 		} 
 
 	}
-	
-	PeakML.Isotope.processTargettedIsotopes(molFormulaFile, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow, sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, fillGaps, massCorrection, useArea, baseCorrection, label)
+        
+        exclude <- NULL
+        if (!is.null(exclude_from_plots)) {
+            exclude <- which(sampleGroups %in% exclude_from_plots)
+            if (length(exclude_from_plots)!=length(exclude)){
+                stop("The sample group you wanted to exlude from the final output does not exist in the sample groups")
+            }
+        }
+        
+    
+	PeakML.Isotope.processTargettedIsotopes(molFormulaFile, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow, sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, fillGaps, massCorrection, useArea, baseCorrection, label,exclude)
 
 }

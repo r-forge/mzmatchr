@@ -7,7 +7,7 @@
 }
 \usage{
 	PeakML.Isotope.processUntargettedIsotopes(peakMLFile, analyse, databases, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow, sampleType,
-	sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, fillGaps, massCorrection, useArea, numSlaves)
+	sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, fillGaps, massCorrection, useArea, filterStringency, baseCorrection, numSlaves, label)
 }
 
 \arguments{
@@ -68,8 +68,17 @@
 	\item{useArea}{
 		TRUE if sum of intensities has to be used instead of the maximum of intensities for peak intensity calculations.
 	}
+	\item{filterStringency}{
+		This is the percentage of samples that needs to be labelled. It can be left to "NULL" if the filter has to be turned off.
+	}
+	\item{baseCorrection}{
+		TRUE or FALSE based on the requirement of base correction for noisy peaks. Enabling this will make the processing slower.
+	}
 	\item{numSlaves}{
 		This parameter can be set to indicate the number of CPU cores that can be used for isotope identification and quantification.
+	}
+	\item{label}{
+		This is the label to be identified. 1 = C13; 2= N15. More will be added as and when implemented.
 	}
 }
 

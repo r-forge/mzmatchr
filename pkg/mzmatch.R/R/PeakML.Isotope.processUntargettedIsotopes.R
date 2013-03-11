@@ -1,4 +1,4 @@
-PeakML.Isotope.processUntargettedIsotopes <- function(peakMLFile, analyse, databases, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow, sampleType, sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, fillGaps, massCorrection, useArea, numSlaves) {
+PeakML.Isotope.processUntargettedIsotopes <- function(peakMLFile, analyse, databases, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow, sampleType, sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, fillGaps, massCorrection, useArea, filterStringency, baseCorrection, numSlaves, label) {
 
 	molFrames <- list()
 
@@ -64,30 +64,33 @@ PeakML.Isotope.processUntargettedIsotopes <- function(peakMLFile, analyse, datab
 	
 		cl <- makeCluster (numSlaves)
 		assign ("peakMLFile", peakMLFile, envir=.GlobalEnv)
-		assign ("molFrames", molFrames , envir=.GlobalEnv)
-		assign ("outDirectory", outDirectory , envir=.GlobalEnv)
+		assign ("molFrames", molFrames, envir=.GlobalEnv)
+		assign ("outDirectory", outDirectory, envir=.GlobalEnv)
 		assign ("outFileName", outFileName, envir=.GlobalEnv)
 		assign ("layoutMtx", layoutMtx, envir=.GlobalEnv)
 		assign ("ppm", ppm, envir=.GlobalEnv)
 		assign ("stdRTWindow", stdRTWindow, envir=.GlobalEnv)
-		assign ("sampleType",sampleType , envir=.GlobalEnv)
+		assign ("sampleType",sampleType, envir=.GlobalEnv)
 		assign ("sampleNames",sampleNames, envir=.GlobalEnv)
-		assign ("peakDataMtx", peakDataMtx , envir=.GlobalEnv)
+		assign ("peakDataMtx", peakDataMtx, envir=.GlobalEnv)
 		assign ("chromDataList", chromDataList, envir=.GlobalEnv)
-		assign ("phenoData", phenoData , envir=.GlobalEnv)
+		assign ("phenoData", phenoData, envir=.GlobalEnv)
 		assign ("sampleGroups", sampleGroups, envir=.GlobalEnv)
-		assign ("plotOrder",plotOrder , envir=.GlobalEnv)
+		assign ("plotOrder",plotOrder, envir=.GlobalEnv)
 		assign ("mzXMLSrc", mzXMLSrc, envir=.GlobalEnv)
-		assign ("fillGaps",fillGaps , envir=.GlobalEnv)
+		assign ("fillGaps",fillGaps, envir=.GlobalEnv)
 		assign ("massCorrection",massCorrection , envir=.GlobalEnv)
 		assign ("useArea",useArea, envir=.GlobalEnv)
-		vars <- list("peakMLFile", "molFrames", "outDirectory", "outFileName", "layoutMtx", "ppm", "stdRTWindow", "sampleType", "sampleNames", "peakDataMtx", "chromDataList", "phenoData", "sampleGroups", "plotOrder", "mzXMLSrc", "fillGaps", "massCorrection", "useArea")
+		assign ("filterStringency",filterStringency, envir=.GlobalEnv)
+		assign ("baseCorrection",baseCorrection, envir=.GlobalEnv)
+		assign ("label",label, envir=.GlobalEnv)
+		vars <- list("peakMLFile", "molFrames", "outDirectory", "outFileName", "layoutMtx", "ppm", "stdRTWindow", "sampleType", "sampleNames", "peakDataMtx", "chromDataList", "phenoData", "sampleGroups", "plotOrder", "mzXMLSrc", "fillGaps", "massCorrection", "useArea", "filterStringency")
 		clusterExport (cl, list=vars)
 		system.time(clusterApply(cl, 1:length(molFrames), plotUtgt))
 		stopCluster(cl)
 	
 	} else {
-		PeakML.Isotope.plotUntargettedIsotopes (peakMLFile, molFrames[[1]], outDirectory, outFileName, layoutMtx, ppm, stdRTWindow, sampleType, sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, fillGaps, massCorrection, useArea)
+		PeakML.Isotope.plotUntargettedIsotopes (peakMLFile, molFrames[[1]], outDirectory, outFileName, layoutMtx, ppm, stdRTWindow, sampleType, sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, fillGaps, massCorrection, useArea,filterStringency, baseCorrection, label)
 	}
 	
 }

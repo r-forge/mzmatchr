@@ -6,7 +6,7 @@
 	Plot isotopes of all identified compounds in the PeakML file.
 }
 \usage{
-	PeakML.Isotope.UntargettedIsotopes(baseDir, outFileName, mzXMLSrc=NULL, outDirectory = "untargettedIsotops", peakMLFile="final_combined_related_identified.peakml", analyse = "databases", databases = c("kegg"), sampleGroups = NULL, layoutMtx = NULL, ppm = 3, trendPlots = NULL, fillGaps = "ALLPEAKS", useArea = FALSE, stdRTWindow = NULL, numSlaves=1)
+	PeakML.Isotope.UntargettedIsotopes(baseDir, outFileName, mzXMLSrc=NULL, outDirectory = "untargettedIsotops", peakMLFile="final_combined_related_identified.peakml", analyse = "databases", databases = c("kegg"), sampleGroups = NULL, layoutMtx = NULL, ppm = 3, trendPlots = NULL, fillGaps = "ALLPEAKS", useArea = FALSE, stdRTWindow = NULL, filterStringency=30, baseCorrection=FALSE, numSlaves=1, label=1)
 }
 
 \arguments{
@@ -29,7 +29,7 @@
 		Indicates what type of analysis you want to run. The tree possible values at the moment are "identified", "databases" and "allmasses". "identified" and "allmasses" can be used to run an untargetted isotope identification procedure on the given PeakML file looking for all the identified compounds or all masses detected. "databases" can be used to run entire databases such as KEGG and HMDB.
 	}
 	\item{databases}{
-		A vector containing databases as numbers or strings based on which initial annotations were made or the databases that has to be used for identification. For more information, see 'Identify peaks from data bases' section at http://mzmatch.sourceforge.net/tutorial.mzmatch.r.advanced.php
+		A vector containing databases as numbers or strings based on which initial annotations were made or the databases that has to be used for identification. For more information, see 'Identify peaks from databases' section at http://mzmatch.sourceforge.net/tutorial.mzmatch.r.advanced.php
 	}
 	\item{sampleGroups}{
 		The sample groups.
@@ -52,8 +52,17 @@
 	\item{stdRTWindow}{
 		The standard retention time  window. Leave it to NULL if no standard retention time is available for the compound.
 	}
+	\item{filterStringency}{
+		This is the percentage of samples that needs to be labelled. It can be left to "NULL" if the filter has to be turned off.
+	}
+	\item{baseCorrection}{
+		TRUE or FALSE based on the requirement of base correction for noisy peaks. Enabling this will make the processing slower.
+	}
 	\item{numSlaves}{
 		This parameter can be set to indicate the number of CPU cores that can be used for isotope identification and quantification.
+	}
+	\item{label}{
+		This is the label to be identified. 1 = C13; 2= N15. More will be added as and when implemented.
 	}
 }
 

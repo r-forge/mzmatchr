@@ -7,7 +7,7 @@
 }
 \usage{
 	PeakML.Isotope.plotUntargettedIsotopes(peakMLFile, molFrame, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow, sampleType,
-	sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, fillGaps, massCorrection, useArea)
+	sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, fillGaps, massCorrection, useArea, filterStringency, baseCorrection, label)
 }
 
 \arguments{
@@ -64,6 +64,15 @@
 	}
 	\item{useArea}{
 		TRUE if sum of intensities has to be used instead of the maximum of intensities for peak intensity calculations.
+	}
+	\item{filterStringency}{
+		This is the percentage of samples that needs to be labelled. It can be left to "NULL" if the filter has to be turned off.
+	}
+	\item{baseCorrection}{
+		TRUE or FALSE based on the requirement of base correction for noisy peaks. Enabling this will make the processing slower.
+	}
+	\item{label}{
+		This is the label to be identified. 1 = C13; 2= N15. More will be added as and when implemented.
 	}
 }
 
