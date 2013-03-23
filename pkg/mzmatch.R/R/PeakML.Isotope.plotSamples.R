@@ -1,5 +1,7 @@
 PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMass, stdRT, sampleType, sampleGroups, plotOrder, useArea, followCarbon, label, exclude_from_plots){
 
+  cat (exclude_from_plots)
+  cat("\n")
 	element <- substr(label,1,1)
 	if(is.null(stdRT)) stdRT <- NA
 #	grads <- c("black",
@@ -105,10 +107,18 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 				trendMtx <- PeakML.Isotope.getTrendMtx(trendList, sampleGroups)
 
                                 if(!is.null(exclude_from_plots)){
-                                  trendMtx <- trendMtx[,- exclude_from_plots]
+                                  exIndex <- match(exclude_from_plots, colnames(trendMtx))
+                                  trendMtx <-subset(trendMtx,select=-exIndex)
                                   lbls <- setdiff(sampleGroups, sampleGroups[exclude_from_plots])
-                    
                                 }
+
+
+                               # if(!is.null(exclude_from_plots)){
+                               #   exclude <- which(sampleGroups %in% exclude_from_plots)
+                               #   trendMtx <- trendMtx[,- exclude]
+                               #   lbls <- setdiff(sampleGroups, sampleGroups[exclude_from_plots])
+                    #
+  #                              }
 				
                                 trendMtx.sum <- apply(trendMtx, 2, sum)
 				trendMtx.sd <- apply(trendMtx, 2, sd)
@@ -129,7 +139,7 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 				}
 
 				mp<-barplot(trendMtx, beside=FALSE, col=fillColor, ylab=ylabel, ylim=c(0,ylimit), border=NA, axisnames=FALSE, axes=FALSE)
-				text(mp, par("usr")[3], labels = lbls, srt = 45, adj = 1, xpd =TRUE, cex=0.6)
+				text(mp, par("usr")[3], labels = colnames(trendMtx), srt = 45, adj = 1, xpd =TRUE, cex=0.6)
 				errBar(mp, trendMtx.sum, trendMtx.sd/numCarbons, lwd=.3)
 				title("Trend plot", cex.main=0.8)
 				axis(2)
@@ -139,31 +149,21 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 			
 				if(is.na(followCarbon)) followCarbon <- 2
 
-                                if(!is.null(exclude_from_plots)){
-                                  #fcMtx <- fcMtx[,- exclude_from_plots]
-                                  sg <- setdiff(sampleGroups, sampleGroups[exclude_from_plots])
-                                  lbls <- setdiff(sampleGroups, sampleGroups[exclude_from_plots])
-                                }else{
-                                  sg <- sampleGroups
-                                  lbls <- sampleGroups
-                                }
-		
-
-				if (followCarbon == 2){
-					#fcMtx <-PeakML.Isotope.getFCMtxAbun(trendList, sampleGroups, followCarbon, element)
-                                  fcMtx <-PeakML.Isotope.getFCMtxAbun(trendList, sg, followCarbon, element)
+                        	if (followCarbon == 2){
+					fcMtx <-PeakML.Isotope.getFCMtxAbun(trendList, sampleGroups, followCarbon, element)
+                                  #fcMtx <-PeakML.Isotope.getFCMtxAbun(trendList, sg, followCarbon, element)
 				} else {
-					#fcMtx <- PeakML.Isotope.getFCMtx(trendList, sampleGroups, followCarbon)
-                                  fcMtx <- PeakML.Isotope.getFCMtx(trendList, sg, followCarbon)
+					fcMtx <- PeakML.Isotope.getFCMtx(trendList, sampleGroups, followCarbon)
+                                  #fcMtx <- PeakML.Isotope.getFCMtx(trendList, sg, followCarbon)
 				}
-                
-                
-                #if(!is.null(exclude_from_plots)){
-                #    fcMtx <- fcMtx[,- exclude_from_plots]
-                #    lbls <- setdiff(sampleGroups, sampleGroups[exclude_from_plots])
-                #    
-                #}
-				
+
+               
+                                if(!is.null(exclude_from_plots)){
+                                                 exIndex <- match(exclude_from_plots, colnames(fcMtx))
+                                                 fcMtx <-subset(fcMtx,select=-exIndex)
+                                                 lbls <- setdiff(sampleGroups, sampleGroups[exclude_from_plots])
+                                 }
+			
 				if (useArea == FALSE){
 #					ylabel <- paste(metName[1], "(mean peak height)", sep= " ")
 					ylabel <- "mean peak height"
@@ -172,7 +172,8 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 					ylabel <- "mean peak area"
 				}
 
-				ylimit <- max(apply(fcMtx, 2, sum)) * axExFact
+                        	ylimit <- max(apply(fcMtx, 2, sum)) * axExFact
+                        
 				if (!ylimit==0){
 					
 #					par (mar=c(2,4,2,0))
@@ -192,7 +193,7 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 #					axis(1, las=3, at=c(1:length(sampleGroups)), labels=sampleGroups, lwd=0, cex.axis=.8)
 					
 					mp<-barplot(fcMtx, beside=FALSE, col=colvector, ylab=ylabel, ylim=c(0,ylimit), border=NA, axisnames=FALSE, axes=FALSE)
-					text(mp, par("usr")[3], labels = lbls, srt = 45, adj = 1, xpd =TRUE, cex=0.6)
+					text(mp, par("usr")[3], labels = colnames(fcMtx), srt = 45, adj = 1, xpd =TRUE, cex=0.6)
 #					axis(1, at = mp, labels = FALSE)
 					title(paste("Trend of ", followCarbon-1,"", element, " labelled isotopomer"), cex.main=0.8)
 					#title(paste("Trend of natural abundance (", element, ")"), cex.main=0.8)
@@ -249,17 +250,15 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
                 
 				if(is.na(followCarbon)) followCarbon <- 2
 
-                                if(!is.null(exclude_from_plots)){
-                                  #fcMtx <- fcMtx[,- exclude_from_plots]
-                                  sg <- setdiff(sampleGroups, sampleGroups[exclude_from_plots])
-                                  lbls <- setdiff(sampleGroups, sampleGroups[exclude_from_plots])
-                                } else {
-                                  sg <- sampleGroups
-                                  lbls <- sampleGroups
-                                }
                                 
-				ftMtx <- getRelAbunMtx(trendList, sg, followCarbon)
+				ftMtx <- getRelAbunMtx(trendList, sampleGroups, followCarbon)
 				ftMtx[is.nan(ftMtx)] <- 0
+
+                               if(!is.null(exclude_from_plots)){
+                                  exIndex <- match(exclude_from_plots, colnames(ftMtx))
+                                  ftMtx <-subset(ftMtx,select=-exIndex)
+                                  lbls <- setdiff(sampleGroups, sampleGroups[exclude_from_plots])
+                                }
                 
 				if (useArea == FALSE){
                     #					ylabel <- paste(metName[1], "(mean peak height)", sep= " ")
@@ -268,7 +267,8 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 					ylabel <- "% relative labelling"
 					#ylabel <- paste(metName[1], "(mean peak height)", sep= " ")
 				}
-                
+
+                            
 				ylimit <- max(apply(ftMtx, 2, sum)) * axExFact
 				if (ylimit>100) ylimit <- 100
                 #				if (is.nan(ylimit)){ylimit<-0}
@@ -282,7 +282,7 @@ PeakML.Isotope.plotSamples <- function(isotopeChroms, metName, metFormula, metMa
 					colvector <- fillColor[followCarbon]
 					
 					mp<-barplot(ftMtx, beside=FALSE, col=colvector, ylab=ylabel, ylim=c(0,ylimit), border=NA, axisnames=FALSE, axes=FALSE)
-					text(mp, par("usr")[3], labels=lbls, srt = 45, adj = 1, xpd =TRUE, cex=0.6)
+					text(mp, par("usr")[3], labels=colnames(ftMtx), srt = 45, adj = 1, xpd =TRUE, cex=0.6)
                     #					axis(1, at = mp, labels = FALSE)
 					title("Relative labelling pattern", cex.main=0.8)
 					axis(2)
