@@ -74,7 +74,7 @@ PeakML.Isotope.getIsotopes <- function(peakDataMtx, mzXMLSrc, sampleNames, label
 		selGroup <- which(pdMtxMassFiltered[,10]==uniqueGroups[gid])	# select all hits in the same group
 		pdMtxMassFilteredGroup <- rbind(pdMtxMassFilteredGroup, pdMtxMassFiltered[selGroup,]) # This matrix now contains the unlabelled peakset
 
-		if (is.null(stdRTWindow)){
+                if (is.null(stdRTWindow)){
 			if (length(pdMtxMassFilteredGroup)!=0){
 				massAve <- mean(pdMtxMassFilteredGroup[,1]) # Uses the mean of average mass
 				rtWindow <- c(min(pdMtxMassFilteredGroup[,5]), max(pdMtxMassFilteredGroup[,6]))			# Uses the min and max RT
@@ -90,7 +90,7 @@ PeakML.Isotope.getIsotopes <- function(peakDataMtx, mzXMLSrc, sampleNames, label
 			}
 		}
 
-		# STORING THE UNLABELLED
+                # STORING THE UNLABELLED
 		unlabledList <- vector("list", length(unique(peakDataMtx[,9])))
 		if (length(pdMtxMassFilteredGroup)!=0){
 			for (rown in 1:nrow(pdMtxMassFilteredGroup)){
@@ -100,15 +100,20 @@ PeakML.Isotope.getIsotopes <- function(peakDataMtx, mzXMLSrc, sampleNames, label
 					mWindow <- PeakML.Methods.getPPMWindow(aveMass, ppm)
 					gapFillHits <- PeakML.Methods.getRawSignals(mzXMLSrc, sampleName, rtWindow, mWindow, massCorrection)
 					if (max(gapFillHits[2,] != -1)){
-						unlabledList[[pdMtxMassFilteredGroup[rown,9]]] <- list("gapfilled", gapFillHits)
+                                           if (baseCorrection==TRUE & !is.null(stdRTWindow)){
+                                             gapFillHits[2,] <- PeakML.Methods.baseCorrection (gapFillHits[2,])
+                                           }
+                                           unlabledList[[pdMtxMassFilteredGroup[rown,9]]] <- list("gapfilled", gapFillHits)
 					}
 				} else {
-					unlabledList[[pdMtxMassFilteredGroup[rown,9]]] <- pdMtxMassFilteredGroup[rown,12]  
+					unlabledList[[pdMtxMassFilteredGroup[rown,9]]] <- pdMtxMassFilteredGroup[rown,12] # Need to address for baseCorrection here.
 				}
 			}
 		}
 		finalList[[gid]][[1]] <- unlabledList # stores peakid of unlabelled, in each selected group sample
-	
+
+
+                
 		# STORING THE LABELLED
 		for (nIsotope in 1:(length(elementsList)-1)){
 		
@@ -155,26 +160,12 @@ PeakML.Isotope.getIsotopes <- function(peakDataMtx, mzXMLSrc, sampleNames, label
 					sampleName <- sampleNames[es]
 					gapFillHits <- PeakML.Methods.getRawSignals(mzXMLSrc, sampleName, rtWindow, massWindow, massCorrection)
 					if (max(gapFillHits[2,] != -1)){
-						finalList[[gid]][[nIsotope+1]][[es]] <- list("gapfilled", gapFillHits)
+                                          if (baseCorrection==TRUE & !is.null(stdRTWindow)){
+                                            gapFillHits[2,] <- PeakML.Methods.baseCorrection (gapFillHits[2,])
+                                          }
+                                          finalList[[gid]][[nIsotope+1]][[es]] <- list("gapfilled", gapFillHits) 
 					}
 				}
-			}
-		}
-		
-		if (fillGaps=="ALLPEAKS" & !is.null(stdRTWindow)){
-			if (is.infinite(max(unlist(unlabledList)))){
-				massWindow <- PeakML.Methods.getPPMWindow(massAve, ppm)
-				for (es in possibleSamples){
-					sampleName <- sampleNames[es]
-					gapFillHits <- PeakML.Methods.getRawSignals(mzXMLSrc, sampleName, rtWindow, massWindow, massCorrection)
-					if (max(gapFillHits[2,] != -1)){
-						if (baseCorrection == TRUE){
-							gapFillHits[2,] <- PeakML.Methods.baseCorrection (gapFillHits[2,])
-						}
-						unlabledList[[es]] <- list("gapfilled", gapFillHits)
-					}
-				}
-				finalList[[gid]][[1]] <- unlabledList
 			}
 		}
 	}
