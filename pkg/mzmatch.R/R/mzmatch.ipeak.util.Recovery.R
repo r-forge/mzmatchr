@@ -1,5 +1,6 @@
 mzmatch.ipeak.util.Recovery <- function(JHeapSize=1425,i=NULL, o=NULL, recovered=NULL, bins=NULL, ppm=NULL, rtwindow=NULL, h=NULL, v=NULL)
 {
+	version.1 <- get("version.1",envir=.GlobalEnv)
 	## define the java runtime parameters
 	java <- "java -da -dsa -Xmn1g -Xss160k -XX:+UseParallelGC -XX:ParallelGCThreads=10"
 	## locate the mzmatch.jar file (it's included in the peakmlR package)
@@ -7,7 +8,13 @@ mzmatch.ipeak.util.Recovery <- function(JHeapSize=1425,i=NULL, o=NULL, recovered
 	JHeapSize <- paste(JHeapSize,"m",sep="")
 	java <- paste(java," -Xms",JHeapSize," -Xmx",JHeapSize," -cp",sep="")
 	mzmatch <- paste(java, " ", .find.package("mzmatch.R"), "/java/mzmatch.jar", sep="")
-	
+	if (version.1==TRUE)
+	{
+		mzmatch <- paste(java, " ", .find.package("mzmatch.R"), "/java/mzmatch.jar", sep="")
+	} else
+	{
+		mzmatch <- paste(java, " ", .find.package("mzmatch.R"), "/java/mzmatch_2.0.jar", sep="")
+	}
 	## setup the tool
 	tool <- paste(mzmatch, "mzmatch.ipeak.util.Recovery")
 		if (!is.null(i))

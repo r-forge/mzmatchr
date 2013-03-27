@@ -1,6 +1,8 @@
 PeakML.DilutionTrendFilter <- function(filename,ionisation="detect",Rawpath=NULL,trendSets,p.value.thr=NULL,outputfile)
 {
 
+	version.1 <- get("version.1",envir=.GlobalEnv)
+
 	#DilutionFactorfunc <- function (x) (1/2^x)
 
 	st <- system.time (PeakMLdata <- PeakML.Read (filename,ionisation,Rawpath))

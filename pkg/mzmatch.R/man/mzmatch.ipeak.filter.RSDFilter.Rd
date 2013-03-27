@@ -7,7 +7,7 @@ Filters all the non-reproducibly detected signals from the given PeakML file.
 }
 
 \usage{
-mzmatch.ipeak.filter.RSDFilter(JHeapSize=1425, i, o, rejected, rsd, h, v)
+mzmatch.ipeak.filter.RSDFilter(JHeapSize=1425, i, o, rejected, rsd, h, v, sampleList, nSlaves, inputfolder="combined")
 }
 
 \arguments{
@@ -30,6 +30,15 @@ When this is set, the help is shown.
 }
 \item{v}{
 When this is set, the progress is shown on the standard output.
+}
+\item{sampleList}{
+Output objetc created by "mzmatch.R.Setup" function, it is used to assign sample names classes.
+}
+\item{nSlaves}{
+number of slaves/cores to be used for parallel peak detection. Snow package is employed for multicore support.
+}
+\item{inputfolder}{
+  Character string containin a name of the folder where output files in peakML format will be created.
 }
 
 }

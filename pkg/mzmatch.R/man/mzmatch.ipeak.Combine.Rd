@@ -7,7 +7,7 @@ Combines the contents of a set of PeakML files, containing either mass chromatog
 }
 
 \usage{
-mzmatch.ipeak.Combine(JHeapSize=1425, i, o, label, labels, ppm, rtwindow, combination, h, v)
+mzmatch.ipeak.Combine(JHeapSize=1425, i, o, label, labels, ppm, rtwindow, combination, h, v, sampleList=NULL, nSlaves=1, outputfolder="combined")
 }
 
 \arguments{
@@ -44,8 +44,20 @@ The retention time window in seconds, defining the range where to look for match
 \item{h}{
 When this is set, the help is shown.
 }
+
 \item{v}{
 When this is set, the progress is shown on the standard output.
+}
+
+\item{sampleList}{
+Output objetc created by "mzmatch.R.Setup" function, it is used to assign sample names classes.
+}
+
+\item{nSlaves}{
+number of slaves/cores to be used for parallel peak detection. Snow package is employed for multicore support.
+}
+\item{outputfolder}{
+  Character string containin a name of the folder where output files in peakML format will be created.
 }
 
 }

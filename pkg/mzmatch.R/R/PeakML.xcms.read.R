@@ -1,4 +1,4 @@
-PeakML.xcms.read <- function(filename,ionisation="detect",Rawpath=NULL,annotations=FALSE)
+PeakML.xcms.read <- function(filename,ionisation="detect",Rawpath=NULL,annotations=FALSE, version.1)
 {
 	#####
 	# Methods
@@ -82,15 +82,15 @@ PeakML.xcms.read <- function(filename,ionisation="detect",Rawpath=NULL,annotatio
 		ionisation<- .jcall (project,returnSig="S",method="getIonisation",as.integer(0),as.integer(0))		
 	}
 	
-	if (ionisation!="negative" & ionisation!="positive")
+	if (version.1==FALSE)
 	{
 		protonCoef <- 0
 	} 
-	if (ionisation=="positive") 
+	if (ionisation=="positive" & version.1==TRUE)
 	{
 		protonCoef <- 1
 	}
-	if (ionisation=="negative") 
+	if (ionisation=="negative" & version.1==TRUE)
 	{
 		protonCoef <- -1
 	} 

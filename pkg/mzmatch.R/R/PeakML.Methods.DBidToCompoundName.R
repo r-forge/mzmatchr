@@ -1,4 +1,4 @@
-PeakML.Methods.DBidToCompoundName <- function (DBS,id.annotations,collapse=TRUE)
+PeakML.Methods.DBidToCompoundName <- function (DBS,PeakMLdata,collapse=TRUE)
 {	
 	dbnameext <- function (i)
 	{
@@ -10,12 +10,29 @@ PeakML.Methods.DBidToCompoundName <- function (DBS,id.annotations,collapse=TRUE)
 
 	annot.extract <- function(annot)
 	{
-		if (!is.na(id.annotations[annot]))
+		if (!is.na(PeakMLdata$GroupAnnotations$identification[annot]))
 		{
-			identifications <- unlist(strsplit(id.annotations[annot],", "))
+			identifications <- unlist(strsplit(PeakMLdata$GroupAnnotations$identification[annot],", "))
+			ppms <- unlist(strsplit(PeakMLdata$GroupAnnotations$ppm[annot],", "))
+			adducts <- unlist(strsplit(PeakMLdata$GroupAnnotations$adduct[annot],", "))
 			dat <- DBcont[which(as.character(DBcont[,1])%in%identifications),]
 			dat[,2] <- sub ("\\[M1\\];\\[","", dat[,2])
 			dat[,2] <- sub ("\\]n","", dat[,2])
+
+			# Keep the same id row for adduct and ppm
+
+			ppmout <- rep(NA, length(identifications))
+			adductout <- rep(NA, length(identifications))
+			
+			for (idn in 1:length(identifications))
+			{
+				hit <- which(identifications==dat[idn,1])[1]
+				adductout[idn] <- adducts[hit]
+				ppmout[idn] <- ppms[hit]
+			}
+			dat$ppm <- round(as.numeric(ppmout),1)
+			dat$adduct <- adductout
+
 			if (collapse==TRUE)
 			{
 				unique.formulas <- unique(dat[,2])
@@ -46,7 +63,7 @@ PeakML.Methods.DBidToCompoundName <- function (DBS,id.annotations,collapse=TRUE)
 		DBcont <- rbind(DBcont,DB)
 	}
 
-	id.resolved <- lapply (1:length(id.annotations),annot.extract)
+	id.resolved <- lapply (1:length(PeakMLdata$GroupAnnotations$identification),annot.extract)
 	id.resolved
 }
 

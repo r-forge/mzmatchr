@@ -6,7 +6,7 @@
 	Simple method to create a EIC plot for different sample groups.
 }
 \usage{
-PeakML.Plot.Chromatograms (PeakMLdata,groupid,sampleClasses=NULL)
+PeakML.Plot.Chromatograms (PeakMLdata,groupid,sampleClasses=NULL, xaxis=TRUE, Title=NULL, mar=c(2,1,0,1))
 }
 \arguments{
 \item{PeakMLdata}{
@@ -16,7 +16,16 @@ PeakML.Plot.Chromatograms (PeakMLdata,groupid,sampleClasses=NULL)
 	Number of the peak set to plot
 }
 \item{sampleClasses}{
-	Character vector indicating whihc sample groups should be shown on the plot. If set to NULL all sample groups from the peakML file will be plotted.
+	Character vector indicating which sample groups should be shown on the plot. If set to NULL all sample groups from the peakML file will be plotted.
+}
+\item{xaxis}{
+	If set to "TRUE" x-axis (RT) will be shown on the plot.
+}
+\item{Title}{
+	Character string to show as a title of the plot. Default is "NULL" (empty).
+}
+\item{mar}{
+	Parameter to define a plot margins, see a help(par) for more details.
 }
 }
 

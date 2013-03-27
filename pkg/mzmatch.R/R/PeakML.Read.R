@@ -3,7 +3,8 @@ PeakML.Read <- function(filename, ionisation = "detect", Rawpath=NULL){
 	# PRE: peakML filename
 	# POST:
 	#	list(peakDataMtx, chromDataList)
-	
+	version.1 <- get("version.1",envir=.GlobalEnv)
+
 	sampleLookUP <- function (x)
 	{
 		phenoData <- sampleClasses[sampleGroups[peakDataMtx[,9]==x][1]]
@@ -29,7 +30,15 @@ PeakML.Read <- function(filename, ionisation = "detect", Rawpath=NULL){
 
 	st <- system.time(PeakMLtree <- xmlInternalTreeParse(filename))
 	
-	massCorrection <- PeakML.Methods.getMassCorrection(PeakMLtree, ionisation)
+	## If olda mzmatch library is used mass will be corrected for ionisation mode and "neutral" mass stored in peakml file.
+	if (version.1==TRUE)
+	{
+		massCorrection <- PeakML.Methods.getMassCorrection(PeakMLtree, ionisation)
+	} else
+	{
+		massCorrection <- 0
+	}
+
 	samPath <- PeakML.Methods.getRawDataPaths(PeakMLtree, Rawpath)
 	sampleNames <- samPath[[1]]
 	rawDataFullPaths <- samPath[[2]]

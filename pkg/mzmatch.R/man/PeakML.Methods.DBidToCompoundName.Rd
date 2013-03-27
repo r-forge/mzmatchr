@@ -6,14 +6,14 @@
  This function will convert identification ID's from data bases to actual compound names.
 }
 \usage{
-PeakML.Methods.DBidToCompoundName (DBS,id.annotations,collapse=TRUE)
+PeakML.Methods.DBidToCompoundName (DBS,PeakMLdata,collapse=TRUE)
 }
 \arguments{
 \item{DBS}{
 	List of comma seperated data bases in XML format to be used.
 }
-\item{id.annotations}{
-	Character vector of annotation which needs to be resolve. Usually as an ouput from PeakML.Read function.
+\item{PeakMLdata}{
+	R obejct in PeakMLdata format, normaly output from the PeakML.Read function.
 }
 \item{collapse}{
 	If set to TRUE ID's matching several data bases will coconated as a comma separated text string.

@@ -1,21 +1,21 @@
-\name{PeakML.xcms.write.SingleMeasurement}
+\name{PeakML.xcms.write.SingleInstance}
 \Rdversion{1.1}
-\alias{PeakML.xcms.write.SingleMeasurement}
-\title{PeakML.xcms.write.SingleMeasurement}
+\alias{PeakML.xcms.write.SingleInstance}
+\title{PeakML.xcms.write.SingleInstance}
 \description{
-  This function writes the given XCMS set (for a single measurement) to the given filename in the PeakML format. This file format
+  This is a single core function to write the given XCMS set (for a single measurement) to the given filename in the PeakML format. This file format
   supports the mass traces (features) and the sets-structure utilized by XCMS and as such provides a
   fully reproducible representation of the contents of an XCMS set structure.
 }
 \usage{
-  PeakML.xcms.write.SingleMeasurement(xset, filename,ionisation="detect",addscans=5,ppm=5,writeRejected=FALSE,ApodisationFilter=TRUE, nSlaves=1)
+  PeakML.xcms.write.SingleInstance(xset, outputfile,ionisation="detect",addscans=5,ppm=5,writeRejected=FALSE,ApodisationFilter=TRUE)
 }
 \arguments{
 \item{xset}{
   The XCMS set structure containing the data to be written to the PeakML file.
 }
-\item{filename}{
-  The filename or character vector with file names for the PeakML file. The path leading up to this file needs to exist, otherwise the function
+\item{outputfile}{
+  The filename for the PeakML file. The path leading up to this file needs to exist, otherwise the function
   will fail.
 }
 \item{ionisation}{
@@ -35,9 +35,7 @@
   If values is set to TRUE, peak set will be filtered on centroid artefacts which are common in Orbitrap data sets. Every mass within 0.9 mass units and 5s retention time window is selected. Peak with the highest signal intensity is retained.
 }
 
-\item{nSlaves}{
-  number of slaves/cores to be used for parallel peak detection. Snow package is employed for multicore support.
-}
+
 
 }
 \details{
@@ -62,7 +60,7 @@
 }
 
 \seealso{
-  \code{\link{PeakML.xcms.read}}
+  \code{\link{PeakML.xcms.write.SingleMeasurement}}
 }
 
 \keyword{mzmatch.R}
