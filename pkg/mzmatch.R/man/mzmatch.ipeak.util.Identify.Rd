@@ -35,13 +35,13 @@ Optional maximum retention time for excluding signals from the input-file. This 
 Optional retention time window for finding matches from the databases. If this is set and the database contains entries with previously registered retention times for molecules. When this value is not set, the stored retention times are ignored.
 }
 \item{massOverride}{
-Option to say whether to override the calculated formula mass with the monoisotopic mass element from the database. If this option is specified, andthe mass element is not present, then the calculated formula mass is used
+Option to say whether to override the calculated formula mass with the monoisotopic mass element from the database. If this option is specified, andthe mass element is not present, then the calculated formula mass is used.
 }
 \item{polarity}{
 Option to discard molecules of the opposite polarity. If this option is specified, any molecules of the opposite polarity will not be checked. Molecules with no polarity specified will always be checked
 }
 \item{adducts}{
-Option to specify which adducts to search for.
+Option to specify which adducts to search for. Default values are "M+H,M-H" and depending on ionisation mode of the data set, what will be determined automatically. 
 }
 \item{h}{
 When this is set, the help is shown.

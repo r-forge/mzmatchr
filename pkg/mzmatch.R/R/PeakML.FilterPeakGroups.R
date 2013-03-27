@@ -1,5 +1,7 @@
 PeakML.FilterPeakGroups <- function (filename, ionisation="detect", Rawpath=NULL, ppm=5, rtwin=60, outputfile)
 {
+	version.1 <- get("version.1",envir=.GlobalEnv)
+
 	st <- system.time (PeakMLdata <- PeakML.Read (filename,ionisation,Rawpath))
 	PeakTable <- PeakML.Methods.getCompleteTable (PeakMLdata)
 	Masses <- apply(PeakTable[[2]],2,median,na.rm=TRUE)
@@ -30,6 +32,7 @@ PeakML.FilterPeakGroups <- function (filename, ionisation="detect", Rawpath=NULL
 					rtwith <- rep(NA,length(setsToCheck))
 					for (setn in 1:length(setsToCheck))
 					{
+						#cat (setn,"\n")
 						## number of sampes in peak set
 						nsamples[setn] <- nrow(rbind(PeakMLdata$peakDataMtx[PeakMLdata$peakDataMtx[,10]==setsToCheck[setn],],NULL))
 						## max signal intensity

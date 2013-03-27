@@ -1,5 +1,7 @@
 PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfile,ppm=0,rtwin=0, nSlaves=1, fillAll=FALSE)
 {
+
+	version.1 <- get("version.1",envir=.GlobalEnv)
 	#####
 	# Methods
 	#####

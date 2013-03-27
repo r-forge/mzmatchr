@@ -13,22 +13,21 @@ PeakML.Plot.RelatedPeaks <- function (filename, ionisation="detect", Rawpath=NUL
 
 		if (!all(is.na(idents)))
 		{
-			ppm <- round((idents[,3]-peakmass)/idents[,3]*10^6,1)
-			idents <- cbind(idents,ppm)
-			colnames (idents) <- c("id","Formula","mass","Name","DB","ppm")
-			textplot(idents[,c(2,6,4,5)],halign="left",valign="top",mar=c(0,0,0,0),show.rownames=FALSE)
+			idents[,6] <- round(as.numeric(idents[,6]),1)
+			colnames (idents) <- c("id","Formula","Mass","Name","DB","ppm","Addcut")
+			textplot(idents[,c(2,7,6,4,5)],halign="left",valign="top",mar=c(0,0,0,0.5),show.rownames=FALSE)
 		} else
 		{
 			plot(1,1,xlab="",ylab="",pch="",axes=FALSE)
 		}
 		groupid <- which.peaksets[peakn]
-		PeakML.Plot.Chromatograms(PeakMLdata=PeakMLdata,groupid=groupid,sampleClasses=sampleClasses)
+		PeakML.Plot.Chromatograms(PeakMLdata=PeakMLdata,groupid=groupid,sampleClasses=sampleClasses,xaxis=FALSE)
 	}
 
 
 	st <- system.time (PeakMLdata <- PeakML.Read (filename,ionisation,Rawpath))
 	PeakTable <- PeakML.Methods.getCompleteTable (PeakMLdata)
-	id.resolved <- PeakML.Methods.DBidToCompoundName(DBS=DBS,id.annotations=PeakMLdata$GroupAnnotations$identification,collapse=FALSE)
+	id.resolved <- PeakML.Methods.DBidToCompoundName(DBS=DBS, PeakMLdata=PeakMLdata, collapse=FALSE)
 	Masses <- apply(PeakTable[[2]],2,median,na.rm=TRUE)
 	RTs <- apply(PeakTable[[3]],2,median,na.rm=TRUE)
 	Intensities <- apply(PeakTable[[1]],2,max,na.rm=TRUE)
@@ -45,7 +44,7 @@ PeakML.Plot.RelatedPeaks <- function (filename, ionisation="detect", Rawpath=NUL
 		col.vector <- rep(NA,length(which.peaksets))
 		col.vector[is.na(id.resolved[which.peaksets])] <- 1
 		col.vector[is.na(col.vector)] <- 2
-		layout (matrix(c(1,1,1,2:16),ncol=3,nrow=6,byrow=TRUE),widths=c(0.3,0.5,0.2))
+		layout (matrix(c(1,1,1,2:16),ncol=3,nrow=6,byrow=TRUE),widths=c(0.25,0.55,0.2))
 		par (mar=c(4,4,1,0))
 		ymax <- max(Intensities[which.peaksets])+(max(Intensities[which.peaksets])/10)
 		plot (Masses[which.peaksets]-(PeakMLdata$massCorrection[[1]]),Intensities[which.peaksets],type="h",xlab="m/z",ylab="Intensity",lwd=1.5,col=col.vector,ylim=c(0,ymax),font.lab=2)
@@ -80,7 +79,7 @@ PeakML.Plot.RelatedPeaks <- function (filename, ionisation="detect", Rawpath=NUL
 					maxnum <- unique(maxnum)
 				}
 
-				layout (matrix(c(1:18),ncol=3,nrow=6,byrow=TRUE),widths=c(0.3,0.5,0.2))
+				layout (matrix(c(1:18),ncol=3,nrow=6,byrow=TRUE),widths=c(0.25,0.55,0.2))
 				for (peakn in maxnum)
 				{
 					plotPeak(peakn)

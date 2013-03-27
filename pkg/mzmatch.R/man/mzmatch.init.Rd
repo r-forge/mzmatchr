@@ -6,11 +6,14 @@
   This function is used to define globals Java envirnoment parameters before startting mzmatch java library.
 }
 \usage{
-  mzmatch.init(memorysize)
+  mzmatch.init(memorysize, version.1=TRUE)
 }
 \arguments{
 \item{memorysize}{
   Amount of RAM memory in megabytes, which should be reserved by the Java virtual machine. The default value is 1024 megabytes (1GB).
+}
+\item{version.1}{
+  For bacwkard compability it is possible to use mzmatch V1. If option version.1 is set to "FALSE", it will load the latest mzmatch version. PeakML files generated with mzmatch V.1 are not compatiable with V.2 and above and vice versa.
 }
 }
 \details{

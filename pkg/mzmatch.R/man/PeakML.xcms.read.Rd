@@ -7,7 +7,7 @@
   fully reproducible representation of the contents of an XCMS set structure.
 }
 \usage{
-  PeakML.xcms.read(filename, ionisation = "detect", Rawpath = NULL, annotations = FALSE)
+  PeakML.xcms.read(filename, ionisation = "detect", Rawpath = NULL, annotations = FALSE, version.1)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -24,6 +24,9 @@
   \item{annotations}{
     When this is set to TRUE, the function also loads the stored annotations from the PeakML file.
   }
+  \item{version.1}{
+	 For bacwkard compability it is possible to use mzmatch V1. If option version.1 is set to "FALSE", it will load the latest mzmatch version. PeakML files generated with mzmatch V.1 are not compatiable with V.2 and above and vice versa.
+	}
 }
 \details{
   The PeakML file format defines an open and extensible file format for storing extracted hyphenated mass spectrometry
