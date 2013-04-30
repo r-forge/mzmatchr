@@ -9,10 +9,10 @@ mzmatch.ipeak.util.BreakupRelated <- function(JHeapSize=1425,i=NULL, o=NULL, h=N
 	java <- paste(java," -Xms",JHeapSize," -Xmx",JHeapSize," -cp",sep="")
 	if (version.1==TRUE)
 	{
-		mzmatch <- paste(java, " ", .find.package("mzmatch.R"), "/java/mzmatch.jar", sep="")
+		mzmatch <- paste(java, " ", find.package("mzmatch.R"), "/java/mzmatch.jar", sep="")
 	} else
 	{
-		mzmatch <- paste(java, " ", .find.package("mzmatch.R"), "/java/mzmatch_2.0.jar", sep="")
+		mzmatch <- paste(java, " ", find.package("mzmatch.R"), "/java/mzmatch_2.0.jar", sep="")
 	}
 	## setup the tool
 	tool <- paste(mzmatch, "mzmatch.ipeak.util.BreakupRelated")

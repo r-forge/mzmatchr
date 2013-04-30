@@ -3,7 +3,7 @@ PeakML.xcms.write.SingleMeasurement <- function(xset, filename, ionisation="dete
 	version.1 <- get("version.1",envir=.GlobalEnv)
 	if (version.1==TRUE)
 	{
-		PeakML.xcms.write.SingleInstance (xset=xset, outputfile=filename, ionisation="detect", addscans=addscans, ppm=ppm, writeRejected=writeRejected, ApodisationFilter=ApodisationFilter)
+		PeakML.xcms.write.SingleInstance (xset=xset, outputfile=filename, ionisation=ionisation, addscans=addscans, ppm=ppm, writeRejected=writeRejected, ApodisationFilter=ApodisationFilter)
 	} else
 	{
 		xseto <- split (xset,xset@filepaths)

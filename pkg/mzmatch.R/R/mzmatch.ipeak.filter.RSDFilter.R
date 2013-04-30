@@ -11,7 +11,7 @@ mzmatch.ipeak.filter.RSDFilter <- function(JHeapSize=1425,i=NULL, o=NULL, reject
 
 	if (version.1==TRUE)
 	{
-		mzmatch <- paste(java, " ", .find.package("mzmatch.R"), "/java/mzmatch.jar", sep="")
+		mzmatch <- paste(java, " ", find.package("mzmatch.R"), "/java/mzmatch.jar", sep="")
 	
 		## setup the tool
 		tool <- paste(mzmatch, "mzmatch.ipeak.filter.RSDFilter")
@@ -52,7 +52,7 @@ mzmatch.ipeak.filter.RSDFilter <- function(JHeapSize=1425,i=NULL, o=NULL, reject
 				o <- paste(outputfiltered,"/",MainClasses[fnum],".peakml",sep="")
 				rejected <- paste(outputrejected,"/",MainClasses[fnum],".peakml",sep="")
 
-				mzmatch <- paste(java, " ", .find.package("mzmatch.R"), "/java/mzmatch_2.0.jar", sep="")
+				mzmatch <- paste(java, " ", find.package("mzmatch.R"), "/java/mzmatch_2.0.jar", sep="")
 	
 				## setup the tool
 				tool <- paste(mzmatch, "mzmatch.ipeak.filter.RSDFilter")

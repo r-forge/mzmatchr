@@ -6,7 +6,7 @@
 	Function to generate an overview pdf document containing summary information shown fragment ad other related signals. Peaks shapes and groups annotations. Including putative identifications.
 }
 \usage{
-PeakML.Plot.RelatedPeaks (filename, ionisation="detect", Rawpath=NULL, DBS=dir(paste(.find.package("mzmatch.R"), "/dbs", sep=""),full.names=TRUE),outputfile,sampleClasses=NULL)
+PeakML.Plot.RelatedPeaks (filename, ionisation="detect", Rawpath=NULL, DBS=dir(paste(find.package("mzmatch.R"), "/dbs", sep=""),full.names=TRUE),outputfile,sampleClasses=NULL)
 }
 \arguments{
 \item{filename}{

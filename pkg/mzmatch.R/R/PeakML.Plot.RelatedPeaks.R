@@ -1,4 +1,4 @@
-PeakML.Plot.RelatedPeaks <- function (filename, ionisation="detect", Rawpath=NULL, DBS=dir(paste(.find.package("mzmatch.R"), "/dbs", sep=""),full.names=TRUE),outputfile,sampleClasses=NULL)
+PeakML.Plot.RelatedPeaks <- function (filename, ionisation="detect", Rawpath=NULL, DBS=dir(paste(find.package("mzmatch.R"), "/dbs", sep=""),full.names=TRUE),outputfile,sampleClasses=NULL)
 {
 	plotPeak <- function (peakn)
 	{
