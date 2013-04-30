@@ -6,7 +6,7 @@ mzmatch.ipeak.filter.FilterCluster <- function(JHeapSize=1425,i=NULL, o=NULL, re
 	## JHeapSize - define amount of RAM availiable for java VM
 	JHeapSize <- paste(JHeapSize,"m",sep="")
 	java <- paste(java," -Xms",JHeapSize," -Xmx",JHeapSize," -cp",sep="")
-	mzmatch <- paste(java, " ", .find.package("mzmatch.R"), "/java/mzmatch.jar", sep="")
+	mzmatch <- paste(java, " ", find.package("mzmatch.R"), "/java/mzmatch.jar", sep="")
 	
 	## setup the tool
 	tool <- paste(mzmatch, "mzmatch.ipeak.filter.FilterCluster")

@@ -13,10 +13,10 @@ mzmatch.ipeak.Combine <- function(JHeapSize=1425,i=NULL, o=NULL, label=NULL, lab
 	{
 		if (version.1==TRUE)
 		{
-			mzmatch <- paste(java, " ", .find.package("mzmatch.R"), "/java/mzmatch.jar", sep="")
+			mzmatch <- paste(java, " ", find.package("mzmatch.R"), "/java/mzmatch.jar", sep="")
 		} else
 		{
-			mzmatch <- paste(java, " ", .find.package("mzmatch.R"), "/java/mzmatch_2.0.jar", sep="")
+			mzmatch <- paste(java, " ", find.package("mzmatch.R"), "/java/mzmatch_2.0.jar", sep="")
 		}
 		## setup the tool
 		tool <- paste(mzmatch, "mzmatch.ipeak.Combine")
@@ -52,7 +52,7 @@ mzmatch.ipeak.Combine <- function(JHeapSize=1425,i=NULL, o=NULL, label=NULL, lab
 		{
 			FILESf <- sampleList$outputfilenames[which(sampleList$sampleClass==MainClasses[fnum])]
 			OUTPUTf <- paste(outputfolder,"/",MainClasses[fnum],".peakml",sep="")
-			mzmatch <- paste(java, " ", .find.package("mzmatch.R"), "/java/mzmatch_2.0.jar", sep="")
+			mzmatch <- paste(java, " ", find.package("mzmatch.R"), "/java/mzmatch_2.0.jar", sep="")
 			## setup the tool
 			tool <- paste(mzmatch, "mzmatch.ipeak.Combine")
 			i=paste(FILESf, collapse=",")

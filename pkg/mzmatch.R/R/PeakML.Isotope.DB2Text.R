@@ -1,6 +1,6 @@
 PeakML.Isotope.DB2Text <- function (filename, databases){
 	
-	dbases <- dir(paste(.find.package("mzmatch.R"),"/dbs",sep=""), full.names=TRUE)
+	dbases <- dir(paste(find.package("mzmatch.R"),"/dbs",sep=""), full.names=TRUE)
 	#lapply(dbases, function(x) tail(strsplit(x,"/")[[1]],1)) # incase want to work on both database name and number.
 	dbases <- dbases[databases]
 	
@@ -9,7 +9,7 @@ PeakML.Isotope.DB2Text <- function (filename, databases){
 	for (i in 1:length(dbases))
 	{
 		DB <- mzmatch.XML.data.base.parser (dbfile = dbases[i], elements = c("name", "class", "subclass"))
-		dbname <- sub(paste(.find.package("mzmatch.R"),"/dbs/",sep=""),"",dbases[i])
+		dbname <- sub(paste(find.package("mzmatch.R"),"/dbs/",sep=""),"",dbases[i])
 		dbname <- sub(".xml","",dbname)
 		DB$db <- dbname
 		DBcont <- rbind(DBcont,DB)

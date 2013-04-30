@@ -1,13 +1,13 @@
 mzmatch.init <- function (memorysize=1024, version.1=TRUE)
 {	
-	DBS.path <- paste(.find.package("mzmatch.R"),"/dbs",sep="")
-	mzmatch.path <- paste(.find.package("mzmatch.R"),"/java",sep="")
+	DBS.path <- paste(find.package("mzmatch.R"),"/dbs",sep="")
+	mzmatch.path <- paste(find.package("mzmatch.R"),"/java",sep="")
 
 	# Install required JAR files and XML databeses on the first run
 	if (!file.exists(DBS.path))
 	{
 		current.dir <- getwd ()
-		setwd (.find.package("mzmatch.R"))
+		setwd (find.package("mzmatch.R"))
 		download.file("http://sourceforge.net/projects/mzmatch/files/mzmatch.R/dbs.zip/download","dbs.zip",cacheOK=FALSE,mode="wb")
 		unzip ("dbs.zip")
 		file.remove ("dbs.zip")

@@ -3,7 +3,7 @@ PeakML.Viewer <- function(arch="detect",install.path=NULL, JHeapSize=1024, unins
 	require (XML)
 	if (is.null(install.path))
 	{
-		install.path <- paste(.find.package("mzmatch.R"),"/PeakMLViewer",sep="")
+		install.path <- paste(find.package("mzmatch.R"),"/PeakMLViewer",sep="")
 	}
 
 	dir.create (install.path, showWarnings=FALSE)
@@ -67,7 +67,7 @@ PeakML.Viewer <- function(arch="detect",install.path=NULL, JHeapSize=1024, unins
 	}
 
 	## Create settings.xml file
-	DBS <- dir(paste(.find.package("mzmatch.R"),"/dbs",sep=""),full.names=TRUE)
+	DBS <- dir(paste(find.package("mzmatch.R"),"/dbs",sep=""),full.names=TRUE)
 	settingsfile <- paste(install.path,"/settings.xml",sep="")
 	
 	databases <- xmlNode("databases")
