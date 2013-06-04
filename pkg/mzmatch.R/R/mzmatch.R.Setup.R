@@ -17,8 +17,8 @@ mzmatch.R.Setup <- function (projectFolder=NULL, samplelist=NULL, outputfolder="
 		mzXMLfiles.shortnames <- append(mzXMLfiles.shortnames,dir(full.names=FALSE, pattern="\\.mzML$",recursive=TRUE))
 		
 		outputfilenames <- paste("peakml/",sub(".mzXML", "", mzXMLfiles.fullnames), ".peakml", sep="")
-		outputfilenames <- sub(".mzData", ".peakml", mzXMLfiles.fullnames)
-		outputfilenames <- sub(".mzML", ".peakml", mzXMLfiles.fullnames)
+		outputfilenames <- sub(".mzData", ".peakml", outputfilenames)
+		outputfilenames <- sub(".mzML", ".peakml", outputfilenames)
 
 		sampleList <- data.frame (filenames=mzXMLfiles.fullnames, sampleClass=rep("",length(mzXMLfiles.fullnames)), globalClass=rep("",length(mzXMLfiles.fullnames)))
 		fix (sampleList)
@@ -37,6 +37,8 @@ mzmatch.R.Setup <- function (projectFolder=NULL, samplelist=NULL, outputfolder="
 			mzXMLfiles.shortnames[i] <- PeakML.Methods.extractFileName(sampleList$filenames[i])
 		}
 		outputfilenames <- paste(outputfolder,"/",sub(".mzXML", "", mzXMLfiles.shortnames), ".peakml", sep="")
+		outputfilenames <- sub(".mzData", ".peakml", outputfilenames)
+		outputfilenames <- sub(".mzML", ".peakml", outputfilenames)
 	}
 	if (!file.exists(outputfolder))
 	{
