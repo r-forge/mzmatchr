@@ -63,6 +63,12 @@ PeakML.Methods.DBidToCompoundName <- function (DBS,PeakMLdata,collapse=TRUE)
 		DBcont <- rbind(DBcont,DB)
 	}
 
+	for (i in 1:length(PeakMLdata$GroupAnnotations$identification))
+	{
+		cat (i,"\n")
+		annot.extract(i)
+	}
+
 	id.resolved <- lapply (1:length(PeakMLdata$GroupAnnotations$identification),annot.extract)
 	id.resolved
 }
