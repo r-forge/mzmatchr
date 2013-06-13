@@ -7,7 +7,7 @@ PeakML.xcms.write.SingleMeasurement <- function(xset, filename, ionisation="dete
 	} else
 	{
 		xseto <- split (xset,xset@filepaths)
-
+		filename <- sort (filename)
 		xsetFunction <- function (i)
 		{
 			require (mzmatch.R)
