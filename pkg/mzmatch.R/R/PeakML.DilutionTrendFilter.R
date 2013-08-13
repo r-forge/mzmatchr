@@ -17,7 +17,12 @@ PeakML.DilutionTrendFilter <- function(filename,ionisation="detect",Rawpath=NULL
 		stop ()
 	}
 
-	trendSetsindex <- which(PeakMLdata$sampleClasses%in%trendSets)
+	trendSetsindex <- NULL
+	for (setin in 1:length(trendSets))
+	{
+		trendSetsindex <- append(trendSetsindex, which(PeakMLdata$sampleClasses==trendSets[setin]))
+	}
+		
 	numOfDilPoints <- length(trendSetsindex)
 
 	PeakSetCorrelations <- matrix(ncol=2,nrow=max(PeakMLdata$peakDataMtx[,10]),data=NA)
