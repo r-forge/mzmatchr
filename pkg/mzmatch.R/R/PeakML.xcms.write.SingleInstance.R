@@ -174,7 +174,8 @@ PeakML.xcms.write.SingleInstance <- function(xset, outputfile, ionisation="detec
 			masses <- C[,2]
 			accepted <- append(accepted,peakid)
 		}
-		chromatograms[[peakid]] <- rbind(scans,retentiontimes,masses,intensities)
+		# In java scan index should start from 0, so I deduct 1 from all scans
+		chromatograms[[peakid]] <- rbind(scans-1,retentiontimes,masses,intensities)
 	}
 
 	## Now we can filter on mass chromatogram as we want and how much we want. 
@@ -291,7 +292,7 @@ PeakML.xcms.write.SingleInstance <- function(xset, outputfile, ionisation="detec
 	# and finally store the resulting data
 	.jcall (project,returnSig="V",method="writeMeasurements",outputfile)
 	
-	## Write rejected chromatograms in saparate file
+	## Write rejected chromatograms in separate file
 	if (writeRejected==TRUE)
 	{
 		project <- .jnew("peakml/util/rjava/ProjectSingleMeasurement", as.character(rownames(xset@phenoData)), as.character(xset@filepaths))
