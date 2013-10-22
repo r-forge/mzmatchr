@@ -8,7 +8,7 @@
   fully reproducible representation of the contents of an XCMS set structure.
 }
 \usage{
-  PeakML.xcms.write.SingleInstance(xset, outputfile,ionisation="detect",addscans=5,ppm=5,writeRejected=FALSE,ApodisationFilter=TRUE)
+  PeakML.xcms.write.SingleInstance(xset, outputfile,ionisation=ionisation,addscans=addscans,ppm=ppm,writeRejected=writeRejected,ApodisationFilter=ApodisationFilter)
 }
 \arguments{
 \item{xset}{
