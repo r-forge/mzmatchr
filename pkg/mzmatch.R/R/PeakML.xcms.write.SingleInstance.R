@@ -1,4 +1,4 @@
-PeakML.xcms.write.SingleInstance <- function(xset, outputfile, ionisation="detect", addscans=5, ppm=5, writeRejected=FALSE, ApodisationFilter=TRUE)
+PeakML.xcms.write.SingleInstance <- function(xset, outputfile, ionisation=ionisation, addscans=addscans, ppm=ppm, writeRejected=writeRejected, ApodisationFilter=ApodisationFilter)
 {
 	#### Java calls	
 	## public int getNrPeaksets() - get the number of PeakSets (groups) in memory 
