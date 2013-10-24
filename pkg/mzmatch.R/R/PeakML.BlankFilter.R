@@ -1,4 +1,4 @@
-PeakML.BlankFilter <- function (filename, ionisation="detect", Rawpath=NULL,outputfile,BlankSample=NULL)
+PeakML.BlankFilter <- function (filename, ionisation="detect", Rawpath=NULL, outputfile, BlankSample=NULL, IgnoreIntensity=FALSE, detectedInNumOfBlanks=NULL, rtwindow=NULL)
 {
 	st <- system.time (PeakMLdata <- PeakML.Read (filename,ionisation,Rawpath))
 	PeakTable <- PeakML.Methods.getCompleteTable (PeakMLdata)
@@ -21,6 +21,36 @@ PeakML.BlankFilter <- function (filename, ionisation="detect", Rawpath=NULL,outp
 	Intensities.rest[is.na(Intensities.rest)] <- 0
 	Intensities.rest <- apply(Intensities.rest,2,max,na.rm=TRUE)
 	to.remove <- which(Intensities.blank >= Intensities.rest)
+
+	if (IgnoreIntensity==TRUE)
+	{
+		to.remove <- which(Intensities.blank!=0)
+	}
+
+	if (!is.null(detectedInNumOfBlanks))
+	{
+		Intensities.blank <- PeakTable[[1]][blanksamples,]
+		ndetect <- rep(NA, ncol(PeakTable[[1]]))
+		for (nd in 1:length(ndetect))
+		{
+			ndetect[nd] <- nrow(Intensities.blank)-length(which(is.na(Intensities.blank[,nd])))
+		}
+
+		hits <- which (ndetect >= detectedInNumOfBlanks)
+		
+		to.remove <- to.remove[to.remove%in%hits]	
+	}
+
+
+
+	if (!is.null(rtwindow))
+	{
+		rtwindow <- rtwindow*60
+		rt.times <- apply (PeakTable[[3]],2,median,na.rm=TRUE)
+		hits <- which(rt.times >= rtwindow[1] & rt.times <= rtwindow[2])
+
+		to.remove <- to.remove[to.remove%in%hits]
+	}
 
 	## Write no matching
 	if (length(to.remove)>0)

@@ -6,7 +6,7 @@
 	This function compares a signal intensities of "real" samples with signal present in blanks (samples usuallu aquired at the beginnning or between analytical samples to equalibrate a LC system and flush out any residues.)
 }
 \usage{
-PeakML.BlankFilter (filename, ionisation="detect", Rawpath=NULL,outputfile,BlankSample=NULL)
+PeakML.BlankFilter (filename, ionisation="detect", Rawpath=NULL, outputfile, BlankSample=NULL, IgnoreIntensity=FALSE, detectedInNumOfBlanks=NULL, rtwindow=NULL)
 }
 \arguments{
 \item{filename}{
@@ -22,7 +22,16 @@ PeakML.BlankFilter (filename, ionisation="detect", Rawpath=NULL,outputfile,Blank
 	File name of the peakml output file  to be created.
 }
 \item{BlankSample}{
-	Character string fefined a sample groups containing blank samples..
+	Character string fefined a sample groups containing blank samples.
+}
+\item{IgnoreIntensity}{
+	If set to TRUE all peak sets what are present in blank will be removed from a real sample ignoring signal intensity.
+}
+\item{detectedInNumOfBlanks}{
+	Only remove peak set if siganl is detecet in n number of blank samples.
+}
+\item{rtwindow}{
+	Numeric vector of two values, defining retention time window in which to apply filter. Fore examples rtwindow=c(5,20).
 }
 }
 
