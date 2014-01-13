@@ -130,7 +130,7 @@ PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfil
 #			assign ("nonzerocount",nonzerocount,envir=.GlobalEnv)
 #			assign ("fillednums",fillednums,envir=.GlobalEnv)
 			#cat (peaknum," ")
-			OUT <- rbind(masses,intensities,retentiontimes,scanids)
+			OUT <- rbind(masses,intensities,retentiontimes,scanids-1)
 	}
 
 	st <- system.time (PeakMLdata <- PeakML.Read (filename,ionisation,Rawpath))
