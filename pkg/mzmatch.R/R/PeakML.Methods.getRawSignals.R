@@ -2,7 +2,7 @@ PeakML.Methods.getRawSignals <- function(mzXMLSrc, sampleName, rtWindow, massWin
 	# PRE:
 	#	Return the raw signals for the given sample in the rt and mass window specified
 	#	mzXMLSrc -> mzXML raw data source path
-	#	samleName -> Name of the sample
+	#	sampleName -> Name of the sample
 	#	rtWindow -> the retention time window as list [min, max]
 	#	massWindow -> the mass window as list [min, max]
 	#	massCorrection -> PeakML.Methods.getMassCorrection
@@ -69,6 +69,6 @@ PeakML.Methods.getRawSignals <- function(mzXMLSrc, sampleName, rtWindow, massWin
 		intensities <- rData[,3]
 	}
 	rm(rawFile, rData)
-	rv <- rbind(masses,intensities,retentiontimes,scanids)
+	rv <- rbind(masses,intensities,retentiontimes,scanids-1)
 	rv
 }
