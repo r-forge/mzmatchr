@@ -40,6 +40,11 @@ PeakML.xcms.write.SingleInstance <- function(xset, outputfile, ionisation=ionisa
 	{
 		ionisation <- as.character(rawdata@polarity[1])
 	}
+
+	if (is.na(ionisation)) ionisation <- "neutral"
+
+	cat(ionisation,"\n")
+
 	if (ionisation=="positive" | ionisation=="negative")
 	{
 		rawdata <- split(rawdata,rawdata@polarity)
@@ -189,6 +194,8 @@ PeakML.xcms.write.SingleInstance <- function(xset, outputfile, ionisation=ionisa
 			rejected <- append (rejected,accepted[[chromnum]])
 		}
 	}
+
+	if (!is.null(rejected))
 	accepted <- accepted[-c(which(accepted%in%rejected))]
 
 	## Filter out centroiding artefacts. It checks a mass withing 0.9 mass units and RT shift of 5s. Remove peaks with intensity less than 2% of maximum intensity.
