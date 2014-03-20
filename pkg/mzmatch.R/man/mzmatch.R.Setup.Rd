@@ -6,7 +6,8 @@
   This function is used to setup a data files folder, and define filenames, sample classes etc.
 }
 \usage{
-  mzmatch.R.Setup (projectFolder=NULL, samplelist=NULL, outputfolder="peakml")
+  mzmatch.R.Setup (projectFolder=NULL, samplelist=NULL, outputfolder="peakml", sampleClassFromFolderNames = FALSE,
+                 extractMeasurentDate = TRUE)
 }
 \arguments{
 \item{projectFolder}{
@@ -18,6 +19,13 @@
 \item{outputfolder}{
   Character string containin a name of the folder where output files in peakML format will be created.
 }
+\item{sampleClassFromFolderNames}{
+  I data files are ordered in sub folders, a name of the subfolder automatically can be used as a class label.
+}
+\item{extractMeasurentDate}{
+  Extract measuremnt date and time information from mzML data files. This information can be used as input for QC correction methods.
+}
+
 
 }
 \details{

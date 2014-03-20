@@ -6,8 +6,11 @@ PeakML.xcms.write.SingleMeasurement <- function(xset, filename, ionisation="dete
 		PeakML.xcms.write.SingleInstance (xset=xset, outputfile=filename, ionisation=ionisation, addscans=addscans, ppm=ppm, writeRejected=writeRejected, ApodisationFilter=ApodisationFilter)
 	} else
 	{
+		#Dirty hack to get filenames right if samples does not follow alphabetic order in the sampleList.
+		
+
 		xseto <- split (xset,xset@filepaths)
-		filename <- sort (filename)
+		#filename <- sort (filename)
 		xsetFunction <- function (i)
 		{
 			require (mzmatch.R)
