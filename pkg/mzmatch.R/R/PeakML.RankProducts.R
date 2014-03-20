@@ -251,6 +251,7 @@ PeakML.RankProducts <- function (sampleGroups, inputTable, groupA, groupB, numbe
 	}
 
 	permutationsList <- unlist(permutationsList)
+
 	# erp - average expected value for the rank product. c/p. c - count how many times the rank products of the genes in the permutations are smaller or equal to the observed rank product. p - number of permutations
 	# pfp - percentage of false positives. erp(g)/rank(g) where rank(g) is the rank of gene g in a list of all n genes sorted by increasing RP
 	erps <- matrix(nrow=length(ranks_out),ncol=2)
