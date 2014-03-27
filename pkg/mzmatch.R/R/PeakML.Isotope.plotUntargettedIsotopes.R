@@ -1,4 +1,4 @@
-PeakML.Isotope.plotUntargettedIsotopes <- function (peakMLFile, molFrame, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow, sampleType, sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, fillGaps, massCorrection, useArea, filterStringency, baseCorrection, label){
+PeakML.Isotope.plotUntargettedIsotopes <- function (peakMLFile, molFrame, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow, sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, fillGaps, massCorrection, useArea, filterStringency, baseCorrection, label, exclude_from_plots){
 
 	addMasses<- function(molFrame){
 
@@ -31,26 +31,28 @@ PeakML.Isotope.plotUntargettedIsotopes <- function (peakMLFile, molFrame, outDir
 	} else {
 		sampleType = "NONE"
 	}
-	
+
 	element <- substr(label,1,1)
-	
+
 	for (i in 1:nrow(molFrame)){
 		metName <- as.character(molFrame$name[i])
 		metFormula <- strsplit(as.character(molFrame$formula[i]), ",")[[1]][1]   #as.character(molFrame$formula[i])
-		
-		#numElements <- PeakML.Methods.getCarbon(metFormula)
 		numElements <- PeakML.Methods.getElements(metFormula, element)
-		
 		metMass <- as.numeric(molFrame$mass[i])
-#		massWindow <- PeakML.Methods.getPPMWindow(metMass, ppm)
 		stdRT <- as.numeric(molFrame$rt[i]) * 60
 		if(is.na(stdRT)) stdRT <- NULL
-		
-		
-		if (is.na(molFrame$follow[i])){
+
+
+		if (is.null(molFrame$follow[i])){
 			followCarbon <-  numElements + 1
 		}else{
 			followCarbon <- as.numeric(molFrame$follow[i])+1
+		}
+
+		if (is.na(molFrame$follow[i])) followCarbon <- 1
+
+		if ('include' %in% colnames(molFrame)){
+			if(as.character(molFrame$include[i]) == "") next()
 		}
 
 		cat(metName, ":\n")
@@ -62,31 +64,30 @@ PeakML.Isotope.plotUntargettedIsotopes <- function (peakMLFile, molFrame, outDir
 
 		cat ("\tIdentifying isotopes: ")
 		# get the UID of isotops
-		
-		#baseCorrection deprecated for untargeted analysis
 		isotopeList <- PeakML.Isotope.getIsotopes (peakDataMtx, mzXMLSrc, sampleNames, label, numElements, metMass, ppm, massCorrection, baseCorrection, stdRT, stdRTWindow, fillGaps)
-		
+
 		if(!is.null(filterStringency)){
 			# This is where to include the isotop level filter.
 			isotopeList <- PeakML.Isotope.filteroutUnlabelled(isotopeList, numElements, fillGaps, sampleNames, stringency=30)
 		}
-		
+                metComment <- "NULL"
+
 		if (!is.null(unlist(isotopeList))){
 			cat ("\n\tGenerating the plots. \n")
 			isotopeChroms <- PeakML.Isotope.getChromData (isotopeList, chromDataList, phenoData, sampleGroups)
-			PeakML.Isotope.plotSamples(isotopeChroms, metName, metFormula, metMass, stdRT, sampleType, sampleGroups, plotOrder, useArea, followCarbon, label)
-			
+			PeakML.Isotope.plotSamples(isotopeChroms, metName, metFormula, metMass, metComment, stdRT, sampleType, sampleGroups, plotOrder, useArea, followCarbon, label, exclude_from_plots)
+
 			ratioMtxList <- PeakML.Isotope.getRatioMtxList(isotopeChroms[[2]], sampleGroups, useArea, metName)
-			
+
 			molAbunList[[metName]] <- ratioMtxList
-			
+
 			cat("Metabolite: ", toupper(metName), "\t Formula: ", metFormula, "\tMass: ", metMass, "\n", file=csvFile, append=TRUE)
 			cat("-----------------------------------------------------------------------------\n", file=csvFile, append=TRUE)
-			for (pkgrp in 1:length(ratioMtxList)){ 
+			for (pkgrp in 1:length(ratioMtxList)){
 				cat("Group: ", pkgrp, "\n", file=csvFile, append = TRUE)
 				sNames <- paste(sampleNames, collapse="\t")
 				cat(paste(metName, metFormula, "\t", sNames , "\n"), file=csvFile, append=TRUE)
-				write.table(ratioMtxList[[pkgrp]] , sep="\t", na= " ", file=csvFile, quote=FALSE, col.names=FALSE, append=TRUE) 
+				write.table(ratioMtxList[[pkgrp]] , sep="\t", na= " ", file=csvFile, quote=FALSE, col.names=FALSE, append=TRUE)
 				cat("\n", file=csvFile, append=TRUE)
 			}
 			cat("\n")

@@ -1,19 +1,18 @@
 PeakML.Isotope.getIsotopes <- function(peakDataMtx, mzXMLSrc, sampleNames, label, numElements, metMass, ppm, massCorrection, baseCorrection, stdRT=NULL, stdRTWindow=NULL, fillGaps="ALLPEAKS"){
 	#
 	# Returns a list that has all isotopes of the given mass in the form isotope[[peak_group]][[isotope]][[sample]] <- peak id from peak data matrix
-	# PRE: 
+	# PRE:
 	#	peakDataMtx <- the original peakDataMtx
 	# 	metData <- metName, metFormula, numElements, metMass, ppm, massWindow, stdRT, stdRTWindow, sampleType
-	# POST: 
+	# POST:
 	#	returns a list all isotops like for each gid all isotops
 
 	massWindow <- PeakML.Methods.getPPMWindow(metMass, ppm)
 	element <- substr(label,1,1)
 
-	#stdRTWin <- NULL
 	massFilterHits <- c()
 	finalList<-NULL
-	
+
 	# get the mass filter hits from the peakML data within the range of the mass specified
 	if (is.null(stdRTWindow)){
 		massFilterHits <- which(peakDataMtx[,1]>=massWindow[[1]] & peakDataMtx[,1]<=massWindow[[2]])
@@ -31,10 +30,9 @@ PeakML.Isotope.getIsotopes <- function(peakDataMtx, mzXMLSrc, sampleNames, label
 		stdRTWindow <- NULL
 		massFilterHits <- which(peakDataMtx[,1]>=massWindow[[1]] & peakDataMtx[,1]<=massWindow[[2]])
 	}
-	
+
 	pdMtxMassFiltered <- rbind(peakDataMtx[massFilterHits,])
-	
-	
+
 	uniqueGroups <- unique(pdMtxMassFiltered[,10]) 		# to arrage the final list in the form of groups -> samples -> peakdata
 
 	massFilterHits <- which(peakDataMtx[,10]%in%uniqueGroups)
@@ -42,18 +40,18 @@ PeakML.Isotope.getIsotopes <- function(peakDataMtx, mzXMLSrc, sampleNames, label
 	pdMtxMassFiltered <- rbind(pdMtxMassFiltered, NULL)
 	pdMtxMassFiltered <- cbind(pdMtxMassFiltered, massFilterHits) # append the original massFilterHits to keep track of the id
 	colnames(pdMtxMassFiltered)[12] <- "" # remove the colname from the matrix to keep it all similar
-	
+
 	if (is.null(stdRTWindow)){
 		if (length(uniqueGroups)==0){
 			return (NULL)
 		} else {
-			finalList <- vector("list",length(uniqueGroups))	# create a list that has the length of the uniqueGroups	
+			finalList <- vector("list",length(uniqueGroups))	# create a list that has the length of the uniqueGroups
 		}
 	} else {
 		if (length(uniqueGroups)==0){
 			finalList <- vector("list",1)
 		} else {
-			finalList <- vector("list",length(uniqueGroups))	# create a list that has the length of the uniqueGroups	
+			finalList <- vector("list",length(uniqueGroups))	# create a list that has the length of the uniqueGroups
 		}
 	}
 
@@ -67,9 +65,9 @@ PeakML.Isotope.getIsotopes <- function(peakDataMtx, mzXMLSrc, sampleNames, label
 
 	for (gid in 1:length(finalList)){
 		cat(".\n")
-		
+
 		possibleSamples <- unique(peakDataMtx[,9])
-		
+
 		pdMtxMassFilteredGroup <- NULL
 		selGroup <- which(pdMtxMassFiltered[,10]==uniqueGroups[gid])	# select all hits in the same group
 		pdMtxMassFilteredGroup <- rbind(pdMtxMassFilteredGroup, pdMtxMassFiltered[selGroup,]) # This matrix now contains the unlabelled peakset
@@ -113,10 +111,10 @@ PeakML.Isotope.getIsotopes <- function(peakDataMtx, mzXMLSrc, sampleNames, label
 		finalList[[gid]][[1]] <- unlabledList # stores peakid of unlabelled, in each selected group sample
 
 
-                
+
 		# STORING THE LABELLED
 		for (nIsotope in 1:(length(elementsList)-1)){
-		
+
 			massWindow <- PeakML.Isotope.getMassWindow(massAve, nIsotope, ppm, element)		# Window of isotope masses
 
 			filterHits <- c()
@@ -129,7 +127,7 @@ PeakML.Isotope.getIsotopes <- function(peakDataMtx, mzXMLSrc, sampleNames, label
 			if (length(filterHits)==0){
 				filterHits <- PeakML.Isotope.filterPeaks(peakDataMtx, rtWindow, massWindow)
 			}
-			
+
 			if (fillGaps=="NONE"){
 				if (length(filterHits) != 0) {
 					for (fh in 1:length(filterHits)){
@@ -163,10 +161,27 @@ PeakML.Isotope.getIsotopes <- function(peakDataMtx, mzXMLSrc, sampleNames, label
                                           if (baseCorrection==TRUE & !is.null(stdRTWindow)){
                                             gapFillHits[2,] <- PeakML.Methods.baseCorrection (gapFillHits[2,])
                                           }
-                                          finalList[[gid]][[nIsotope+1]][[es]] <- list("gapfilled", gapFillHits) 
+                                          finalList[[gid]][[nIsotope+1]][[es]] <- list("gapfilled", gapFillHits)
 					}
 				}
 			}
+		}
+
+                if (fillGaps=="ALLPEAKS" & !is.null(stdRTWindow)){
+			#if (is.infinite(max(unlist(unlabledList)))){
+				massWindow <- PeakML.Methods.getPPMWindow(massAve, ppm)
+				for (es in possibleSamples){
+					sampleName <- sampleNames[es]
+					gapFillHits <- PeakML.Methods.getRawSignals(mzXMLSrc, sampleName, rtWindow, massWindow, massCorrection)
+					if (max(gapFillHits[2,] != -1)){
+						if (baseCorrection == TRUE){
+							gapFillHits[2,] <- PeakML.Methods.baseCorrection (gapFillHits[2,])
+						}
+						unlabledList[[es]] <- list("gapfilled", gapFillHits)
+					}
+				}
+				finalList[[gid]][[1]] <- unlabledList
+			#}
 		}
 	}
 	finalList

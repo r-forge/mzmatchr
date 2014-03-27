@@ -6,7 +6,7 @@
 	Plot isotopes of all identified compounds in the PeakML file.
 }
 \usage{
-	PeakML.Isotope.UntargettedIsotopes(baseDir, outFileName, mzXMLSrc=NULL, outDirectory = "untargettedIsotops", peakMLFile="final_combined_related_identified.peakml", analyse = "databases", databases = c("kegg"), sampleGroups = NULL, layoutMtx = NULL, ppm = 3, trendPlots = NULL, fillGaps = "ALLPEAKS", useArea = FALSE, stdRTWindow = NULL, filterStringency=30, baseCorrection=FALSE, numSlaves=1, label=1)
+	PeakML.Isotope.UntargettedIsotopes(baseDir, outFileName, mzXMLSrc=NULL, outDirectory = "untargettedIsotops", peakMLFile="final_combined_related_identified.peakml", analyse = "databases", databases = c("kegg"), sampleGroups = NULL, layoutMtx = NULL, ppm = 3, trendPlots = NULL, fillGaps = "ALLPEAKS", useArea = FALSE, stdRTWindow = NULL, filterStringency=30, baseCorrection=FALSE, numSlaves=1, label=1, exclude_from_plots = NULL)
 }
 
 \arguments{
@@ -64,6 +64,9 @@
 	\item{label}{
 		This is the label to be identified. 1 = C13; 2= N15. More will be added as and when implemented.
 	}
+	\item{exclude_from_plots}{
+                Exclude sample groups in this list from the plots. Can be used for removing blanks and standards from the result plots.
+        }
 }
 
 

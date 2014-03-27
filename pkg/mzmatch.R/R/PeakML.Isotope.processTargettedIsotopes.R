@@ -1,21 +1,23 @@
-PeakML.Isotope.processTargettedIsotopes <- function (molFormulaFile, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow,
-	sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, 
-	fillGaps, massCorrection, useArea, baseCorrection, label, exclude_from_plots){
+PeakML.Isotope.processTargettedIsotopes <- function (molFormulaFile, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow, sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, fillGaps, massCorrection, useArea, baseCorrection, label, exclude_from_plots){
 
 	readTargetsFromFile<- function(inputFile){
-		# PRE: 
+		# PRE:
 		#	inputFile: a tab separated csv file that conforms to RCreateXMLDB format e.i. "id", "name", "formula" as column headings
 		# POST:
 		#	Contents of the input file as a dataFrame that has masses added in column "mass"
-	
 		# Load the java project where the java class is located with dummy parameters
 
 		molFrame <- read.table(inputFile, sep="\t", header=TRUE) # read the file as a data frame
 		molMasses <- NULL
 		for (imol in 1:length(molFrame$formula)){
-			molMasses <- c (molMasses, PeakML.Methods.formula2mass(as.character(molFrame$formula)[imol]))
+                    mass <- try(PeakML.Methods.formula2mass(as.character(molFrame$formula)[imol]), silent=TRUE)
+                    if(is.numeric(mass)){
+                        molMasses <- c(molMasses, mass)
+                    }else{
+                        molMasses <- c(molMasses, NA)
+                    }
 		}
-		molFrame$mass <- molMasses
+		if(is.null(molFrame$mass)) molFrame$mass <- molMasses
 		molFrame
 	}
 
@@ -40,17 +42,36 @@ PeakML.Isotope.processTargettedIsotopes <- function (molFormulaFile, outDirector
 	} else {
 		sampleType = "NONE"
 	}
-	
+
 	element <- substr(label,1,1)
 
 	for (i in 1:nrow(molFrame)){
+
 		metName <- as.character(molFrame$name[i])
+                cat(metName, ":\n")
+
 		metFormula <- as.character(molFrame$formula[i])
 		numElements <- PeakML.Methods.getElements(metFormula, element)
 		metMass <- as.numeric(molFrame$mass[i])
-		stdRT <- as.numeric(molFrame$rt[i]) * 60
-		if(is.na(stdRT)) stdRT <- NULL
-		
+                if(is.na(metMass)){
+                    cat("\tThe metabolite ", metName, " with formula (", metFormula,"), does not exist, skipping. \n")
+                    next()
+                }
+                metComment <- as.character(molFrame$comment[i])
+
+                readRT <- as.character(molFrame$rt[i])
+                if(!is.na(readRT)){
+                    lb <- as.numeric(strsplit(readRT, "-")[[1]][1])
+                    ub <- as.numeric(strsplit(readRT, "-")[[1]][2])
+                    readRT <- PeakML.Methods.getRTWindowFromString(lb, ub)
+
+                    stdRT <- readRT[[1]] * 60
+                    stdRTWindow <- readRT[[2]] * 60
+                } else {
+                    stdRT <- NULL
+                }
+
+
 		if (is.null(molFrame$follow[i])){
 			followCarbon <-  numElements + 1
 		}else{
@@ -62,8 +83,7 @@ PeakML.Isotope.processTargettedIsotopes <- function (molFormulaFile, outDirector
 		if ('include' %in% colnames(molFrame)){
 			if(as.character(molFrame$include[i]) == "") next()
 		}
-		
-		cat(metName, ":\n")
+
 		if (numElements==0){
 			cat("\tThe metabolite ", metName, " does not contain the preferred element (", element,"), hence skipping. \n")
 			next()
@@ -73,29 +93,29 @@ PeakML.Isotope.processTargettedIsotopes <- function (molFormulaFile, outDirector
 		cat ("\tIdentifying isotopes: ")
 		# get the UID of isotops
 		isotopeList <- PeakML.Isotope.getIsotopes (peakDataMtx, mzXMLSrc, sampleNames, label, numElements, metMass, ppm, massCorrection, baseCorrection, stdRT, stdRTWindow, fillGaps)
-		
+
 		if (!is.null(unlist(isotopeList))){
 			cat ("\n\tGenerating the plots. \n")
 			isotopeChroms <- PeakML.Isotope.getChromData (isotopeList, chromDataList, phenoData, sampleGroups)
-			PeakML.Isotope.plotSamples(isotopeChroms, metName, metFormula, metMass, stdRT, sampleType, sampleGroups, plotOrder, useArea, followCarbon, label, exclude_from_plots)
-			
+			PeakML.Isotope.plotSamples(isotopeChroms, metName, metFormula, metMass, metComment, stdRT, sampleType, sampleGroups, plotOrder, useArea, followCarbon, label, exclude_from_plots)
+
 			ratioMtxList <- PeakML.Isotope.getRatioMtxList(isotopeChroms[[2]], sampleGroups, useArea, metName)
-			
+
 			molAbunList[[metName]] <- ratioMtxList
-			
+
 			cat("Metabolite: ", toupper(metName), "\t Formula: ", metFormula, "\tMass: ", metMass, "\n", file=csvFile, append=TRUE)
 			cat("-----------------------------------------------------------------------------\n", file=csvFile, append=TRUE)
-			for (pkgrp in 1:length(ratioMtxList)){ 
+			for (pkgrp in 1:length(ratioMtxList)){
 				cat("Group: ", pkgrp, "\n", file=csvFile, append = TRUE)
 				sNames <- paste(sampleNames, collapse="\t")
 				cat(paste(metName, metFormula, "\t", sNames , "\n"), file=csvFile, append=TRUE)
-				write.table(ratioMtxList[[pkgrp]] , sep="\t", na= " ", file=csvFile, quote=FALSE, col.names=FALSE, append=TRUE) 
+				write.table(ratioMtxList[[pkgrp]] , sep="\t", na= " ", file=csvFile, quote=FALSE, col.names=FALSE, append=TRUE)
 				cat("\n", file=csvFile, append=TRUE)
 			}
 			cat("\n")
 
 		} else{
-			cat("\tNo peaks found with mass:", metMass ," and its isotopes\n")
+			cat("\tNo peaks found with mass:", metFormula, " (" , metMass ,") and its isotopes\n")
 		}
 	}
 	save("molAbunList", file="abunList.Rdata")
