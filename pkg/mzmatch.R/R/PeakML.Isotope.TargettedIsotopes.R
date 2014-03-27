@@ -1,18 +1,21 @@
-PeakML.Isotope.TargettedIsotopes <- function(baseDir, 
-	molFormulaFile, outFileName, 
-	mzXMLSrc=NULL, 
-	outDirectory = "targettedIsotops",  
-	peakMLFile="final_combined_related_identified.peakml", 
-	sampleGroups = NULL, 
-	layoutMtx = NULL, 
-	ppm = 3, 
-	trendPlots = NULL, 
-	fillGaps = "ALLPEAKS", 
-	useArea = FALSE, 
-	stdRTWindow = NULL, 
-	baseCorrection=TRUE, 
+PeakML.Isotope.TargettedIsotopes <- function(
+        baseDir,
+	molFormulaFile,
+        outFileName,
+	mzXMLSrc=NULL,
+	outDirectory = "targettedIsotops",
+	peakMLFile="final_combined_related_identified.peakml",
+	sampleGroups = NULL,
+	layoutMtx = NULL,
+	ppm = 3,
+	trendPlots = NULL,
+	fillGaps = "ALLPEAKS",
+	useArea = FALSE,
+	stdRTWindow = NULL,
+	baseCorrection=TRUE,
 	label=1,
-    exclude_from_plots=NULL){
+        exclude_from_plots=NULL
+    ){
 	# PRE:
 	#	peakMLFiles: the complete peakml dataset
 	#	molFormulaFile: file containing the list of molecules whoes isotops has to be found out
@@ -27,28 +30,28 @@ PeakML.Isotope.TargettedIsotopes <- function(baseDir,
 	#	vector containing the list of isotops
 	## Reads the peakml file & prepare the parameters to scan for isotops
 	## --------------------------------------------------------------------
-	
-	labels <-  c("C13", "N15")
+
+	labels <-  c("C13", "N15", "S34")
 	if (label <= length(labels)){
 		label <- labels[label]
 	} else {
 		stop ("Please specify the correct isotope used for labelling")
 	}
-	
+
 	cat("Indentifying isotopes in sample\n")
 	setwd (baseDir)
-	
+
 	if (is.null(mzXMLSrc)){
 		stop ("Please provide the location of the raw data (mzXML) files ")
 	}
-	
+
 	if (file.exists("cpData.Rdata") == TRUE){
 		load("cpData.Rdata")
 	} else{
 		chromPeakData <- PeakML.Read(peakMLFile, ionisation = "neutral", mzXMLSrc)
 		save("chromPeakData", file="cpData.Rdata")
 	}
-	
+
 	peakDataMtx <- chromPeakData$peakDataMtx
 	chromDataList <- chromPeakData$chromDataList
 	sampleClasses <- chromPeakData$sampleClasses
@@ -60,7 +63,7 @@ PeakML.Isotope.TargettedIsotopes <- function(baseDir,
 	if (is.null(sampleGroups)) sampleGroups <- unique(phenoData)		# To enable the user to change the order of the samples
 
 	if (is.null(trendPlots)) trendPlots <- c("RATIO","TREND", "LABELLED", "TOTRATIO")
-	
+
 	if (length(sampleGroups)>22) {
 		if (is.null(layoutMtx)){
 			stop("You have more than 22 samples to plot. Please specify an appropriate layout matrix.\n")
@@ -78,10 +81,9 @@ PeakML.Isotope.TargettedIsotopes <- function(baseDir,
 		} else if (numSG > 14 & numSG <=21){
 			if (is.null(layoutMtx)) layoutMtx <- matrix(c(1,1,1,1,1,1,2, 3,4,5,6,7,8,9, 10,11,12,13,14,15,16, 17,18,19,20,21,22,23, 24,25,25,26,26,27,27),5,7, byrow=TRUE)
 			plotOrder <- c(sampleGroups, rep("EMPTY", 21-numSG), trendPlots)
-		} 
-
+		}
 	}
-        
+
         exclude <- NULL
         if (!is.null(exclude_from_plots)) {
             exclude <- which(sampleGroups %in% exclude_from_plots)
@@ -89,8 +91,7 @@ PeakML.Isotope.TargettedIsotopes <- function(baseDir,
                 stop("The sample group you wanted to exlude from the final output does not exist in the sample groups")
             }
         }
-        
-    
-	PeakML.Isotope.processTargettedIsotopes(molFormulaFile, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow, sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, fillGaps, massCorrection, useArea, baseCorrection, label,exclude_from_plots)
+
+	PeakML.Isotope.processTargettedIsotopes(molFormulaFile, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow, sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, fillGaps, massCorrection, useArea, baseCorrection, label, exclude_from_plots)
 
 }

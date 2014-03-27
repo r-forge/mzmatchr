@@ -6,8 +6,8 @@
 	Determines the type of analysis that has to be used to perform the untargetted isotope quantification and parallalizes the process.
 }
 \usage{
-	PeakML.Isotope.processUntargettedIsotopes(peakMLFile, analyse, databases, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow, sampleType,
-	sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, fillGaps, massCorrection, useArea, filterStringency, baseCorrection, numSlaves, label)
+	PeakML.Isotope.processUntargettedIsotopes(peakMLFile, analyse, databases, outDirectory, outFileName, layoutMtx, ppm, stdRTWindow,
+	sampleNames, peakDataMtx, chromDataList, phenoData, sampleGroups, plotOrder, mzXMLSrc, fillGaps, massCorrection, useArea, filterStringency, baseCorrection, numSlaves, label, exclude_from_plots)
 }
 
 \arguments{
@@ -34,9 +34,6 @@
 	}
 	\item{stdRTWindow}{
 		The standard retention time  window. Leave it to NULL if no standard retention time is available for the compound.
-	}
-	\item{sampleType}{
-		The sample type, eg., negative ionisation.
 	}
 	\item{sampleNames}{
 		The names of samples.
@@ -80,6 +77,10 @@
 	\item{label}{
 		This is the label to be identified. 1 = C13; 2= N15. More will be added as and when implemented.
 	}
+	\item{exclude_from_plots}{
+                Exclude sample groups in this list from the plots. Can be used for removing blanks and standards from the result plots.
+        }
+
 }
 
 

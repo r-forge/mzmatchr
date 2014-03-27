@@ -6,7 +6,7 @@ PeakML.Isotope.ReadDB <- function (dbNames){
 #	"""
 	
 	DB <- NULL
-	dbases <- dir(paste(find.package("mzmatch.R"),"/dbs",sep=""), full.names=TRUE) # mzmatch databases
+	dbases <- dir(paste(.find.package("mzmatch.R"),"/dbs",sep=""), full.names=TRUE) # mzmatch databases
 	
 	for (db in 1:length(dbases)){
 		dbname <- strsplit(tail(strsplit(dbases[[db]], "/")[[1]], n=1), ".xml")[[1]][[1]]

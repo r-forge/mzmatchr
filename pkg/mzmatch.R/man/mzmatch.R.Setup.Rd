@@ -7,7 +7,7 @@
 }
 \usage{
   mzmatch.R.Setup (projectFolder=NULL, samplelist=NULL, outputfolder="peakml", sampleClassFromFolderNames = FALSE,
-                 extractMeasurentDate = TRUE)
+                 extractMeasurentDate = FALSE)
 }
 \arguments{
 \item{projectFolder}{
