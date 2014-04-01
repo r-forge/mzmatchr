@@ -1,7 +1,7 @@
 Package: mzmatch.R
 Type: Package
 Title: mzmatch and PeakML integration for XCMS.
-Version: 2.0-9
+Version: 2.0-10
 Date: 2014-01-08
 Author: Richard Scheltema <r.a.scheltema@rug.nl>, Andris Jankevics <a.jankevics@rug.nl>, Achuthanuni Chokkathukalam (unni.chokkathukalam@glasgow.ac.uk).
 Maintainer: Andris Jankevics <andris.jankevics@manchester.ac.uk>

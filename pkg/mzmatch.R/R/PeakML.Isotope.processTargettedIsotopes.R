@@ -61,12 +61,16 @@ PeakML.Isotope.processTargettedIsotopes <- function (molFormulaFile, outDirector
 
                 readRT <- as.character(molFrame$rt[i])
                 if(!is.na(readRT)){
-                    lb <- as.numeric(strsplit(readRT, "-")[[1]][1])
-                    ub <- as.numeric(strsplit(readRT, "-")[[1]][2])
-                    readRT <- PeakML.Methods.getRTWindowFromString(lb, ub)
+			if(length(strsplit(readRT, "-")[[1]])>1){
+                	    lb <- as.numeric(strsplit(readRT, "-")[[1]][1])
+                	    ub <- as.numeric(strsplit(readRT, "-")[[1]][2])
+                    	    readRT <- PeakML.Methods.getRTWindowFromString(lb, ub)
 
-                    stdRT <- readRT[[1]] * 60
-                    stdRTWindow <- readRT[[2]] * 60
+                    	    stdRT <- readRT[[1]] * 60
+                            stdRTWindow <- readRT[[2]] * 60
+			}else{
+			    stdRT <- as.numeric(readRT) * 60
+			}
                 } else {
                     stdRT <- NULL
                 }
