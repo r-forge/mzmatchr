@@ -1,24 +1,38 @@
-PeakML.Methods.getRawMat <- function (rawfile,scan_start,scan_finis, mz_start, mz_finis,correctedRT,uncorrectedRT)
+unsafeFindInterval <- function (x, vec, rightmost.closed = FALSE, all.inside = FALSE) 
 {
-	Rawpeaks <- peaks(rawfile,scans=c(scan_start:scan_finis))
-	rawRT <- uncorrectedRT[scan_start:scan_finis]
-	cRT <- correctedRT[scan_start:scan_finis]
-	scans <- scan_start:scan_finis
+    nx <- as.integer(length(x))
+    nv <- as.integer(length(vec))
+    index <- integer(nx)
+    .C("find_interv_vec", xt = vec, n = nv, x = as.double(x), 
+        nx = nx, as.logical(rightmost.closed), as.logical(all.inside), 
+        index, DUP = FALSE, NAOK = TRUE, PACKAGE = "base")
+    index
+}
+
+PeakML.Methods.getRawMat <- function (allRawPeaks, scan_start,scan_finis, mz_start, mz_finis,correctedRT,uncorrectedRT)
+{
+    scans <- scan_start:scan_finis
+    Rawpeaks <- allRawPeaks[scans]
+	rawRT <- uncorrectedRT[scans]
+	cRT <- correctedRT[scans]
 
 	peakExtract <- function (ind)
 	{
 		MZpeakset <- Rawpeaks[[ind]]
-		hit <- which(MZpeakset[,1] >= mz_start & MZpeakset[,1] <= mz_finis)
-		# if more than one peak match the criteria, mass for highest intense peak is used as output.
-		if (length(hit)>0)
-		{
-			dout <- MZpeakset[hit,]
+        massData = MZpeakset[,1]
+        idxes = unsafeFindInterval(c(mz_start, mz_finis), massData)
+        low = idxes[1] + (idxes[1] == 0 || mz_start != massData[idxes[1]])
+        high = idxes[2]
+        hit = low:high
+
+        if (high - low < 0) {
+            out <- NULL
+        } else {
+            dout <- MZpeakset[hit,]
 			dout <- rbind(dout,NULL)
-			out <- c(rawRT[ind],cRT[ind],scans[ind],mean(dout[which(dout[,2]==max(dout[,2]))[1],1]),max(dout[,2]))
-		} else
-		{
-			out <- NULL
-		}
+            maxIntens = which.max(dout[,2])
+            out <- c(rawRT[ind],cRT[ind],scans[ind],dout[maxIntens,1],dout[maxIntens,2])
+        }
 		out
 	}
 

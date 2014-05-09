@@ -104,7 +104,7 @@ PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfil
 		######
 		#  Extract data form raw data files
 		######
-		C <- try(PeakML.Methods.getRawMat (rawfile,scan_start, scan_finis, mz_start, mz_finis,correctedRT,uncorrectedRT))
+		C <- try(PeakML.Methods.getRawMat (allRawPeaks, scan_start, scan_finis, mz_start, mz_finis,correctedRT,uncorrectedRT))
 		if (class(C)=="try-error")
 		{
 			C <- c(1,1,1,1,1)
@@ -154,9 +154,10 @@ PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfil
 
 	for (setnum in 1:max(PeakMLdata$peakDataMtx[,10])){
 		inset <- c(1:length(samplenames))
-		rownums <- which(PeakMLdata$peakDataMtx[,10]==setnum,9)
-		hit <- PeakMLdata$peakDataMtx[PeakMLdata$peakDataMtx[,10]==setnum,9]
-		numchromsexpected[which(numchromsexpected[,1]==setnum),2] <- as.numeric(inset%in%hit)
+		rownums <- which(PeakMLdata$peakDataMtx[,10]==setnum)
+        hit <- PeakMLdata$peakDataMtx[rownums,9]
+        oneEqualsSetnum = which(numchromsexpected[,1]==setnum)
+		numchromsexpected[oneEqualsSetnum,2] <- as.numeric(inset%in%hit)
 		missed <- which(inset%in%hit==FALSE)
 		if (length(missed)>0)
 		{
@@ -167,9 +168,9 @@ PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfil
 		{
 			detectedpeaks <- rep(1,length(hit))
 		}
-		numchromsexpected[which(numchromsexpected[,1]==setnum),3] <- hit
-		numchromsexpected[which(numchromsexpected[,1]==setnum),2] <- detectedpeaks
-		numchromsexpected[which(numchromsexpected[,1]==setnum),4] <- rownums
+		numchromsexpected[oneEqualsSetnum,3] <- hit
+		numchromsexpected[oneEqualsSetnum,2] <- detectedpeaks
+		numchromsexpected[oneEqualsSetnum,4] <- rownums
 	}
 	colnames(numchromsexpected) <- NULL
 
@@ -206,7 +207,9 @@ PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfil
 
 			# Retention times vector is used to detect scan numbers
 			# rawfile <- xcmsRaw(rawdatafullpaths[samplefile])
+            cat('Working on file: ', rawdatafullpaths[samplefile], '\n')
 			rawfile <- openMSfile (rawdatafullpaths[samplefile],verbose=FALSE)
+            allRawPeaks <- peaks(rawfile)
 			correctedRT <- as.numeric(PeakMLdata$correctedRTList[[samplefile]])
 			uncorrectedRT <- header(rawfile)$retentionTime
 			if (all(correctedRT==uncorrectedRT))
