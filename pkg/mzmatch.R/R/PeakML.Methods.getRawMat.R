@@ -1,4 +1,4 @@
-unsafeFindInterval <- function (x, vec, rightmost.closed = FALSE, all.inside = FALSE) 
+unsafeFindInterval2 <- function (x, vec, rightmost.closed = FALSE, all.inside = FALSE) 
 {
     nx <- as.integer(length(x))
     nv <- as.integer(length(vec))
@@ -7,6 +7,10 @@ unsafeFindInterval <- function (x, vec, rightmost.closed = FALSE, all.inside = F
         nx = nx, as.logical(rightmost.closed), as.logical(all.inside), 
         index, DUP = FALSE, NAOK = TRUE, PACKAGE = "base")
     index
+}
+
+unsafeFindInterval3 <- function (x, vec, rightmost.closed = FALSE, all.inside = FALSE) {
+    .Internal(findInterval(vec, x, rightmost.closed, all.inside))
 }
 
 PeakML.Methods.getRawMat <- function (allRawPeaks, scan_start,scan_finis, mz_start, mz_finis,correctedRT,uncorrectedRT)
@@ -20,7 +24,11 @@ PeakML.Methods.getRawMat <- function (allRawPeaks, scan_start,scan_finis, mz_sta
 	{
 		MZpeakset <- Rawpeaks[[ind]]
         massData = MZpeakset[,1]
-        idxes = unsafeFindInterval(c(mz_start, mz_finis), massData)
+        if ( version$major == '2' ) {
+            idxes = unsafeFindInterval2(c(mz_start, mz_finis), massData)
+        } else {
+            idxes = unsafeFindInterval3(c(mz_start, mz_finis), massData)
+        }
         low = idxes[1] + (idxes[1] == 0 || mz_start != massData[idxes[1]])
         high = idxes[2]
         hit = low:high
