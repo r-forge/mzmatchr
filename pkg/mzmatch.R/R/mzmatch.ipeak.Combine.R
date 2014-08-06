@@ -42,7 +42,7 @@ mzmatch.ipeak.Combine <- function(JHeapSize=1425,i=NULL, o=NULL, label=NULL, lab
 		system(tool)
 	} else
 	{
-		MainClasses <- levels(sampleList$sampleClass)
+		MainClasses <- levels(as.factor(sampleList$sampleClass))
 		if (!file.exists(outputfolder))
 		{
 			dir.create (outputfolder)

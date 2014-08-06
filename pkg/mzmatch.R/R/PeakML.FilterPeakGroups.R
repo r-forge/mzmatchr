@@ -17,7 +17,7 @@ PeakML.FilterPeakGroups <- function (filename, ionisation="detect", Rawpath=NULL
 	{
 		if(!is.na(Masses[mm]))
 		{
-			massWindow <- PeakML.Methods.getPPMWindow(Masses[mm],5)
+			massWindow <- PeakML.Methods.getPPMWindow(Masses[mm],ppm)
 			HITS <- which(Masses >= massWindow [[1]] & Masses<=massWindow[[2]])
 			if (length(HITS)>1)
 			{
@@ -33,7 +33,7 @@ PeakML.FilterPeakGroups <- function (filename, ionisation="detect", Rawpath=NULL
 					for (setn in 1:length(setsToCheck))
 					{
 						#cat (setn,"\n")
-						## number of sampes in peak set
+						## number of samples in peak set
 						nsamples[setn] <- nrow(rbind(PeakMLdata$peakDataMtx[PeakMLdata$peakDataMtx[,10]==setsToCheck[setn],],NULL))
 						## max signal intensity
 						maxint[setn] <- max(PeakMLdata$peakDataMtx[PeakMLdata$peakDataMtx[,10]==setsToCheck[setn],8])
@@ -43,12 +43,13 @@ PeakML.FilterPeakGroups <- function (filename, ionisation="detect", Rawpath=NULL
 					setsToKeep <- which(nsamples==max(nsamples))
 					if (length(setsToKeep)>1)
 					{
-						setsToKeep <- which(nsamples==max(nsamples) & rtwith==max(rtwith))
+						setsToKeep <- which(nsamples==max(nsamples) & maxint==max(maxint))
 					}
 					if (length(setsToKeep)>1)
 					{
-						setsToKeep <- which(nsamples==max(nsamples) & rtwith==max(rtwith) & maxint==max(maxint))[1]
+						setsToKeep <- which(nsamples==max(nsamples) & rtwith==max(rtwith) & rtwith==max(rtwith))
 					}
+					
 					validSetIndex[setsToCheck[-c(setsToKeep)]] <- 0
 				}
 			}
