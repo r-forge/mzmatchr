@@ -1,17 +1,17 @@
 PeakML.Plot.RankProducts <- function (pdffile, PeakMLtree, RankProducts, identifications, sortby="Class1")
 {
 	pdf (pdffile)
-	if (is.null(ncol(RankProducts$ranks)))
+	if (is.null(ncol(RankProducts$RPs)))
 	{
-		ranks <- RankProducts$ranks
+		ranks <- RankProducts$RPs
 	} else
 	{
 		if (sortby=="Class1")
 		{
-			ranks <- RankProducts$ranks[,1]
+			ranks <- RankProducts$RPs[,1]
 		} else
 		{
-			ranks <- RankProducts$ranks[,2]
+			ranks <- RankProducts$RPs[,2]
 		}
 	}
 
