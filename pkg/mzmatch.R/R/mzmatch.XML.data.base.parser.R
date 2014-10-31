@@ -1,6 +1,5 @@
 mzmatch.XML.data.base.parser <- function (dbfile,elements=c("name","inchi","class","synonyms"))
 {
-	require (XML)
 	project <- .jnew("peakml/util/rjava/Project", rep("A",3), rep("A",3), rep("A",3))
 	DBcontent <- xmlInternalTreeParse (dbfile)
 	ids <- getNodeSet(DBcontent, "/compounds/compound/id")
