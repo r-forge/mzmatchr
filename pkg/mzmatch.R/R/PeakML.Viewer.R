@@ -1,6 +1,5 @@
 PeakML.Viewer <- function(arch="detect",install.path=NULL, JHeapSize=1024, uninstall=FALSE)
 {
-	require (XML)
 	if (is.null(install.path))
 	{
 		install.path <- paste(find.package("mzmatch.R"),"/PeakMLViewer",sep="")

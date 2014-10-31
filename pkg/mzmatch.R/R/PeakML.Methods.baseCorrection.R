@@ -1,11 +1,9 @@
 PeakML.Methods.baseCorrection <- function(signals, lambda=100){
-	# require package(ptw)
-	# Correct the baseline of noisy signals by estimating the trend based on asymmetric least squares
+	
+					# Correct the baseline of noisy signals by estimating the trend based on asymmetric least squares
 	# signals <- intensities
 	# lambda <- smoothing parameter
-  
- # require(R.utils)
-  
+ 
 	signals[which(signals==NA|signals==Inf|signals==NaN)]=0
         baseline <- evalWithTimeout({asysm(signals, lambda);}, timeout=10, onTimeout="silent");
 

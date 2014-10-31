@@ -225,11 +225,18 @@ PeakML.GapFiller <- function(filename,ionisation="detect",Rawpath=NULL,outputfil
 			
 			isSnow <- FALSE
 			if (nSlaves>1){
-				tryCatch(isSnow <- require(snow, quietly=TRUE), warning=function(e) 
-				print ("Pleae install package snow to use multiple processors. \n We will continue with a single processor for the time being."))
+				HIT <- grep("snow",installed.packages()[,1])
+				if (!is.null(HIT)) 
+				{				
+					isSnow==TRUE
+				} else
+				{
+					cat("Pleae install package snow to use multiple processors. \n We will continue with a single processor for the time being.","\\n")
+				}
+
 			}
 			if (isSnow==TRUE){
-				library (snow)
+				#library (snow)
 				if (filenum==1)
 				{
 					cat("Package snow loaded.","\n")

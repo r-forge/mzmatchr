@@ -11,5 +11,11 @@ import(
   XML,
   snow,
   caTools,
-  bitops
+  bitops,
+  tcltk,
+  gplots,
+  mzR,
+  Rcpp
 )
+importFrom(ptw, asysm)
+importFrom(R.utils, evalWithTimeout)
