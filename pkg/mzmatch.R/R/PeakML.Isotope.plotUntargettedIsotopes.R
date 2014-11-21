@@ -49,7 +49,7 @@ PeakML.Isotope.plotUntargettedIsotopes <- function (peakMLFile, molFrame, outDir
 			followCarbon <- as.numeric(molFrame$follow[i])+1
 		}
 
-		if (is.na(molFrame$follow[i])) followCarbon <- 1
+		if (!is.null(molFrame$follow[i]) && is.na(molFrame$follow[i])) followCarbon <- 1
 
 		if ('include' %in% colnames(molFrame)){
 			if(as.character(molFrame$include[i]) == "") next()
