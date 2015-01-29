@@ -35,6 +35,8 @@ PeakML.xcms.write.SingleInstance <- function(xset, outputfile, ionisation=ionisa
 	
 	# load the raw data
 	rawdata <- xcmsRaw(xset@filepaths[1])
+	#rawdata <- mzR::openMSfile (xset@filepaths[1])
+
 	# correction for ionisation mode		
 	if (ionisation=="detect") 
 	{
@@ -324,5 +326,6 @@ PeakML.xcms.write.SingleInstance <- function(xset, outputfile, ionisation=ionisa
 		.jcall(project, returnSig="V", method="write", filename2)
 	}
 	cat (length(accepted)," peaks exported.\n")
+	#mzR::close(rawdata)
 }
 
