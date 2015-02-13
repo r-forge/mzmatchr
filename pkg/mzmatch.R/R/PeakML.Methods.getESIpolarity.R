@@ -28,7 +28,7 @@ PeakML.Methods.getESIpolarity <- function(filename)
 		if (xmlFileType=="indexedmzXML" | xmlFileType=="mzXML")
 		{
 			polarityf <- unique(unlist(getNodeSet(xmlRoot(xmltree), "//x:scan/@polarity", "x")))
-			if (length(polarity)>1)
+			if (length(polarityf)>1)
 			{
 				cat ("mzXML file contains scans for more than one ESI polarity mode. Such data files are not supported. \n")
 				stop ()	
