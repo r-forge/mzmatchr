@@ -1,4 +1,4 @@
-mzmatch.ipeak.util.Identify <- function(JHeapSize=1425,i=NULL, o=NULL, ppm=NULL, databases=NULL, minrt=NULL, maxrt=NULL, rtwindow=NULL, massOverride=NULL, polarity=NULL, adducts=NULL, h=NULL, v=NULL)
+mzmatch.ipeak.util.Identify <- function(JHeapSize=1425,i=NULL, o=NULL, ppm=NULL, databases=NULL, minrt=NULL, maxrt=NULL, rtwindow=NULL, rtwindowrelative=NULL, massOverride=NULL, polarity=NULL, adducts=NULL, h=NULL, v=NULL)
 {
 	version.1 <- get("version.1",envir=.GlobalEnv)
 	## define the java runtime parameters
@@ -30,6 +30,8 @@ mzmatch.ipeak.util.Identify <- function(JHeapSize=1425,i=NULL, o=NULL, ppm=NULL,
 		tool <- paste(tool, "-maxrt", maxrt)
 	if (!is.null(rtwindow))
 		tool <- paste(tool, "-rtwindow", rtwindow)
+	if (!is.null(rtwindowrelative) && rtwindowrelative==T && !is.null(rtwindow))
+		tool <- paste(tool, "-rtwindowrelative true")
 	if (!is.null(massOverride))
 		tool <- paste(tool, "-massOverride", massOverride)
 	if (!is.null(polarity))
@@ -40,6 +42,6 @@ mzmatch.ipeak.util.Identify <- function(JHeapSize=1425,i=NULL, o=NULL, ppm=NULL,
 		tool <- paste(tool, "-h")
 	if (!is.null(v) && v==T)
 		tool <- paste(tool, "-v")
-
+	cat(tool)
 	system(tool)
 }

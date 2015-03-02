@@ -34,6 +34,9 @@ Optional maximum retention time for excluding signals from the input-file. This 
 \item{rtwindow}{
 Optional retention time window for finding matches from the databases. If this is set and the database contains entries with previously registered retention times for molecules. When this value is not set, the stored retention times are ignored.
 }
+\item{rtwindowrelative}{
+If TRUE, the rtwindow parameter does not specify an absolute time, but instead specifies a fraction of the molecule time. E.g. rtwindow=0.05 rtwindowfraction=true specifies a 5 percent window around the database retention time.
+}
 \item{massOverride}{
 Option to say whether to override the calculated formula mass with the monoisotopic mass element from the database. If this option is specified, andthe mass element is not present, then the calculated formula mass is used.
 }
