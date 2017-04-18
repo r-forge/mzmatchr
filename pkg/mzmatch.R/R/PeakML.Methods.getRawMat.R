@@ -27,7 +27,7 @@ PeakML.Methods.getRawMat <- function (allRawPeaks, scan_start,scan_finis, mz_sta
         if ( version$major == '2' ) {
             idxes = unsafeFindInterval2(c(mz_start, mz_finis), massData)
         } else {
-            idxes = unsafeFindInterval2(c(mz_start, mz_finis), massData)
+            idxes = unsafeFindInterval3(c(mz_start, mz_finis), massData)
         }
         low = idxes[1] + (idxes[1] == 0 || mz_start != massData[idxes[1]])
         high = idxes[2]
