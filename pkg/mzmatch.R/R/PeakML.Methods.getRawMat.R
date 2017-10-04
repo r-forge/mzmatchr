@@ -9,9 +9,16 @@ unsafeFindInterval2 <- function (x, vec, rightmost.closed = FALSE, all.inside = 
     index
 }
 
-unsafeFindInterval3 <- function (x, vec, rightmost.closed = FALSE, all.inside = FALSE) {
-    .Internal(findInterval(vec, x, rightmost.closed, all.inside))
-}
+#unsafeFindInterval3 <- function (x, vec, rightmost.closed = FALSE, all.inside = FALSE) {
+#    .Internal(findInterval(vec, x, rightmost.closed, all.inside))
+#}
+
+unsafeFindInterval3 <- function (x, vec, rightmost.closed = FALSE, all.inside = FALSE, left.open = FALSE) {
+            .Internal(findInterval(vec=vec, x=x,
+                                   rightmost.closed=rightmost.closed,
+                                   all.inside=all.inside, left.open = left.open))
+
+    }
 
 PeakML.Methods.getRawMat <- function (allRawPeaks, scan_start,scan_finis, mz_start, mz_finis,correctedRT,uncorrectedRT)
 {
